@@ -35,8 +35,8 @@ plt.rcParams.update({
 
 def prevalence():
     df = pd.read_csv(ROOT / "data/processed/games.csv", usecols=["release_date", "has_page", "disclosed",
-                                                                 "review_count"], low_memory=False)
-    df = df[(df.has_page == 1) & (df.release_date >= "2024-01-01")]
+                                                                 "review_count", "page_redirect"], low_memory=False)
+    df = df[(df.has_page == 1) & (df.release_date >= "2024-01-01") & (df.page_redirect != 1)]
     df["m"] = pd.to_datetime(df.release_date.str[:7])
     allg = df.groupby("m").disclosed.mean() * 100
     rv = df[(df.review_count >= 10) & (df.release_date <= "2026-06-30")].groupby("m").disclosed.mean() * 100
@@ -44,8 +44,8 @@ def prevalence():
     ax.plot(allg.index, allg.values, color=SIG, lw=1.2, label="All releases", solid_joinstyle="round")
     ax.plot(rv.index, rv.values, color=ORANGE, lw=1.2, label="Releases with \u226510 reviews", solid_joinstyle="round")
     ax.axvline(pd.Timestamp("2026-01-01"), color=INK2, lw=0.5, ls=(0, (2.5, 2)))
-    ax.set_ylim(0, 50)
-    ax.text(pd.Timestamp("2026-01-20"), 49, "Valve rule\nrevision", fontsize=6, color=INK2, va="top", linespacing=1.1)
+    ax.set_ylim(0, 55)
+    ax.text(pd.Timestamp("2026-01-20"), 54, "Valve rule\nrevision", fontsize=6, color=INK2, va="top", linespacing=1.1)
     for ser in (allg, rv):
         ax.annotate(f"{ser.values[-1]:.0f}%", xy=(ser.index[-1], ser.values[-1]), xytext=(3, 0),
                     textcoords="offset points", fontsize=6, color=INK, va="center")
@@ -218,7 +218,7 @@ def overview():
              ("H2", [f"Marketing only {b('within_crit_share', loc.format('marketing_only'), 100)} pp AI-critical",
                      f"Runtime {b('within_crit_share', loc.format('runtime'), 100)} pp AI-critical, flag-dependent"]),
              ("H3", ["Review, edit, human final: n.s.",
-                     f"AI on human work {b('within_pct_positive', 'ai_on_human')} pp rating"]),
+                     "Exploratory: AI on human work", f"{b('within_pct_positive', 'ai_on_human')} pp rating"]),
              ("H4", [f"Visual {b('within_crit_share', 'd_visual', 100)} pp AI-critical; rating n.s.",
                      "Voice: n.s."]),
              ("RQ2", [f"No guardrail stated: {100 * H['live_in_gr_none']:.0f}% of fully",

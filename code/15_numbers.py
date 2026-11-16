@@ -529,6 +529,8 @@ def main():
               r"reference labels. Prevalence and $F_1$ values are weighted to each sample's target population. " +
               (r"Guardrail codes: Table~\ref{tab:guardrails}. " if hum_g else r"Guardrail codes (not shown) were "
                r"validated on the " + mac["NGuardTest"] + r" runtime texts of the test sample. ") +
+              r"$\kappa$ columns use the " + mac["HumDN"] + r" disclosures and " + mac["HumRN"] + r" reviews coded by both "
+              r"human coders, $F_1$ columns the full samples. "
               r"$\kappa_{H}$: Cohen's $\kappa$ ($^a$quadratic-weighted) between the two human coders; $\kappa_{MH}$: final codes (bulk codes after the runtime re-coding; reviews: "
               r"lexicon) against each coder, averaged. $F_1^{m}$: final codes against the reference labels. $F_1^{r}$: "
               r"rule-based coder, a reproducible baseline (reviews: lexicon). "
@@ -631,7 +633,7 @@ def main():
         n_ = "" if hum_g else mac["NGr" + k.capitalize()] + " & "
         lines.append(f"{lab} & {n_}{mac['ShareGr' + k.capitalize()]} & {hv_}{cell} \\\\")
     hnote = (r" \%$_{R}$: among the " + mac["NLiveInRS"] + r" runtime disclosures of the reception sample, all of which "
-             r"were coded." + r" \%$_{H}$: share coded by the two human coders (mean); agreement: Supplementary "
+             r"were coded." + r" \%$_{H}$: among all " + mac["HumGGames"] + r" games, as coded by the two human coders (mean); agreement: Supplementary "
              r"Table~S4.") if hum_g else ""
     lines += [r"\bottomrule", r"\end{tabular}",
               r"\par\smallskip\parbox{\columnwidth}{\scriptsize A disclosure can state several guardrails." +
