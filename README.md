@@ -8,7 +8,7 @@ store data and reviews, coding of the AI-disclosure texts, validation of the cod
 |---|---|
 | `code/` | the scripts, run in the order given under Pipeline |
 | `annotation/` | codebook, coder instructions, gold samples, bulk coding batches and codes, model and human labels; see `annotation/README.md` |
-| `data/processed/` | game-level tables: `games.csv` (disclosure texts and codes), `review_ai.csv` (review aggregates), `prior_release.csv`, `developer_lists.csv`, `cohort_appids.txt`, `review_queue.txt` |
+| `data/processed/` | game-level tables: `games.csv` (disclosure texts and codes), `review_ai.csv` (review aggregates), `prior_release.csv`, `developer_lists.csv`, `publishers.csv`, `cohort_appids.txt`, `review_queue.txt` |
 | `data/raw/` | Internet Archive snapshot targets, dates, and display checks (`wayback_*`) |
 | `results/` | analysis output |
 
@@ -38,6 +38,7 @@ Run the scripts from `code/`, in this order:
 | 10c | `21_wayback_timing.py --targets`, `21_wayback_timing.py`, `21_wayback_timing.py --display` | `data/raw/wayback_targets.csv`, `data/raw/wayback_timing.jsonl`: disclosure timing from Internet Archive snapshots; `data/raw/wayback_display.csv`: how archived store pages display the disclosure |
 | 10d | `23_developer_lists.py` | `data/processed/developer_lists.csv`: all developers listed for each game; must run before `08_analysis.py` |
 | 11 | `08_analysis.py` | `results/`: models, robustness checks, descriptive tables, `headline.json`, `short_text.csv` (estimates with the lexicon limited to the first 1,500 characters), and `supplement.csv`; console output in `run_log.txt` |
+| 11a | `24_publishers.py` | `data/processed/publishers.csv` (listed publishers; separate and established third-party publisher indicators, rebuilt only when the raw store items are present) and `results/publisher.csv`, `results/publisher.json`: the exploratory publisher analysis (RQ3); must run after `08_analysis.py` and before `15_numbers.py`. `results/publisher_check_sample.csv` holds the 70-game classification check |
 | 11b | `22_rerun_agreement.py` | `results/rerun_agreement.csv`: test-retest agreement of the bulk coder (batch 02 coded twice); must run before `15_numbers.py` |
 | 12 | `17_make_human_tasks.py`, `18_human_validation.py` | human validation round: item sets and annotation page in `annotation/human/`; `results/human_validation.csv` |
 | 13 | `14_figures.py`, `15_numbers.py` | figures in `manuscript/figures/`; number macros in `manuscript/numbers.tex`; tables in `manuscript/tables/` |
