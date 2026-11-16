@@ -1,0 +1,37 @@
+{
+ "coders": [
+  "H1",
+  "H2"
+ ],
+ "versions": {
+  "H1": {
+   "P": "20261130-v1",
+   "G": "20261130-v2-G",
+   "D": "20261130-v1",
+   "R": "20261130-v1"
+  },
+  "H2": {
+   "P": "20261130-v1",
+   "G": "20261130-v2-G",
+   "D": "20261130-v1",
+   "R": "20261130-v1"
+  }
+ },
+ "D_n_all_coders": 200,
+ "D_aoh_disagreements": 22,
+ "D_aoh_disagreements_translation": 18,
+ "D_disagreement_cells": 135,
+ "D_aoh_model_pos": 10,
+ "D_aoh_gold_pos": 21,
+ "D_aoh_model_in_gold": 10,
+ "D_aoh_gold_extra": 11,
+ "D_aoh_gold_extra_rejected": 7,
+ "G_n_all_coders": 288,
+ "G_disagreement_cells": 93,
+ "R_n_all_coders": 300,
+ "R_disagreement_cells": 26,
+ "G_runtime_items": 248,
+ "G_decoy_items": 40,
+ "G_decoys_coded_runtime_H1": 0,
+ "G_decoys_coded_runtime_H2": 0
+}

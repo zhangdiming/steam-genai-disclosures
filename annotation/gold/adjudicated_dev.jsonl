@@ -1,0 +1,37 @@
+{"gid": "d0001", "authority": 0}
+{"gid": "d0005", "d_text": 0, "d_code": 1}
+{"gid": "d0013", "authority": 0}
+{"gid": "d0014", "scope_minor": 0}
+{"gid": "d0030", "d_other": 1}
+{"gid": "d0035", "ai_on_human": 1}
+{"gid": "d0075", "live_player": 1}
+{"gid": "d0086", "scope_minor": 0}
+{"gid": "d0089", "d_other": 1}
+{"gid": "d0091", "gr_report": 1, "gr_none": 0}
+{"gid": "d0101", "authority": 0}
+{"gid": "d0117", "scope_minor": 0}
+{"gid": "d0130", "d_other": 1}
+{"gid": "d0132", "d_other": 1}
+{"gid": "d0133", "d_other": 1}
+{"gid": "d0140", "d_voice": 1}
+{"gid": "d0166", "d_sfx": 1}
+{"gid": "d0191", "d_other": 1}
+{"gid": "d0194", "ai_on_human": 1}
+{"gid": "d0200", "authority": 3, "gr_local": 1}
+{"gid": "d0213", "d_text": 0, "d_code": 1}
+{"gid": "d0231", "ai_on_human": 0}
+{"gid": "d0240", "d_other": 1}
+{"gid": "d0254", "scope_extensive": 1}
+{"gid": "d0260", "scope_extensive": 1}
+{"gid": "d0267", "d_other": 1}
+{"gid": "d0290", "d_other": 1}
+{"gid": "d0301", "d_visual": 1}
+{"gid": "d0312", "scope_extensive": 1}
+{"gid": "d0317", "ai_on_human": 0}
+{"gid": "d0321", "d_code": 1}
+{"gid": "d0325", "d_other": 1}
+{"gid": "d0342", "d_other": 1}
+{"gid": "d0356", "scope_minor": 0}
+{"gid": "d0365", "d_other": 1}
+{"gid": "d0376", "scope_minor": 1, "placeholder": 0}
+{"gid": "d0392", "authority": 0}

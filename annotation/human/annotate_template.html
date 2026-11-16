@@ -1,0 +1,765 @@
+<title>AI 披露标注台</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<style>
+:root {
+  --bg: #edf0f3; --surface: #ffffff; --surface-2: #f5f7f9; --ink: #18212b; --muted: #586574; --line: #d3dae1;
+  --accent: #2b5d8a; --accent-ink: #ffffff; --accent-soft: #e1ebf4;
+  --band: #1f3a52; --band-ink: #d7e3ed;
+  --ok: #2c7a4b; --ok-soft: #e1f1e7; --warn: #8a5a00; --warn-soft: #fbf0d9; --err: #b3261e; --err-soft: #fbe3e1;
+  --draft: #c4ced8;
+  --f-ui: "IBM Plex Sans", "PingFang SC", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif;
+  --f-text: "Source Serif 4", "Noto Serif SC", "Songti SC", Georgia, serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --r: 6px; --hh: 72px;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #10151b; --surface: #18202a; --surface-2: #1e2832; --ink: #e2e8ee; --muted: #97a5b3; --line: #2c3946;
+  --accent: #7fb0dd; --accent-ink: #0c1620; --accent-soft: #213649;
+  --band: #0d1f2f; --band-ink: #c3d4e2;
+  --ok: #6cc08b; --ok-soft: #173325; --warn: #e3b354; --warn-soft: #3a2c10; --err: #f08a80; --err-soft: #3d1a17;
+  --draft: #3c4a58; color-scheme: dark;
+} }
+:root[data-theme="dark"] {
+  --bg: #10151b; --surface: #18202a; --surface-2: #1e2832; --ink: #e2e8ee; --muted: #97a5b3; --line: #2c3946;
+  --accent: #7fb0dd; --accent-ink: #0c1620; --accent-soft: #213649;
+  --band: #0d1f2f; --band-ink: #c3d4e2;
+  --ok: #6cc08b; --ok-soft: #173325; --warn: #e3b354; --warn-soft: #3a2c10; --err: #f08a80; --err-soft: #3d1a17;
+  --draft: #3c4a58; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--f-ui); font-size: 14px; line-height: 1.5; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--surface); }
+button, input, textarea { font: inherit; color: inherit; }
+button { cursor: pointer; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.wrap { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.mono { font-family: var(--f-mono); }
+.muted { color: var(--muted); }
+
+header { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--surface); border-bottom: 1px solid var(--line); }
+.hbar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; padding-block: 10px; }
+.brand { font-weight: 600; font-size: 15px; letter-spacing: .01em; white-space: nowrap; }
+.brand small { font-weight: 400; color: var(--muted); margin-left: 6px; font-size: 12px; }
+.tabs { display: flex; flex-wrap: wrap; gap: 4px; flex: 1 1 auto; }
+.tab { border: 1px solid transparent; background: none; border-radius: var(--r); padding: 5px 10px; display: flex; flex-direction: column; align-items: flex-start; gap: 3px; min-width: 112px; }
+.tab:hover { background: var(--surface-2); }
+.tab[aria-selected="true"] { background: var(--accent-soft); border-color: var(--accent); }
+.tab .tl { font-weight: 500; font-size: 13px; }
+.tab .tp { font-size: 11px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.tab .bar { width: 100%; height: 3px; background: var(--line); border-radius: 2px; overflow: hidden; }
+.tab .bar i { display: block; height: 100%; background: var(--accent); }
+.tools { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.chip { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; padding: 3px 8px; border-radius: 999px; background: var(--surface-2); border: 1px solid var(--line); white-space: nowrap; }
+.dot { width: 7px; height: 7px; border-radius: 50%; background: var(--muted); }
+.dot.ok { background: var(--ok); } .dot.warn { background: var(--warn); }
+.btn { border: 1px solid var(--line); background: var(--surface); border-radius: var(--r); padding: 5px 11px; font-size: 13px; }
+.btn:hover { border-color: var(--accent); }
+.btn.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); font-weight: 500; }
+.btn.primary:disabled { opacity: .45; cursor: not-allowed; }
+.btn.ghost { border-color: transparent; background: none; }
+.kbd { font-family: var(--f-mono); font-size: 11px; border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 4px; padding: 0 4px; background: var(--surface-2); color: var(--muted); }
+
+.start { max-width: 760px; margin: 28px auto; display: grid; gap: 16px; }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 18px 20px; }
+.panel h2 { margin: 0 0 10px; font-size: 16px; text-wrap: balance; }
+.panel ol, .panel ul { margin: 0; padding-left: 20px; display: grid; gap: 6px; }
+.row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.field { border: 1px solid var(--line); border-radius: var(--r); padding: 7px 10px; background: var(--surface); min-width: 0; }
+.tasklist { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 8px; margin-top: 4px; }
+.tasklist div { border: 1px solid var(--line); border-radius: var(--r); padding: 8px 10px; background: var(--surface-2); }
+.tasklist b { display: block; font-weight: 600; font-size: 13px; }
+.tasklist span { font-size: 12px; color: var(--muted); }
+table.prog { border-collapse: collapse; width: 100%; font-variant-numeric: tabular-nums; font-size: 13px; }
+table.prog th, table.prog td { border-bottom: 1px solid var(--line); padding: 5px 8px; text-align: left; }
+.tscroll { overflow-x: auto; }
+
+.bench { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 16px; padding-block: 16px 40px; align-items: start; }
+.left { position: sticky; top: calc(env(safe-area-inset-top, 0px) + var(--hh) + 12px); display: grid; gap: 12px; max-height: calc(100vh - var(--hh) - 24px); overflow-y: auto; min-width: 0; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; min-width: 0; }
+.cardhead { background: var(--band); color: var(--band-ink); padding: 8px 14px; display: flex; justify-content: space-between; gap: 10px; align-items: baseline; flex-wrap: wrap; }
+.cardhead .lab { font-size: 11px; letter-spacing: .09em; text-transform: uppercase; font-weight: 600; }
+.cardhead .pos { font-size: 12px; font-variant-numeric: tabular-nums; font-family: var(--f-mono); }
+.cardbody { padding: 14px 16px 16px; }
+.lead { font-size: 12px; color: var(--muted); margin: 0 0 8px; }
+.itext { font-family: var(--f-text); font-size: 16.5px; line-height: 1.62; white-space: pre-wrap; overflow-wrap: anywhere; margin: 0; max-width: 68ch; }
+.status { display: inline-flex; gap: 6px; align-items: center; font-size: 12px; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--line); }
+.status.done { color: var(--ok); background: var(--ok-soft); border-color: transparent; }
+.status.draft { color: var(--muted); background: var(--surface-2); }
+.status.unsure { color: var(--warn); background: var(--warn-soft); border-color: transparent; }
+.nav { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; padding: 10px 16px; border-top: 1px solid var(--line); background: var(--surface-2); }
+.nav input { width: 64px; }
+.help { padding: 12px 16px; font-size: 13px; }
+.help h3 { margin: 0 0 4px; font-size: 13px; font-family: var(--f-mono); font-weight: 500; }
+.help p { margin: 4px 0 0; }
+.help .cue { color: var(--muted); }
+.map { display: flex; flex-wrap: wrap; gap: 3px; padding: 12px 16px; }
+.sq { width: 11px; height: 11px; border-radius: 2px; border: 0; padding: 0; background: var(--line); }
+.sq.draft { background: var(--draft); }
+.sq.done { background: var(--accent); }
+.sq.unsure { box-shadow: 0 0 0 2px var(--warn) inset; }
+.sq.cur { outline: 2px solid var(--ink); outline-offset: 1px; }
+.legend { display: flex; flex-wrap: wrap; gap: 10px; font-size: 11px; color: var(--muted); padding: 0 16px 12px; }
+.legend i { display: inline-block; width: 9px; height: 9px; border-radius: 2px; margin-right: 4px; vertical-align: -1px; }
+
+.sheet { display: grid; gap: 12px; min-width: 0; }
+.block { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 12px 14px 14px; }
+.block > h3 { margin: 0 0 10px; font-size: 13px; font-weight: 600; display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; }
+.block > h3 .bl { font-family: var(--f-mono); color: var(--accent); }
+.block > h3 small { font-weight: 400; color: var(--muted); font-size: 12px; }
+.block.off { opacity: .55; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 6px; }
+.tg { display: flex; align-items: stretch; border: 1px solid var(--line); border-radius: var(--r); background: var(--surface); min-width: 0; }
+.tg button.t { flex: 1; text-align: left; border: 0; background: none; padding: 6px 8px; display: grid; grid-template-columns: 16px 1fr; gap: 0 8px; align-items: start; min-width: 0; }
+.tg .box { width: 14px; height: 14px; border: 1.5px solid var(--muted); border-radius: 3px; margin-top: 3px; display: grid; place-items: center; }
+.tg .k { font-family: var(--f-mono); font-size: 12.5px; overflow-wrap: anywhere; }
+.tg .z { grid-column: 2; font-size: 12px; color: var(--muted); line-height: 1.35; }
+.tg button.q { border: 0; border-left: 1px solid var(--line); background: none; color: var(--muted); width: 26px; font-size: 12px; }
+.tg button.q:hover { color: var(--accent); }
+.tg.on { border-color: var(--accent); background: var(--accent-soft); }
+.tg.on .box { background: var(--accent); border-color: var(--accent); }
+.tg.on .box::after { content: ""; width: 7px; height: 4px; border-left: 2px solid var(--accent-ink); border-bottom: 2px solid var(--accent-ink); transform: rotate(-45deg) translate(1px, -1px); }
+.tg button.t:disabled { cursor: not-allowed; }
+.seg { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; margin-bottom: 8px; }
+.seg button { border: 1px solid var(--line); border-radius: var(--r); background: var(--surface); padding: 7px 8px; text-align: left; display: grid; gap: 1px; min-width: 0; }
+.seg button .k { font-family: var(--f-mono); font-size: 12.5px; }
+.seg button .z { font-size: 12px; color: var(--muted); line-height: 1.35; }
+.seg button[aria-pressed="true"] { border-color: var(--accent); background: var(--accent-soft); box-shadow: inset 0 0 0 1px var(--accent); }
+.opts { display: grid; gap: 8px; }
+.opt { border: 1px solid var(--line); border-radius: var(--r); background: var(--surface); padding: 12px 14px; text-align: left; display: grid; grid-template-columns: auto 1fr; gap: 2px 12px; align-items: baseline; }
+.opt .n { font-family: var(--f-mono); font-size: 18px; color: var(--accent); grid-row: span 2; }
+.opt b { font-weight: 600; }
+.opt span { font-size: 12.5px; color: var(--muted); }
+.opt[aria-pressed="true"] { border-color: var(--accent); background: var(--accent-soft); box-shadow: inset 0 0 0 1px var(--accent); }
+.checks { display: grid; gap: 6px; }
+.ck { font-size: 13px; padding: 6px 10px; border-radius: var(--r); display: flex; gap: 8px; align-items: baseline; }
+.ck.err { background: var(--err-soft); color: var(--err); }
+.ck.warn { background: var(--warn-soft); color: var(--warn); }
+.ck.info { background: var(--surface-2); color: var(--muted); }
+.ck b { font-family: var(--f-mono); font-size: 11px; text-transform: uppercase; letter-spacing: .06em; }
+.foot { display: grid; gap: 10px; }
+.foot textarea { width: 100%; min-height: 54px; resize: vertical; }
+.savebar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: space-between; }
+.unsure { display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--line); border-radius: var(--r); background: var(--surface); padding: 5px 10px; font-size: 13px; }
+.unsure[aria-pressed="true"] { border-color: var(--warn); color: var(--warn); background: var(--warn-soft); }
+.banner { border-radius: var(--r); padding: 8px 12px; font-size: 13px; background: var(--ok-soft); color: var(--ok); }
+.banner.local { background: var(--warn-soft); color: var(--warn); }
+.keys { font-size: 12px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 4px 14px; }
+
+.overlay { position: fixed; inset: 0; z-index: 20; background: color-mix(in srgb, var(--ink) 35%, transparent); display: flex; justify-content: flex-end; }
+.drawer { background: var(--surface); width: min(720px, 100%); height: 100%; overflow-y: auto; padding: calc(env(safe-area-inset-top, 0px) + 16px) max(20px, env(safe-area-inset-right, 0px)) calc(env(safe-area-inset-bottom, 0px) + 24px) 20px; border-left: 1px solid var(--line); }
+.drawer h2 { font-size: 17px; margin: 0; }
+.drawer h3 { font-size: 14px; margin: 20px 0 8px; }
+.dhead { display: flex; justify-content: space-between; align-items: center; gap: 8px; position: sticky; top: calc(-16px - env(safe-area-inset-top, 0px)); background: var(--surface); padding-block: 8px; border-bottom: 1px solid var(--line); }
+.defs { display: grid; gap: 8px; }
+.def { border: 1px solid var(--line); border-radius: var(--r); padding: 8px 10px; font-size: 13px; }
+.def .k { font-family: var(--f-mono); font-weight: 500; }
+.def p { margin: 3px 0 0; }
+.rules li { font-size: 13px; }
+.modal { position: fixed; inset: 0; z-index: 21; display: grid; place-items: center; background: color-mix(in srgb, var(--ink) 35%, transparent); padding: 16px; }
+.modal .panel { width: min(560px, 100%); max-height: 90vh; overflow-y: auto; display: grid; gap: 12px; }
+.modal textarea { width: 100%; min-height: 120px; font-family: var(--f-mono); font-size: 11px; }
+.toast { position: fixed; left: 50%; transform: translateX(-50%); bottom: calc(env(safe-area-inset-bottom, 0px) + 18px); z-index: 30; background: var(--ink); color: var(--bg); padding: 8px 14px; border-radius: var(--r); font-size: 13px; max-width: calc(100% - 32px); }
+
+@media (max-width: 860px) {
+  header { position: static; }
+  .tabs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .tab { min-width: 0; }
+  .bench { grid-template-columns: minmax(0, 1fr); }
+  .left { position: static; max-height: none; overflow: visible; }
+  .seg { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .tg, .seg button, .opt, .tab { transition: background-color .12s, border-color .12s; }
+}
+</style>
+
+<header id="hdr">
+  <div class="wrap hbar">
+    <div class="brand">AI 披露标注台<small id="ver"></small></div>
+    <nav class="tabs" id="tabs" role="tablist" aria-label="标注任务"></nav>
+    <div class="tools">
+      <span class="chip" id="coderChip" hidden></span>
+      <span class="chip" id="storeChip"><span class="dot" id="storeDot"></span><span id="storeTxt">本地保存</span></span>
+      <button class="btn" id="bBook" type="button">编码手册</button>
+      <button class="btn" id="bProg" type="button" hidden>进度</button>
+      <button class="btn" id="bData" type="button">导出 / 导入</button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="start" id="start" hidden>
+    <div class="panel">
+      <h2>开始标注</h2>
+      <div class="row">
+        <label for="coderIn">编码员代号</label>
+        <input class="field mono" id="coderIn" maxlength="16" placeholder="如 H1" autocomplete="off" spellcheck="false">
+        <button class="btn primary" id="bStart" type="button">开始</button>
+      </div>
+      <p class="muted" id="coderHint" style="margin:8px 0 0">只用代号，不要填写姓名。同一代号在同一浏览器中继续上次进度。</p>
+    </div>
+    <div class="panel" id="roundNote" hidden>
+      <h2>本轮说明</h2>
+      <p id="roundNoteText" style="margin:0"></p>
+    </div>
+    <div class="panel">
+      <h2>标注规则</h2>
+      <ol>
+        <li>独立盲标：不要与其他编码员讨论具体条目，不查看模型编码或他人的结果，不搜索游戏或商店页面。</li>
+        <li>只按文本字面意思编码，线索缺失即为 0。非英语文本按含义编码。定义以英文编码手册为准，中文仅为提示。</li>
+        <li id="rulePractice">先做“练习”。练习结束后可以对照手册讨论练习条目；正式任务开始后不再讨论。</li>
+        <li>拿不准时照常编码，同时标记“不确定”并写一句备注。</li>
+        <li>每完成一段就导出一次 JSON，发给项目负责人。</li>
+      </ol>
+    </div>
+    <div class="panel">
+      <h2>任务</h2>
+      <div class="tasklist" id="taskList"></div>
+    </div>
+    <div class="panel" id="progPanel" hidden>
+      <h2>编码员进度</h2>
+      <div class="tscroll" id="progTable"></div>
+    </div>
+  </section>
+
+  <section class="bench" id="bench" hidden>
+    <div class="left">
+      <article class="card">
+        <div class="cardhead"><span class="lab" id="cardLab"></span><span class="pos" id="cardPos"></span></div>
+        <div class="cardbody">
+          <p class="lead" id="cardLead"></p>
+          <p class="itext" id="itemText"></p>
+        </div>
+        <div class="nav">
+          <span class="status" id="itemStatus"></span>
+          <button class="btn" id="bPrev" type="button" aria-label="上一条">← 上一条</button>
+          <button class="btn" id="bNext" type="button" aria-label="下一条">下一条 →</button>
+          <button class="btn" id="bTodo" type="button">下一条未完成</button>
+          <label class="muted" for="jump">跳到</label>
+          <input class="field mono" id="jump" inputmode="numeric" autocomplete="off">
+        </div>
+      </article>
+      <section class="card" aria-label="代码定义">
+        <div class="help" id="help"></div>
+      </section>
+      <section class="card" aria-label="条目总览">
+        <div class="map" id="map"></div>
+        <div class="legend"><span><i style="background:var(--accent)"></i>已完成</span><span><i style="background:var(--draft)"></i>未确认草稿</span><span><i style="box-shadow:0 0 0 2px var(--warn) inset"></i>不确定</span><span><i style="background:var(--line)"></i>未开始</span></div>
+      </section>
+    </div>
+    <div class="sheet" id="sheet"></div>
+  </section>
+</main>
+
+<div class="overlay" id="book" hidden>
+  <aside class="drawer" role="dialog" aria-modal="true" aria-labelledby="bookTitle">
+    <div class="dhead"><h2 id="bookTitle">编码手册</h2><button class="btn" id="bBookClose" type="button">关闭</button></div>
+    <div id="bookBody"></div>
+  </aside>
+</div>
+
+<div class="modal" id="dataModal" hidden>
+  <div class="panel" role="dialog" aria-modal="true" aria-labelledby="dataTitle">
+    <h2 id="dataTitle" style="margin:0">导出 / 导入</h2>
+    <p class="muted" id="dataSummary" style="margin:0"></p>
+    <div class="row">
+      <button class="btn primary" id="bExport" type="button">下载 JSON</button>
+      <button class="btn" id="bCopy" type="button">复制 JSON</button>
+      <label class="btn" for="importFile">导入 JSON…</label>
+      <input type="file" id="importFile" accept=".json,application/json" hidden>
+    </div>
+    <textarea id="exportBox" readonly hidden aria-label="导出的 JSON"></textarea>
+    <p class="muted" id="dataMsg" style="margin:0"></p>
+    <div class="row" id="importConfirm" hidden></div>
+    <div class="row" style="justify-content:flex-end"><button class="btn" id="bDataClose" type="button">关闭</button></div>
+  </div>
+</div>
+
+<div class="modal" id="progModal" hidden>
+  <div class="panel" role="dialog" aria-modal="true" aria-labelledby="progTitle">
+    <h2 id="progTitle" style="margin:0">编码员进度</h2>
+    <div class="tscroll" id="progTable2"></div>
+    <div class="row" style="justify-content:flex-end"><button class="btn" id="bProgClose" type="button">关闭</button></div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script>
+"use strict";
+const DATA = /*__TASK_DATA__*/null;
+
+const DEF = {
+  pre: { zh: "开发期生成，作为固定内容随游戏发布", def: "AI-generated or AI-assisted content created during development and shipped as fixed content (in-game assets, text, audio, code).", cues: "“created during development”, “pre-generated”, “assets were generated with…”, “AI-assisted art in the game”", note: "Default for in-game content when no runtime generation is described. Do not code pre if AI was used only for store/marketing material." },
+  live_system: { zh: "游戏运行时由系统发起的生成", def: "Content generated while the game runs, initiated by the game system (e.g., LLM-driven NPC dialogue, dynamically generated quests, procedural images by a generative model).", cues: "“in real time”, “during gameplay”, “dynamically generated by an AI model”, “LLM generates responses”", note: "Requires generative AI at runtime. Classic game AI (pathfinding, chess engines, enemy behaviour) is not live_system; see non_genai." },
+  live_player: { zh: "运行时由玩家输入驱动的生成", def: "Runtime generation directed by player input (players type prompts, upload images, request content).", cues: "“players can generate…”, “based on your text input”, “create your own … using AI”", note: "Code both live_system and live_player if both are described. Runtime use of a generative model to evaluate player input (e.g., an LLM judging answers) is runtime generation (live_player when the input is the player's), unless the text says the model generates nothing." },
+  marketing: { zh: "商店页、胶囊图、预告片、宣传或社区素材", def: "AI used for store page, capsule/library art, trailers, promotional or community material (trading cards, emoticons, social posts).", cues: "“store page”, “capsule”, “promotional”, “trailer”, “marketing”, “trading cards”", note: "" },
+  marketing_only: { zh: "仅用于宣传，游戏内没有 AI 内容", def: "marketing = 1 and no AI content ships in the game (no pre, live_system, live_player).", cues: "“only used for the store page”", note: "Derived; coders still mark it explicitly." },
+  explicit_no_live: { zh: "明确声明运行时不生成 / 不连接 AI 服务", def: "Text explicitly states that the game does not generate AI content at runtime / does not connect to AI services during play.", cues: "“does not generate content during gameplay”, “no AI is used while playing”", note: "" },
+  non_genai: { zh: "只描述非生成式或传统 AI", def: "The disclosure describes only non-generative or classic AI (chess engines, neural-network recognition, “AI opponents”; upscaling without generation is still generative-adjacent: code upscaling as pre).", cues: "“AI opponents”, “enemy AI”, “chess engine”", note: "Marks likely misuse of the disclosure field." },
+  ai_on_human: { zh: "AI 作用于人类原创内容（权限方向反转）", def: "AI is applied to human-originated content (upscaling original art, polishing or translating human-written text, refining human code, cleaning human recordings). The direction of authority is reversed: humans originate, AI transforms.", cues: "“refined with the help of AI”, “AI upscaling of our original artwork”, “AI-assisted proofreading of our script”", note: "AI translation counts as ai_on_human only when the source text is stated to be human-written or original." },
+  mixed_oversight: { zh: "明确说明部分 AI 内容未经修改", def: "If different assets receive different levels, code the maximum authority level and set mixed_oversight = 1 when the text explicitly says some AI content was used without modification.", cues: "", note: "" },
+  d_visual: { zh: "视觉：美术、图像、贴图、3D、UI、动画、视频、放大", def: "Art, images, illustrations, sprites, textures, 3D models, UI graphics, animation, video, upscaling.", cues: "", note: "Domain codes apply to every AI-produced item the text names, including store and marketing material: a capsule image or promotional art → d_visual 1 (with marketing 1)." },
+  d_music: { zh: "音乐", def: "Music.", cues: "", note: "A single named item (“a music track”) still counts as d_music; it does not trigger scope_minor." },
+  d_sfx: { zh: "音效、笼统的“音频”", def: "Sound effects, generic “audio”.", cues: "", note: "" },
+  d_voice: { zh: "配音、TTS、旁白、角色语音", def: "Voice acting, TTS, narration, character voices.", cues: "", note: "A trailer voice-over → d_voice 1." },
+  d_text: { zh: "故事、对话、叙事、描述、游戏内文字", def: "Story, dialogue, narrative, descriptions, in-game writing.", cues: "", note: "An AI-written store description → d_text 1." },
+  d_localization: { zh: "翻译 / 本地化", def: "Translation.", cues: "", note: "" },
+  d_code: { zh: "编程、脚本、着色器", def: "Programming, scripts, shaders.", cues: "", note: "“Scripts”/“scripting” → d_code unless clearly narrative (dialogue/story script)." },
+  d_other: { zh: "构思、设计文档、关卡设计、测试、概念稿", def: "Ideation, design documents, level design, testing.", cues: "", note: "Concept art, drafts, inspiration references, mock-ups, prototypes → d_other 1 (plus the content domain, e.g. d_visual)." },
+  scope_minor: { zh: "使用被描述为有限", def: "Use is described as limited.", cues: "“some”, “a few”, “minor”, “small portion”, “limited”, “one or two”, “only” (restrictive)", note: "A single named item (“a music track”, “the main menu song”) does not trigger scope_minor; “certain”, “selected”, “parts of” do." },
+  scope_extensive: { zh: "使用被描述为大量 / 全面", def: "Use is described as pervasive.", cues: "“all”, “most”, “majority”, “entirely”, “much of”, “fully generated”", note: "“All other”, “every” trigger scope_extensive." },
+  placeholder: { zh: "AI 内容为临时占位，将被人工替换", def: "AI content is temporary or will be replaced by human work.", cues: "“placeholder”, “temporary”, “will be replaced”, “plan to replace”", note: "Placeholders whose replacement is only planned or in progress → authority 0 (unless another human role is stated) and placeholder 1." },
+  tools_named: { zh: "点名具体模型、产品或厂商", def: "Names a specific model, product, or vendor.", cues: "Midjourney, DALL·E, Stable Diffusion, ChatGPT, GPT-4, Claude, Gemini, Copilot, ElevenLabs, Suno, Udio, Firefly, Leonardo, Meshy, Codex", note: "" },
+  provenance_claim: { zh: "关于训练数据或版权的声明", def: "Claims about training data or rights: licensed, ethically sourced, trained on own art, commercially safe, no copyrighted material.", cues: "“trained on our own artwork”, “licensed”, “ethically trained”", note: "" },
+  small_team: { zh: "以团队规模或资源为由解释 AI 使用", def: "Justifies AI use by team size or resources.", cues: "“solo developer”, “small team”, “one-person”, “limited budget”, “indie”", note: "" },
+  gr_filter: { zh: "自动过滤或审核输入/输出", def: "Automated output/input filtering or moderation.", cues: "“filter”, “moderation API”, “blocklist”, “safety system”, “content policy enforcement”", note: "" },
+  gr_constrained: { zh: "生成范围受限：预设、系统提示、模板、封闭词表", def: "Generation constrained in scope: restricted prompts, preset options, system prompts limiting topics, curated templates, closed vocabularies.", cues: "“limited to the game's context”, “cannot generate”, “preset”, “restricted”", note: "" },
+  gr_local: { zh: "本地 / 设备端 / 离线模型，或隐私保护", def: "Local/on-device/offline model or privacy protection (no data sent or stored).", cues: "“runs locally”, “on-device”, “offline”, “no data is sent”", note: "A general privacy commitment counts as gr_local." },
+  gr_human: { zh: "人工监控、审查生成内容或审核团队", def: "Human monitoring, review of generated content, or moderation team.", cues: "“our team monitors”, “human moderators”, “logs are reviewed”", note: "" },
+  gr_report: { zh: "玩家举报或反馈渠道", def: "Player reporting or feedback channel for generated content.", cues: "“report”, “Steam overlay”, “contact us if”", note: "An invitation to give feedback on runtime AI counts as gr_report." },
+  gr_optout: { zh: "玩家可关闭、选择开启或重新生成", def: "Player control to disable, opt in to, or regenerate AI features.", cues: "“can be turned off”, “optional”, “toggle”", note: "" },
+  gr_provider: { zh: "依赖 AI 供应商的安全措施或条款", def: "Relies on the vendor's safety measures or terms.", cues: "“OpenAI's usage policies”, “provider safety”", note: "" },
+  gr_none: { zh: "描述了运行时生成，但没有陈述任何护栏", def: "Runtime generation described but no guardrail stated.", cues: "", note: "" },
+  genai_mention: { zh: "评论提到用于制作或运行游戏的生成式 AI", def: "The review refers to generative AI used to make or run the game (AI art, AI voices, AI-written text, LLM characters, “AI slop”, AI translation, the AI disclosure). Classic game AI (enemy/NPC behaviour, bots, difficulty, pathfinding) is 0. Mentions of AI as a story theme are 0.", cues: "", note: "" },
+  genai_critical: { zh: "提到生成式 AI，且对其使用给出负面评价", def: "genai_mention = 1 and the reviewer expresses a negative evaluation of the generative-AI use (quality, ethics, effort, authenticity, refusal to buy). Neutral or positive mentions are 0.", cues: "", note: "" },
+};
+const AUTH = [
+  { k: "0 none", zh: "未声明人工作用", def: "No human role in producing, checking, or changing AI output is stated. “Created with the help/assistance of AI” alone is level 0.", cues: "“made with AI”, “AI-generated images”, “Help in creating images”" },
+  { k: "1 review", zh: "人工检查、挑选、批准", def: "Humans check, select, curate, approve, or verify AI output, without stating that they change it.", cues: "“reviewed by the developer”, “selected”, “curated”, “checked”, “approved”" },
+  { k: "2 edit", zh: "人工修改 AI 输出", def: "Humans modify AI output: edit, refine, retouch, repaint, adjust, rework, mix, integrate after modification.", cues: "“edited”, “refined”, “retouched”, “painted over”, “adjusted”, “reworked”, “manually refined”" },
+  { k: "3 human_final", zh: "最终内容为人工制作", def: "The final content is stated to be human-made, with AI only as reference, inspiration, ideation, brainstorming, or placeholders that were replaced.", cues: "“used only as reference”, “all final art was hand-drawn”, “AI was used for brainstorming”, “concepts only”" },
+];
+const RULES = [
+  "Placeholders whose replacement is only planned or in progress → authority 0 (unless another human role is stated) and placeholder 1. Level 3 requires that the shipped content is stated to be human-made.",
+  "Statements that every key asset is hand-crafted / starts and ends in human hands → level 3.",
+  "AI translation counts as ai_on_human only when the source text is stated to be human-written or original.",
+  "Concept art, drafts, inspiration references, mock-ups, prototypes → d_other 1 (plus the content domain, e.g. d_visual).",
+  "“Scripts”/“scripting” → d_code unless clearly narrative (dialogue/story script).",
+  "A single named item (“a music track”, “the main menu song”) does not trigger scope_minor; “certain”, “selected”, “parts of” do. “All other”, “every” trigger scope_extensive.",
+  "An invitation to give feedback on runtime AI counts as gr_report; a general privacy commitment counts as gr_local.",
+  "Runtime use of a generative model to evaluate player input (e.g., an LLM judging answers) is runtime generation (live_player when the input is the player's), unless the text says the model generates nothing.",
+  "“Integrated” alone (no editing verb) → review. “Reviewed and edited” → edit. A blanket “all AI content was reviewed and refined” → edit.",
+  "If different assets receive different levels, code the maximum and set mixed_oversight = 1 when the text explicitly says some AI content was used without modification.",
+];
+const GR = ["gr_filter", "gr_constrained", "gr_local", "gr_human", "gr_report", "gr_optout", "gr_provider", "gr_none"];
+const DOM = ["d_visual", "d_music", "d_sfx", "d_voice", "d_text", "d_localization", "d_code", "d_other"];
+const BLOCKS = {
+  A: { t: "生成位置", en: "Locus of generation", codes: ["pre", "live_system", "live_player", "marketing", "marketing_only", "explicit_no_live", "non_genai"] },
+  B: { t: "人工权限", en: "Human authority (highest level claimed for the in-game content; marketing content only if nothing else is described)", codes: ["ai_on_human", "mixed_oversight"] },
+  C: { t: "内容领域", en: "Content domains (multi-label)", codes: DOM },
+  D: { t: "范围与框架", en: "Scope and framing", codes: ["scope_minor", "scope_extensive", "placeholder", "tools_named", "provenance_claim", "small_team"] },
+  E: { t: "运行时护栏", en: "Runtime guardrails (only when live_system or live_player = 1)", codes: GR },
+};
+const FULL = [...BLOCKS.A.codes, ...BLOCKS.B.codes, ...DOM, ...BLOCKS.D.codes, ...GR];
+const TASKS = {
+  P: { label: "练习", name: "练习：完整编码", form: "full", card: "disc", desc: "开发集中的披露文本，全部代码。不计入一致性统计。" },
+  G: { label: "B 运行时与护栏", name: "运行时生成与护栏", form: "runtime", card: "disc", desc: "判断文本是否描述运行时生成，并编码其陈述的护栏。部分文本并不描述运行时生成。" },
+  D: { label: "A 披露全码", name: "披露文本完整编码", form: "full", card: "disc", desc: "测试集中的披露文本，按编码手册 A–E 组编码。" },
+  R: { label: "C 玩家评论", name: "评论中的生成式 AI", form: "review", card: "review", desc: "判断评论是否提及生成式 AI，以及是否负面评价其使用。" },
+};
+const TASK_ORDER = ["P", "G", "D", "R"].filter((t) => !DATA || DATA.tasks[t]);
+const FIELDS = { full: [...FULL, "authority"], runtime: ["live_system", "live_player", ...GR], review: ["genai_mention", "genai_critical"] };
+
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const LS = {
+  get(k) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : null; } catch (e) { return null; } },
+  set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); return true; } catch (e) { return false; } },
+};
+function hash32(s) { let h = 2166136261; for (let i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); } return h >>> 0; }
+function shuffled(arr, seed) {
+  let a = seed || 1; const rnd = () => { a = (a + 0x6D2B79F5) | 0; let t = Math.imul(a ^ (a >>> 15), 1 | a); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
+  const out = arr.slice(); for (let i = out.length - 1; i > 0; i--) { const j = Math.floor(rnd() * (i + 1)); [out[i], out[j]] = [out[j], out[i]]; } return out;
+}
+let toastTimer = 0;
+function toast(msg) { const t = $("toast"); t.textContent = msg; t.hidden = false; clearTimeout(toastTimer); toastTimer = setTimeout(() => { t.hidden = true; }, 2600); }
+const blank = (form) => { const d = {}; FIELDS[form].forEach((k) => { d[k] = 0; }); d.unsure = 0; d.note = ""; d.t_ms = 0; return d; };
+
+const VERSION = DATA ? DATA.version : "none";
+const NS = "aidisc-ann:" + VERSION;
+const ITEMS = {}; const TEXT = {};
+if (DATA) for (const t of TASK_ORDER) { ITEMS[t] = (DATA.tasks[t] || []).map((x) => x.id); TEXT[t] = Object.fromEntries((DATA.tasks[t] || []).map((x) => [x.id, x.text])); }
+const S = { coder: null, task: TASK_ORDER[0], pos: { P: 0, G: 0, D: 0, R: 0 }, labels: null, order: {}, draft: null, helpKey: null, lastExport: null };
+let remote = null;
+let lastMark = performance.now();
+
+function labelsKey(c) { return NS + ":labels:" + c; }
+function loadLocal(c) { const L = LS.get(labelsKey(c)) || {}; for (const t of TASK_ORDER) L[t] = L[t] || {}; return L; }
+function saveLocal() { if (!S.coder) return; if (!LS.set(labelsKey(S.coder), S.labels)) setStore("warn", "浏览器无法保存，请立即导出"); }
+function saveSession() { LS.set(NS + ":session", { coder: S.coder, task: S.task, pos: S.pos, lastExport: S.lastExport }); }
+function buildOrder() { for (const t of TASK_ORDER) S.order[t] = shuffled(ITEMS[t], hash32(S.coder + "|" + t + "|" + VERSION)); }
+function curId() { return S.order[S.task][S.pos[S.task]]; }
+function rec(t, id) { return S.labels[t][id]; }
+function doneCount(t) { return S.order[t].reduce((n, id) => n + (S.labels[t][id] && S.labels[t][id].done ? 1 : 0), 0); }
+
+function setStore(kind, txt) { $("storeDot").className = "dot " + (kind || ""); $("storeTxt").textContent = txt; }
+
+const pending = new Map(); let flushing = false; let flushTimer = 0; let profileDirty = false;
+function queueRemote(t, id, r) {
+  if (!remote || remote.readonly) return;
+  pending.set(t + "/" + id, r); profileDirty = true;
+  clearTimeout(flushTimer); flushTimer = setTimeout(flush, 800);
+}
+async function flush() {
+  if (flushing || !remote) return; flushing = true;
+  try {
+    while (pending.size) {
+      const [key, r] = pending.entries().next().value; pending.delete(key);
+      const ok = await remoteWrite("labels/" + remote.uid + "/" + key, r);
+      if (!ok) { pending.clear(); break; }
+    }
+    if (profileDirty && remote && !remote.readonly) { profileDirty = false; await remoteWrite("labels/" + remote.uid, profileDoc()); }
+  } finally { flushing = false; }
+  if (pending.size) flush();
+}
+async function remoteWrite(path, body, retried) {
+  try { await remote.db.doc(path).set(body); setStore("ok", "已同步到云端"); return true; }
+  catch (e) {
+    const code = e && e.code;
+    if ((code === "unavailable" || !code) && !retried) { await new Promise((r) => setTimeout(r, 600 + Math.random() * 900)); return remoteWrite(path, body, true); }
+    if (code === "invalid_argument" || code === "not_granted" || code === "revoked") { remote.readonly = true; setStore("warn", "云端不可写，仅保存在本浏览器"); }
+    else if (code === "quota_exceeded") setStore("warn", "云端存储已满，请导出 JSON");
+    else setStore("warn", "云端同步失败，已保存在本浏览器");
+    return false;
+  }
+}
+function profileDoc() { const counts = {}; for (const t of TASK_ORDER) counts[t] = doneCount(t); return { coder: S.coder, version: VERSION, counts, updated: new Date().toISOString() }; }
+async function connectRemote() {
+  if (!window.claude || typeof window.claude.use !== "function") return;
+  const [db, user] = await Promise.all([window.claude.use("db"), window.claude.use("user")]);
+  if (!db || !user) return;
+  const uid = await user.id(); if (!uid) return;
+  remote = { db, uid, owner: !!(await user.isOwner()), readonly: false };
+  setStore("ok", "云端已连接");
+  if (remote.owner) { $("bProg").hidden = false; renderProgress(); }
+  let prof = null;
+  try { const s = await db.doc("labels/" + uid).get(); prof = s.exists ? s.data() : null; } catch (e) {  }
+  if (prof && prof.coder && prof.coder !== S.coder) { await startCoder(prof.coder, true); toast("已载入此账号的编码员代号 " + prof.coder); }
+  else if (S.coder) await pullRemote();
+  if (prof && prof.coder) { $("coderIn").value = prof.coder; $("coderIn").disabled = true; $("coderHint").textContent = "此账号已绑定编码员代号 " + prof.coder + "。"; }
+}
+async function pullRemote() {
+  if (!remote || !S.coder) return;
+  let changed = false;
+  for (const t of TASK_ORDER) {
+    try {
+      const snap = await remote.db.collection("labels/" + remote.uid + "/" + t).get();
+      for (const d of snap.docs) { const r = d.data(); const cur = S.labels[t][d.id]; if (!cur || (r.ts || "") > (cur.ts || "")) { S.labels[t][d.id] = { ...r }; changed = true; } }
+    } catch (e) { setStore("warn", "云端读取失败，使用本地数据"); return; }
+  }
+  if (changed) { saveLocal(); if (!$("bench").hidden) showItem(); renderTabs(); }
+  for (const t of TASK_ORDER) for (const [id, r] of Object.entries(S.labels[t])) queueRemote(t, id, r);
+}
+async function renderProgress() {
+  if (!remote || !remote.owner) return;
+  let rows = [];
+  try { const snap = await remote.db.collection("labels").get(); rows = snap.docs.map((d) => d.data()).filter((r) => r && r.coder); } catch (e) { rows = null; }
+  const html = rows === null ? '<p class="muted">无法读取进度。</p>' : !rows.length ? '<p class="muted">还没有编码员保存过结果。把此页面以“参与者（Contributor）”权限分享给编码员后，他们的进度会出现在这里。</p>' :
+    '<table class="prog"><thead><tr><th>编码员</th>' + TASK_ORDER.map((t) => "<th>" + esc(TASKS[t].label) + "</th>").join("") + "<th>最近保存</th></tr></thead><tbody>" +
+    rows.sort((a, b) => a.coder.localeCompare(b.coder)).map((r) => "<tr><td class='mono'>" + esc(r.coder) + "</td>" + TASK_ORDER.map((t) => "<td>" + ((r.counts && r.counts[t]) || 0) + " / " + ITEMS[t].length + "</td>").join("") + "<td>" + esc((r.updated || "").replace("T", " ").slice(0, 16)) + "</td></tr>").join("") + "</tbody></table>";
+  $("progTable").innerHTML = html; $("progTable2").innerHTML = html; $("progPanel").hidden = false;
+}
+
+async function startCoder(code, fromRemote) {
+  S.coder = code; S.labels = loadLocal(code); buildOrder();
+  const sess = LS.get(NS + ":session");
+  if (sess && sess.coder === code) { S.task = TASK_ORDER.includes(sess.task) ? sess.task : TASK_ORDER[0]; S.pos = { ...S.pos, ...sess.pos }; S.lastExport = sess.lastExport || null; }
+  for (const t of TASK_ORDER) S.pos[t] = Math.min(Math.max(0, S.pos[t] | 0), Math.max(0, S.order[t].length - 1));
+  $("coderChip").hidden = false; $("coderChip").innerHTML = "编码员 <b class='mono'>" + esc(code) + "</b>";
+  $("start").hidden = true; $("bench").hidden = false;
+  saveSession(); renderTabs(); buildSheet(); showItem();
+  if (remote && !fromRemote) { await remoteWrite("labels/" + remote.uid, profileDoc()); }
+  if (remote) await pullRemote();
+}
+function showStart() {
+  $("start").hidden = false; $("bench").hidden = true;
+  $("taskList").innerHTML = TASK_ORDER.map((t) => "<div><b>" + esc(TASKS[t].label) + " · " + ITEMS[t].length + " 条</b><span>" + esc(TASKS[t].desc) + "</span></div>").join("");
+  renderTabs();
+}
+
+function renderTabs() {
+  $("tabs").innerHTML = TASK_ORDER.map((t) => {
+    const n = ITEMS[t].length, d = S.labels ? doneCount(t) : 0;
+    return '<button class="tab" role="tab" type="button" data-t="' + t + '" aria-selected="' + (S.coder && S.task === t) + '"' + (S.coder ? "" : " disabled") + '><span class="tl">' + esc(TASKS[t].label) + '</span><span class="tp">' + d + " / " + n + '</span><span class="bar"><i style="width:' + (n ? (100 * d / n).toFixed(1) : 0) + '%"></i></span></button>';
+  }).join("");
+}
+
+function toggleHTML(k, disabled) {
+  return '<div class="tg" data-k="' + k + '"><button class="t" type="button" data-k="' + k + '" aria-pressed="false"' + (disabled ? " disabled" : "") + '><span class="box"></span><span class="k">' + k + '</span><span class="z">' + esc(DEF[k].zh) + '</span></button><button class="q" type="button" data-help="' + k + '" aria-label="' + k + ' 的定义">?</button></div>';
+}
+function blockHTML(b, codes, extra) {
+  return '<section class="block" data-block="' + b + '"><h3><span class="bl">' + b + "</span>" + esc(BLOCKS[b].t) + " <small>" + esc(BLOCKS[b].en) + "</small></h3>" + (extra || "") + '<div class="grid">' + codes.map((k) => toggleHTML(k)).join("") + "</div></section>";
+}
+function buildSheet() {
+  const form = TASKS[S.task].form; let h = "";
+  h += '<div class="banner' + (remote && !remote.readonly ? "" : " local") + '" id="saveBanner"></div>';
+  if (form === "full") {
+    const seg = '<div class="seg" role="group" aria-label="authority">' + AUTH.map((a, i) => '<button type="button" data-auth="' + i + '" aria-pressed="false"><span class="k">' + a.k + '</span><span class="z">' + esc(a.zh) + "</span></button>").join("") + "</div>";
+    h += blockHTML("A", BLOCKS.A.codes) + blockHTML("B", BLOCKS.B.codes, seg) + blockHTML("C", DOM) + blockHTML("D", BLOCKS.D.codes) + blockHTML("E", GR);
+  } else if (form === "runtime") {
+    h += '<section class="block" data-block="A"><h3><span class="bl">A</span>运行时生成 <small>Does the text describe generative AI producing content while the game runs?</small></h3><div class="grid">' + toggleHTML("live_system") + toggleHTML("live_player") + "</div></section>" + blockHTML("E", GR);
+  } else {
+    h += '<section class="block"><h3>评论编码 <small>按 0 / 1 / 2 选择后自动进入下一条</small></h3><div class="opts">' +
+      [["0", "未提及生成式 AI", "包括只谈传统游戏 AI（敌人行为、机器人、难度、寻路）或把 AI 当作剧情主题。"], ["1", "提及生成式 AI，非负面", "提到 AI 美术、AI 配音、AI 文本、LLM 角色、AI 翻译或 AI 披露等，但评价中性或正面。"], ["2", "提及生成式 AI，且负面评价", "批评其质量、伦理、投入、真实性，或因此拒绝购买。"]]
+        .map((o) => '<button class="opt" type="button" data-opt="' + o[0] + '" aria-pressed="false"><span class="n">' + o[0] + "</span><b>" + o[1] + "</b><span>" + o[2] + "</span></button>").join("") + "</div></section>";
+  }
+  h += '<section class="block foot"><div class="checks" id="checks"></div>' +
+    '<label for="note" class="muted">备注（可选，例如不确定的理由）</label><textarea class="field" id="note" maxlength="500"></textarea>' +
+    '<div class="savebar"><button class="unsure" id="bUnsure" type="button" aria-pressed="false">不确定 <span class="kbd">U</span></button>' +
+    (form === "review" ? '<span class="muted">选项即保存</span>' : '<button class="btn primary" id="bSave" type="button">保存并下一条 <span class="kbd" style="color:inherit;background:none;border-color:currentColor">Enter</span></button>') + "</div>" +
+    '<div class="keys">' + (form === "full" ? "<span><span class='kbd'>0</span>–<span class='kbd'>3</span> 人工权限</span>" : "") + (form === "review" ? "<span><span class='kbd'>0</span> <span class='kbd'>1</span> <span class='kbd'>2</span> 选择</span>" : "") +
+    "<span><span class='kbd'>←</span> <span class='kbd'>→</span> 翻页（不保存）</span><span><span class='kbd'>U</span> 不确定</span><span><span class='kbd'>?</span> 编码手册</span></div></section>";
+  $("sheet").innerHTML = h;
+  S.helpKey = null;
+}
+function isLive(d) { return !!(d.live_system || d.live_player); }
+function checks(form, d) {
+  const out = []; if (form === "review") return out;
+  const live = isLive(d);
+  if (live && !GR.some((k) => d[k])) out.push(["warn", "描述了运行时生成：勾选文本陈述的护栏；没有任何护栏时勾选 gr_none。"]);
+  if (form === "runtime") { if (!live) out.push(["info", "两项都不勾选表示该文本没有描述运行时生成，护栏代码记为 0。"]); return out; }
+  if (d.marketing_only && (d.pre || live)) out.push(["err", "marketing_only = 1 时游戏内不能有 AI 内容（pre、live_system、live_player 应为 0）。"]);
+  if (d.marketing && !d.marketing_only && !d.pre && !live && !d.non_genai) out.push(["warn", "只描述了宣传素材？若游戏内没有 AI 内容，应勾选 marketing_only。"]);
+  if (!d.pre && !live && !d.marketing && !d.non_genai) out.push(["warn", "A 组没有勾选任何生成位置。"]);
+  if (!d.non_genai && !DOM.some((k) => d[k])) out.push(["warn", "C 组没有勾选任何内容领域。"]);
+  if (d.explicit_no_live && live) out.push(["warn", "explicit_no_live 与 live_* 同时为 1，请确认。"]);
+  if (d.mixed_oversight && !d.authority) out.push(["warn", "mixed_oversight = 1 时，通常至少有部分内容声明了人工作用（authority ≥ 1）。"]);
+  if (d.placeholder && d.authority === 3) out.push(["warn", "替换仅在计划中的占位内容记 authority 0；level 3 要求已发布内容声明为人工制作。"]);
+  if (d.scope_minor && d.scope_extensive) out.push(["warn", "scope_minor 与 scope_extensive 同时为 1，请确认。"]);
+  return out;
+}
+function syncSheet() {
+  const form = TASKS[S.task].form, d = S.draft, live = isLive(d);
+  document.querySelectorAll("#sheet .tg").forEach((el) => {
+    const k = el.dataset.k, on = !!d[k], btn = el.querySelector("button.t");
+    el.classList.toggle("on", on); btn.setAttribute("aria-pressed", on);
+    btn.disabled = GR.includes(k) && !live;
+  });
+  const e = document.querySelector('#sheet [data-block="E"]'); if (e) e.classList.toggle("off", !live);
+  document.querySelectorAll("#sheet [data-auth]").forEach((b) => b.setAttribute("aria-pressed", String(+b.dataset.auth === d.authority)));
+  if (form === "review") {
+    const r = rec(S.task, curId()); const v = r && r.done ? (r.genai_critical ? "2" : r.genai_mention ? "1" : "0") : null;
+    document.querySelectorAll("#sheet [data-opt]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.opt === v)));
+  }
+  const cs = checks(form, d);
+  $("checks").innerHTML = cs.map(([lv, m]) => '<div class="ck ' + lv + '"><b>' + ({ err: "冲突", warn: "检查", info: "说明" }[lv]) + "</b><span>" + esc(m) + "</span></div>").join("");
+  const sv = $("bSave"); if (sv) sv.disabled = cs.some((c) => c[0] === "err");
+  const u = $("bUnsure"); u.setAttribute("aria-pressed", String(!!d.unsure));
+  const n = $("note"); if (document.activeElement !== n) n.value = d.note || "";
+  const r = rec(S.task, curId());
+  $("saveBanner").className = "banner" + (remote && !remote.readonly ? "" : " local");
+  $("saveBanner").textContent = remote && !remote.readonly ? "每次修改自动同步到云端；按“保存并下一条”才算完成。" :
+    "结果只保存在这个浏览器里" + (S.lastExport ? "，上次导出 " + S.lastExport.replace("T", " ").slice(0, 16) : "，尚未导出") + "。请定期导出 JSON。";
+  const st = $("itemStatus");
+  if (r && r.unsure) { st.className = "status unsure"; st.textContent = r.done ? "已完成 · 不确定" : "草稿 · 不确定"; }
+  else if (r && r.done) { st.className = "status done"; st.textContent = "已完成"; }
+  else if (r) { st.className = "status draft"; st.textContent = "未确认草稿"; }
+  else { st.className = "status"; st.textContent = "未开始"; }
+}
+function setHelp(k) {
+  S.helpKey = k; const h = $("help");
+  if (k === null) { h.innerHTML = '<h3>定义</h3><p class="muted">把鼠标移到代码上，或点它右侧的 ?，这里显示编码手册中的英文定义和线索。</p>'; return; }
+  const a = typeof k === "number" ? AUTH[k] : null, d = a || DEF[k];
+  h.innerHTML = "<h3>" + esc(a ? "authority = " + a.k : k) + "</h3><p>" + esc(d.def) + "</p>" + (d.cues ? '<p class="cue">线索：' + esc(d.cues) + "</p>" : "") + (d.note ? '<p class="cue">注：' + esc(d.note) + "</p>" : "") + '<p class="cue">' + esc(d.zh) + "</p>";
+}
+
+function showItem() {
+  const t = S.task, id = curId(), form = TASKS[t].form, n = S.order[t].length;
+  if (!n) { $("itemText").textContent = "此任务没有条目。"; return; }
+  const r = rec(t, id);
+  S.draft = r ? { ...blank(form), ...r } : blank(form);
+  lastMark = performance.now();
+  const disc = TASKS[t].card === "disc", txt = TEXT[t][id];
+  $("cardLab").textContent = disc ? "AI Generated Content Disclosure" : "Player review";
+  $("cardPos").textContent = (S.pos[t] + 1) + " / " + n;
+  $("cardLead").textContent = disc ? "The developers describe how their game uses AI Generated Content like this:" : (txt.length >= 1500 ? "评论已截断至 1,500 字符" : "Steam 评论正文");
+  $("itemText").textContent = txt;
+  $("jump").value = ""; $("jump").placeholder = String(S.pos[t] + 1);
+  renderMap(); syncSheet(); if (S.helpKey === null) setHelp(null);
+  saveSession();
+}
+function renderMap() {
+  const t = S.task;
+  $("map").innerHTML = S.order[t].map((id, i) => { const r = S.labels[t][id]; const c = "sq" + (r ? (r.done ? " done" : " draft") : "") + (r && r.unsure ? " unsure" : "") + (i === S.pos[t] ? " cur" : ""); return '<button type="button" class="' + c + '" data-i="' + i + '" aria-label="第 ' + (i + 1) + ' 条"></button>'; }).join("");
+}
+function go(i) { const n = S.order[S.task].length; if (!n) return; S.pos[S.task] = (i + n) % n; showItem(); window.scrollTo({ top: 0 }); }
+function nextTodo(from) {
+  const t = S.task, ord = S.order[t], n = ord.length;
+  for (let s = 1; s <= n; s++) { const i = (from + s) % n; const r = S.labels[t][ord[i]]; if (!r || !r.done) return i; }
+  return -1;
+}
+function commit(markDone) {
+  const t = S.task, id = curId(), form = TASKS[t].form, prev = rec(t, id);
+  const now = performance.now(); S.draft.t_ms = (S.draft.t_ms || 0) + Math.min(now - lastMark, 300000); lastMark = now;
+  const r = { id, coder: S.coder, ...S.draft, done: markDone ? 1 : (prev && prev.done ? 1 : 0), ts: new Date().toISOString() };
+  for (const k of FIELDS[form]) r[k] = k === "authority" ? (r[k] | 0) : (r[k] ? 1 : 0);
+  r.t_ms = Math.round(r.t_ms);
+  S.labels[t][id] = r; saveLocal(); queueRemote(t, id, r);
+  renderTabs(); syncSheet();
+  const sq = document.querySelector('#map [data-i="' + S.pos[t] + '"]'); if (sq) sq.className = "sq" + (r.done ? " done" : " draft") + (r.unsure ? " unsure" : "") + " cur";
+}
+function saveNext() {
+  if (TASKS[S.task].form !== "review" && checks(TASKS[S.task].form, S.draft).some((c) => c[0] === "err")) { toast("先解决标红的冲突再保存"); return; }
+  commit(true);
+  const i = nextTodo(S.pos[S.task]);
+  if (i < 0) { toast("本任务已全部完成，请导出 JSON"); renderMap(); return; }
+  go(i);
+}
+function setCode(k) {
+  const d = S.draft; d[k] = d[k] ? 0 : 1;
+  if ((k === "live_system" || k === "live_player") && !isLive(d)) GR.forEach((g) => { d[g] = 0; });
+  if (k === "gr_none" && d.gr_none) GR.forEach((g) => { if (g !== "gr_none") d[g] = 0; });
+  if (GR.includes(k) && k !== "gr_none" && d[k]) d.gr_none = 0;
+  if (k === "marketing_only" && d.marketing_only) d.marketing = 1;
+  if (k === "marketing" && !d.marketing) d.marketing_only = 0;
+  commit(false);
+}
+let advancing = false;
+function chooseReview(v) {
+  if (advancing) return; advancing = true;
+  S.draft.genai_mention = v > 0 ? 1 : 0; S.draft.genai_critical = v === 2 ? 1 : 0;
+  commit(true);
+  setTimeout(() => { advancing = false; const i = nextTodo(S.pos[S.task]); if (i < 0) { toast("本任务已全部完成，请导出 JSON"); renderMap(); } else go(i); }, 140);
+}
+
+function renderBook() {
+  const def = (k) => '<div class="def"><span class="k">' + k + "</span> · " + esc(DEF[k].zh) + "<p>" + esc(DEF[k].def) + "</p>" + (DEF[k].cues ? '<p class="muted">Cues: ' + esc(DEF[k].cues) + "</p>" : "") + (DEF[k].note ? '<p class="muted">Note: ' + esc(DEF[k].note) + "</p>" : "") + "</div>";
+  let h = '<p class="muted">分析单位：一款游戏商店页上 “AI Generated Content Disclosure” 部分的全文。只编码文本陈述的内容，不根据游戏类型或名称推断。二值代码出现即为 1，否则为 0；一条披露可以有多个代码。</p>';
+  h += "<h3>A 生成位置 Locus of generation</h3><div class='defs'>" + BLOCKS.A.codes.map(def).join("") + "</div>";
+  h += "<h3>B 人工权限 Human authority</h3><p class='muted'>Ordinal; code the highest level claimed for the in-game content; if only marketing content is described, code for that content.</p><div class='defs'>" + AUTH.map((a) => '<div class="def"><span class="k">' + a.k + "</span> · " + esc(a.zh) + "<p>" + esc(a.def) + '</p><p class="muted">Cues: ' + esc(a.cues) + "</p></div>").join("") + BLOCKS.B.codes.map(def).join("") + "</div>";
+  h += "<h3>裁定规则 Adjudication rules</h3><ol class='rules'>" + RULES.map((r) => "<li>" + esc(r) + "</li>").join("") + "</ol>";
+  h += "<h3>C 内容领域 Content domains</h3><div class='defs'>" + DOM.map(def).join("") + "</div>";
+  h += "<h3>D 范围与框架 Scope and framing</h3><div class='defs'>" + BLOCKS.D.codes.map(def).join("") + "</div>";
+  h += "<h3>E 运行时护栏 Runtime guardrails</h3><p class='muted'>Code only when live_system or live_player = 1. gr_none = 1 only when runtime generation is described and no guardrail is stated.</p><div class='defs'>" + GR.map(def).join("") + "</div>";
+  h += "<h3>评论任务 Reviews</h3><div class='defs'>" + def("genai_mention") + def("genai_critical") + "</div>";
+  $("bookBody").innerHTML = h;
+}
+
+function exportObj() {
+  const records = {}; for (const t of TASK_ORDER) records[t] = Object.values(S.labels[t]);
+  return { tool: "aidisc-annotator", version: VERSION, coder: S.coder, exported_at: new Date().toISOString(), storage: remote && !remote.readonly ? "cloud" : "local", records };
+}
+function openData() {
+  $("exportBox").hidden = true; $("dataMsg").textContent = ""; $("importConfirm").hidden = true;
+  $("dataSummary").textContent = S.coder ? "编码员 " + S.coder + "：" + TASK_ORDER.map((t) => TASKS[t].label + " " + doneCount(t) + "/" + ITEMS[t].length).join("，") + "。" : "先在开始页填写编码员代号。";
+  $("bExport").disabled = $("bCopy").disabled = !S.coder;
+  $("dataModal").hidden = false;
+}
+function markExported() { S.lastExport = new Date().toISOString(); saveSession(); if (!$("bench").hidden) syncSheet(); }
+async function doExport() {
+  const json = JSON.stringify(exportObj(), null, 1);
+  const name = "aidisc_" + S.coder + "_" + new Date().toISOString().slice(0, 16).replace(/[-:]/g, "").replace("T", "-") + ".json";
+  const dl = window.claude && typeof window.claude.use === "function" ? await window.claude.use("downloads") : null;
+  if (dl) {
+    try { const res = await dl.save({ filename: name, data: json }); if (res && res.status === "saved") { markExported(); $("dataMsg").textContent = "已保存 " + name + "。"; } return; }
+    catch (e) { if (e && e.code !== "unavailable") { $("dataMsg").textContent = "没有保存文件。可以改用“复制 JSON”。"; return; } }
+  }
+  if (window.claude && typeof window.claude.use === "function" && window.parent !== window) {
+    $("exportBox").value = json; $("exportBox").hidden = false; $("dataMsg").textContent = "此页面不能直接下载文件。请用“复制 JSON”，粘贴到文本文件并保存为 " + name + "。"; return;
+  }
+  const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([json], { type: "application/json" })); a.download = name;
+  document.body.appendChild(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 1000);
+  markExported(); $("dataMsg").textContent = "已下载 " + name + "。";
+}
+async function doCopy() {
+  const json = JSON.stringify(exportObj(), null, 1);
+  try { await navigator.clipboard.writeText(json); markExported(); $("dataMsg").textContent = "已复制到剪贴板。"; }
+  catch (e) { const b = $("exportBox"); b.value = json; b.hidden = false; b.focus(); b.select(); $("dataMsg").textContent = "无法写入剪贴板，已全选下方文本，请手动复制。"; }
+}
+function mergeRecords(obj) {
+  let n = 0;
+  for (const t of TASK_ORDER) for (const r of (obj.records[t] || [])) {
+    if (!r || !TEXT[t][r.id]) continue;
+    const cur = S.labels[t][r.id]; if (!cur || (r.ts || "") > (cur.ts || "")) { S.labels[t][r.id] = r; queueRemote(t, r.id, r); n++; }
+  }
+  saveLocal(); renderTabs(); if (!$("bench").hidden) showItem();
+  $("dataMsg").textContent = "已导入 " + n + " 条较新的记录。"; $("importConfirm").hidden = true;
+}
+function onImport(file) {
+  const fr = new FileReader();
+  fr.onload = () => {
+    let obj; try { obj = JSON.parse(fr.result); } catch (e) { $("dataMsg").textContent = "文件不是有效的 JSON。"; return; }
+    if (!obj || obj.tool !== "aidisc-annotator" || !obj.records) { $("dataMsg").textContent = "这不是本工具导出的文件。"; return; }
+    if (obj.version !== VERSION) { $("dataMsg").textContent = "文件来自另一版本的条目集（" + obj.version + "），不能导入。"; return; }
+    if (!S.coder) { startCoder(obj.coder).then(() => mergeRecords(obj)); return; }
+    if (obj.coder === S.coder) { mergeRecords(obj); return; }
+    if (remote) { $("dataMsg").textContent = "文件属于编码员 " + obj.coder + "，与此账号的代号 " + S.coder + " 不同，不能导入。"; return; }
+    const c = $("importConfirm"); c.hidden = false;
+    c.innerHTML = '<span>文件属于编码员 <b class="mono">' + esc(obj.coder) + '</b>。</span><button class="btn primary" type="button" id="bSwitch">切换到 ' + esc(obj.coder) + ' 并导入</button><button class="btn" type="button" id="bNoSwitch">取消</button>';
+    $("bSwitch").onclick = () => startCoder(obj.coder).then(() => mergeRecords(obj));
+    $("bNoSwitch").onclick = () => { c.hidden = true; };
+  };
+  fr.readAsText(file);
+}
+
+document.addEventListener("click", (ev) => {
+  const el = ev.target.closest("button, [data-i]"); if (!el) return;
+  if (el.matches(".tab") && el.dataset.t) { S.task = el.dataset.t; renderTabs(); buildSheet(); showItem(); return; }
+  if (el.matches("button.t[data-k]")) { setCode(el.dataset.k); setHelp(el.dataset.k); return; }
+  if (el.dataset.help) { setHelp(el.dataset.help); return; }
+  if (el.dataset.auth !== undefined) { S.draft.authority = +el.dataset.auth; setHelp(+el.dataset.auth); commit(false); return; }
+  if (el.dataset.opt !== undefined) { chooseReview(+el.dataset.opt); return; }
+  if (el.matches(".sq")) { go(+el.dataset.i); return; }
+});
+document.addEventListener("pointerover", (ev) => {
+  const t = ev.target.closest("#sheet .tg, #sheet [data-auth]"); if (!t) return;
+  if (t.dataset.k) setHelp(t.dataset.k); else setHelp(+t.dataset.auth);
+});
+$("sheet").addEventListener("click", (ev) => {
+  if (ev.target.closest("#bSave")) saveNext();
+  if (ev.target.closest("#bUnsure")) { S.draft.unsure = S.draft.unsure ? 0 : 1; commit(false); }
+});
+let noteTimer = 0;
+$("sheet").addEventListener("input", (ev) => { if (ev.target.id === "note") { S.draft.note = ev.target.value; clearTimeout(noteTimer); noteTimer = setTimeout(() => commit(false), 700); } });
+$("bPrev").onclick = () => go(S.pos[S.task] - 1);
+$("bNext").onclick = () => go(S.pos[S.task] + 1);
+$("bTodo").onclick = () => { const i = nextTodo(S.pos[S.task]); if (i < 0) toast("本任务已全部完成"); else go(i); };
+$("jump").addEventListener("keydown", (ev) => { if (ev.key === "Enter") { const v = parseInt(ev.target.value, 10); if (v >= 1 && v <= S.order[S.task].length) go(v - 1); ev.stopPropagation(); } });
+$("bStart").onclick = () => { const v = $("coderIn").value.trim(); if (!/^[A-Za-z0-9_-]{1,16}$/.test(v)) { toast("代号只用字母、数字、- 或 _，最多 16 个字符"); return; } startCoder(v); };
+$("coderIn").addEventListener("keydown", (ev) => { if (ev.key === "Enter") $("bStart").click(); });
+$("bBook").onclick = () => { $("book").hidden = false; $("bBookClose").focus(); };
+$("bBookClose").onclick = () => { $("book").hidden = true; };
+$("book").addEventListener("click", (ev) => { if (ev.target.id === "book") $("book").hidden = true; });
+$("bData").onclick = openData;
+$("bDataClose").onclick = () => { $("dataModal").hidden = true; };
+$("bExport").onclick = doExport;
+$("bCopy").onclick = doCopy;
+$("importFile").addEventListener("change", (ev) => { const f = ev.target.files[0]; if (f) onImport(f); ev.target.value = ""; });
+$("bProg").onclick = () => { renderProgress(); $("progModal").hidden = false; };
+$("bProgClose").onclick = () => { $("progModal").hidden = true; };
+document.addEventListener("keydown", (ev) => {
+  if (ev.key === "Escape") { $("book").hidden = true; $("dataModal").hidden = true; $("progModal").hidden = true; return; }
+  if (ev.ctrlKey || ev.metaKey || ev.altKey || $("bench").hidden) return;
+  if (ev.target.closest && ev.target.closest("input, textarea")) return;
+  if (!$("book").hidden || !$("dataModal").hidden || !$("progModal").hidden) return;
+  const form = TASKS[S.task].form;
+  if (ev.key === "ArrowLeft") { go(S.pos[S.task] - 1); ev.preventDefault(); }
+  else if (ev.key === "ArrowRight") { go(S.pos[S.task] + 1); ev.preventDefault(); }
+  else if (ev.key === "Enter" && form !== "review") {
+    const b = ev.target.closest && ev.target.closest("button");
+    if (!b || (b.closest("#sheet") && b.id !== "bSave")) { saveNext(); ev.preventDefault(); }
+  }
+  else if (ev.key === "u" || ev.key === "U") { S.draft.unsure = S.draft.unsure ? 0 : 1; commit(false); }
+  else if (ev.key === "?") { $("book").hidden = false; }
+  else if (form === "review" && ["0", "1", "2"].includes(ev.key)) chooseReview(+ev.key);
+  else if (form === "full" && ["0", "1", "2", "3"].includes(ev.key)) { S.draft.authority = +ev.key; setHelp(+ev.key); commit(false); }
+});
+window.addEventListener("pagehide", () => { saveLocal(); saveSession(); });
+const setHH = () => document.documentElement.style.setProperty("--hh", $("hdr").offsetHeight + "px");
+window.addEventListener("resize", setHH); setHH();
+
+if (!DATA) {
+  document.querySelector("main").innerHTML = '<div class="start"><div class="panel"><h2>没有条目数据</h2><p>这是模板文件。运行 <span class="mono">python code/17_make_human_tasks.py</span> 生成 annotate.html。</p></div></div>';
+} else {
+  $("ver").textContent = "条目集 " + VERSION;
+  if (DATA.note) { $("roundNote").hidden = false; $("roundNoteText").textContent = DATA.note; }
+  if (!TASK_ORDER.includes("P")) $("rulePractice").hidden = true;
+  renderBook();
+  const sess = LS.get(NS + ":session");
+  if (sess && sess.coder) startCoder(sess.coder, true); else showStart();
+  connectRemote();
+}
+</script>

@@ -1,0 +1,232 @@
+item,code,H1,H2,adjudicated,text
+u00006,marketing,1,0,,"No AI image generators were used for the game's visuals. The clover, trees, and ground were modeled and textured in the 3D software Blender from the developer's own photos of the real thing, then assembled into a forest in Unity. The concept, the photography, and the decisions about how the game looks were all the developer's own.
+Made with help from AI
+• The game's code and the Blender scripts that build the shapes and textures. The developer checked the finished visuals side by side with the photos of the real thing.
+• The text in the game and on the store page, and its translation from Japanese into 10 languages, including English. The translations were made by AI and checked by a different AI. No native speaker has reviewed them, so if you spot a mistranslation, please report it through the support contact.
+The sounds are nature recordings made by other creators and released as CC0 or public domain. No AI runs while you play."
+u00006,ai_on_human,0,1,,"No AI image generators were used for the game's visuals. The clover, trees, and ground were modeled and textured in the 3D software Blender from the developer's own photos of the real thing, then assembled into a forest in Unity. The concept, the photography, and the decisions about how the game looks were all the developer's own.
+Made with help from AI
+• The game's code and the Blender scripts that build the shapes and textures. The developer checked the finished visuals side by side with the photos of the real thing.
+• The text in the game and on the store page, and its translation from Japanese into 10 languages, including English. The translations were made by AI and checked by a different AI. No native speaker has reviewed them, so if you spot a mistranslation, please report it through the support contact.
+The sounds are nature recordings made by other creators and released as CC0 or public domain. No AI runs while you play."
+u00006,mixed_oversight,0,1,,"No AI image generators were used for the game's visuals. The clover, trees, and ground were modeled and textured in the 3D software Blender from the developer's own photos of the real thing, then assembled into a forest in Unity. The concept, the photography, and the decisions about how the game looks were all the developer's own.
+Made with help from AI
+• The game's code and the Blender scripts that build the shapes and textures. The developer checked the finished visuals side by side with the photos of the real thing.
+• The text in the game and on the store page, and its translation from Japanese into 10 languages, including English. The translations were made by AI and checked by a different AI. No native speaker has reviewed them, so if you spot a mistranslation, please report it through the support contact.
+The sounds are nature recordings made by other creators and released as CC0 or public domain. No AI runs while you play."
+u00058,d_visual,0,1,,"Type in an environmental map for you to play on, and watch AI transform your prompt into a playable game!"
+u00058,d_other,1,0,,"Type in an environmental map for you to play on, and watch AI transform your prompt into a playable game!"
+u00230,scope_extensive,0,1,,"The game uses multiple AI characters, each with unique memories and re-collections to participate in a group conversation where they try to deduce who is the killer (the player). Essentially a reverse Turing-test with bells and whistles."
+u00294,d_localization,0,1,,"With the help of the AI chatbot, you can generate analyses and varied comments on your games and, if required, listen to them in different languages."
+u00591,ai_on_human,0,1,,The game features AI-generated voiceover technology that performs real-time text-to-speech based on pre-written scripts.
+u00754,authority,2,0,,"This title uses generative AI tools to assist in the creation of some written content and visual assets. All AI-assisted content is curated, edited, and finalized by the developer, and no AI-generated content is created dynamically during gameplay."
+u00772,marketing,0,1,,"This app includes pre-generated content created or assisted using generative AI.
+This includes the game logo, title screen, certain story-related images used during key moments of the game, a majority of item-related visuals (such as weapons, armors, accessories, and quest items), and approximately 60% of character portraits used in dialogue.
+All such content was selected, reviewed, and in many cases manually edited and integrated by the developer before being included in the game or on the store page.
+Additionally, most of the game's plugins were developed with the assistance of AI tools. No AI is used at runtime or during gameplay."
+u00794,ai_on_human,0,1,,"AI was used to assist with localization and some written text. All art, animation, music, sound effects, and level design were created entirely by me. All AI-assisted content was reviewed and edited by me, and several translations were additionally checked by native speakers.
+The game does not generate AI content during gameplay and does not connect to any external AI services."
+u00798,d_visual,1,0,,Some assets were developed working with large language models.
+u00807,d_visual,1,0,,"Character concepts and some design elements were created with assistance from ChatGPT, in close collaboration with the creator (Abstract Gaming). This approach ensured thoughtful planning and a focus on integrating original ideas, balancing AI support with human creativity."
+u00807,authority,0,3,,"Character concepts and some design elements were created with assistance from ChatGPT, in close collaboration with the creator (Abstract Gaming). This approach ensured thoughtful planning and a focus on integrating original ideas, balancing AI support with human creativity."
+u00809,ai_on_human,0,1,,I've used chatgpt to translate the text in the game and on the steam page.
+u00962,live_system,1,0,,"This game is a generative text adventure. Its text contents are generated by AI in response to the player’s text input. Players enjoy their own unique story experience by inputting texts in response to the generated contents.　Furthermore, this game does not perform image generation using generative AI."
+u00962,scope_extensive,0,1,,"This game is a generative text adventure. Its text contents are generated by AI in response to the player’s text input. Players enjoy their own unique story experience by inputting texts in response to the generated contents.　Furthermore, this game does not perform image generation using generative AI."
+u01010,d_sfx,1,0,,"This game uses generative AI tools during development to create pre-generated content, including visual assets, character and background images, voice/audio assets, partial text drafts, localization drafts, and marketing materials. All AI-generated or AI-assisted content is manually reviewed, selected, edited, and integrated by the developer before being included in the game or store materials.
+This game does not use live generative AI during gameplay. No images, text, voices, or audio are generated dynamically while the player is playing."
+u01010,scope_extensive,0,1,,"This game uses generative AI tools during development to create pre-generated content, including visual assets, character and background images, voice/audio assets, partial text drafts, localization drafts, and marketing materials. All AI-generated or AI-assisted content is manually reviewed, selected, edited, and integrated by the developer before being included in the game or store materials.
+This game does not use live generative AI during gameplay. No images, text, voices, or audio are generated dynamically while the player is playing."
+u01032,marketing_only,0,1,,Capsule and promotional artwork were created using AI-assisted image generation. These assets are pre-generated marketing materials and are not generated during gameplay. The game itself does not use live AI systems.
+u01039,scope_minor,1,0,,"Generative AI was used only to create pre-generated artwork for the game's Steam store banner and capsule images. No AI-generated content or code is created during gameplay, and the game does not connect to any external AI services."
+u01174,live_system,1,0,,We used AI service to make chatting with some NPCs in our game more fun and personalized for you. Your chat with the NPCs you can talk to will be periodic. You will have to wait for a while before you can talk to them again.
+u01203,marketing,0,1,,"This product uses pre-generated AI-assisted content during development. AI tools were used to help create some promotional artwork, selected visual assets, and some development-support content such as text or localization assistance. The game does not use live-generated AI during gameplay."
+u01203,explicit_no_live,0,1,,"This product uses pre-generated AI-assisted content during development. AI tools were used to help create some promotional artwork, selected visual assets, and some development-support content such as text or localization assistance. The game does not use live-generated AI during gameplay."
+u01203,ai_on_human,0,1,,"This product uses pre-generated AI-assisted content during development. AI tools were used to help create some promotional artwork, selected visual assets, and some development-support content such as text or localization assistance. The game does not use live-generated AI during gameplay."
+u01203,d_text,0,1,,"This product uses pre-generated AI-assisted content during development. AI tools were used to help create some promotional artwork, selected visual assets, and some development-support content such as text or localization assistance. The game does not use live-generated AI during gameplay."
+u01203,d_localization,0,1,,"This product uses pre-generated AI-assisted content during development. AI tools were used to help create some promotional artwork, selected visual assets, and some development-support content such as text or localization assistance. The game does not use live-generated AI during gameplay."
+u01203,scope_minor,0,1,,"This product uses pre-generated AI-assisted content during development. AI tools were used to help create some promotional artwork, selected visual assets, and some development-support content such as text or localization assistance. The game does not use live-generated AI during gameplay."
+u01203,scope_extensive,1,0,,"This product uses pre-generated AI-assisted content during development. AI tools were used to help create some promotional artwork, selected visual assets, and some development-support content such as text or localization assistance. The game does not use live-generated AI during gameplay."
+u01209,explicit_no_live,1,0,,"We use about 15 seconds of AI footage in our trailer. All assets in the game are human authored.
+We also use a local, small and offline LLM (meaning: no data ever leaves your computer, and it does not cause significant performance drops) as a Director that controls: enemy spawn and frequency of challenges, essentially choosing when to press with difficulty and when to hold the challenge based on parameters such as player frustration, boredom and an emergence metric.
+This mechanic does not generate any text, narrative or story: it is just a mechanic that controls game balance to ensure the best challenge. And you can turn it off on the settings menu, if you want."
+u01209,provenance_claim,0,1,,"We use about 15 seconds of AI footage in our trailer. All assets in the game are human authored.
+We also use a local, small and offline LLM (meaning: no data ever leaves your computer, and it does not cause significant performance drops) as a Director that controls: enemy spawn and frequency of challenges, essentially choosing when to press with difficulty and when to hold the challenge based on parameters such as player frustration, boredom and an emergence metric.
+This mechanic does not generate any text, narrative or story: it is just a mechanic that controls game balance to ensure the best challenge. And you can turn it off on the settings menu, if you want."
+u01209,authority,3,0,,"We use about 15 seconds of AI footage in our trailer. All assets in the game are human authored.
+We also use a local, small and offline LLM (meaning: no data ever leaves your computer, and it does not cause significant performance drops) as a Director that controls: enemy spawn and frequency of challenges, essentially choosing when to press with difficulty and when to hold the challenge based on parameters such as player frustration, boredom and an emergence metric.
+This mechanic does not generate any text, narrative or story: it is just a mechanic that controls game balance to ensure the best challenge. And you can turn it off on the settings menu, if you want."
+u01217,live_system,1,0,,"Neofold includes real-time generated AI content, such as its recommended ""Infinity Mode"", which uses a local diffusion model to generate infinite unique creatures in real-time using your GPU. No external servers are used. No generation happens without your prior input, ensuring stable performance during your work and gaming sessions.
+Neofold includes pre-generated AI content, such as its alternate ""Lite Mode"", which uses a giant set of pre-generated creatures for players without a suitable video card."
+u01217,scope_extensive,0,1,,"Neofold includes real-time generated AI content, such as its recommended ""Infinity Mode"", which uses a local diffusion model to generate infinite unique creatures in real-time using your GPU. No external servers are used. No generation happens without your prior input, ensuring stable performance during your work and gaming sessions.
+Neofold includes pre-generated AI content, such as its alternate ""Lite Mode"", which uses a giant set of pre-generated creatures for players without a suitable video card."
+u01217,gr_local,0,1,,"Neofold includes real-time generated AI content, such as its recommended ""Infinity Mode"", which uses a local diffusion model to generate infinite unique creatures in real-time using your GPU. No external servers are used. No generation happens without your prior input, ensuring stable performance during your work and gaming sessions.
+Neofold includes pre-generated AI content, such as its alternate ""Lite Mode"", which uses a giant set of pre-generated creatures for players without a suitable video card."
+u01217,gr_none,1,0,,"Neofold includes real-time generated AI content, such as its recommended ""Infinity Mode"", which uses a local diffusion model to generate infinite unique creatures in real-time using your GPU. No external servers are used. No generation happens without your prior input, ensuring stable performance during your work and gaming sessions.
+Neofold includes pre-generated AI content, such as its alternate ""Lite Mode"", which uses a giant set of pre-generated creatures for players without a suitable video card."
+u01327,pre,0,1,,"Laryen includes an optional in-game AI companion named Laria. When a player asks Laria a question by voice or text, her answer is generated at runtime by an AI language model, grounded in Laryen's own game data (monsters, hunting grounds, equipment, drops and progression). Laria answers questions about the game only. She does not generate artwork, music, or content that is shared with other players, and using her is never required to play.
+Some artwork used in our store page and marketing materials was created with the assistance of generative AI tools and reviewed by our team before publication."
+u01327,live_system,1,0,,"Laryen includes an optional in-game AI companion named Laria. When a player asks Laria a question by voice or text, her answer is generated at runtime by an AI language model, grounded in Laryen's own game data (monsters, hunting grounds, equipment, drops and progression). Laria answers questions about the game only. She does not generate artwork, music, or content that is shared with other players, and using her is never required to play.
+Some artwork used in our store page and marketing materials was created with the assistance of generative AI tools and reviewed by our team before publication."
+u01327,scope_minor,1,0,,"Laryen includes an optional in-game AI companion named Laria. When a player asks Laria a question by voice or text, her answer is generated at runtime by an AI language model, grounded in Laryen's own game data (monsters, hunting grounds, equipment, drops and progression). Laria answers questions about the game only. She does not generate artwork, music, or content that is shared with other players, and using her is never required to play.
+Some artwork used in our store page and marketing materials was created with the assistance of generative AI tools and reviewed by our team before publication."
+u01335,live_system,1,0,,"Story Engine uses generative AI to create narrative content in real-time during gameplay, including:
+- Story text: scene descriptions, character dialogue, action outcomes, world-building entries
+- State tracking: character attributes, inventory changes, relationship values, quest progress
+Additionally, the store page promotional images (capsule art, background images) were created with AI assistance during development and manually reviewed before publication.
+All in-game content is dynamically generated based on player choices, the selected Game Master persona, and the chosen world framework. Nothing is pre-scripted.
+Default experience: The game includes a built-in relay service (enabled by default, no setup required). Players can launch and play immediately. All AI requests are routed through the developer's own server, which applies keyword filtering and progressive moderation on both input and output before forwarding to the AI model. Every player receives a free daily quota.
+Monetization: One-time DLC purchases are available through Steam for additional turns beyond the free daily quota. These are single purchases, not subscriptions, priced $1–$10. DLC revenue covers the developer's costs.
+Content guardrails: In Relay Mode, all requests pass through server-side multi-layer moderation — keyword filtering (red-line terms blocked immediately; yellow-line terms accumulate toward escalation), bidirectional input/output checks, and progressive restrictions for repeat violations."
+u01335,gr_constrained,0,1,,"Story Engine uses generative AI to create narrative content in real-time during gameplay, including:
+- Story text: scene descriptions, character dialogue, action outcomes, world-building entries
+- State tracking: character attributes, inventory changes, relationship values, quest progress
+Additionally, the store page promotional images (capsule art, background images) were created with AI assistance during development and manually reviewed before publication.
+All in-game content is dynamically generated based on player choices, the selected Game Master persona, and the chosen world framework. Nothing is pre-scripted.
+Default experience: The game includes a built-in relay service (enabled by default, no setup required). Players can launch and play immediately. All AI requests are routed through the developer's own server, which applies keyword filtering and progressive moderation on both input and output before forwarding to the AI model. Every player receives a free daily quota.
+Monetization: One-time DLC purchases are available through Steam for additional turns beyond the free daily quota. These are single purchases, not subscriptions, priced $1–$10. DLC revenue covers the developer's costs.
+Content guardrails: In Relay Mode, all requests pass through server-side multi-layer moderation — keyword filtering (red-line terms blocked immediately; yellow-line terms accumulate toward escalation), bidirectional input/output checks, and progressive restrictions for repeat violations."
+u01335,gr_provider,0,1,,"Story Engine uses generative AI to create narrative content in real-time during gameplay, including:
+- Story text: scene descriptions, character dialogue, action outcomes, world-building entries
+- State tracking: character attributes, inventory changes, relationship values, quest progress
+Additionally, the store page promotional images (capsule art, background images) were created with AI assistance during development and manually reviewed before publication.
+All in-game content is dynamically generated based on player choices, the selected Game Master persona, and the chosen world framework. Nothing is pre-scripted.
+Default experience: The game includes a built-in relay service (enabled by default, no setup required). Players can launch and play immediately. All AI requests are routed through the developer's own server, which applies keyword filtering and progressive moderation on both input and output before forwarding to the AI model. Every player receives a free daily quota.
+Monetization: One-time DLC purchases are available through Steam for additional turns beyond the free daily quota. These are single purchases, not subscriptions, priced $1–$10. DLC revenue covers the developer's costs.
+Content guardrails: In Relay Mode, all requests pass through server-side multi-layer moderation — keyword filtering (red-line terms blocked immediately; yellow-line terms accumulate toward escalation), bidirectional input/output checks, and progressive restrictions for repeat violations."
+u01335,authority,1,0,,"Story Engine uses generative AI to create narrative content in real-time during gameplay, including:
+- Story text: scene descriptions, character dialogue, action outcomes, world-building entries
+- State tracking: character attributes, inventory changes, relationship values, quest progress
+Additionally, the store page promotional images (capsule art, background images) were created with AI assistance during development and manually reviewed before publication.
+All in-game content is dynamically generated based on player choices, the selected Game Master persona, and the chosen world framework. Nothing is pre-scripted.
+Default experience: The game includes a built-in relay service (enabled by default, no setup required). Players can launch and play immediately. All AI requests are routed through the developer's own server, which applies keyword filtering and progressive moderation on both input and output before forwarding to the AI model. Every player receives a free daily quota.
+Monetization: One-time DLC purchases are available through Steam for additional turns beyond the free daily quota. These are single purchases, not subscriptions, priced $1–$10. DLC revenue covers the developer's costs.
+Content guardrails: In Relay Mode, all requests pass through server-side multi-layer moderation — keyword filtering (red-line terms blocked immediately; yellow-line terms accumulate toward escalation), bidirectional input/output checks, and progressive restrictions for repeat violations."
+u01389,authority,3,0,,"Our game uses AI only for pre-rendered content, such as promotional images and minor art touch-ups. No AI is used during gameplay. All gameplay, writing, characters, and systems are fully handcrafted."
+u01410,provenance_claim,1,0,,"This app uses AI tools during the development process, for example to configure some behavior algorithms. All dog sprite art consists of hand-drawn works by human artists, purchased under a commercial license. No generative AI is used during gameplay."
+u01410,authority,3,0,,"This app uses AI tools during the development process, for example to configure some behavior algorithms. All dog sprite art consists of hand-drawn works by human artists, purchased under a commercial license. No generative AI is used during gameplay."
+u01425,ai_on_human,0,1,,"The store page translations and the translations beta branch are made with the help of large language models. If a translation in the game reads wrong, point at the text and press Insert to report it."
+u01480,scope_minor,0,1,,"All visual art, gameplay assets, music and written narrative were created by humans. No AI is used to generate content during gameplay. The game uses AI-generated voice acting for cinematic and in-game character dialogue."
+u01538,authority,2,1,,"Generative AI tools were used during development to create or assist with character illustrations, some character sprites and other visual assets, store and promotional artwork, background music, and portions of localized text. These assets were selected, processed and integrated by the developer. The game does not generate AI content during play and does not connect to external AI services at runtime."
+u00012,scope_extensive,1,0,,"This is a SPOILER, actually, but your arch enemy in this game is an Evil Generative A. I. It must look accordingly. Big part of it is A. I. generated, and it's made as obvious as possible."
+u00156,pre,1,0,,"Due to lack of artistic capabilities some raw assets shown in the store page have been generated and manually edited to fit the games purpose (Skill Issue lol)
+Most assets have been replaced in a later build"
+u00156,marketing_only,0,1,,"Due to lack of artistic capabilities some raw assets shown in the store page have been generated and manually edited to fit the games purpose (Skill Issue lol)
+Most assets have been replaced in a later build"
+u00156,scope_minor,1,0,,"Due to lack of artistic capabilities some raw assets shown in the store page have been generated and manually edited to fit the games purpose (Skill Issue lol)
+Most assets have been replaced in a later build"
+u00156,small_team,0,1,,"Due to lack of artistic capabilities some raw assets shown in the store page have been generated and manually edited to fit the games purpose (Skill Issue lol)
+Most assets have been replaced in a later build"
+u00164,placeholder,0,1,,"We utilized AI tools to generate internal references for composition and framing. These outputs were then used as a base to manually create handcrafted pixel art assets, ensuring all final in-game visuals follow our custom palettes and artistic standards."
+u00275,d_other,1,0,,"No Artist Credited is a virtual gallery experience and an experiment in the capabilities and limitations of AI tools. The entire gallery was designed and constructed using instructions, themes, and art generated by one of three AI tools."
+u00279,authority,0,3,,"At Lovely Bytes, we're not just developers, we're passionate gamers like you. And because we understand the gamer's perspective, we firmly believe that the heart of a truly great game lies in the emotional depth and authenticity that only human creativity can provide.
+In the development of UNHEIM, artificial intelligence plays a supporting role to accelerate our production, and is used mindfully to help us with certain time-consuming tasks, such as visual brainstorming, or speeding up the process of creating some of the textures. Additionally, AI bravely tackles the Herculean task of turning our chaotic creative thoughts and wild brainstorming scribbles into something resembling coherent, actionable documents.
+Our approach to AI is to use it as a tool to augment our skills and capabilities, not to substitute the craft elements that are crucial for creating a deeply engaging and memorable game experience.
+Now go and have fun getting scared to death, knowing that what you experience is the result of a mindful blend of assistive technology and traditional craftsmanship."
+u00304,authority,2,1,,"During development, AI tools were used to assist with code generation, debugging, and drafting of game documentation. Voice callouts were generated using AI text-to-speech and processed with radio filters to simulate authentic ATC communications."
+u00375,ai_on_human,0,1,,"I create a small portion of the code with reference to AI.
+I use AI for translating the store text."
+u00375,d_text,1,0,,"I create a small portion of the code with reference to AI.
+I use AI for translating the store text."
+u00375,authority,3,0,,"I create a small portion of the code with reference to AI.
+I use AI for translating the store text."
+u00407,ai_on_human,0,1,,Photoshop and AI was used to tweak backgrounds.
+u00471,ai_on_human,0,1,,"AI has been used to translate the game into the following languages: German and Spanish. Those languages are marked as ""experimental"". Claude has been used to fix some issues in the engine."
+u00471,scope_minor,1,0,,"AI has been used to translate the game into the following languages: German and Spanish. Those languages are marked as ""experimental"". Claude has been used to fix some issues in the engine."
+u00472,ai_on_human,0,1,,"Yes, AI was used to assist the minimal localisation required to play SHED (human edited)."
+u00474,scope_minor,1,0,,"DALL-E was used in the creation of some of the enemy battle sprites, character portraits, parallax backgrounds (4 total), and the in-game polaroid pictures. All generated images were further modified by the developer."
+u00478,ai_on_human,0,1,,"Generative AI was used for translation and proofreading into English, Simplified Chinese, Traditional Chinese, and Korean.
+All translated content was reviewed and adjusted by the developer."
+u00478,scope_minor,1,0,,"Generative AI was used for translation and proofreading into English, Simplified Chinese, Traditional Chinese, and Korean.
+All translated content was reviewed and adjusted by the developer."
+u00495,d_other,1,0,,"Our art team uses AI to help spur along early stage concept art and ideas. From there, our art team develops unique art that is inspired by those concepts."
+u00495,scope_minor,0,1,,"Our art team uses AI to help spur along early stage concept art and ideas. From there, our art team develops unique art that is inspired by those concepts."
+u00520,ai_on_human,0,1,,Some localizations use AI tools to make the game accessible in multiple languages.
+u00528,mixed_oversight,1,0,,"The billboard female model was created using AI, and the initial draft of the game icon was also generated with AI before being refined by me.
+I lacked both the resources and the skills, and I apologize for this."
+u00533,ai_on_human,0,1,,This game uses AI translation to support multiple languages.
+u00560,ai_on_human,0,1,,Some background images and translations in this game were created using AI.
+u00606,pre,0,1,,"At the time we launched in Early Access, item art, UI art, and 2D environment art was AI-sourced. We have now replaced all of these with hand-drawn art.
+Please note that, as of writing, the trailer on the store page shows a previous version of the game with AI-generated UI assets, though it is still highly representative of what the game currently looks like. Please view the screenshots at the top of the page and the gifs on the store page to see what the game looks like currently with no AI-generated assets in it."
+u00606,marketing_only,1,0,,"At the time we launched in Early Access, item art, UI art, and 2D environment art was AI-sourced. We have now replaced all of these with hand-drawn art.
+Please note that, as of writing, the trailer on the store page shows a previous version of the game with AI-generated UI assets, though it is still highly representative of what the game currently looks like. Please view the screenshots at the top of the page and the gifs on the store page to see what the game looks like currently with no AI-generated assets in it."
+u00606,scope_extensive,1,0,,"At the time we launched in Early Access, item art, UI art, and 2D environment art was AI-sourced. We have now replaced all of these with hand-drawn art.
+Please note that, as of writing, the trailer on the store page shows a previous version of the game with AI-generated UI assets, though it is still highly representative of what the game currently looks like. Please view the screenshots at the top of the page and the gifs on the store page to see what the game looks like currently with no AI-generated assets in it."
+u00606,placeholder,0,1,,"At the time we launched in Early Access, item art, UI art, and 2D environment art was AI-sourced. We have now replaced all of these with hand-drawn art.
+Please note that, as of writing, the trailer on the store page shows a previous version of the game with AI-generated UI assets, though it is still highly representative of what the game currently looks like. Please view the screenshots at the top of the page and the gifs on the store page to see what the game looks like currently with no AI-generated assets in it."
+u00606,authority,3,0,,"At the time we launched in Early Access, item art, UI art, and 2D environment art was AI-sourced. We have now replaced all of these with hand-drawn art.
+Please note that, as of writing, the trailer on the store page shows a previous version of the game with AI-generated UI assets, though it is still highly representative of what the game currently looks like. Please view the screenshots at the top of the page and the gifs on the store page to see what the game looks like currently with no AI-generated assets in it."
+u00638,ai_on_human,0,1,,"AI was used during the production of Mr. Toilet to support selected marketing and localization tasks. In particular, we used AI tools to help prepare promotional materials, including the Steam key art, as well as to assist with the translations available in the game."
+u00639,scope_minor,0,1,,"Aside from AI-assisted programming, all art, music, and writing are fully original."
+u00661,d_visual,0,1,,Some steam community/marketing content
+u00674,pre,0,1,,"AI was used in the creation of the store page material. In game, there are a couple fake advertisement posters scattered for products and services. For example, the insurance advertisement seen in the game trailer."
+u00674,live_system,1,0,,"AI was used in the creation of the store page material. In game, there are a couple fake advertisement posters scattered for products and services. For example, the insurance advertisement seen in the game trailer."
+u00674,marketing,0,1,,"AI was used in the creation of the store page material. In game, there are a couple fake advertisement posters scattered for products and services. For example, the insurance advertisement seen in the game trailer."
+u00674,d_visual,0,1,,"AI was used in the creation of the store page material. In game, there are a couple fake advertisement posters scattered for products and services. For example, the insurance advertisement seen in the game trailer."
+u00674,d_text,1,0,,"AI was used in the creation of the store page material. In game, there are a couple fake advertisement posters scattered for products and services. For example, the insurance advertisement seen in the game trailer."
+u00674,scope_minor,0,1,,"AI was used in the creation of the store page material. In game, there are a couple fake advertisement posters scattered for products and services. For example, the insurance advertisement seen in the game trailer."
+u00674,gr_none,1,0,,"AI was used in the creation of the store page material. In game, there are a couple fake advertisement posters scattered for products and services. For example, the insurance advertisement seen in the game trailer."
+u00730,d_other,1,0,,Some illustrations on the store page were created using AI.
+u00730,scope_minor,0,1,,Some illustrations on the store page were created using AI.
+u00730,authority,3,0,,Some illustrations on the store page were created using AI.
+u00748,marketing_only,0,1,,Most game previews are generated using AI
+u00748,scope_extensive,0,1,,Most game previews are generated using AI
+u00779,marketing,0,1,,"We use AI as a creative assistant to refine our English descriptions and ensure they are easy to read and engaging (since we are not native speakers). In addition, some of the game’s illustrations were created with the help of generative AI tools and later refined by human artists."
+u00793,scope_minor,0,1,,"I use AI to generate music and sound effects, mainly these two."
+u00813,pre,0,1,,"AI is strictly used for rebalancing cards, and generating marketing assets."
+u00813,marketing_only,1,0,,"AI is strictly used for rebalancing cards, and generating marketing assets."
+u00813,scope_minor,0,1,,"AI is strictly used for rebalancing cards, and generating marketing assets."
+u00825,d_visual,1,0,,I use generative AI to create various assets.
+u00826,d_other,1,0,,剧情CG有部分使用了AI作为创作灵感，人物设计和部分道具设计使用AI提供了创作灵感。
+u00855,scope_extensive,0,1,,"The game contains about 2,000 unique pre-rendered player portraits that were algorithmically generated and (badly) touched up by me, a human. The stadium backdrop image used in promotional material and on the home screen is likewise generated."
+u00986,ai_on_human,0,1,,"The only use of AI has been to translate the game subtitles and menus.
+The translation has then been reviewed in Polish and French by native speakers, but might contain oddities in the other supported languages."
+u01011,ai_on_human,1,0,,A small part of the details were refined with the help of AI
+u01011,authority,3,2,,A small part of the details were refined with the help of AI
+u01017,d_other,1,0,,"The operator portraits in-game are procedurally drawn, but their designs were based on AI-generated reference art. The full body operators in the promo images were also AI-generated."
+u01017,authority,3,2,,"The operator portraits in-game are procedurally drawn, but their designs were based on AI-generated reference art. The full body operators in the promo images were also AI-generated."
+u01035,ai_on_human,0,1,,Artificial intelligence was utilized to translate the game's description page into multiple languages besides Russian.
+u01110,ai_on_human,0,1,,"I use AI tools in limited parts of the development process, including:
+• Assisting with certain steps of creating game assets.
+• Supporting debugging workflows.
+• Helping with localization and translation."
+u01110,d_code,1,0,,"I use AI tools in limited parts of the development process, including:
+• Assisting with certain steps of creating game assets.
+• Supporting debugging workflows.
+• Helping with localization and translation."
+u01110,d_other,0,1,,"I use AI tools in limited parts of the development process, including:
+• Assisting with certain steps of creating game assets.
+• Supporting debugging workflows.
+• Helping with localization and translation."
+u01116,explicit_no_live,0,1,,"All our puzzles are created from 3D scans of real world places or modelled by human 3D artists.
+Occasionally our 3D artists use some limited generative AI tools as part of their process, e.g. for cleaning up texture artifacts of 3D scans or adding small details like figures or objects.
+We will never use any fully AI generated content directly in the game."
+u01116,authority,2,0,,"All our puzzles are created from 3D scans of real world places or modelled by human 3D artists.
+Occasionally our 3D artists use some limited generative AI tools as part of their process, e.g. for cleaning up texture artifacts of 3D scans or adding small details like figures or objects.
+We will never use any fully AI generated content directly in the game."
+u01176,d_visual,1,0,,AI is used for Character design reference. Programming assistent. Localization translating.
+u01176,authority,3,0,,AI is used for Character design reference. Programming assistent. Localization translating.
+u01182,d_visual,1,0,,Some background music in this game is produced using artificial intelligence technology
+u01182,d_music,0,1,,Some background music in this game is produced using artificial intelligence technology
+u01182,scope_minor,0,1,,Some background music in this game is produced using artificial intelligence technology
+u01183,placeholder,0,1,,Drafts of screens were created using AI
+u01190,tools_named,1,0,,"During the development of this project, the production team created multiple built-in demo maps featuring diverse themes and gameplay styles to showcase the functionality of the Game Level Editor.
+In the asset production process for these demonstration maps, certain visual assets were generated using AI technology. We hereby solemnly declare that all use of AI technology strictly complies with the Doubao AI Agreement and applicable laws and regulations, ensuring the compliance and safety of content generation.
+If you have any questions or concerns about the materials used in the game, please feel free to contact us via email at: [email removed 06]"
+u01219,ai_on_human,0,1,,Some images use AI-generated pictures as a source of inspiration. Some highly abstract images was created by AI. And this sentence was translated by AI.
+u01219,mixed_oversight,1,0,,Some images use AI-generated pictures as a source of inspiration. Some highly abstract images was created by AI. And this sentence was translated by AI.
+u01219,authority,3,0,,Some images use AI-generated pictures as a source of inspiration. Some highly abstract images was created by AI. And this sentence was translated by AI.
+u01222,ai_on_human,0,1,,"Due to budget constraints, the cover illustrations in the Story menu of the game are generated using AI, which will hardly have any substantial impact on the gameplay experience. Depending on future budget considerations, we will decide whether to hire an illustrator to redraw the illustrations.
+Some of the language translations in the game are done using AI. If you have any better localization suggestions, please feel free to contact me!"
+u01296,ai_on_human,1,0,,Used AI to assist with coding and used to assist editing store page assets/imagery.
+u01312,scope_minor,0,1,,"Most of the paintings and phone call voiceover are made with AI, everything else is selfmade/recorded."
+u01312,scope_extensive,1,0,,"Most of the paintings and phone call voiceover are made with AI, everything else is selfmade/recorded."
+u01321,mixed_oversight,1,0,,"After I personally finalized the design phase, some art assets were first rendered using generative AI tools, and I then manually refined and detailed them.
+Similarly, certain background music pieces were developed with the help of generative AI tools.
+Should you have any concerns about these methods, please feel free to experience the game according to your own preferences. Thank you for your understanding and consideration."
+u01430,scope_minor,1,0,,"Some of the images,and music in the game are generated by AI."
+u01449,authority,1,0,,We only use parts of AI-generated voice-overs – the voice samples come from recordings of our developers working on the game.
+u01476,authority,3,2,,Some AI tools were used to help with early ideation in the development process. AI tools were also used to assist in up-rezzing our portraits and adding facial animations. Final assets were all painted by artists. We have not replaced any developers with AI and believe that talented people lie at the heart of exciting games.
+u01493,scope_minor,0,1,,一部の画像、3Dモデルの作成に生成AIを使用しています。
+u01497,scope_minor,1,0,,"AI is used to create keyart, headers and some instore assets."
+u01532,scope_minor,1,0,,"We want to emphasize that both human-art and AI-generated content are used in the event illustrations. At the time of writing this (pre-beta), some of the illustrations in the game are still early experiments and, as such, treated as placeholders. As artists, we fully understand that AI-generated imagery is a controversial topic at the moment. We felt that by using generated art, in addition to our own art, we could create a much more vivid and immersive experience for the player. We are fully open to discussing this further and elaborating on our approach."
+u01532,provenance_claim,0,1,,"We want to emphasize that both human-art and AI-generated content are used in the event illustrations. At the time of writing this (pre-beta), some of the illustrations in the game are still early experiments and, as such, treated as placeholders. As artists, we fully understand that AI-generated imagery is a controversial topic at the moment. We felt that by using generated art, in addition to our own art, we could create a much more vivid and immersive experience for the player. We are fully open to discussing this further and elaborating on our approach."

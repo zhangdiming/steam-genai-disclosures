@@ -1,0 +1,26 @@
+{"gid": "u00401", "scope_minor": 1, "note": "'apart from the intro scene' restricts in-game use"}
+{"gid": "u00762", "d_other": 1, "note": "terrain elevation/biome generation = level design"}
+{"gid": "u01107", "ai_on_human": 1, "note": "game stated to predate ChatGPT, so translated source text is human-written"}
+{"gid": "u00002", "provenance_claim": 1, "note": "rights claim about the AI voice: 'does not belong to any real person'"}
+{"gid": "u01387", "provenance_claim": 0, "note": "licence/royalty claims cover non-AI assets only"}
+{"gid": "u01080", "d_visual": 1, "note": "'materials and scenes' are visual"}
+{"gid": "u01000", "scope_extensive": 1, "note": "the game's music and all appearance images are AI-made"}
+{"gid": "u00252", "authority": 0, "note": "'curated by our team' refers to interactions and mechanics, not AI output"}
+{"gid": "u00711", "authority": 1, "note": "'final implementation authored by the developer' = integration"}
+{"gid": "u01532", "d_other": 0, "note": "shipped placeholders, not development drafts"}
+{"gid": "u00697", "scope_minor": 0, "note": "enumerated items without restrictive framing"}
+{"gid": "u01211", "scope_minor": 1, "note": "'no AI is used in the game' restricts use to one store image"}
+{"gid": "u00664", "gr_constrained": 0, "gr_none": 1, "note": "clothing templates describe the feature, not a stated limit"}
+{"gid": "u01175", "d_sfx": 0, "note": "'radio audio' is decomposed into TTS and music"}
+{"gid": "u01410", "provenance_claim": 0, "note": "licence claim covers hand-drawn art, not AI output"}
+{"gid": "u01449", "authority": 1, "provenance_claim": 1, "note": "'only use parts of' = selection; voice samples are the developers' own recordings"}
+{"gid": "u00986", "mixed_oversight": 1, "note": "only two of the languages were reviewed by native speakers"}
+{"gid": "u00190", "d_visual": 1, "note": "AI-generated characters = character art"}
+{"gid": "u01209", "explicit_no_live": 1, "note": "runtime model stated to generate no text, narrative or story"}
+{"gid": "u01110", "ai_on_human": 0, "note": "translation source not stated to be human-written"}
+{"gid": "u01174", "gr_constrained": 0, "gr_none": 1, "note": "rate limit is not a scope constraint"}
+{"gid": "u01429", "ai_on_human": 0, "note": "'auxiliary support' does not state that AI transforms human-made content"}
+{"gid": "u00842", "d_visual": 1, "note": "'would have hired artists' implies AI-made art"}
+{"gid": "u01054", "explicit_no_live": 1, "note": "'gameplay does not contain any AI-generated content'"}
+{"gid": "u01305", "d_voice": 0, "note": "synthesized singing vocals in the ending song = music"}
+{"gid": "u00962", "gr_constrained": 0, "gr_none": 1, "note": "no stated guardrail on generated text"}
