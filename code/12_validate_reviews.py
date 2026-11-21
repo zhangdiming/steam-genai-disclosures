@@ -1,3 +1,4 @@
+import hashlib
 import json
 import sys
 from pathlib import Path
@@ -18,12 +19,37 @@ def load(p):
         return {r["rid"]: r for r in map(json.loads, f)}
 
 
+def sha(s):
+    return hashlib.sha256(s.encode("utf-8")).hexdigest()
+
+
+def match_crawl(hashes, meta):
+    want = {(int(meta.loc[r, "appid"]), h): r for r, h in hashes.items()}
+    found = {}
+    text = (ROOT / "data/raw/reviews_toprated.jsonl").read_text(encoding="utf-8")
+    for line in text.split("\n"):
+        if line:
+            o = json.loads(line)
+            r = want.get((o["appid"], sha(o["text"][:1500])))
+            if r is not None and r not in found:
+                found[r] = (o["text"][:1500], o.get("recommended"))
+    return found
+
+
 def main():
     A, B = load(G / "coderA_reviews.jsonl"), load(G / "coderB_reviews.jsonl")
-    T = load(G / "reviews_gold.jsonl")
     meta = pd.read_csv(G / "review_meta.csv").set_index("rid")
+    if (G / "reviews_gold.jsonl").exists():
+        T = load(G / "reviews_gold.jsonl")
+        hashes = {r: sha(t["text"]) for r, t in T.items()}
+    else:
+        hashes = {r: v["sha256"] for r, v in load(G / "reviews_gold_ids.jsonl").items()}
+    found = match_crawl(hashes, meta)
+    if not (G / "reviews_gold.jsonl").exists():
+        T = {r: {"rid": r, "text": t} for r, (t, _) in found.items()}
+    print(f"validation reviews found in the crawl: {len(found)} of {len(hashes)}")
     adj = load(G / "adjudicated_reviews.jsonl") if (G / "adjudicated_reviews.jsonl").exists() else {}
-    rids = [r for r in T if r in A and r in B]
+    rids = [r for r in hashes if r in A and r in B]
     out = {"n": len(rids)}
     gold = {}
     for k in ("genai_mention", "genai_critical"):
@@ -35,8 +61,9 @@ def main():
     with open(G / "gold_reviews.jsonl", "w", encoding="utf-8") as fo:
         for r in rids:
             fo.write(json.dumps({"rid": r, **gold[r]}) + "\n")
-    lines = (ROOT / "data/raw/reviews_toprated.jsonl").read_text(encoding="utf-8").splitlines()
-    rec = {r: json.loads(lines[int(meta.loc[r, "line"])]).get("recommended") for r in rids}
+    out["crawl_unmatched"] = sum(1 for r in rids if r not in found)
+    rids = [r for r in rids if r in found]
+    rec = {r: found[r][1] for r in rids}
     pred = {r: {"genai_mention": genai_mention(T[r]["text"]), "genai_critical": genai_critical(T[r]["text"], rec[r]),
                 "genai_critical_term": genai_critical(T[r]["text"])} for r in rids}
     for r in rids:
@@ -53,8 +80,13 @@ def main():
         out[f"{k}_gold_prev_w"] = (w * y).sum() / w.sum()
         out[f"{k}_pred_prev_w"] = (w * p).sum() / w.sum()
         out[f"{k}_unresolved"] = sum(1 for r in rids if gold[r][k] is None)
-    g = pd.read_csv(ROOT / "data/processed/games.csv", usecols=["appid", "disclosed", "c_live_system", "c_live_player"],
-                    low_memory=False)
+    g = pd.read_csv(ROOT / "data/processed/games.csv",
+                    usecols=["appid", "disclosed", "c_live_system", "c_live_player", "page_redirect"], low_memory=False)
+    redir = set(g.appid[g.page_redirect == 1])
+    out["redirect_n"] = sum(1 for r in rids if int(meta.loc[r, "appid"]) in redir)
+    out["redirect_games"] = len({int(meta.loc[r, "appid"]) for r in rids} & redir)
+    out["redirect_crit"] = sum(1 for r in rids if int(meta.loc[r, "appid"]) in redir and gold[r]["genai_critical"] == 1)
+    g = g[g.page_redirect != 1]
     disc = dict(zip(g.appid, g.disclosed))
     live = dict(zip(g.appid, (g.c_live_system == 1) | (g.c_live_player == 1)))
     for grp, val in (("runtime", True), ("other", False)):

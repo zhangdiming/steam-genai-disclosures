@@ -13,8 +13,9 @@ store data and reviews, coding of the AI-disclosure texts, validation of the cod
 | `results/` | analysis output |
 
 The store and review crawls (`data/raw/search_index.jsonl`, `store_items.jsonl`, `store_pages.jsonl`,
-`reviews_toprated.jsonl`) are not included; steps 1–5 re-collect them. `08_analysis.py` runs on the shared tables; the
-census counts in `15_numbers.py` and the count of pages behind the age check in `08_analysis.py` need the crawls.
+`reviews_toprated.jsonl`, `store_about.jsonl`) are not included; steps 1–5 and 11c re-collect them. `08_analysis.py`
+runs on the shared tables. The counts that need the crawls (census listings, pages behind the age check) are kept in
+`results/census_counts.json`, which `15_numbers.py` reads when the crawls are absent.
 
 ## Requirements
 Python 3.12. Install the packages with `pip install -r requirements.txt`.
@@ -28,18 +29,19 @@ Run the scripts from `code/`, in this order:
 | 2 | `build_cohort.py` | `data/processed/cohort_appids.txt`: games released 2024-01-01 to 2026-10-24 |
 | 3 | `04_fetch_store_items.py` | `data/raw/store_items.jsonl`: structured store metadata (store-browse API) |
 | 4 | `02_fetch_store_pages.py` | `data/raw/store_pages.jsonl`: store pages and AI-disclosure text |
-| 5 | `build_review_queue.py`, `03_fetch_reviews.py` | `data/raw/reviews_toprated.jsonl`: up to 30 most helpful English reviews per game (disclosing games and a 20% control draw) |
-| 6 | `06_sample_gold.py` (dev), `06b_sample_test.py` (test; checks or rewrites `test_meta.csv`), `11_sample_review_gold.py` | gold samples in `annotation/gold/` |
-| 7 | `10_make_coding_batches.py` | bulk coding batches in `annotation/bulk/` |
-| 8 | `07_validate_coding.py dev\|test`, `12_validate_reviews.py` | agreement, adjudicated gold, coder validation |
-| 9 | `05_build_dataset.py` | `data/processed/games.csv`: game-level table with LLM (`c_*`) and rule (`r_*`) codes |
+| 5 | `build_review_queue.py`, `03_fetch_reviews.py ../data/processed/review_queue.txt 30` | `data/raw/reviews_toprated.jsonl`: up to 30 most helpful English reviews per game (disclosing games and a 20% control draw) |
+| 6 | `06_sample_gold.py` (dev), `11_sample_review_gold.py` (reviews; see Data notes) | gold samples in `annotation/gold/` |
+| 7 | `10_make_coding_batches.py`, then `06b_sample_test.py` (test sample, drawn from the shared first-round batches 00–03; without `--write` it only checks `annotation/gold/disclosures_test.jsonl` and `test_meta.csv`) | bulk coding batches in `annotation/bulk/`; test sample in `annotation/gold/` |
+| 8 | `07_validate_coding.py dev\|test` | agreement, adjudicated gold, coder validation |
+| 9 | `05_build_dataset.py`, then `12_validate_reviews.py` (reads `games.csv`) | `data/processed/games.csv`: game-level table with LLM (`c_*`) and rule (`r_*`) codes; `annotation/gold/review_validation.json`: review-lexicon validation |
 | 10 | `09_review_ai.py` | `data/processed/review_ai.csv`: game-level shares of reviews mentioning or criticizing generative AI, reviews alleging undisclosed use, and the same flags on each review's first 1,500 characters |
 | 10b | `20_prior_release.py` | `data/processed/prior_release.csv`: remasters, ports, re-releases, and series entries |
 | 10c | `21_wayback_timing.py --targets`, `21_wayback_timing.py`, `21_wayback_timing.py --display` | `data/raw/wayback_targets.csv`, `data/raw/wayback_timing.jsonl`: disclosure timing from Internet Archive snapshots; `data/raw/wayback_display.csv`: how archived store pages display the disclosure |
 | 10d | `23_developer_lists.py` | `data/processed/developer_lists.csv`: all developers listed for each game; must run before `08_analysis.py` |
 | 11 | `08_analysis.py` | `results/`: models, robustness checks, descriptive tables, `headline.json`, `short_text.csv` (estimates with the lexicon limited to the first 1,500 characters), and `supplement.csv`; console output in `run_log.txt` |
 | 11a | `24_publishers.py` | `data/processed/publishers.csv` (listed publishers; separate and established third-party publisher indicators, rebuilt only when the raw store items are present) and `results/publisher.csv`, `results/publisher.json`: the exploratory publisher analysis (RQ3); must run after `08_analysis.py` and before `15_numbers.py`. `results/publisher_check_sample.csv` holds the 70-game classification check |
-| 11b | `22_rerun_agreement.py` | `results/rerun_agreement.csv`: test-retest agreement of the bulk coder (batch 02 coded twice); must run before `15_numbers.py` |
+| 11b | `22_rerun_agreement.py` | `results/rerun_agreement.csv`: repeat-coding agreement of the bulk coder (batch 02 coded twice); must run before `15_numbers.py` |
+| 11c | `25_store_about.py --fetch`, `25_store_about.py` | current store pages of the runtime-generation games of the reception sample (`data/raw/store_about.jsonl`, not included) the sentences of the developers' own page texts that mention AI or match a guardrail cue, and the page's review summary rows (`annotation/store_about/candidates.csv`, `pages.csv`); the decisions are in `annotation/store_about/coded.csv`; must run after `08_analysis.py` |
 | 12 | `17_make_human_tasks.py`, `18_human_validation.py` | human validation round: item sets and annotation page in `annotation/human/`; `results/human_validation.csv` |
 | 13 | `14_figures.py`, `15_numbers.py` | figures in `manuscript/figures/`; number macros in `manuscript/numbers.tex`; tables in `manuscript/tables/` |
 
@@ -49,7 +51,8 @@ coder), `review_ai.py` (review lexicon), and `steamhttp.py` (rate-limited HTTP s
 
 ## Data notes
 - Snapshot: listings, store metadata, store pages, and reviews were collected on 24 October 2026 (UTC). Reviews come
-  from the public Steam Community review pages.
+  from the public Steam Community review pages. The current store pages of the runtime-generation games of the
+  reception sample were fetched again on 19 November 2026 (step 11c).
 - The crawlers limit their request rate: by default 1 to 2 requests per second, set by a command-line argument; the
   collection used at most 2.5. No account data or reviewer identifiers are stored; the review crawler uses reviewer
   profile links only to remove duplicates within a game and drops them before writing.
@@ -64,4 +67,6 @@ coder), `review_ai.py` (review lexicon), and `steamhttp.py` (rate-limited HTTP s
   file, which a new crawl will not reproduce, and reviews can be edited or deleted. `annotation/gold/reviews_gold_ids.jsonl`
   gives the length and SHA-256 hash of each annotated text (the review's first 1,500 characters), so a re-collected review
   can be matched to its labels. Coder agreement can be recomputed from the shared labels; lexicon precision and recall
-  need the texts.
+  need the texts. `11_sample_review_gold.py` drew the published sample from the 33,572 reviews collected when it was
+  run, early in the review crawl; run on the complete crawl, it draws a different sample. To check the published
+  labels, match re-collected reviews by hash rather than rerunning it.

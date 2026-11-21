@@ -1,0 +1,618 @@
+appid,field,selected_by,cue_codes,previous,sentence
+3884970,about,ai_term,,"The boss embodies the atmosphere and characteristics of the region, and becomes the main objective of the exploration through exclusive skills and combat sequences.","AI Pets, Unpredictable Behaviors"
+3884970,early_access,cue,gr_report,Early Access is an opportunity for us to grow the game together with our community.,"With your feedback, we hope to further refine features such as pet interactions, crafting systems, and world events."
+3884970,early_access,cue,gr_report,"However, there is still much more to create in Layer Land together with our players.","Throughout Early Access, we plan to experiment with new ideas, refine existing systems, and build a living world shaped by the creativity and feedback of our community.”"
+3884970,early_access,cue,gr_report,"“ We’re aiming for a full release around spring next year, but we’re keeping things flexible to make sure we get it right.",The timeline may shift depending on player feedback and development progress.
+3884970,early_access,cue,gr_report,Early Access players not only get the game at a lower price— they’re part of our development story.,"Your support, feedback, and attention mean the world to us, and we’re grateful to share this adventure with you from the very beginning.”"
+3884970,early_access,cue,gr_report,“ We believe Layer Land will grow best with the voices of the players who explore it.,"From Early Access onward, we’ll be listening closely to your feedback—whether it’s about gameplay balance, pet interactions, or wild ideas for new features."
+3884970,early_access,cue,gr_report,"We’ll be active on Discord and other social platforms, sharing updates, gathering suggestions, and celebrating your creativity.","Whether you’re reporting bugs, sharing fan art, or suggesting new monster talents, your input will help shape the future of Layer Land."
+4494770,about,cue,gr_report,<Permitted Uses>,"If you own the game, you're welcome to create video content using in-game material.That goes for individuals and companies alike, commercial or non-commercial, as long as you follow the guidelines.If your content contains spoilers, please flag them clearly (e.g."
+4494770,about,cue,gr_provider,"""Spoilers"") so other players aren't caught off guard.",<Terms of Use>
+4412590,about,cue,gr_optout,🌷 Cozy wallpaper:,"Your sanctuary (optionally) becomes your desktop's animated wallpaper, featuring a real-time day/night cycle, soothing ambient sounds, and a built-in MP3 player."
+4412590,about,cue,gr_local,Expand your horizons by collecting location DLCs to seamlessly expand the map and unlock new vistas for your weirdos to inhabit.,"🔒 100% offline, 100% yours:"
+4412590,about,cue,gr_local,Ready to grow your sanctuary of weirdos?,100% offline.
+2943740,about,ai_term,,A new map every time you play,"Explore vast, procedurally generated landscapes created through the fusion of our in-house machine learning technology and human talent."
+3794600,about,cue,gr_constrained,.,The End of Predefined Dialogue Trees
+3794600,about,ai_term,,Thanks to the integration of,Artificial Intelligence
+3794600,about,ai_term,,"Kang Yuna remembers your previous conversations, creating a deeper and continuous connection.",Change Models
+3794600,about,ai_term,,Change Models,: Change the underlying model with other Gemma 3 types to improve text generation performance.
+3794600,about,cue;ai_term,gr_local,: Change the underlying model with other Gemma 3 types to improve text generation performance.,Absolute Privacy: 100% Local AI
+3794600,about,cue,gr_local,Absolute Privacy: 100% Local AI,Your privacy comes first.
+3794600,about,cue,gr_local,runs,completely locally on your computer
+3794600,about,cue,gr_local,The game does not require a connection to external servers or third-party services.,Anonymous and private:
+3794600,about,cue,gr_local,Anonymous and private:,"Your conversations with Yuna stay on your hardware, guaranteeing a safe, secure, and private experience."
+3794600,about,cue;ai_term,gr_local,SFML for multimedia management.,llama.cpp for the efficient execution of local Large Language Models (LLMs).
+3794600,mature,cue;ai_term,gr_constrained,The developers describe the content like this:,"In the dialogues, although there is no predefined adult content, the user can ask or discuss certain topics that may lead the language model to have a more mature conversation."
+3794600,mature,cue;ai_term,gr_filter,"For example, talks about sex or drugs.","However, the language model typically censors controversial topics."
+3634340,about,ai_term,,Highlight Features:,AI Chat
+3634340,about,ai_term,,AI Chat,"The full version will introduce an AI chat feature, allowing players to break free from fixed NPC text-based dialogues."
+3634340,about,cue,gr_report,"From prominent lineages with centuries of official heritage to rising upstarts from humble origins, their blood ties and grudges (feuds) weave an intricate web of relationships.","Harness the Family Genealogy System and secret reports to piece together clues, deduce the truth, and uncover the clan’s hidden secrets and legacies."
+4576390,snippet,ai_term,,Purge yokai with the power of words.,A roguelike word-association game judged by AI.
+4576390,about,ai_term,,Purge yokai with the power of words.,A roguelike word-association game judged by AI.
+4576390,about,ai_term,,Enter a word related to the topic each turn.,"If the AI recognizes the connection, you deal damage."
+3165680,about,cue,gr_constrained,About This Game,Start a life without limits in Avakin Life now!
+3165680,about,ai_term,,Express your personality with animations.,Walk like a zombie or strut like a model - you decide.
+3165680,about,ai_term,,Make a statement with head-turning accessories from cute hats to beautiful wings.,Transform your ideas into wearable designs with our Fashion AI Design Tool.
+4258720,snippet,ai_term,,A turn-based pvp creature combat game where you can freely invent your creatures' abilities.,An AI evaluates what happens when two abilities clash.
+4258720,about,cue;ai_term,gr_filter,About This Game,"What if a turn-based PvP combat system met pen-and-paper role-playing, moderated by an AI-based gamemaster?"
+4258720,about,ai_term,,"What if a turn-based PvP combat system met pen-and-paper role-playing, moderated by an AI-based gamemaster?","That's Promptables, the official game of ARD's AI podcast."
+4258720,about,ai_term,,But be careful; not every ability is allowed.,Our referee AI evaluates whether the ability suits the creature.
+4258720,about,ai_term,,Who is best prepared for all test scenarios with their prompts?,The Gaming Experiment for the ARD AI Podcast
+4258720,about,ai_term,,What might the video game of the future look like?,"On the ARD AI Podcast, Gregor Schmalzried, Marie Kilg, and Fritz Espenlaub discuss the latest AI developments every week—in a timely, humorous, and, above all, human way."
+4258720,about,ai_term,,"On the ARD AI Podcast, Gregor Schmalzried, Marie Kilg, and Fritz Espenlaub discuss the latest AI developments every week—in a timely, humorous, and, above all, human way.","The latest episode, “Promptables & Co.: Is AI Building the Perfect Video Game?”, explores how AI enables new forms of game mechanics and creativity."
+4258720,about,ai_term,,"The latest episode, “Promptables & Co.: Is AI Building the Perfect Video Game?”, explores how AI enables new forms of game mechanics and creativity.","In line with this, Promptables was created: a game where you can outsmart an AI referee."
+2873660,about,cue,gr_filter,"Your vehicles drive to the scene and park there, and your staff step out to visibly carry out their work on your command: they extinguish fires, treat the injured, question witnesses, or arrest suspects.","Even traffic reacts to what's happening, backing up in front of blocked-off streets."
+2873660,early_access,cue,gr_report,"“With City Bus Manager, we had a very positive Early Access experience.","Working closely with our community allowed us to shape the game together with players, prioritize the right features, and continuously improve based on real feedback."
+2873660,early_access,cue,gr_report,"Based on our current plans, we expect Global Rescue to remain in Early Access for approximately 1 to 2 years.","However, this timeframe may change depending on development progress, player feedback, and the overall reception of the game.”"
+2873660,early_access,cue,gr_report,“We plan to involve the community closely throughout the entire development process.,"Players can share ideas, discuss features, and give feedback through Steam Discussions and our Discord."
+2873660,early_access,cue,gr_report,"Players can share ideas, discuss features, and give feedback through Steam Discussions and our Discord.","In addition, we have integrated a dedicated in-game feedback system that allows players to report issues and submit suggestions directly from within the game."
+3644200,about,cue,gr_local,"Meet funny characters, discover hidden easter eggs and enjoy a light story as you progress through the world.",Local Splitscreen Chaos
+3644200,about,ai_term,,Anything beyond that is between you and your hardware.,AI disclaimer:
+3644200,about,ai_term,,AI disclaimer:,We understand that AI can be a sensitive topic in the gaming community.
+3644200,about,ai_term,,We understand that AI can be a sensitive topic in the gaming community.,"For us, AI is simply a tool that helps speed up parts of development: the vision, design, and final decisions are always human-made."
+3644200,early_access,cue,gr_report,"Releasing in Early Access allows our team to cook the game with you, not just for you.","By letting players jump in as early as possible, we can gather live feedback, observe how teams really play, and refine the game’s systems, recipes, challenges, and pacing directly alongside the community."
+3644200,early_access,cue,gr_report,“We estimate 2 Cooks 1 Mess will remain in Early Access for around 6-9 months.,"This may change depending on community feedback, how players engage with the different modes, and the amount of polish and additional content required to deliver the final release we have in mind.”"
+3644200,early_access,cue,gr_report,"Players can cook, coordinate, dispatch npcs, unlock new items, and experience the complete gameplay loop and we plan to add new content, new tools, and new surprises on a weekly basis.","While the game is playable and fun, we want to continue improving pacing, depth, challenge variety, and overall polish based on your feedback.”"
+3644200,early_access,cue,gr_report,"We want to hear from you: your ideas, your frustrations, your funniest kitchen disasters, and what kinds of challenges you want to see.",You can contact us directly through Discord or Steam discussions.
+3644200,early_access,cue,gr_report,"If you see names like Darkirby3 or Linkupdated, those are the core developers of the project but anyone on the team with a [Staff] or [Developer] tag is there to help and listen.","Your feedback will shape the recipes, the difficulty curve, the game modes, and everything in between."
+4529510,snippet,cue,gr_local,"When enabled, she can see what's on your screen, hear your computer's audio, and react in her own time while you work, watch, or play.",Runs offline.
+4529510,about,ai_term,,A companion for the everyday moments.,"CielChan is an animated AI companion who stays on your desktop while you work, study, browse, play, or unwind."
+4529510,about,cue,gr_local,"These are periodic observations, not continuous human-like sight or hearing, and they can be inaccurate.","Her local memory can retrieve selected details from earlier conversations, so she can feel more familiar over time."
+4529510,about,ai_term,,"Her local memory can retrieve selected details from earlier conversations, so she can feel more familiar over time.","She will not remember everything, and her responses may vary with the model you use."
+4529510,about,cue,gr_local,"Watch Together can bring her reactions to supported videos, games, browsing, and other desktop activities, using available visual and audio context.","Ask her to read supported text files and EPUB books aloud, or enjoy conversations, companion minigames, and shared online rooms."
+4529510,about,cue,gr_report,"Use Focus Companion for timed sessions, breaks, check-ins, notes, tasks, reminders, and ambient sounds such as rain or café ambience.","Move or resize her transparent overlay, use click-through when needed, and reposition the toolbar to suit your workspace."
+4529510,about,cue,gr_optout,"Move or resize her transparent overlay, use click-through when needed, and reposition the toolbar to suit your workspace.",Optional webcam Presence recognises supported gestures; compatible avatars can also sit on the edges of suitable application windows.
+4529510,about,cue,gr_local,Memory and everyday assistance,Recall can save selected screen and audio moments locally and help you search for something you saw or heard earlier.
+4529510,about,cue,gr_constrained,"Desktop Tools can search the web, read supported documents, create files, and help with other permitted actions.",File access is limited to authorised locations.
+4529510,about,ai_term,,Goals can plan and attempt multi-step tasks using the tools available to them.,"Goals and tool execution are experimental; success depends on the model, permissions, and task."
+4529510,about,cue,gr_optout,"With Observation Tools enabled, eligible observations can also trigger configured tool instructions.",This is optional.
+4529510,about,cue;ai_term,gr_local,"Use supported VRM, Live2D, or sprite avatars, create characters, and share supported character-and-personality pairs through Steam Workshop.","Choose from the included local AI and voice options, or configure compatible GGUF models and supported voices."
+4529510,about,cue,gr_optout,Connect only when you want to,"Optional connections include Twitch, YouTube Live, TikTok Live, Discord, Telegram, Multiplayer, and the Codex desktop app."
+4529510,about,ai_term,,"Optional connections include Twitch, YouTube Live, TikTok Live, Discord, Telegram, Multiplayer, and the Codex desktop app.","Advanced users can also configure OpenAI, Anthropic, or OpenRouter for cloud AI, and supported cloud voice services such as ElevenLabs."
+4529510,about,cue,gr_local,Availability varies by service and setup.,"Local first, with clear choices"
+4529510,about,cue;ai_term,gr_local,"Local first, with clear choices","CielChan's core chat, local memory, and bundled local voice and AI features can run offline after installation."
+4529510,about,cue,gr_local,"CielChan's core chat, local memory, and bundled local voice and AI features can run offline after installation.","No cloud account, API key, or subscription is needed for the offline core experience."
+4529510,about,cue,gr_local,"No cloud account, API key, or subscription is needed for the offline core experience.",Local conversations and local processing stay on your PC.
+4529510,about,ai_term,,Good to know,"CielChan is an AI companion, not a human-level autonomous assistant."
+4529510,about,ai_term,,"Vision, Tools, Goals, and some integrations are experimental.","Speech recognition, voice options, and AI response quality vary by language, model, and installed voice components."
+4529510,about,cue,gr_local,One-time purchase,Pay once to use the included offline core features without an ongoing subscription.
+4529510,about,cue,gr_optout,Pay once to use the included offline core features without an ongoing subscription.,Optional third-party services may have separate charges.
+4489800,about,cue,gr_report,"We're planning to exit Early Access on September 23, 2026.","We have a lot left to build, and we want to hear your feedback and suggestions too!"
+4489800,early_access,ai_term,,"As we progress through Early Access, we plan to add significantly more levels, more characters, and many more enemies.",We also plan to significantly expand our AI-powered crafting systems to give you more control over the builds you want to try out.
+4489800,early_access,cue,gr_report,How are you planning on involving the Community in your development process?,"“We have a Discord that we wholeheartedly welcome any and all ideas, suggestions, and feedback."
+3597510,snippet,cue;ai_term,gr_optout,,MyRobot is a robot sandbox game with optional AI features!
+3597510,about,ai_term,,MyRobot is a robot sandbox game with a TON of character interactions; from triggering emotions to customizations to engaging NPC conversations!,All wrapped with silly gameplay and AI integration!
+3597510,about,cue;ai_term,gr_optout,All wrapped with silly gameplay and AI integration!,AI is optional
+3597510,about,ai_term,,AI is optional,and you can host your own AI models for
+3597510,about,cue,gr_local,and you can host your own AI models for,complete privacy
+3597510,about,ai_term,,.,Alternatively you can use our online AI services or mix and match!
+3597510,about,ai_term,,Alternatively you can use our online AI services or mix and match!,100k AI speech tokens included in your Steam copy
+3597510,about,ai_term,,whenever a big update drops!,(13 hours+ of AI voice chatting)
+4468180,snippet,ai_term,,,"Build a town or run a game studio, both staffed by AI characters with real personalities."
+4468180,snippet,ai_term,,"Watch townsfolk work, argue, fight, and raid dungeons.","Or play the RPG your own AI dev team designs, builds, and ships while you run the company."
+4468180,snippet,cue,gr_local,"Or play the RPG your own AI dev team designs, builds, and ships while you run the company.",Runs 100% locally on your machine.
+4468180,about,cue;ai_term,gr_local,About This Game,AI Society is a civilization simulation game where every character is driven by a local AI model.
+4468180,about,ai_term,,Choose your mode:,"In AI Town, build a society full of townsfolk who live their own lives."
+4468180,about,ai_term,,"In AI Town, build a society full of townsfolk who live their own lives.","In AI Game Studio, hire an AI dev team, run the company, and play the game they make."
+4468180,about,ai_term,,"In AI Game Studio, hire an AI dev team, run the company, and play the game they make.",AI TOWN
+4468180,about,ai_term,,Watch them react to your decisions on their social media,AI GAME STUDIO
+4468180,about,ai_term,,Play a game made by a studio you run.,"Your team of AI employees designs it, builds it, markets it, and ships it, and every part of it comes out of their work and your decisions."
+4468180,about,cue,gr_report,"Watch tasks move across the board, see what failed and why, and make them try again",Call meetings where employees report in and pitch ideas.
+4468180,about,cue,gr_local,"Earn 63 studio achievements, from ""First Errand"" to ""Millionaire"", each paying cash into the company.",RUNS 100% LOCALLY
+4468180,about,ai_term,,RUNS 100% LOCALLY,AI Society runs entirely on your machine using Ollama that comes bundled in your download.
+4468180,about,cue,gr_local,AI Society runs entirely on your machine using Ollama that comes bundled in your download.,"No internet required, no subscriptions or monthly payments, no data sent anywhere."
+4468180,about,ai_term,,Works with LM Studio.,Choose the model that fits your hardware:
+4468180,about,ai_term,,Gemma 2 2B - An alternative lightweight option,"Every conversation, every social media post, every meeting, every decision your characters make is generated live by the AI model you select."
+4468180,about,ai_term,,GPU acceleration works automatically for NVIDIA GPUs.,"Before you launch the game, right click on 'AI Society' > select Properties > Game Versions & Betas > select the linux version > then launch the game."
+4426310,snippet,ai_term,,,Experience CAI UWE: Your AI companion in Unreal Engine 5 graphics.
+4426310,snippet,cue,gr_human,Chat in real-time with a Metahuman that responds without scripts.,"The perfect ""Idler"" for your second monitor — connected with Twitch, YouTube & Discord."
+4426310,about,ai_term,,is not just a program — it's a window to a new kind of communication.,"Powered by Unreal Engine 5 and cutting-edge generative AI, this CAI UWE offers one of the most visually stunning and responsive digital humans (Metahumans) you can experience on your desktop."
+4426310,about,ai_term,,What is CAI UWE?,CAI UWE is an experimental life simulation and AI companion.
+4426310,about,ai_term,,"There are no pre-written scripts, no dialogue trees, and no fixed game objectives.",You start the simulation and connect with an artificial intelligence that responds to you in real-time.
+4426310,about,ai_term,,Unlimited Conversations:,"Thanks to modern LLM technology (Large Language Model), you can chat with CAI UWE about anything and everything."
+4426310,about,cue,gr_human,"CAI UWE is designed as an ""Idler"".",Let the simulation run on your second monitor and enjoy the company of a digital presence.
+4232190,about,cue,gr_report,All rights reserved.,■ Feedback & Contact
+4417720,snippet,ai_term,,,"More than a cute pet, this is your versatile AI desktop agent."
+4417720,about,ai_term,,"This is not an ordinary virtual pet, but an",AI Agent
+4417720,about,ai_term,,with infinite possibilities.,"We provide the ""body,"" and you choose the ""brain."" By choosing your preferred AI model (such as Gemini, Claude), she becomes the most capable assistant on your desktop."
+4417720,about,ai_term,,🐱 Standalone Companion,"Even without any AI configuration, she is a fully interactive"
+4417720,about,cue,gr_local,.,You can interact with her via mouse clicks and use the built-in music manager to play your local tracks.
+4417720,about,ai_term,,She doesn't just chat; she works.,"Thanks to the built-in sandbox environment, the AI has ""hands"":"
+4417720,about,cue,gr_report,File Management:,"Organize folders, rename files, or generate data reports."
+4417720,about,cue,gr_local,She keeps a,private diary
+4417720,about,ai_term,,Live2D Interaction:,Switch between multiple built-in models or import your own.
+4417720,about,cue,gr_filter,Her emotions and expressions sync perfectly with the conversation!,🛡️ Safety First
+4417720,about,ai_term,,🛡️ Safety First,"We understand the risks of AI executing code, so we built multiple defense lines:"
+4417720,about,cue,gr_filter,Command Blacklist:,Automatically blocks dangerous system commands.
+4417720,about,cue;ai_term,gr_optout,💡 Why Choose Us?,"Ready to play upon download, no need to obtain API keys yourself, and you can choose from multiple LLMs (e.g., Gemini, Claude, etc.).Contains in-app purchases, solely for covering the cost of API keys."
+4417720,about,cue,gr_constrained,Customizable:,Supports custom System Prompts.
+4417720,about,ai_term,,Licenses & Credits,Live2D Models Used:
+4417720,about,ai_term,,Live2D Models Used:,Model Name:
+2671050,about,ai_term,,It's about discovering who you are.,Your journey through this AI generated labyrinth will leave you reflecting on what makes us human long after you've played.
+2671050,about,ai_term,,Your journey through this AI generated labyrinth will leave you reflecting on what makes us human long after you've played.,Generative AI
+2671050,about,ai_term,,Voice recognition is handled by Deepgram.,The character dialog is generated using GPT-5 from Open AI.
+4397180,snippet,cue;ai_term,gr_local,,"Your Friend's Mom — a desktop companion with a local LLM, roleplaying as the mom of one of your Steam friends."
+4397180,about,cue;ai_term,gr_local,— an interactive desktop companion with a built-in,local LLM
+4397180,about,cue;ai_term,gr_local,Features,Local LLM
+4397180,about,cue;ai_term,gr_local,Local LLM,— on-device AI for more immersive roleplay conversations.
+4397180,about,ai_term,,Mouse tracking,— the 3D model follows your cursor and reacts to its movement.
+4397180,mature,cue,gr_filter,"The game may include poses, movements, and behavior elements that some users may consider provocative or sexualized.","The DLC offers more revealing clothing and costume options; however, the game contains no explicit nudity, sexual acts, or sexual violence."
+3522640,about,ai_term,,"Shape limitless stories, share memorable adventures",Embrace complete freedom and forge truly unique sagas with AI narration adapting seamlessly to any input.
+3522640,about,cue,gr_human,"Design any adventure, from a legendary campaign to a cheeky side quest, and complete missions to gather memories and skills meticulously generated to fit each character and storyline.","Once completed, share a Quest Log with the world, or load and play original scenarios created by fellow adventurers to continue the search for the ultimate story."
+3522640,about,ai_term,,Your actions and dialogue are dictated entirely by your own free-form input.,"No matter the content or length of what you write, the AI will adapt and expand the story accordingly."
+3522640,about,ai_term,,"In Saga & Seeker, it's not just the story that's dynamic.","The background music and sound effects are also controlled by the AI, changing to match the mood of the narrative."
+3522640,about,cue,gr_constrained,"And if you want to unleash even more creativity, you can load and play original scenarios created by players.",Simply fill out the official text file template.
+3522640,about,cue,gr_human,"Enjoy creating stories just for yourself, without worrying about anyone else, whenever and however you please.","Additionally, upon clearing a scenario, a ""Log"" is saved for you to revisit anytime."
+3522640,about,cue,gr_human,"Additionally, upon clearing a scenario, a ""Log"" is saved for you to revisit anytime.","These logs can be exported as files, so you can share your favorite stories with friends!"
+3522640,about,ai_term,,About In-Game Currency,"In Saga & Seeker, ""Ink"" is consumed to utilize generative AI features."
+3522640,about,ai_term,,"In Saga & Seeker, ""Ink"" is consumed to utilize generative AI features.","The cost of Ink covers generative AI API fees, server maintenance, and other operational costs."
+3522640,about,ai_term,,"The cost of Ink covers generative AI API fees, server maintenance, and other operational costs.",Please note that the amount of Ink required for generation may fluctuate based on changes in AI service pricing and currency exchange rates.
+3522640,about,cue,gr_constrained,No prior application or notification is required.,"Permitted content includes, but is not limited to"
+3522640,about,cue,gr_filter,"When using in-game footage in videos or streams, please note the following.","If content shown in the game containing inappropriate expressions or potential rights infringement appears, please edit it where possible using masking, blurring, or similar methods, or remove the relevant section"
+3522640,about,cue,gr_provider,Impersonation of official sources or expressions that may cause confusion or misrepresentation,Content that violates the terms of service of the respective streaming or video platforms
+4311740,snippet,ai_term,,The player does only one thing: rewrite the letter sent to Neml.,"An AI interprets the letter, changing Neml’s actions and the story’s outcome."
+4311740,about,ai_term,,the player freely writes what should be conveyed to Neml in plain text.,"An AI interprets the contents of the letter, altering Neml’s actions, decisions,"
+3166940,about,ai_term,,Mouse tracking,— the 3D model follows your cursor and reacts to its movement.
+3166940,about,ai_term,,— each waifu has 80 unique voice lines that match her character.,AI voiceover + subtitles
+3166940,mature,cue,gr_filter,The game includes dances with provocative elements and some voice lines with mild innuendo.,"In a separate DLC, you can change the character’s appearance to an underwear outfit — with the chest covered and censored."
+3166940,mature,cue,gr_filter,"In a separate DLC, you can change the character’s appearance to an underwear outfit — with the chest covered and censored.",There is no full nudity or explicit sexual content in the game.
+4210600,snippet,ai_term,,,RoleMIAster bridges classic tabletop RPG and Artificial Intelligence.
+4210600,snippet,ai_term,,RoleMIAster bridges classic tabletop RPG and Artificial Intelligence.,"An integrated AI Game Master that respects rules, rolls dice, and manages your character sheet across infinite Fantasy or Cyberpunk worlds."
+4210600,about,ai_term,,you write your own destiny,", and an Artificial Intelligence acts as a true Game Master — interpreting your actions, narrating consequences, and enforcing a strict, coherent rule system."
+4210600,about,ai_term,,🎭,A Real AI Game Master
+4210600,about,ai_term,,A Real AI Game Master,Forget chaotic chatbots.
+4210600,about,ai_term,,Forget chaotic chatbots.,"The RoleMIAster engine forces AI to follow rules, consult tables, manage inventories, and maintain strict world coherence."
+4210600,about,ai_term,,is,generated by the AI in real time
+4210600,about,cue,gr_constrained,.,Nothing is predefined.
+4210600,about,ai_term,,Integrated Multimedia Generation,The AI doesn’t just narrate:
+4210600,about,ai_term,,Player-Chosen Language,The AI automatically translates both interface and story into the language you select.
+4210600,about,ai_term,,I don’t have hundreds of employees.,"I’m a self-taught programmer and a long-time RPG lover who spent countless hours (and many sleepless nights), assisted by AI tools, to bring this project to life."
+4210600,about,ai_term,,a bridge between the nostalgia of classic tabletop role-playing,and the future of generative artificial intelligence.
+4210600,early_access,ai_term,,Why Early Access?,“RoleMIAster is an experimental project that bridges two complex worlds: tabletop role-playing and generative artificial intelligence.
+4210600,early_access,cue;ai_term,gr_report,“RoleMIAster is an experimental project that bridges two complex worlds: tabletop role-playing and generative artificial intelligence.,"As a solo developer, I need community feedback to balance the rules, refine the integration with different AI models, and ensure the experience is enjoyable and stable before considering it a finished product."
+4210600,early_access,ai_term,,“I estimate the Early Access period will last between 6 and 12 months.,"This time will allow me to implement missing features, refine the user interface, and ensure compatibility with new AI models as they emerge.”"
+4210600,early_access,cue;ai_term,gr_local,- Multiplayer implementation (planned),- Official support for more AI providers and local models.
+4210600,early_access,ai_term,,“The game is fully playable from start to finish.,- Character Creation: Functional and AI-assisted.
+4210600,early_access,ai_term,,- Narrative: Infinite adventures generated dynamically.,- Multimedia: AI-assisted multimedia assignment.
+4210600,early_access,cue,gr_report,How are you planning on involving the Community in your development process?,“I will use Steam forums and Discord to gather direct feedback.
+4210600,early_access,ai_term,,1.,Which AI models work best for players.
+4025700,about,cue,gr_human,Create Unique Memories,"Chat with the charming residents of Heartopia Town, hang out with old friends, and meet new friends every time you log in!"
+3600810,snippet,ai_term,,,Couch Detective is a text-based deduction game hosted by AI.
+3600810,snippet,ai_term,,Ask questions to uncover bizarre yet logical truths.,You can also feed the AI your ideas to generate new puzzles and share them with friends.
+3600810,about,ai_term,,"is just like that, except this time,","the host is AI,"
+3600810,about,ai_term,,"Ask any yes/no questions, try to deduce","AI will answer ""yes,"" ""no,"" or ""irrelevant"" based on your questions, and you piece together the story step by step"
+3600810,about,ai_term,,"By the way, we have a creation mode!","In creation mode, you just need to input a few keywords, a scenario, or even an ending, and AI will automatically generate a complete lateral thinking puzzle for you—the prompt, the answer, and the logic all set."
+3600810,early_access,cue;ai_term,gr_human;gr_report,“Couch Detective is a deduction game where the experience depends heavily on how real players ask questions and interpret answers.,"Early Access lets us ship a complete, playable core and then iterate with community feedback on (1) case clarity and difficulty (so solutions feel fair), (2) the AI host’s ruling consistency for “Yes/No/Irrelevant”, and (3) investigation UX such as logs, clue review, and pacing."
+3600810,early_access,cue,gr_report,“We plan to be in Early Access for approximately 6 to 12 months.,This timeline may adjust depending on player feedback and the time needed to polish planned updates.”
+3600810,early_access,ai_term,,“We have a phased roadmap for the full version.,"We plan to expand the case library with new themed case packs, continue refining the AI host’s logic and guidance, and add progression and customization features (achievements, badges, and office items)."
+3600810,early_access,cue;ai_term,gr_constrained;gr_human,“The Early Access build is fully playable as a single-player deduction experience.,"It includes curated “Turtle Soup” style cases, an AI host that answers free-form questions with “Yes/No/Irrelevant,” and an in-game log/notebook-style UI to review what you’ve learned."
+3600810,early_access,cue;ai_term,gr_report,How are you planning on involving the Community in your development process?,"“We will use Steam Discussions and update posts to collect feedback and bug reports, especially on case fairness and any AI responses that feel inconsistent or unclear."
+3600810,early_access,ai_term,,We plan to run periodic polls on upcoming case themes and prioritize roadmap items based on aggregated community input.,"We may also use Steam beta branches to test larger changes (major AI logic updates, new progression systems, and any co-op experiments) before rolling them out broadly.”"
+4141770,snippet,ai_term,,,Bring a charming AI friend to your desktop.
+4141770,snippet,ai_term,,Bring a charming AI friend to your desktop.,"Molili AI friend listens, reads by your side, blushes when you care, and helps with study or work using a smart personality system that remembers your moments, growing from curious visitor to the companion who understands you best."
+4141770,about,ai_term,,About This Game,Your desktop is the world where you meet your AI partner.
+4141770,about,ai_term,,This is more than just a desktop pet.,"Here, every character is powered by the advanced Molili personalization model."
+4141770,about,ai_term,,Not just a friend but also your capable assistant.,"Your AI partner can connect to the internet to look up information for you, or activate Deep Thought Mode to explore complex questions with you."
+4141770,about,ai_term,,"From the tentative first meetings to becoming inseparable confidants, and finally, to being each other's irreplaceable one—you will experience the deepening of your connection day by day.","Personalized AI Companions: Powered by the Molili model, characters feature long-term memory, emotional simulation, and evolving personality traits."
+4141770,about,ai_term,,Vivid Live2D Animation: Experience a lively desktop companion with beautiful animations and rich interactions.,"Powerful Assistant Tools: Integrated with practical functions like web search, deep thought analysis, and AI image generation."
+4141770,about,ai_term,,Rich Customization: Dress up your partner in different outfits and accessories to create your favorite look.,Stress‑free companionship: the core experience is free forever (including unlimited AI chat powered by cost‑efficient models).
+4141770,about,ai_term,,Stress‑free companionship: the core experience is free forever (including unlimited AI chat powered by cost‑efficient models).,Only high‑performance AI features require a quota‑based subscription.
+4141770,about,ai_term,,Only high‑performance AI features require a quota‑based subscription.,Add Molili AI Friends to your wishlist now!
+4141770,early_access,cue;ai_term,gr_report,Why Early Access?,“Molili AI Friends aims to co-create with the community through Early Access: we will first open core features and invite you to join design discussions and use‑case validation; we will keep updating along a public roadmap with staged goals; and we will allocate resources and adjust the development order based on feedback priorities.
+4141770,early_access,ai_term,,“Molili AI Friends aims to co-create with the community through Early Access: we will first open core features and invite you to join design discussions and use‑case validation; we will keep updating along a public roadmap with staged goals; and we will allocate resources and adjust the development ,"With this transparent and fast iteration, we can shape Molili AI Friends into a desktop AI companion that truly meets user expectations, then release it officially once it’s mature.”"
+4141770,early_access,ai_term,,“Early Access is expected to last around 3–6 months.,"Our core features are complete; we’re now fine‑tuning new characters, auxiliary features, and the business model.”"
+4141770,early_access,cue;ai_term,gr_local,- Story adventure mode,"- Local AI acceleration, customization, and a creators’ workshop"
+4141770,early_access,ai_term,,"“The Early Access build delivers the core experience, including:",- A robust AI persona model with high‑quality conversational abilities
+4141770,early_access,cue,gr_report,How are you planning on involving the Community in your development process?,"“We will continuously refine our development based on community feedback: building communities across multiple channels, actively gathering and incorporating player input to keep iterations aligned with real needs.”"
+3227670,about,ai_term,,"As the one who has been entrusted with their young child by FengHuang, you are going to role-playing as the father/mother of the young daughter in",My Daughter in Family Ai
+3227670,about,ai_term,,Explore and collect them and check out which future you and your daughter are heading to!,——AI GAME Studio
+3184990,about,ai_term,,"You will be discovering vital clues in every case, diving into unscripted interrogations and uncovering truths that break minds.",Play as a rookie investigator for the A.I.B.
+3184990,about,ai_term,,KEY FEATURES,🗣️ Unscripted & AI-Driven Interrogations
+3184990,about,ai_term,,"Tired of linear games where you just click until you find the ""one true evidence""?",We break the rigid structure by integrating large language models (LLMs) to power our NPC dialogue.
+3184990,about,cue,gr_filter,Welcome to this world touched by mysterious secrets.,"Here, shadow organizations safeguard relics of lost gods, while desperate souls in the city’s underbelly whisper of forbidden rituals."
+3184990,about,cue,gr_human,Every conversation matters.,Every text log counts.
+3564740,about,cue,gr_constrained,No pay-to-win.,"Gameplay content is entirely free, with monetization limited to cosmetic items."
+3701370,snippet,ai_term,,,Cook for your AI grandchildren in this heartwarming novel + cooking simulation.
+3701370,snippet,cue,gr_report,Combine over 300 ingredients and over 100 skills to create unique recipes.,"Your grandkids will react with feedback—sometimes strict, sometimes kind."
+3701370,about,ai_term,,COOK FOR ME GRANDPA!,is a cozy story-driven cooking simulation where you prepare meals for your AI grandchildren.
+3701370,about,cue,gr_report,"Collect over 300 ingredients and over 100 cooking skills, mix and match them freely to create heartfelt recipes.","Your grandkids will taste your dishes and respond with feedback—sometimes strict, sometimes kind, always sincere."
+3701370,about,cue,gr_report,"Your two grandchildren and daughter respond to your cooking with real emotion: joy, disappointment, and everything in between.","Their feedback isn’t just praise—it’s personal, detailed, and shaped by their unique tastes."
+2451190,snippet,ai_term,,Follow the signal to the Ice Cream Cult's island fortress.,Become the world's first AI secret agent and kill the enemies.
+2451190,about,ai_term,,FEEL YOUR REAL HANDS,You're not just an agent or AI agent...
+2451190,about,ai_term,,THE GLASSES,—  An AI that reviewed your life and concluded it could run it better.
+2451190,mature,cue,gr_filter,"The game contains limited nudity, alcohol, erotic dances, blood and violence.",Some players may find these elements culturally sensitive or inappropriate.
+2451190,early_access,ai_term,,"This is a commitment from us to you: we are here, we are dedicated, and we will see this through to the 1.0 launch and beyond.","The Early Access price is our honest acknowledgment that you're joining us during this final, crucial stage for next-generation artificial intelligence enhanced game.”"
+2451190,early_access,ai_term,,Not Just A Cooking Simulator.,"An AI, armed with a weapon and a chef's ladle."
+2451190,early_access,cue,gr_report,Are weapons working well?,"This is the kind of intuitive, expert feedback we crave!"
+2451190,early_access,cue,gr_report,"This is the kind of intuitive, expert feedback we crave!",The Prepared Food: We created detailed feedback and bug report form to fix the things in the back of the house(BoH).
+3649950,about,cue,gr_report,You can look forward to more fun growth and chat experiences!,"There’s still a long journey ahead before 1.0, and we’re truly grateful to everyone who’s been helping us shape this world with your feedback and support 💫"
+3649950,about,cue,gr_report,Be Part of Our Story!,Join our Discord community to share your feedback with us!
+3649950,early_access,cue,gr_report,We chose Early Access because we believe this kind of world can only grow together with players.,"Your feedback, stories, and imagination will guide how Biibits live, interact, and change."
+3649950,early_access,cue,gr_report,"“Bside is a community-driven world, and we want every player to feel part of its growth.","We listen closely to feedback shared through our Discord, social channels, and in-game experiences."
+3474800,mature,cue,gr_filter,"Cosmetic items in the game may include avatars wearing bikinis or shirtless male appearances, but full cartoon nudity is never allowed.",Players may use mild profanity in chat as long as it is not directed at others in an abusive or harassing manner.
+3474800,mature,cue,gr_filter,"Violence in Highrise is lighthearted and cartoonish, often shown through exaggerated animations, whimsical effects, or stylized comic visuals rather than realistic depictions.","References to smoking or drinking may appear indirectly through collectible items or community discussions, but illegal activity is not permitted or endorsed."
+2827960,about,cue,gr_local,"First, you need to check what you need for your next build.","Head to your local warehouse, buy your tools and materials, and load them onto your lorry."
+2827960,early_access,cue,gr_report,We have decided to launch in Early Access to maintain our close relationship with the community as we continue to implement more and more features by tinkering with the mechanics.,"We believe that with community feedback and participation, we can deliver a better experience.”"
+2827960,early_access,cue,gr_report,"We plan to release major content updates, as well as smaller updates that will focus on specific aspects of the game.",We will continue to listen to feedback from our community and work on improvements to the core of the game.”
+3386650,about,ai_term,,Can be played solo!,The Game Master (GM) can be set as either an AI or a player.
+3386650,about,ai_term,,The Game Master (GM) can be set as either an AI or a player.,"By letting the AI take on the role of GM, the game can be played solo."
+3386650,about,ai_term,,Create or Join a Room,The player who creates the room becomes the host and can assign the role of the questioner to either a player or an AI.
+3386650,about,cue,gr_optout,The player who creates the room becomes the host and can assign the role of the questioner to either a player or an AI.,Players who join the room can choose to play as the questioner or as solvers.
+3386650,about,cue,gr_optout,Select a Problem and Set the Rules,Players can choose a problem from the problem set to start the game.
+3386650,about,cue,gr_local,Overview,Private Sessions:
+3386650,about,cue,gr_local,Only players with the room information can join.,Enjoy a private experience with friends or acquaintances.
+3386650,about,cue;ai_term,gr_optout,Enjoy a private experience with friends or acquaintances.,You can choose the questioner to be either an AI or a player.
+3386650,early_access,cue,gr_report,Why Early Access?,“We have decided to offer an Early Access period in order to gradually increase the number of questions and to further improve the game by getting valuable feedback from our players.”
+3386650,early_access,cue,gr_report,How are you planning on involving the Community in your development process?,"“We will collect suggestions, bug reports and feedback via Discord."
+2726370,snippet,ai_term,,is a comedic game where you survive as a bloodsucking vampire in the human world.,"Talk to real AI characters, fool them into trusting you, and find a way into their homes to feed without getting caught."
+3360380,about,ai_term,,■Basic Game Flow,① A prompt is displayed → ② The player answers via microphone or keyboard → ③ The AI scores it out of 100 points
+3360380,about,ai_term,,Conversation Battles,Prompts where you exchange lines with the AI several times to achieve a goal.
+3360380,about,cue,gr_local,: For those who want to enjoy a variety of stages while having fun,■Co-op Stage Clear Mode (Offline Multiplayer)
+3360380,about,cue,gr_constrained,: Playing every prompt once takes about 2 hours,■Notes and Play Restrictions
+3360380,about,cue,gr_constrained,We welcome video streaming and gameplay commentary.,"Monetization is also allowed, with no restrictions on the scope of streaming."
+3360380,about,cue,gr_provider,Please download and use the assets.,※The terms of use for image assets are outlined in the in-game document ‘Streaming Guidelines’.
+3360380,about,cue,gr_report,"If you use a voice changer for streaming, we recommend testing the ‘Play’ button once before going live.",■Bug Reports and Inquiries
+3360380,about,cue,gr_report,■Bug Reports and Inquiries,Bug reports will be addressed and posted sequentially on the [Bulletin Board] found on the store page or in the library.
+3405690,about,cue,gr_optout,About This Game,"This game includes optional in-game purchases of virtual currency that can be used to acquire virtual in-game items, including a random selection of virtual in-game items."
+3808550,snippet,ai_term,,,A singleplayer/multiplayer RPG reminiscent of TTRPGs mixed with MUD games but with content generated by an AI Game Master.
+3808550,about,cue;ai_term,gr_constrained,"Here, the story is not pre-written.","It's generated live, guided either by a human Game Master using our  toolset, or by an advanced generative AI that acts as your Game Master."
+3808550,about,ai_term,,"It's generated live, guided either by a human Game Master using our  toolset, or by an advanced generative AI that acts as your Game Master.",There is daily free AI Usage for everyone!
+3808550,about,ai_term,,Have friends but nobody wants to be the one to run the game?,Just want to see what AI can do?
+3808550,about,ai_term,,A True RPG Engine,Skaldsong is not another hastily thrown together AI chatbot.
+3808550,about,ai_term,,"It is a complete game engine with robust, underlying systems that feel like a modern evolution of classic MUDs (Multi-User Dungeons).","The AI's role is not to solely run the game, but to create content for it."
+3808550,about,cue,gr_constrained,"The AI's role is not to solely run the game, but to create content for it.","You are not limited to pure adventure games, using custom Game Rules, you can play all sorts of games- Slice of Life school romance?"
+3808550,about,ai_term,,Interstellar Empire management?,"With the right ruleset, the AI can smoothly run about any game you can define."
+3808550,about,ai_term,,"With the right ruleset, the AI can smoothly run about any game you can define.","When the AI responds to your actions, its narrative is embedded with special"
+3808550,about,ai_term,,Our custom parser reads these tags and translates them into mechanical changes within the game state.,"If the AI describes you finding a sword, a [Create_Item] tag mechanically adds that sword to your inventory."
+3808550,about,cue,gr_human,"While the interaction is text-based, the world is fully visualized.","You are not just reading text; you are interacting with graphical character sheets, inventory windows, a world map, quest logs, and more."
+3808550,about,ai_term,,"You are not just reading text; you are interacting with graphical character sheets, inventory windows, a world map, quest logs, and more.","I'm tired of hastily put together AI games that look like, frankly, dogwater."
+3808550,about,ai_term,,"I'm tired of hastily put together AI games that look like, frankly, dogwater.","Skaldsong is a demonstration of how you can truly use AI not to replace the game, but enhance it."
+3808550,about,ai_term,,Skaldsong is free to download and play.,"The core software, including the multiplayer framework and all non-AI GM tools, is available to everyone at no cost, meaning if you join a friend or public lobby, you will have to pay nothing to play with them."
+3808550,about,ai_term,,"The core software, including the multiplayer framework and all non-AI GM tools, is available to everyone at no cost, meaning if you join a friend or public lobby, you will have to pay nothing to play with them.","Additionally, every player gets 40 free actions/generations using our subscription model for free per day."
+3808550,about,ai_term,,"Additionally, every player gets 40 free actions/generations using our subscription model for free per day.","If you want unlimited usage of the subscription model, there is a $15 subscription for 30 days of unlimited usage available for purchase in-game or a higher tier $25 subscription which includes image generation."
+3808550,about,ai_term,,"If you want unlimited usage of the subscription model, there is a $15 subscription for 30 days of unlimited usage available for purchase in-game or a higher tier $25 subscription which includes image generation.","But to use the premium models and image generation, these all use credits which can be purchased through Steam."
+3808550,about,ai_term,,Credits are spent as used.,"The cost of AI features (outside Unlimited usage) depends on factors such as the size of your game world, how many characters are in your game, and various other settings you can tweak to meet your cost threshold."
+3808550,about,ai_term,,Tips on managing cost and other helpful information can be found on the Skaldsong Discord.,The AI as a Creative Partner
+3808550,about,ai_term,,The AI as a Creative Partner,"When you play with the AI GM, you just tell it what genre, setting, and type of game you'd like to play."
+3808550,about,cue;ai_term,gr_constrained,"When you play with the AI GM, you just tell it what genre, setting, and type of game you'd like to play.","Guided by those, the AI's responsibilities include:"
+3808550,about,ai_term,,"Creating new characters, items, quests, and locations as the story demands them.",AI-Powered Art:
+3808550,about,cue,gr_constrained,"If your computer can handle it, you can use our built-in TTS system to generate voice overs for your game using custom voices.",You can use one of the preset ones or add your own!
+3808550,about,ai_term,,"The host controls the world, and clients connect to share in the adventure.","Our system automatically synchronizes all necessary game assets, including any AI-generated images or custom music tracks the host chooses to use."
+3808550,about,ai_term,,"Our system automatically synchronizes all necessary game assets, including any AI-generated images or custom music tracks the host chooses to use.","When using the AI, only the lobby host needs to have credits."
+3808550,about,ai_term,,"When using the AI, only the lobby host needs to have credits.","If you're playing as a player, there is absolutely no cost associated with AI usage."
+3808550,about,cue;ai_term,gr_optout,A Powerful Tool for Human Game Masters,The AI is completely optional.
+3808550,about,ai_term,,Skaldsong can be used as a powerful platform for running your own TTRPG campaigns with friends.,"As a human GM, you can ignore the AI entirely and use the game's systems to:"
+3808550,about,cue,gr_human,Manage a  world map with custom locations.,Create and assign quests through the built-in quest log.
+3808550,mature,cue,gr_filter,"Players guide the actions of the characters, meaning characters may use drugs or alcohol based on player action or setting.",Players may also encounter non-explicit sexual content such as sexual langage or innuendos.
+3808550,mature,cue;ai_term,gr_filter,Players may also encounter non-explicit sexual content such as sexual langage or innuendos.,"Google's Gemini AI prevents explicit sexual content, but upon player bruteforcing actions may lead to 'Fade to black'-esque text depictions."
+3808550,mature,cue,gr_filter,"Google's Gemini AI prevents explicit sexual content, but upon player bruteforcing actions may lead to 'Fade to black'-esque text depictions.","The Image generation does not produce any explicit sexual content and prevents most violent/gory content, usually amounting to not more than depictions of blood."
+3841830,about,ai_term,,"Perfect your reflexes with the new Bullet Training mode: configure the time limit exactly, and learn to keep your nerves under pressure – ideal for blitz and bullet players on online platforms.",AI that understands chess – and speaks
+3841830,about,ai_term,,AI that understands chess – and speaks,"Experience a new dimension of interaction with AI chat and voice output: polished commentary, amusing analyses and subtle hints – spoken in natural language if desired."
+3841830,about,cue,gr_report,"Capablanca, Tal, Kasparov Master as virtual opponents",Opponent simulation via ChessBase 18 Style Report
+3841830,about,ai_term,,New playing styles: ‘Romantic’ and ‘Hypermodern’,"Bullet training, AI chat, new 3D graphics, game controller support, new achievements"
+3646320,snippet,ai_term,,,"Create your own AI companion — design their voice, look, and personality."
+3646320,snippet,ai_term,,"Create your own AI companion — design their voice, look, and personality.",Persona Shell is a customizable desktop assistant game that brings an emotional AI to your daily life.
+3646320,about,ai_term,,"""I can wear the outfit you made for me…?""",Supports VRM model import.
+3646320,about,cue,gr_constrained,Multiple,preset personalities
+3646320,about,ai_term,,Full support for,VRM models
+3646320,about,ai_term,,"(e.g., screenshots, daily photos)",AI-generated adventure stories
+3902690,snippet,ai_term,,"Interrogate, investigate, and judge in an authoritarian regime.","In Civil Purgatory, real-time AI-generated role-playing dialogue adds depth and dynamism to this narrative simulation full of moral dilemmas, where you decide who walks free… and who doesn’t."
+3902690,about,ai_term,,About This Game,"This game is an AI-driven experience, it is evolving and may not represent the final product."
+3902690,about,ai_term,,"This game is an AI-driven experience, it is evolving and may not represent the final product.","The game focuses on running advanced AI fully on your PC, without cloud servers."
+3902690,about,ai_term,,This requires significant GPU power.,"To keep the experience smooth, the graphics are deliberately minimal (2D pixel art) so that your GPU can dedicate resources to the AI."
+3902690,about,ai_term,,"To keep the experience smooth, the graphics are deliberately minimal (2D pixel art) so that your GPU can dedicate resources to the AI.","Even on high-end GPUs (like RTX 4080/5080), realistic graphics would make the AI unbearably slow."
+3902690,about,cue,gr_report,",",intelligence reports
+3902690,about,ai_term,,— from personal belongings to weapons and valuables.,Real-Time AI-Generated Dialogue
+3902690,about,ai_term,,Every interrogation is powered by,artificial intelligence
+3902690,about,cue,gr_report,"Civilians respond differently depending on your tone, pressure, and strategy — offering a dynamic and immersive experience every time.","Search, Analyze, and Report"
+3902690,about,cue,gr_report,But every action has ethical weight — and you are being evaluated constantly.,Your Report Matters
+3902690,about,ai_term,,Your logic and clarity will be reviewed by an,AI system
+3902690,about,ai_term,,Features,AI-generated conversations with real-time responses
+3902690,about,cue,gr_report,AI-generated conversations with real-time responses,"Photographs, ID documents, and intelligence reports"
+3902690,about,cue,gr_filter,"Photographs, ID documents, and intelligence reports","Personal, valuable, and illegal items to analyze"
+3902690,about,cue;ai_term,gr_report,Appraisal and item selling system between shifts,Written reports reviewed and scored by AI
+3634800,about,ai_term,,Please do not use language that is not allowed by law towards her,"Currently, switching languages may cause a delay as the corresponding language model needs to be loaded"
+3622760,snippet,ai_term,,,"AI Spellcraft is a battle game where you create original spells using kanji, and an AI evaluates their damage and effects."
+3622760,about,ai_term,,About This Game,■Create Spells and Battle in an AI × Kanji Duel
+3622760,about,ai_term,,This game challenges you to create original four-kanji spells using randomly distributed kanji characters.,"The AI will analyze and describe the damage, element, and effect of your spell."
+3622760,about,cue,gr_local,■Battle with friends and families,A local versus mode where two players compete for kanji characters to create their own original spells and fight.
+3622760,about,ai_term,,"■Chuunibyou-Style Spell Descriptions, Too...?","Yes, the AI might even describe your spell in dramatic, over-the-top style—straight out of a teenage fantasy."
+3622760,about,ai_term,,■ Notes,"This game uses the conversational AI ""ChatGPT"" provided by OpenAI."
+3714550,about,cue,gr_filter,Shift your perspective to clear the fog of uncertainty.,"When all paths seem blocked, change your view—"
+3823840,snippet,ai_term,,,World's first AI agentic game.
+3823840,snippet,ai_term,,World's first AI agentic game.,Play as the first AI AGENT and also AGENT HERO.
+3823840,about,ai_term,,epic journey,of a humble kebab seller who becomes an AI agent after losing everything in the desert.
+3823840,about,ai_term,,"From flipping kebabs on the streets to partying in luxury parties, you’ll rise through the ranks and transform into an",elite AI Agent
+3823840,about,ai_term,,"After losing everything, you put on a mysterious pair of glasses and suddenly find yourself at a luxury party — with nothing left to your name.","From the deserts to Cyprus, you’ll meet a blind man and begin an epic, super journey into the world of artificial intelligence espionage."
+3823840,mature,cue,gr_filter,"The game contains limited nudity, alcohol and erotic dances.",Some players may find these elements culturally sensitive or inappropriate.
+3126880,early_access,cue,gr_report,"By joining us in Early Access, you'll have a direct line to the development team.",Your feedback will play a crucial role in helping us understand what resonates with players and will inform our decisions as we continue to build upon the current state of Beneath The Six.”
+3126880,early_access,cue,gr_report,“It is vitally important to us that the community helps guide the rest of our development.,We plan to be open with what features we want to introduce and what changes we wish to make so that the community can give their feedback as early in the process as possible.
+3126880,early_access,cue,gr_report,We plan to be open with what features we want to introduce and what changes we wish to make so that the community can give their feedback as early in the process as possible.,"We have a discord server where players will be able to give us their feedback, but we will also be using the steam discussion forums.”"
+3426240,about,ai_term,,About This Game,"Neuroarena is a free-to-play online card game where players engage in thrilling PvP duels and explore a universe of unique, AI-generated cards."
+3426240,about,ai_term,,GENERATE UNIQUE CARDS,"Harness the power of AI-generated cards, ensuring every card is completely unique."
+3496510,snippet,ai_term,,,"Share your home with an AI-powered roommate who learns, grows, and makes every day unique."
+3496510,about,ai_term,,About This Game,AI Roommate: Life with an Artificial Companion
+3496510,about,ai_term,,AI Roommate: Life with an Artificial Companion,AI Roommate
+3496510,about,cue;ai_term,gr_local,is a game where you share your home with a,local AI-powered
+3496510,about,ai_term,,more intimate verbal connection,as the AI evolves.
+3496510,about,ai_term,,: Your home isn’t just a backdrop—it’s a space you can explore and interact with.,"Sit down to relax, move through different rooms, and talk to your AI roommate as they respond to your presence and conversations."
+3496510,about,ai_term,,", where NPCs naturally interact with each other and react to your presence.","Whether you're looking for companionship, casual fun, or something more personal, your AI roommate will evolve with you."
+3496510,about,ai_term,,"Live, Explore, and Socialize",Dynamic AI Interactions
+3496510,about,ai_term,,SteamOS compatibility,AI Roommate has been tested on SteamOS.
+3496510,early_access,ai_term,,Why Early Access?,“AI Roommate: Life with an Artificial Companion is an evolving game.
+3496510,early_access,cue,gr_report,“AI Roommate: Life with an Artificial Companion is an evolving game.,We want players to experience the world early and help shape its development with their feedback.
+3496510,early_access,cue;ai_term,gr_local,We want players to experience the world early and help shape its development with their feedback.,"The PC version introduces a local AI that we plan to improve over time, and Early Access allows us to refine the experience, expand mechanics, and adjust NPC behavior based on community input.”"
+3496510,early_access,cue;ai_term,gr_report,Approximately how long will this game be in Early Access?,"“We plan to keep AI Roommate: Life with an Artificial Companion in Early Access for at least a year, though the exact duration will depend on development progress and player feedback."
+3496510,early_access,ai_term,,"“We plan to keep AI Roommate: Life with an Artificial Companion in Early Access for at least a year, though the exact duration will depend on development progress and player feedback.","We plan to continue improving the AI, adding new interactions, and optimizing the experience to ensure a polished full release.”"
+3496510,early_access,ai_term,,How is the full version planned to differ from the Early Access version?,“We plan to expand AI Roommate: Life with an Artificial Companion with:
+3496510,early_access,ai_term,,“We plan to expand AI Roommate: Life with an Artificial Companion with:,"-A more advanced and natural AI, with improved responses and capabilities."
+3496510,early_access,ai_term,,What is the current state of the Early Access version?,“The current version offers a fully playable experience where you can interact with your AI roommate and explore the neighborhood.
+3496510,early_access,ai_term,,“The current version offers a fully playable experience where you can interact with your AI roommate and explore the neighborhood.,"The AI is still in its early stages, and while it works for casual conversations and basic interactions, we plan to enhance its depth and responsiveness significantly over time.”"
+3496510,early_access,cue;ai_term,gr_report,How are you planning on involving the Community in your development process?,“Community feedback is essential to making AI Roommate the best experience possible.
+3496510,early_access,cue,gr_report,“Community feedback is essential to making AI Roommate the best experience possible.,"Players can share their thoughts, report issues, and suggest improvements through our Discord server and YouTube channel, where we will also post updates and development insights.”"
+3642750,about,cue,gr_constrained,is a unique massively multiplayer online game (MMO) where virtual assets hold real-world value and players can participate in a thriving virtual sandbox economy.,The platform has been live since 2003 and continues to push the boundaries of virtual economy design.
+2613480,early_access,cue,gr_report,"We're driven to design a platform that's not only user-friendly but also brimming with features, ensuring that gamers worldwide can experience the thrill and camaraderie of a LAN party, regardless of their geographical location.","To truly achieve this, ongoing player feedback is pivotal."
+2613480,early_access,cue,gr_local,This means constantly innovating and introducing new features that elevate the user experience.,"Some of the features that we plan to introduce in the future include a cloud browser, remote LAN multiplayer, and remote local multiplayer."
+2613480,early_access,cue,gr_report,"Some of the features that we plan to introduce in the future include a cloud browser, remote LAN multiplayer, and remote local multiplayer.",The feedback and insights of our community will directly influence the enhancements and features we introduce.”
+2613480,early_access,cue,gr_report,We genuinely believe that our community holds the keys to making LAN Party truly outstanding.,"To facilitate this, we'll actively engage with feedback and suggestions on our social media pages and will be particularly attentive to discussions on our Community Hub."
+3677620,about,ai_term,,"Tala isn't a real person, but using these new technologies, we can tell a new kind of story through the structure of a multiplayer game.","Plus, nothing in DuoQ is AI Generated."
+3677620,about,ai_term,,"Plus, nothing in DuoQ is AI Generated.","We use  machine learning to advance the conversation, but we don't use AI to generate voice lines, art, or the story itself."
+3059520,about,ai_term,,Accurate LIDAR Circuits:,"Experience 5 rebuilt tracks, including fan-favorite Suzuka with laser-scanned models of the real venues"
+3059520,about,ai_term,,New Online Co-op Events:,"Brand new multiplayer mode in F1® World, where you and your friends race as a squad against AI drivers"
+3059520,about,cue,gr_optout,"New cinematics, updated podium scenes, and Reverse Tracks on select circuits",This game includes optional in-game purchases of virtual currency that can be used to acquire virtual in-game items.
+3059520,about,ai_term,,†MADRING circuit can only be driven with 2026 cars.,††Some final car models will release in a post-launch update; internet connection required.
+3189430,snippet,ai_term,,,Pick Me Pick Me throws you into the battlefield of love where you face off against a friend to charm quirky AI characters powered by a Large Language Model.
+3189430,about,ai_term,,"- Realsleepy, Discord member",Compete against friends in chaotic AI speed dating!
+3189430,about,ai_term,,Compete directly against your friends in fast-paced speed dating battles!,"Use your wit and strategic sabotage cards to out-charm your rival and win the affection of bizarre, unforgettable AI characters."
+3189430,about,ai_term,,Want to practice your game or just enjoy some digital romance?,Chat one-on-one with over 20 unique AI characters-from smooth talkers and adorable weirdos to fantasy creatures with very human problems.
+3189430,about,ai_term,,Design your own bizarre dating prospects!,"Upload custom models, set personalities, and challenge friends with your creations."
+3189430,about,ai_term,,🎮 Key Features,"Dynamic AI conversations: Experience unique, real-time interactions every playthrough powered by a Large language model"
+3189430,about,ai_term,,"Argue in the language you’re most comfortable with and challenge your opponent, no matter what they speak!","""Pick Me Pick Me"" is a perfect party game for players who enjoy competitive, yet lighthearted, gaming experiences with a unique AI twist."
+3189430,about,ai_term,,Start playing for free - everyone gets trial rounds to experience the chaos!,"Full access requires purchasing in-game currency (which covers AI token costs) to unlock unlimited dating battles, custom characters, deeper relationship building, and premium storylines."
+3189430,about,ai_term,,"delivers an unforgettable mix of chaos, charm, and comedy.","With endlessly unique AI interactions, custom content, and competitive flair, it’s the ultimate showdown of heart and wit."
+3189430,early_access,cue;ai_term,gr_report,.,"Due to the inherent uncertainty of AI, we believe that Early Access allows us to better engage with players, collect feedback, and continuously improve and optimize the game to deliver a better experience.”"
+3189430,early_access,ai_term,,"is planned to offer a more diverse experience, which may include:",Introducing more types of AI characters with rich and interesting backstories to discover.
+3189430,early_access,ai_term,,Pick Me Pick Me,"provides a complete dating battle mode with 20 AI characters available for dates, ensuring a rich and diverse interactive experience."
+3189430,early_access,ai_term,,"“Whether in Early Access or in the final release, the game will include enough initial tokens to allow for about 30-40 hours of gameplay.","However, due to the uncertain cost of AI services, we plan to gradually raise the price as we ship new content and features.”"
+3189430,early_access,cue,gr_human;gr_report,How are you planning on involving the Community in your development process?,“We will continuously monitor player community feedback and actively adjust and improve the game based on suggestions.
+2895510,snippet,ai_term,,,"""_turing"" is a new sci-fi adventure game that allows the player to chat with the heroine during the story and teach her feelings to the AI heroine, thereby changing her personality and the outcome of the story."
+2895510,about,ai_term,,About This Game,"""_turing"" is ""a new sci-fi adventure game that allows you to chat during the story and teach emotions to the heroine, an AI, to change her personality and the outcome of the story."
+2895510,about,ai_term,,The game's three selling points are as follows,Real-time conversation with the AI character
+2895510,about,ai_term,,Real-time conversation with the AI character,"In this game, players send messages to the heroine AI ""Iris"" via chat, and the game's language model outputs responses to the messages, allowing players to enjoy free conversations with the in-game characters."
+2895510,about,ai_term,,The storyline branches according to the content of the conversation.,The AI analyzes the conversation between the player and the heroine in the game and changes the storyline from the middle of the game onward according to the content of the conversation.
+2895510,about,cue,gr_report,The AI analyzes the conversation between the player and the heroine in the game and changes the storyline from the middle of the game onward according to the content of the conversation.,"Unlike existing adventure games, you can enjoy the thrill of having all your inputs become flags."
+3558190,about,ai_term,,"Over 23,000 hand-drawn tiles, 5,000+ voiced lines by 96 actors, and a 37-track soundtrack.","No AI-generated art, music, or voices."
+3558190,about,cue,gr_constrained,It may not be for you if you:,"Want real-time action or a short, guided experience."
+3558190,about,cue,gr_optout,Start on an easier difficulty in a mode where death is not the end.,"In-game hints, item and monster details, and the optional"
+3558190,about,ai_term,,) covers the changes.,Does GnollHack use generative AI?
+3558190,about,cue;ai_term,gr_optout,"All graphics, animations, music, sound effects, and voice acting are made by people.","The only AI feature is the Gnoll Overseer, an optional game advisor."
+3309950,about,cue,gr_local;gr_optout,An internet connection is required.,"Optional subscriptions add features such as construction queues, information overlays, scenario access and private hosting, depending on the plan."
+2840210,about,ai_term,,About This Game,"Neural network controls the ghost’s behavior and tactics, which is changing based on the actions and words players said to the ghost."
+3593190,about,ai_term,,But there is a twist.,"The map that you play on is generated from text-to-AI, so you play what you type!"
+3593190,about,cue;ai_term,gr_constrained,Dev Note,": This was a solo project, and offers gameplay the scope of which is restricted by the capabilities of AI."
+2456740,about,cue;ai_term,gr_local,Experience the joy of unbridled creativity!,inZOI uses on-device generative AI technology to provide creators with additional customization options for an intuitive creative experience.
+2456740,early_access,cue,gr_constrained;gr_report,"“As this is our first-ever life simulation game, we wanted to create an experience that meets the expectations of players who have enjoyed this genre for many years.","With very few direct templates for this type of game in our industry, we believe launching inZOI in Early Access will allow players to experience the game early and provide valuable feedback to help us guide our development."
+2456740,early_access,cue,gr_report,“We plan to improve the game throughout Early Access for at least a year.,"However, as we communicate with players and gather feedback on the game's direction, the roadmap may change.”"
+2456740,early_access,cue,gr_report,How is the full version planned to differ from the Early Access version?,"“As we rapidly implement player feedback, the Early Access build may be unstable and undergo significant changes."
+2456740,early_access,cue,gr_report,“We plan to consistently communicate with our players through Discord and other social media platforms.,"Player feedback will play a central role in shaping inZOI's development, as we actively listen to suggestions and integrate them into the game."
+3361180,snippet,ai_term,,"Your task is to explore the city, find clues, talk to the residents of the city and find the killer!",P.S: Every city resident is an AI...
+3361180,about,ai_term,,"Your task is to explore the town, find evidence, talk to the residents, and uncover the murderer!","The most exciting feature is that every resident in this town is powered by artificial intelligence, and you can talk to them using your microphone!"
+3554810,snippet,cue;ai_term,gr_local,,"Personalized AI-powered storytelling, built for you - right on your machine   Runs entirely on your machine with no online servers and no data collection, for the ultimate privacy."
+3554810,about,ai_term,,🛠️ Before You Dive In: Check Your Specs,Neverending AI Storybook
+3554810,about,ai_term,,Neverending AI Storybook,runs all its AI magic
+3554810,about,ai_term,,fast SSD is also helpful but not required,—this thing moves big models around (2.5GB+) and needs fast storage to keep up.
+3554810,about,ai_term,,Every adventure is unique.,Every image is AI-crafted.
+3554810,about,cue;ai_term,gr_local,No subscriptions.,"Just endless storytelling, powered by local AI that responds to your imagination."
+3554810,about,cue;ai_term,gr_local,Features:,"• 🧠 Fully local, private AI-generated stories - no internet required"
+3554810,about,cue;ai_term,gr_local,"• 🧠 Fully local, private AI-generated stories - no internet required","• ☁️ Cloud based model options (not private, requires your own API keys) for users with slower hardware"
+3554810,about,ai_term,,"• ☁️ Cloud based model options (not private, requires your own API keys) for users with slower hardware","• 🖼️ AI-generated art for every scene, with customizable visual style"
+3554810,about,cue,gr_local,• ⚖️ Your choices matter: pick from actions or type your own,"• 🎮 No subscriptions required for local generation, no limits - just unlimited adventures"
+3554810,about,cue,gr_local,"• 🎮 No subscriptions required for local generation, no limits - just unlimited adventures",• 🔒 100% private when generated locally - nothing leaves your machine
+3554810,about,ai_term,,• 🔒 100% private when generated locally - nothing leaves your machine,• 🪛 Load your own AI Text models - supports GGUF files
+3554810,about,ai_term,,Neverending AI Storybook,"is your personal AI-powered storyteller, generating unique tales, stunning illustrations, and interactive choices based on your input."
+3554810,about,cue,gr_local,No two adventures are ever the same!,"Privacy-first storytelling—no limits, no internet, just adventure."
+3554810,about,cue;ai_term,gr_local,"Privacy-first storytelling—no limits, no internet, just adventure.","Shape your own adventure with a local AI that crafts fully customized stories, complete with AI-generated images and dynamic choices -"
+3554810,about,cue;ai_term,gr_local;gr_optout,"Shape your own adventure with a local AI that crafts fully customized stories, complete with AI-generated images and dynamic choices -",100% private with no internet required unless using the optional cloud model support
+3554810,about,ai_term,,.,"AI-powered storytelling, built for you."
+3554810,about,ai_term,,Neverending AI Storybook,", the AI reacts to your ideas, crafting unique tales with stunning illustrations at every turn."
+3554810,about,ai_term,,What will your next adventure be?,"• With every decision you make, the AI weaves a deeper narrative, ensuring no two journeys are alike, even with the same premise."
+3554810,about,ai_term,,Infinite Storytelling Possibilities,• Every session is a brand-new adventure - AI dynamically generates unique stories based on your input.
+3554810,about,cue,gr_constrained,• Every session is a brand-new adventure - AI dynamically generates unique stories based on your input.,• Choose from preset story genres or create something entirely original.
+3554810,about,ai_term,,Pick from three suggested actions or type your own to shape the narrative however you like.,AI-Generated Illustrations
+3554810,about,ai_term,,AI-Generated Illustrations,"• Watch as the game paints a scene for every page, using AI-generated imagery to match the unfolding story."
+3554810,about,ai_term,,"• Watch as the game paints a scene for every page, using AI-generated imagery to match the unfolding story.","• From medieval castles to dystopian wastelands, each setting is brought to life with unique AI-crafted visuals."
+3554810,about,cue,gr_local,"• From medieval castles to dystopian wastelands, each setting is brought to life with unique AI-crafted visuals.",Offline & Private Options – Your Stories Stay Yours
+3554810,about,cue,gr_local,• Ability to run,entirely locally
+3554810,about,cue,gr_local,• Your adventures are,100% private when generating locally
+3554810,about,ai_term,,"• No subscriptions required, no microtransactions - just unlimited storytelling at your fingertips.",Pick the AI model that fits your system
+3554810,about,ai_term,,high-end desktop,", you can select the AI model that balances speed, creativity, and accuracy."
+3554810,about,cue,gr_optout,", you can select the AI model that balances speed, creativity, and accuracy.",You can even disable image generation for maximum speed.
+3554810,about,ai_term,,"8GB VRAM (RTX 2060, RX 6600 or better)",– Runs smaller models for quick storytelling.
+3554810,about,ai_term,,"24GB+ VRAM (RTX 4090, 3090, or equivalent)",– For the most expressive AI-generated stories.
+3554810,about,ai_term,,right on your machine.,Just pick a model that fits your setup and start generating stories!
+3554810,mature,cue;ai_term,gr_filter,The developers describe the content like this:,"Neverending AI Storybook generates dynamic, interactive stories based on player input, with strict guardrails to ensure content remains appropriate."
+3554810,mature,cue;ai_term,gr_filter,"Neverending AI Storybook generates dynamic, interactive stories based on player input, with strict guardrails to ensure content remains appropriate.",The AI does not generate sexually explicit material or extreme content.
+3554810,mature,cue;ai_term,gr_filter,The AI does not generate sexually explicit material or extreme content.,"If inappropriate input is detected, the AI will either redirect the story to a safe narrative or refuse to generate content altogether."
+3489080,snippet,ai_term,,,An AI-directed town where anything can happen.
+3489080,about,ai_term,,About This Game,Life of an NPC is a top-down AI-directed town simulator.
+3489080,about,cue,gr_constrained,Each NPC formulates their own goals and decides how to respond to other NPCs or in-game events.,They can also use items on each other or interact with objects within the world.
+3489080,about,ai_term,,": This game has reached a state where it's close enough to the final vision that it's supposed to be fun, but has approximately 0 daily active users.","It is therefore in maintenance mode: It will get critical fixes and model updates, but no guaranteed feature updates."
+3489080,about,ai_term,,"It is therefore in maintenance mode: It will get critical fixes and model updates, but no guaranteed feature updates.","This does not guarantee a lack of feature updates; for example, in January 2026, AI Roguelite 2D was in the same state but got a huge overhaul due to technological improvements."
+3489080,early_access,ai_term,,Why Early Access?,“AI is a rapidly changing technology.
+3489080,early_access,cue,gr_report,“AI is a rapidly changing technology.,We aim to iteratively improve this game via experimentation and user feedback to gradually make it closer to our vision of a town simulator which never gets boring.
+3489080,early_access,ai_term,,Approximately how long will this game be in Early Access?,“1-2 years (unless AI takes over the world or obsoletes all games)”
+3489080,early_access,ai_term,,“Planned features (non-exhaustive):,Improved or AI-generated animation
+3489080,early_access,ai_term,,Notice:,"This game uses LLMs to generate future actions/decisions and is subject to well-known pitfalls of AI such as hallucinations and issues with coherence, which will be alleviated but not eliminated over time."
+3489080,early_access,ai_term,,“The price of the full release version will most likely be greater than or equal to the early access version.,The final pricing will also depend on the assessed costs of calling the cloud services which provide AI inference.
+3489080,early_access,cue,gr_report,How are you planning on involving the Community in your development process?,“Please send feedback via the Steam discussions page or the Discord.”
+3156240,snippet,ai_term,,,Millennium Whisper is a next-gen dating-sim set in 1999 at the fictional Escafeld College with an AI trained by real actors portraying the cast!
+3156240,about,cue;ai_term,gr_local,ATTENTION:,"Millennium Whisper's AI system runs locally, therefore your computer requires a"
+3156240,about,ai_term,,Hell hath no fury like an Escafeld Student scorned.,Millennium Whisper is a one of a kind experience using ethical AI.
+3156240,about,ai_term,,Millennium Whisper is a one of a kind experience using ethical AI.,"Unlike standard dry AI experiences trained on large sets of data from the internet, the cast in Millennium Whisper is created by utilizing AI exclusively trained by real actors, and runs entirely on your own hardware!"
+3156240,about,ai_term,,"The possibilities are endless, and the narrative you play out will be entirely unique to you.",Each of our (13) characters has their own unique personality and behaviours powered by their own separately trained model.
+3156240,about,ai_term,,🎀,- Ground breaking AI Conversation System:
+3156240,about,ai_term,,- Ground breaking AI Conversation System:,A new ethical approach to AI in video games.
+3156240,about,ai_term,,Converse with the cast like never before.,With an AI trained by real actors portraying the cast!
+3156240,about,cue,gr_local,🎀,- Completely Offline:
+3156240,about,cue;ai_term,gr_local,- Completely Offline:,"Unlike other AI games that require you to be online, Millennium Whisper is entirely offline!"
+3156240,early_access,ai_term,,Why Early Access?,“The development of our models is an ongoing process.
+3156240,early_access,cue,gr_report,We have lots of plans for improving them to make them more engaging to talk to and more mechanically complex.,We want to start building an audience of early adopters who can provide feedback and help shape the direction of the characters and the game as a whole.
+3156240,early_access,ai_term,,We want to start building an audience of early adopters who can provide feedback and help shape the direction of the characters and the game as a whole.,Through this we hope to also make the models more robust before we begin implementing much larger augmentations to the experience that are part of our vision for a 1.0 release.”
+3156240,early_access,ai_term,,"Mini-games, gifts, economy and part-time jobs",General AI improvements and difficulty balancing
+3156240,early_access,cue,gr_report,"""Rizz-em-up"" hard mode",Improvements to the Tutor's mechanics and to end-of-year report cards
+3156240,early_access,ai_term,,Players can speak to the tutor for information on other character's perspectives and what rumours are being spread (although his information is not always as accurate as we'd like).,"The AI models are uniquely engaging to interact with but can sometimes be quite forgetful, tend towards apology when challenged and are not always well equipped to respond appropriately to situations that differ wildly from their training data.”"
+3156240,early_access,ai_term,,Will the game be priced differently during and after Early Access?,“We plan to gradually raise the price as the quality of the models improve and we ship new content.”
+3156240,early_access,cue;ai_term,gr_human,“We have an option for players to send their playdata to us.,This is invaluable as it can help us monitor where the models are doing well and where they could be improved.
+2871370,about,cue;ai_term,gr_constrained;gr_local,"Converse with the witch’s ghost using voice or text in four languages (English, Chinese, Spanish, and Russian).",The locally-run LLM not only responds with a real voice but also can influence in-game events—from sudden lighting changes to triggering unexpected jump scares or initiating a chase.
+2871370,about,cue,gr_constrained,Discover a world where fear becomes tangible and your decisions are the key to survival.,"World Horror Story invites you to the brink between reality and nightmare—a realm where the boundaries between life and death are blurred, and every step could be your last."
+2871370,about,ai_term,,"World Horror Story invites you to the brink between reality and nightmare—a realm where the boundaries between life and death are blurred, and every step could be your last.",Immerse yourself in World Horror Story and experience how innovative AI integration takes horror games to a whole new level!
+3391170,snippet,ai_term,,,Explore a platform with thousands of AI-generated 3D characters.
+3391170,about,ai_term,,"What kind of ""game"" is this?","To be honest, we can't really define it precisely, especially when most of the experience is built on ""AI-generated content."" All we can say is that this is a product featuring tens of thousands of 3D AI-driven characters, where players enjoy complete freedom to create stories and scripts."
+3391170,about,ai_term,,"To be honest, we can't really define it precisely, especially when most of the experience is built on ""AI-generated content."" All we can say is that this is a product featuring tens of thousands of 3D AI-driven characters, where players enjoy complete freedom to create stories and scripts.",It's also one that will continuously evolve with new and entertaining AI-driven gameplay.
+3391170,about,ai_term,,Free Chat:,"Engage with the AI companion using your text, or go ahead and use voice chat, even send images or gifts to strengthen your connection and deepen your relationship over time."
+3391170,about,ai_term,,"Engage with the AI companion using your text, or go ahead and use voice chat, even send images or gifts to strengthen your connection and deepen your relationship over time.",Discover Your Ideal AI Companion:
+3391170,about,ai_term,,Discover Your Ideal AI Companion:,Find your perfect match among tens of thousands of unique AI entities.
+3391170,about,ai_term,,Find your perfect match among tens of thousands of unique AI entities.,Create Your Own AI Companion:
+3391170,about,ai_term,,Create Your Own AI Companion:,"Upload content, customize appearances, design from scratch, or use any DIY method you can think of to bring your unique AI to life."
+3391170,about,ai_term,,"Upload content, customize appearances, design from scratch, or use any DIY method you can think of to bring your unique AI to life.",AI-Generated Scripts:
+3391170,early_access,ai_term,,Why Early Access?,“NYXverse is a 3D interactive content platform based on AI big model capabilities.
+3391170,early_access,ai_term,,“NYXverse is a 3D interactive content platform based on AI big model capabilities.,"At least for now, it is still a novel and unique AI entertainment product."
+3391170,early_access,ai_term,,"Therefore, we believe that improving its playability with early users in terms of basic gameplay experience is a feasible path.","We also hope to work with all users who have ideas and enthusiasm for ""AI+3D interaction"" to create exciting and novel experiences."
+3391170,early_access,ai_term,,"We also hope to work with all users who have ideas and enthusiasm for ""AI+3D interaction"" to create exciting and novel experiences.","Do you have any ideas about ""creation"", ""human creation"", ""AI stories"", and ""virtual life""?"
+3391170,early_access,cue,gr_report,"“To continuously enhance the entertainment value and diversity, we plan to optimize and experiment with various gameplay designs through an Early Access period of at least six months.","During the Early Access phase, we intend to update content based on the current planning and user feedback."
+3391170,early_access,ai_term,,We anticipate that the full version will offer:,"AI-generated scenes along with DIY scene functionality,AI-generated character models and a character customization feature,Multiple intelligent entities within the same scene,A guest feature for users to visit across different scenes,AI-generated 3D short drama functionality,"
+3391170,early_access,ai_term,,"AI-generated scenes along with DIY scene functionality,AI-generated character models and a character customization feature,Multiple intelligent entities within the same scene,A guest feature for users to visit across different scenes,AI-generated 3D short drama functionality,","A suite of AI-native gameplay features, including an AI prediction master, AI-generated 3D props, inter-dimensional video calls between intelligent entities, and a baby-making system."
+3391170,early_access,cue,gr_report,"A suite of AI-native gameplay features, including an AI prediction master, AI-generated 3D props, inter-dimensional video calls between intelligent entities, and a baby-making system.",Please note that these features are what we aim to provide and are subject to changes based on development progress and user feedback.”
+3391170,early_access,ai_term,,What is the current state of the Early Access version?,"“The current version of NYXverse already provides a basic experience framework, including: Zhiling Discovery and Sharing Platform, 3D Model Upload, Face Pinching System, Character Customization System, AI Script Gameplay, Intimacy System, Gift System, Touch and Double Action, Permanent Memory Save, Image Chat System, Personality Development System, etc."
+3391170,early_access,cue,gr_report,How are you planning on involving the Community in your development process?,"“We will be collecting everyone's feedback across multiple platforms, including Steam community discussion threads, the comment sections of our official Bilibili account, our official QQ groups, and potentially our future official Discord, as well as other social media platforms.”"
+3017180,about,ai_term,,"The cat will occasionally write letters to the player, sharing its observations and experiences.","Utilizing advanced large language model technology, the game enables the cat to respond to the letters in a personalized way, allowing players to feel the cat's sincere emotions and personalized interactions."
+3198850,about,cue,gr_human,Play Together offers more convenience by letting you link your mobile device with Steam.,Log in and start making friends with various people from all over the world in Play Together!
+3282930,about,ai_term,,What is the game about:,Welcome to AI Asylum
+3282930,about,cue,gr_filter,"But beware,","not everyone is as they appear, and peril lurks around every corner, inappropriate questions or actions may provoke the character and result in mission failure."
+3282930,about,ai_term,,Key features:,AI-powered puzzle duels:
+3282930,about,ai_term,,Solve intricate puzzles and outsmart them in a battle of wits to escape with your life!,AI Character Editor:
+3282930,about,ai_term,,Craft your own unique personas.,"Choose from a wide array of models and environments to bring your chilling narrative to life, then share your meticulously designed characters with fellow adventurers."
+3309620,snippet,ai_term,,A text-based visual game with a non-linear plot where every decision shapes the story.,"AI-driven characters engage in lifelike dialogues, each with unique motivations and hidden intentions you can uncover."
+3309620,about,ai_term,,Over 6 Unique Characters,: Each AI-controlled character has their own hidden motives and unique personality.
+3309620,about,cue,gr_constrained,Free Dialogues,": Communicate without restrictions, explore characters and create new storylines without pre-set lines."
+3309620,about,ai_term,,": Communicate without restrictions, explore characters and create new storylines without pre-set lines.",Uses AI:
+3309620,about,ai_term,,Uses AI:,Based on LLM to bring characters to life.
+3309620,about,ai_term,,The game requires a video card with at least 6-8 GB of video memory.,This is necessary to run a large text model on your PC.
+3079970,snippet,cue,gr_filter,Step into the critical role of a baggage security operative in Airport X-Ray Simulator.,"As part of the backbone of airport security, you are the last line of defense against prohibited or illegal items making their way onto an aircraft or into the airport."
+3079970,about,cue,gr_filter,Step into the critical role of a baggage security operative in Airport X-Ray Simulator.,"As part of the backbone of airport security, you are the last line of defense against prohibited or illegal items making their way onto an aircraft or into the airport."
+3079970,about,cue,gr_filter,"Bags come through on conveyors, and it’s up to you to spot and handle any suspicious items.","X-ray Screening: Inspect bags using an x-ray machine, identifying prohibited or illegal items."
+3079970,about,cue,gr_filter;gr_report,"Manual Searches: Remove bags from the conveyor and conduct thorough searches, interacting with and examining all objects inside.",Item Confiscation and Flagging: Confiscate prohibited items and flag illegal items for further action.
+3079970,about,cue,gr_report,"Passenger Information: Use your computer to check passenger details, permits for firearms or blades, and access your email.","Performance Summary: Receive daily summaries of your performance, providing detailed feedback and insights."
+3079970,about,cue,gr_report,Dynamic challenges and random events to keep gameplay engaging.,Detailed performance summaries and feedback.
+3079970,about,cue,gr_filter,In-depth passenger information system for checking permits and other details.,Immerse yourself in the high-stakes world of airport security and ensure the safety of countless passengers.
+3079970,mature,cue,gr_filter;gr_optout,"It is important to note that these items are presented as physical objects within the luggage, and there is no depiction of their actual use.","Players have the option to disable the inclusion of explosives and sex toys when starting a new game, providing flexibility for those who may find these items offensive."
+3079970,early_access,cue,gr_report,“Airport X-Ray Simulator is launching in Early Access to involve the community in the development process.,"Your feedback is crucial in helping me refine and expand the game, ensuring it provides a realistic and engaging experience."
+3079970,early_access,cue,gr_report,"Your feedback is crucial in helping me refine and expand the game, ensuring it provides a realistic and engaging experience.","By participating in Early Access, you’ll have the opportunity to influence game mechanics, identify and report bugs, and suggest new features that can enhance the overall gameplay."
+3079970,early_access,ai_term,,How is the full version planned to differ from the Early Access version?,"“In general, I plan to add enough models and bag varients to limit the feeling of repetition."
+3079970,early_access,cue,gr_report,"All listed features are implemented and working, though there is room for improvement.","Throughout the Early Access period, all features will receive polish and enhancements based on community feedback.”"
+3079970,early_access,cue,gr_report,How are you planning on involving the Community in your development process?,"“I plan to actively involve the community in the development process by gathering feedback, suggestions, and bug reports."
+3248650,snippet,ai_term,,Land your dream job with JOBifAI!,"With an impressive CV and AI-crafted portfolio, you've got an interview at Grizley Studios!"
+3248650,about,ai_term,,"With your language skills, you will need to use every clue in the dialogue and the images to win in a battle of wit.","The typical VN formula is enhanced with AI interactions that allow for free-form interactions: describe it with plain words, and see how the game plays it out."
+3248650,about,ai_term,,A playthrough should  last at most 20 minutes; try to collect all endings and find all secrets!,JOBifAI: Harness the Power of AI to Land Your Dream Job!
+3248650,about,ai_term,,You've completely forgotten what you submitted!,"Fortunately, you've got a stunning CV and a portfolio crafted by cutting-edge AI technology."
+3248650,about,ai_term,,Unleash Your Creativity:,"When faced with stunning series artwork and an AI-generated portfolio, it's up to you to weave a convincing narrative."
+3248650,about,ai_term,,Free-Form Interaction:,"Engage in a rich, AI-based dialogue system that allows for true exploration of your ideas."
+3248650,about,ai_term,,Artistic Inspiration:,Draw from countless artistic styles and concepts as the AI generates both the portfolio and series artwork.
+3290470,about,cue,gr_report,crime scenes,", interrogate suspects, and dive into case files full of photos, reports, and testimonies."
+3290470,about,cue,gr_report,.,"💌 Your feedback is essential — every review, suggestion, or message helps us improve and expand the world of"
+2820060,snippet,ai_term,,"Preface is an immersive tech demo showcasing Melba, PLAYERUNKNOWN Productions' groundbreaking technology generating an Earth-scale world.","In this project still in development, experience our machine learning agents creating a planet in real-time, directly on your GPU."
+2820060,about,ai_term,,"showcasing Melba, PLAYERUNKNOWN Productions' groundbreaking technology generating an Earth-scale world.","In this project still in development, experience our Machine Learning agents creating a dynamic planet in real-time, all processed directly on your GPU - with no reliance on cloud services."
+2820060,about,cue,gr_report,Melba,", your experiences and feedback will play a crucial role."
+2820060,about,cue,gr_report,", your experiences and feedback will play a crucial role.","Your Feedback, Our Path Forward"
+2820060,about,cue,gr_report,Discord,", where you can engage directly with our dev team, share ideas, provide feedback, and stay informed on the latest updates."
+2820060,about,cue,gr_constrained,- not a finished product.,"We’re in an ongoing development phase, so check back regularly to see new features and enhancements as we continue to push the boundaries of ML-driven world generation."
+2820060,early_access,cue,gr_report,Why Early Access?,“In order to finish our product we need feedback from our users.
+2820060,early_access,cue,gr_report,": In alignment with Preface's guiding principle that features serve the technology, we plan on adding interactive elements that highlight Melba's capabilities.","Based on community feedback, we plan to add features that give users greater control over the world, making exploration more impactful and engaging."
+3023190,snippet,ai_term,,,Players throw questions at an AI and deduce the correct answers in this competitive multiplayer game.
+3023190,about,ai_term,,About This Game,"""Deduce Together"" is a cooperative and competitive online multiplayer game where players ask the AI about characters, locations, and more to uncover the correct answers."
+3023190,about,cue,gr_local,Overview,Private Session:
+3325660,snippet,ai_term,,,An AI-driven murder mystery where you play as the killer.
+3325660,about,ai_term,,AlibAi,"is a thrilling, AI-driven murder mystery game where you, the player, take on the role of a clever imposter hidden among a group of NPCs."
+3325660,about,ai_term,,"is a thrilling, AI-driven murder mystery game where you, the player, take on the role of a clever imposter hidden among a group of NPCs.","As suspicions rise and alibis are tested, your goal is simple but intense: deceive, mislead, and outwit the AI characters to survive."
+3325660,about,ai_term,,challenges you to manipulate the story and dodge accusations.,Think you're clever enough to convince AI-driven NPCs that someone else is to blame?
+3325660,about,ai_term,,Make strategic choices in night-time actions and morning conversations to shift suspicion onto others and avoid getting caught.,Immersive AI-Driven Conversations
+3325660,about,ai_term,,Immersive AI-Driven Conversations,"Interact with advanced AI NPCs, each with unique personalities, alibis, and motivations, who adapt and respond based on your actions."
+3325660,about,ai_term,,Move between rooms with intent; each night offers a new opportunity to corner a target or shift suspicion elsewhere.,Narrative Twists and Unexpected AI Reactions
+3325660,about,ai_term,,Narrative Twists and Unexpected AI Reactions,"The AI characters may have unique suspicions or even provide information that’s partially true yet damaging to your plan, keeping gameplay unpredictable."
+3325660,early_access,cue,gr_report,"“The core game is complete, however there is no monetization plan in-place and each API call is currently billed to the Developer personally.","While feedback is being collected and first impressions being made, there shouldn't be a financial barrier to entry."
+3325660,early_access,cue,gr_report,"While feedback is being collected and first impressions being made, there shouldn't be a financial barrier to entry.","While in Early-Access this game will remain free, the only price is feedback and ideas.”"
+3325660,early_access,ai_term,,Approximately how long will this game be in Early Access?,“Until API calls reach a certain volume and a paid model is required in order to sustain costs; roughly by Feb 2025.”
+3093690,snippet,ai_term,,,"Engage with unique AI characters, each with distinct personalities, in immersive 3D environments."
+3093690,about,ai_term,,About This Game,Embark on a journey into the future of AI-powered conversations with our innovative 3D chatbot experience.
+3093690,about,ai_term,,"Each month, we provide credits for a brief experience, allowing you to explore the app before deciding on a subscription.","A subscription is necessary, as Replikant relies on external AI services like ChatGPT and ElevenLabs."
+3093690,about,ai_term,,This cost primarily covers those services rather than being a charge from us.,"AI service prices are decreasing, so this will evolve over time."
+3093690,about,ai_term,,"Immersive Environments: yourself in highly realistic 3D environments, where cinematic camera angles make every interaction feel like a scene from your favorite movie.","Witness the magic as real and AI-generated images seamlessly blend within these dynamic 3D stages, enhancing every narrative and communication."
+3093690,about,cue;ai_term,gr_constrained,"Stay inspired with regular updates and new characters, ensuring that your journey with us is always fresh, exciting, and full of surprises.","Our platform doesn't just offer conversations; it creates immersive, interactive experiences that push the boundaries of AI technology."
+3093690,about,ai_term,,"Our platform doesn't just offer conversations; it creates immersive, interactive experiences that push the boundaries of AI technology.","Whether you're seeking knowledge, entertainment, or a unique way to explore ideas, our 3D chatbot experience opens up a world of possibilities."
+3093690,about,ai_term,,"Whether you're seeking knowledge, entertainment, or a unique way to explore ideas, our 3D chatbot experience opens up a world of possibilities.","Embark on this journey where technology meets imagination, and every interaction is an opportunity to learn, be entertained, and explore the vast potential of AI-driven communication."
+3093690,early_access,ai_term,,Why Early Access?,"“We believe Replikant Chat represents a new frontier in AI chat interaction, and we want to involve our community in shaping its development."
+3093690,early_access,cue;ai_term,gr_report,"“We believe Replikant Chat represents a new frontier in AI chat interaction, and we want to involve our community in shaping its development.","Early Access allows us to gather valuable feedback, refine our AI chat systems, and expand our content library while working closely with our users."
+3093690,early_access,ai_term,,"Early Access allows us to gather valuable feedback, refine our AI chat systems, and expand our content library while working closely with our users.",Our goal is to create an engaging AI chat experience that truly responds to user needs and desires.”
+3093690,early_access,ai_term,,“We anticipate Replikant Chat to be in Early Access for approximately 6-12 months.,"However, the nature of AI development and the potential for new breakthroughs may affect this timeline."
+3093690,early_access,ai_term,,“For the full version of Replikant Chat we plan to add the following features:,- An expanded library of AI characters across various genres
+3093690,early_access,ai_term,,- More detailed and interactive 3D environments,- Enhanced AI models for more natural and complex conversations
+3093690,early_access,ai_term,,“The Early Access version of Replikant Chat includes:,- Core chat functionality with a selection of AI characters
+3093690,early_access,cue,gr_report,- Host regular (bi-weekly) developer updates on our Steam community page,- Create a dedicated feedback forum for feature requests and bug reports
+3224380,about,cue;ai_term,gr_filter,A Quick Note from the Developers:,"We're super excited to share one of the first games to use Gen AI not as part of generating any of our assets (awesome artists hand placed every block of cheese and every human skull inside MageMart), but in powering our game engine to allow players to do almost anything they can imagine!"
+3224380,about,cue,gr_constrained,"We're super excited to share one of the first games to use Gen AI not as part of generating any of our assets (awesome artists hand placed every block of cheese and every human skull inside MageMart), but in powering our game engine to allow players to do almost anything they can imagine!","If you're looking to get creative and goofy with some friends in pushing the boundaries of what you can do and what you can get the game to allow, Retail Mage should be right up your alley."
+3224380,about,cue,gr_report,"But we're very excited to offer you a one of a kind game that lets you create your own objectives and goals, with some hidden bits of lore and mystery to discover as well!","Please don't hesitate to contact us if you have feedback, questions, or problems with the game."
+3224380,about,cue,gr_report,We'll do our best to get back to you as quickly as possible and provide support as needed.,And we're excited to sneak little things in here and there with a few patches as well (we already had one or two roll out thanks to some great suggestions from folks in reviews and in feedback!)
+2588860,about,ai_term,,About This Game,Kuronyam is an AI character with cat ears and tail.
+3070260,about,cue,gr_constrained,That you can generate them with,"Monkeys and Typewriters, in fact there’s nothing you cannot generate!"
+3070260,about,cue,gr_constrained,gives you the freedom to create and explore it.,"Forget about rigid templates, you prompt your story as detailed as you want and the game will help you make it come alive."
+3070260,early_access,cue,gr_report,"“We chose Early Access because our game introduces a fresh concept, and we believe it's important to involve players from the very beginning.","By sharing our idea early, we can gather valuable feedback and address potential issues, ensuring that the final version of the game meets players' expectations.”"
+3070260,early_access,cue,gr_report,“We estimate that the Early Access period will last approximately 3 months.,This will allow us to refine the game based on player feedback and ensure that the final version delivers a polished experience.”
+3070260,early_access,ai_term,,What is the current state of the Early Access version?,"“The Early Access version is fully playable, with the core AI-driven gameplay implemented."
+3070260,early_access,cue,gr_report,How are you planning on involving the Community in your development process?,“We welcome player feedback and suggestions throughout the Early Access period.
+3199040,about,ai_term,,PSX + Analog horror styled graphics,AI generated dialogue for unique interactions
+3164900,about,ai_term,,Think you're ready to go to the next level?,"""Bureau of Contacts"" - more locations, tools and ghosts, co-op mode, and generative AI built into enemies that makes the game even more realistic and unpredictable."
+2928500,about,ai_term,,(Animal companions) Various small animals appear randomly and can interact and become friends.,"(Personalized random character, open AI chat) He/she/it may become your partner."
+2858840,about,ai_term,,About This Game,Alchemy Unbound is an item crafting game that uses AI to create the elements making the possibilities
+2858840,about,ai_term,,.,AI Generation garbage from early access has been addressed to generate better responses.
+2858840,about,cue,gr_filter,Boring features,Filters to organize your collection instead of getting lost in your discoveries.
+2492290,snippet,ai_term,,,A Battle of Wits with AI: Solve the case by conversing with a suspect robot using GPT to gather evidence.
+2844700,snippet,ai_term,,A short interrogation game taking full advantage of ChatGPT!,You are tasked with interrogating the suspect [AI] of a murder case as an [excellent police officer].
+2844700,snippet,cue,gr_optout,You are tasked with interrogating the suspect [AI] of a murder case as an [excellent police officer].,How you choose to interrogate the suspect is up to you.
+2844700,snippet,ai_term,,How you choose to interrogate the suspect is up to you.,How the AI reacts is rendered in real-time through ChatGPT.
+2844700,about,ai_term,,A Short Interrogation Game Taking Full Advantage of ChatGPT,You are tasked with interrogating the suspect [AI] of a murder crime as an [excellent police officer].
+2844700,about,cue,gr_optout,You are tasked with interrogating the suspect [AI] of a murder crime as an [excellent police officer].,How you choose to interrogate the suspect is up to you.
+2844700,about,ai_term,,How you choose to interrogate the suspect is up to you.,How the AI reacts is rendered in real-time through ChatGPT.
+2844700,about,ai_term,,How the AI reacts is rendered in real-time through ChatGPT.,"In addition, an emotional circuit is programmed into the AI, raising its heartbeat as the interrogation progresses, making it want to confess as its uncomfortability rises."
+2844700,about,ai_term,,This is a short story that you can finish in about 10-15 minutes of playtime.,Why are You Interrogating an AI?
+2844700,about,ai_term,,"At the beginning of the story, you are made to participate in a mysterious game.","""Welcome to Doki Doki AI Interrogation."
+2844700,about,ai_term,,"Conduct a superb interrogation.""","After you succeed in making the AI confess, the real """"conversation with an AI"""" will unfold."
+2844700,about,ai_term,,"After you succeed in making the AI confess, the real """"conversation with an AI"""" will unfold.","A notable characteristic of this game is that the viral invention, Artificial Intelligence (AI), is not just incorporated into the game system, but also plays a vital part in the story."
+2844700,about,cue;ai_term,gr_optout,Game Play that Changes Every Time,"There is an infinite amount of possibilities when it comes to the words you choose to tell the AI, as well as its responses."
+2753730,about,ai_term,,《美女，应接不暇》是一款恋爱模拟类真人互动影像作品，以第一视角开启一段屌丝逆袭的恋爱之旅！,AI 虚拟人，全新体验：游戏完成后解锁 AI 虚拟人玩法，享受对话互动和虚拟陪伴，真实带入感打破次元壁。
+2800150,snippet,ai_term,,,The world's first AI-generated 2D Action RPG.
+2800150,about,ai_term,,About This Game,"Introducing AI Roguelite 2D, the world's first fully AI-generated 2D Action RPG!"
+2800150,about,ai_term,,"Introducing AI Roguelite 2D, the world's first fully AI-generated 2D Action RPG!","Input any theme, such as ""Star Wars with vampires"", and an AI will generate all the lore, items, mobs, crafting recipes, animations, and game mechanics of the universe."
+2800150,about,ai_term,,": This game has reached a state where it's close enough to the final vision that it's supposed to be fun, but has approximately 0 daily active users.","It is therefore in maintenance mode: It will get critical fixes and model updates, but no guaranteed feature updates."
+2800150,early_access,ai_term,,Why Early Access?,“AI is changing at breakneck speeds.
+2800150,early_access,cue,gr_report,“AI is changing at breakneck speeds.,Early access allows us to iterate quickly with constant player feedback.”
+2800150,early_access,ai_term,,"- More interesting world objects, chests/traps etc",- AI-generated sound effects
+2800150,early_access,cue,gr_report,How are you planning on involving the Community in your development process?,“Please feel free to give feedback in the Steam Discussions or the Discord channel.”
+2795060,snippet,ai_term,,,DREAMIO is a 'choose-your-own-adventure' game where stories and visuals are dynamically created through the power of generative AI in response to your decisions.
+2795060,about,ai_term,,About This Game,DREAMIO: AI-Powered Adventures
+2795060,about,ai_term,,DREAMIO: AI-Powered Adventures,is an innovative 'choose-your-own-adventure' game powered by the latest advancements in generative AI.
+2795060,about,ai_term,,"Your decisions shape the narrative in real-time, offering a unique, personalized adventure with every playthrough.",Dynamic AI-Generated Content
+2795060,about,ai_term,,Story:,"Your adventure evolves dynamically based on your choices, thanks to large language models."
+2795060,about,ai_term,,Illustrations:,Auto-generated illustrations using image generation models bring your adventure to life.
+2795060,about,ai_term,,Customizable Gameplay,"Choose from over 150 large language models such as Llama, Mistral, GPT, Gemma, etc., provided by OpenRouter, OpenAI, and others."
+2795060,about,ai_term,,"Choose from over 150 large language models such as Llama, Mistral, GPT, Gemma, etc., provided by OpenRouter, OpenAI, and others.","Various image generation models like FLUX, SDXL, and their variants are also available."
+2795060,about,cue;ai_term,gr_local,"Various image generation models like FLUX, SDXL, and their variants are also available.",You can also use on-device inference and bring your own models.
+2795060,about,cue,gr_optout,"However, you can fully customize how the narrator operates using simple natural language instructions, adjusting the challenges and freedoms within your story as you see fit.","The game also includes an optional status system to track elements like your current location, time, inventory, etc."
+2795060,about,cue,gr_optout,"The game also includes an optional status system to track elements like your current location, time, inventory, etc.",There's also an optional vector database system for long-term memory.
+2795060,about,ai_term,,"Whether you're surviving a zombie apocalypse or exploring an alien planet, the possibilities are limitless.",Note: The cloud AI services that power this game have ongoing operating costs.
+2795060,about,cue;ai_term,gr_local;gr_optout,.,"If you wish to bypass the token system entirely, you can provide your own API keys, switch to free AI models in the settings, or install the AI models locally from the Steam Workshop."
+2795060,mature,ai_term,,The developers describe the content like this:,"In some situations, AI models used in this game may be capable of generating mature content in response to player input."
+2795060,mature,cue,gr_filter,"In some situations, AI models used in this game may be capable of generating mature content in response to player input.","Such content may include violence, profanity, etc."
+2795060,mature,cue;ai_term,gr_constrained,"Such content may include violence, profanity, etc.","However, please note that Steam platform has a restriction on Adult Only Sexual Content that is created with Live-Generated AI."
+2795060,mature,cue,gr_filter,"However, please note that Steam platform has a restriction on Adult Only Sexual Content that is created with Live-Generated AI.","Therefore, such content, and other content that violates Steam's Rules and Guidelines, is filtered using an automated algorithm."
+2778690,snippet,cue,gr_filter,Dive into a brand-new 3D top-down RPG adventure world within Journey Mode.,"Engage in events generated in real-time, acquire items, and fend off monsters that block your way!"
+2778690,about,ai_term,,Text Adventure Mode Game Features,"In the game, you will face an NPC driven by GPT3.5."

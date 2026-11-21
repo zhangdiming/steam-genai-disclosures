@@ -38,17 +38,41 @@ def apply_runtime_pass(r, rp):
     return r
 
 
+def rule_violations(r):
+    live = r["live_system"] or r["live_player"]
+    gr = [k for k in r if k.startswith("gr_") and k != "gr_none"]
+    bad = []
+    if r["marketing_only"] != int(bool(r["marketing"] and not r["pre"] and not live)):
+        bad.append("marketing_only")
+    if not live and (r["gr_none"] or any(r[k] for k in gr)):
+        bad.append("guardrail without runtime generation")
+    if live and r["gr_none"] != int(not any(r[k] for k in gr)):
+        bad.append("gr_none")
+    return bad
+
+
+def bulk_codes():
+    B = ROOT / "annotation/bulk"
+    rp = {r.pop("uid"): r for r in load_jsonl(B / "runtime_pass.jsonl")} if (B / "runtime_pass.jsonl").exists() else {}
+    corr = pd.read_csv(B / "logic_corrections.csv")
+    out = {}
+    for p in sorted(B.glob("coded_batch_[0-9][0-9].jsonl")):
+        for r in load_jsonl(p):
+            out[r.pop("uid")] = r
+    for c in corr.itertuples():
+        assert out[c.uid][c.code] == c.coded, c
+        out[c.uid][c.code] = c.corrected
+    return {u: apply_runtime_pass(r, rp.get(u)) for u, r in out.items()}
+
+
 def llm_codes():
     A = ROOT / "annotation"
     out = {}
     m = pd.read_csv(A / "bulk/uid_map.csv")
     uid_norm = dict(zip(m.uid, m.norm))
-    rp = {r.pop("uid"): r for r in load_jsonl(A / "bulk/runtime_pass.jsonl")} if (A / "bulk/runtime_pass.jsonl").exists() else {}
-    for p in sorted((A / "bulk").glob("coded_batch_[0-9][0-9].jsonl")):
-        for r in load_jsonl(p):
-            u = r.pop("uid")
-            if u in uid_norm:
-                out[uid_norm[u]] = (apply_runtime_pass(r, rp.get(u)), "bulk")
+    for u, r in bulk_codes().items():
+        if u in uid_norm:
+            out[uid_norm[u]] = (r, "bulk")
     for split in ("test", "dev"):
         gp, tp = A / f"gold/gold_{split}.jsonl", A / f"gold/disclosures_{split}.jsonl"
         if not gp.exists():
@@ -58,6 +82,8 @@ def llm_codes():
             g = r.pop("gid")
             if all(v is not None for v in r.values()):
                 out[norm(txt[g])] = (r, f"gold_{split}")
+    bad = {k: (src, v) for k, (r, src) in out.items() if (v := rule_violations(r))}
+    assert not bad, bad
     return out
 
 

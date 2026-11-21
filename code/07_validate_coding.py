@@ -71,12 +71,11 @@ def main():
         for bp in sorted((ROOT / "annotation/bulk").glob("coded_batch_[0-9][0-9].jsonl")):
             bulk.update({r["uid"]: r for r in map(json.loads, open(bp, encoding="utf-8"))})
         coders["bulk"] = {g: bulk[g] for g in gids if g in bulk}
-        rp_p = ROOT / "annotation/bulk/runtime_pass.jsonl"
-        if rp_p.exists():
+        if (ROOT / "annotation/bulk/runtime_pass.jsonl").exists():
             spec = importlib.util.spec_from_file_location("bd", Path(__file__).parent / "05_build_dataset.py")
             bd = importlib.util.module_from_spec(spec); spec.loader.exec_module(bd)
-            rp = {r["uid"]: {k: v for k, v in r.items() if k != "uid"} for r in map(json.loads, open(rp_p))}
-            coders["final"] = {g: bd.apply_runtime_pass(dict(bulk[g]), rp.get(g)) for g in gids if g in bulk}
+            final = bd.bulk_codes()
+            coders["final"] = {g: final[g] for g in gids if g in final}
     for name, pred in coders.items():
         val = score(gids, gold, pred, w)
         print(f"--- {name} coder vs gold ({split}) ---")

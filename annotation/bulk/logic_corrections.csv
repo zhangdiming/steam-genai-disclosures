@@ -1,0 +1,6 @@
+uid,code,coded,corrected,reason
+u00952,marketing_only,0,1,"Steam Community assets are community material (marketing); no content in the game is named"
+u01656,marketing_only,0,1,"a trailer voice-over and cover art are marketing material; no content in the game is named"
+u03085,marketing_only,0,1,"the text names only marketing content"
+u03159,marketing_only,0,1,"AI was used only for marketing materials, and the text states that no AI is used in gameplay"
+u02844,pre,0,1,"in-game localization is AI-assisted content shipped in the game"

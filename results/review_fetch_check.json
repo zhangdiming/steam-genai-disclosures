@@ -1,0 +1,18 @@
+{
+ "n_runs": 3,
+ "n_requested": 7805,
+ "n_done": 7805,
+ "no_failed_fetch": true,
+ "n_rows": 145191,
+ "n_games_with_reviews": 7568,
+ "one_block_per_game": true,
+ "ranks_consecutive": true,
+ "max_per_game": 30,
+ "n_repeat_text_rows": 246,
+ "n_repeat_text_games": 200,
+ "n_identical_but_rank": 2,
+ "identical_text_lengths": [
+  9,
+  27
+ ]
+}

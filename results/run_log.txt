@@ -1,94 +1,94 @@
                            model                                              term       b     se      p  p_holm     n
                  H1_pct_positive                                         disclosed -3.4451 0.3623 0.0000     NaN 23136
         H1_log_reviews_allwindow                                         disclosed -0.5277 0.0274 0.0000     NaN 46253
-             within_pct_positive        C(locus, Treatment('dev_time'))[T.runtime] -4.1272 1.9785 0.0370  0.0739  3393
-             within_pct_positive C(locus, Treatment('dev_time'))[T.marketing_only]  1.4263 1.1680 0.2220  0.2220  3393
-             within_pct_positive              C(auth, Treatment('none'))[T.review] -4.8008 2.4309 0.0483  0.1449  3393
-             within_pct_positive                C(auth, Treatment('none'))[T.edit] -0.5819 0.9120 0.5234  1.0000  3393
-             within_pct_positive         C(auth, Treatment('none'))[T.human_final] -0.5954 1.4300 0.6771  1.0000  3393
-             within_pct_positive                                          d_visual -1.5828 0.7947 0.0464  0.2319  3393
-             within_pct_positive                                           d_voice -0.1210 1.0426 0.9076  1.0000  3393
-             within_pct_positive                                           d_music  2.6963 0.9046 0.0029  0.0173  3393
-             within_pct_positive                                             d_sfx  0.6004 1.3467 0.6557  1.0000  3393
-             within_pct_positive                                            d_text -2.1114 1.1831 0.0743  0.2973  3393
-             within_pct_positive                                    d_localization  4.5360 0.8947 0.0000  0.0000  3393
-             within_pct_positive                                            d_code  1.0082 1.2985 0.4375  1.0000  3393
-             within_pct_positive                                       ai_on_human  3.8021 1.2687 0.0027  0.0109  3393
-             within_pct_positive                                       scope_minor  1.9383 0.6734 0.0040     NaN  3393
-             within_pct_positive                                   scope_extensive -0.2784 1.6143 0.8631     NaN  3393
-             within_pct_positive                                       placeholder  2.6494 1.8949 0.1621     NaN  3393
-             within_pct_positive                                       tools_named  0.6370 1.2763 0.6177     NaN  3393
-             within_pct_positive                                        small_team  2.5520 1.4090 0.0701     NaN  3393
-             within_pct_positive                                  explicit_no_live -1.0869 1.3885 0.4337     NaN  3393
-             within_pct_positive                                         log_words  0.8339 0.4984 0.0943     NaN  3393
-within_pct_positive_anyoversight                                     any_oversight -1.0008 0.8268 0.2261     NaN  3393
-              within_log_reviews        C(locus, Treatment('dev_time'))[T.runtime]  0.3522 0.1932 0.0682  0.1365  3393
-              within_log_reviews C(locus, Treatment('dev_time'))[T.marketing_only] -0.1288 0.1004 0.1997  0.1997  3393
-              within_log_reviews              C(auth, Treatment('none'))[T.review] -0.0617 0.1768 0.7273  0.7273  3393
-              within_log_reviews                C(auth, Treatment('none'))[T.edit]  0.1201 0.0735 0.1023  0.3069  3393
-              within_log_reviews         C(auth, Treatment('none'))[T.human_final]  0.4578 0.1817 0.0118  0.0471  3393
-              within_log_reviews                                          d_visual -0.1825 0.0666 0.0061  0.0428  3393
-              within_log_reviews                                           d_voice  0.1307 0.0954 0.1707  0.6829  3393
-              within_log_reviews                                           d_music -0.0698 0.0716 0.3295  0.6829  3393
-              within_log_reviews                                             d_sfx -0.0510 0.0976 0.6016  0.6829  3393
-              within_log_reviews                                            d_text -0.2044 0.0925 0.0271  0.1627  3393
-              within_log_reviews                                    d_localization  0.1087 0.0847 0.1992  0.6829  3393
-              within_log_reviews                                            d_code -0.1739 0.0910 0.0560  0.2798  3393
-              within_log_reviews                                       ai_on_human  0.1212 0.1208 0.3154  0.6308  3393
-              within_log_reviews                                       scope_minor  0.1190 0.0520 0.0220     NaN  3393
-              within_log_reviews                                   scope_extensive -0.1245 0.1178 0.2904     NaN  3393
-              within_log_reviews                                       placeholder  0.0654 0.1771 0.7118     NaN  3393
-              within_log_reviews                                       tools_named -0.2077 0.1008 0.0393     NaN  3393
-              within_log_reviews                                        small_team  0.0903 0.1610 0.5749     NaN  3393
-              within_log_reviews                                  explicit_no_live -0.2832 0.1010 0.0050     NaN  3393
-              within_log_reviews                                         log_words  0.0185 0.0407 0.6501     NaN  3393
-                oversight_extent                                         n_domains  0.0739 0.0108 0.0000     NaN  3393
-                oversight_extent                                       scope_minor  0.0595 0.0168 0.0004     NaN  3393
-                oversight_extent                                   scope_extensive -0.0361 0.0371 0.3302     NaN  3393
-                oversight_extent                                            post26  0.0698 0.0159 0.0000     NaN  3393
+             within_pct_positive        C(locus, Treatment('dev_time'))[T.runtime] -4.1057 1.9785 0.0380  0.0759  3393
+             within_pct_positive C(locus, Treatment('dev_time'))[T.marketing_only]  1.5355 1.1599 0.1856  0.1856  3393
+             within_pct_positive              C(auth, Treatment('none'))[T.review] -4.7914 2.4316 0.0488  0.1464  3393
+             within_pct_positive                C(auth, Treatment('none'))[T.edit] -0.5746 0.9121 0.5287  1.0000  3393
+             within_pct_positive         C(auth, Treatment('none'))[T.human_final] -0.5832 1.4300 0.6834  1.0000  3393
+             within_pct_positive                                          d_visual -1.5841 0.7945 0.0462  0.2308  3393
+             within_pct_positive                                           d_voice -0.1131 1.0426 0.9136  1.0000  3393
+             within_pct_positive                                           d_music  2.7056 0.9047 0.0028  0.0167  3393
+             within_pct_positive                                             d_sfx  0.6081 1.3467 0.6516  1.0000  3393
+             within_pct_positive                                            d_text -2.1147 1.1825 0.0737  0.2949  3393
+             within_pct_positive                                    d_localization  4.5483 0.8950 0.0000  0.0000  3393
+             within_pct_positive                                            d_code  1.0182 1.2985 0.4329  1.0000  3393
+             within_pct_positive                                       ai_on_human  3.8066 1.2686 0.0027  0.0108  3393
+             within_pct_positive                                       scope_minor  1.9475 0.6731 0.0038     NaN  3393
+             within_pct_positive                                   scope_extensive -0.2697 1.6144 0.8673     NaN  3393
+             within_pct_positive                                       placeholder  2.6585 1.8949 0.1606     NaN  3393
+             within_pct_positive                                       tools_named  0.6431 1.2763 0.6144     NaN  3393
+             within_pct_positive                                        small_team  2.5601 1.4091 0.0692     NaN  3393
+             within_pct_positive                                  explicit_no_live -1.0879 1.3888 0.4334     NaN  3393
+             within_pct_positive                                         log_words  0.8336 0.4983 0.0944     NaN  3393
+within_pct_positive_anyoversight                                     any_oversight -0.9925 0.8268 0.2300     NaN  3393
+              within_log_reviews        C(locus, Treatment('dev_time'))[T.runtime]  0.3532 0.1932 0.0675  0.1350  3393
+              within_log_reviews C(locus, Treatment('dev_time'))[T.marketing_only] -0.1226 0.0995 0.2178  0.2178  3393
+              within_log_reviews              C(auth, Treatment('none'))[T.review] -0.0612 0.1768 0.7293  0.7293  3393
+              within_log_reviews                C(auth, Treatment('none'))[T.edit]  0.1203 0.0735 0.1018  0.3053  3393
+              within_log_reviews         C(auth, Treatment('none'))[T.human_final]  0.4582 0.1817 0.0117  0.0468  3393
+              within_log_reviews                                          d_visual -0.1825 0.0666 0.0061  0.0427  3393
+              within_log_reviews                                           d_voice  0.1315 0.0954 0.1677  0.6710  3393
+              within_log_reviews                                           d_music -0.0695 0.0716 0.3322  0.6710  3393
+              within_log_reviews                                             d_sfx -0.0506 0.0976 0.6040  0.6710  3393
+              within_log_reviews                                            d_text -0.2047 0.0925 0.0268  0.1610  3393
+              within_log_reviews                                    d_localization  0.1091 0.0847 0.1976  0.6710  3393
+              within_log_reviews                                            d_code -0.1734 0.0910 0.0567  0.2835  3393
+              within_log_reviews                                       ai_on_human  0.1214 0.1208 0.3149  0.6297  3393
+              within_log_reviews                                       scope_minor  0.1196 0.0520 0.0214     NaN  3393
+              within_log_reviews                                   scope_extensive -0.1241 0.1178 0.2920     NaN  3393
+              within_log_reviews                                       placeholder  0.0656 0.1771 0.7109     NaN  3393
+              within_log_reviews                                       tools_named -0.2074 0.1008 0.0396     NaN  3393
+              within_log_reviews                                        small_team  0.0905 0.1610 0.5739     NaN  3393
+              within_log_reviews                                  explicit_no_live -0.2834 0.1010 0.0050     NaN  3393
+              within_log_reviews                                         log_words  0.0183 0.0407 0.6532     NaN  3393
+                oversight_extent                                         n_domains  0.0738 0.0108 0.0000     NaN  3393
+                oversight_extent                                       scope_minor  0.0594 0.0168 0.0004     NaN  3393
+                oversight_extent                                   scope_extensive -0.0363 0.0371 0.3274     NaN  3393
+                oversight_extent                                            post26  0.0697 0.0159 0.0000     NaN  3393
                    H1_crit_share                                         disclosed  0.0491 0.0023 0.0000     NaN  6290
                 H1_mention_share                                         disclosed  0.0696 0.0031 0.0000     NaN  6290
               H1_crit_share_term                                         disclosed  0.0301 0.0015 0.0000     NaN  6290
-               within_crit_share        C(locus, Treatment('dev_time'))[T.runtime]  0.0510 0.0150 0.0007  0.0007  2719
-               within_crit_share C(locus, Treatment('dev_time'))[T.marketing_only] -0.0327 0.0047 0.0000  0.0000  2719
-               within_crit_share              C(auth, Treatment('none'))[T.review] -0.0137 0.0118 0.2467  0.7400  2719
-               within_crit_share                C(auth, Treatment('none'))[T.edit] -0.0030 0.0069 0.6697  1.0000  2719
-               within_crit_share         C(auth, Treatment('none'))[T.human_final] -0.0067 0.0100 0.5045  1.0000  2719
-               within_crit_share                                          d_visual  0.0151 0.0050 0.0024  0.0144  2719
-               within_crit_share                                           d_voice  0.0057 0.0066 0.3896  0.8325  2719
-               within_crit_share                                           d_music  0.0079 0.0073 0.2775  0.8325  2719
-               within_crit_share                                             d_sfx  0.0205 0.0110 0.0632  0.3161  2719
-               within_crit_share                                            d_text  0.0049 0.0080 0.5432  0.8325  2719
-               within_crit_share                                    d_localization -0.0283 0.0055 0.0000  0.0000  2719
-               within_crit_share                                            d_code -0.0114 0.0074 0.1217  0.4867  2719
-               within_crit_share                                       ai_on_human -0.0136 0.0098 0.1665  0.6660  2719
+               within_crit_share        C(locus, Treatment('dev_time'))[T.runtime]  0.0508 0.0150 0.0007  0.0007  2719
+               within_crit_share C(locus, Treatment('dev_time'))[T.marketing_only] -0.0333 0.0047 0.0000  0.0000  2719
+               within_crit_share              C(auth, Treatment('none'))[T.review] -0.0137 0.0118 0.2452  0.7355  2719
+               within_crit_share                C(auth, Treatment('none'))[T.edit] -0.0030 0.0069 0.6621  0.9946  2719
+               within_crit_share         C(auth, Treatment('none'))[T.human_final] -0.0068 0.0100 0.4973  0.9946  2719
+               within_crit_share                                          d_visual  0.0151 0.0050 0.0024  0.0143  2719
+               within_crit_share                                           d_voice  0.0057 0.0066 0.3890  0.8471  2719
+               within_crit_share                                           d_music  0.0078 0.0073 0.2824  0.8471  2719
+               within_crit_share                                             d_sfx  0.0205 0.0110 0.0638  0.3190  2719
+               within_crit_share                                            d_text  0.0049 0.0080 0.5437  0.8471  2719
+               within_crit_share                                    d_localization -0.0284 0.0055 0.0000  0.0000  2719
+               within_crit_share                                            d_code -0.0115 0.0074 0.1194  0.4777  2719
+               within_crit_share                                       ai_on_human -0.0136 0.0098 0.1648  0.6591  2719
                within_crit_share                                       scope_minor -0.0149 0.0043 0.0005     NaN  2719
-               within_crit_share                                   scope_extensive  0.0249 0.0132 0.0584     NaN  2719
-               within_crit_share                                       placeholder -0.0104 0.0139 0.4507     NaN  2719
-               within_crit_share                                       tools_named  0.0057 0.0075 0.4511     NaN  2719
-               within_crit_share                                        small_team  0.0175 0.0128 0.1707     NaN  2719
+               within_crit_share                                   scope_extensive  0.0249 0.0132 0.0591     NaN  2719
+               within_crit_share                                       placeholder -0.0105 0.0139 0.4470     NaN  2719
+               within_crit_share                                       tools_named  0.0057 0.0075 0.4526     NaN  2719
+               within_crit_share                                        small_team  0.0174 0.0128 0.1723     NaN  2719
                within_crit_share                                  explicit_no_live -0.0020 0.0106 0.8495     NaN  2719
                within_crit_share                                         log_words  0.0108 0.0035 0.0020     NaN  2719
-            within_mention_share        C(locus, Treatment('dev_time'))[T.runtime]  0.1593 0.0252 0.0000  0.0000  2719
-            within_mention_share C(locus, Treatment('dev_time'))[T.marketing_only] -0.0405 0.0062 0.0000  0.0000  2719
-            within_mention_share              C(auth, Treatment('none'))[T.review] -0.0240 0.0154 0.1183  0.4405  2719
-            within_mention_share                C(auth, Treatment('none'))[T.edit] -0.0043 0.0087 0.6181  0.6181  2719
-            within_mention_share         C(auth, Treatment('none'))[T.human_final] -0.0154 0.0116 0.1862  0.4405  2719
+            within_mention_share        C(locus, Treatment('dev_time'))[T.runtime]  0.1592 0.0252 0.0000  0.0000  2719
+            within_mention_share C(locus, Treatment('dev_time'))[T.marketing_only] -0.0412 0.0061 0.0000  0.0000  2719
+            within_mention_share              C(auth, Treatment('none'))[T.review] -0.0240 0.0154 0.1175  0.4356  2719
+            within_mention_share                C(auth, Treatment('none'))[T.edit] -0.0044 0.0087 0.6112  0.6112  2719
+            within_mention_share         C(auth, Treatment('none'))[T.human_final] -0.0155 0.0116 0.1825  0.4356  2719
             within_mention_share                                          d_visual  0.0283 0.0064 0.0000  0.0001  2719
-            within_mention_share                                           d_voice  0.0206 0.0091 0.0229  0.0914  2719
-            within_mention_share                                           d_music  0.0116 0.0090 0.1985  0.3970  2719
-            within_mention_share                                             d_sfx  0.0361 0.0141 0.0104  0.0519  2719
-            within_mention_share                                            d_text  0.0111 0.0105 0.2878  0.3970  2719
-            within_mention_share                                    d_localization -0.0307 0.0068 0.0000  0.0001  2719
-            within_mention_share                                            d_code -0.0157 0.0097 0.1067  0.3201  2719
-            within_mention_share                                       ai_on_human -0.0195 0.0122 0.1101  0.4405  2719
+            within_mention_share                                           d_voice  0.0206 0.0090 0.0226  0.0906  2719
+            within_mention_share                                           d_music  0.0115 0.0090 0.2020  0.4039  2719
+            within_mention_share                                             d_sfx  0.0360 0.0141 0.0105  0.0524  2719
+            within_mention_share                                            d_text  0.0111 0.0105 0.2882  0.4039  2719
+            within_mention_share                                    d_localization -0.0309 0.0069 0.0000  0.0000  2719
+            within_mention_share                                            d_code -0.0158 0.0097 0.1050  0.3150  2719
+            within_mention_share                                       ai_on_human -0.0196 0.0122 0.1089  0.4356  2719
             within_mention_share                                       scope_minor -0.0221 0.0053 0.0000     NaN  2719
-            within_mention_share                                   scope_extensive  0.0379 0.0162 0.0197     NaN  2719
-            within_mention_share                                       placeholder -0.0155 0.0153 0.3130     NaN  2719
-            within_mention_share                                       tools_named  0.0208 0.0122 0.0874     NaN  2719
-            within_mention_share                                        small_team  0.0263 0.0161 0.1023     NaN  2719
-            within_mention_share                                  explicit_no_live -0.0054 0.0129 0.6734     NaN  2719
-            within_mention_share                                         log_words  0.0137 0.0044 0.0017     NaN  2719
+            within_mention_share                                   scope_extensive  0.0378 0.0163 0.0200     NaN  2719
+            within_mention_share                                       placeholder -0.0156 0.0153 0.3098     NaN  2719
+            within_mention_share                                       tools_named  0.0208 0.0122 0.0878     NaN  2719
+            within_mention_share                                        small_team  0.0263 0.0161 0.1032     NaN  2719
+            within_mention_share                                  explicit_no_live -0.0055 0.0129 0.6734     NaN  2719
+            within_mention_share                                         log_words  0.0136 0.0044 0.0017     NaN  2719
        within_crit_given_mention        C(locus, Treatment('dev_time'))[T.runtime] -0.2106 0.0511 0.0000  0.0001  1573
        within_crit_given_mention C(locus, Treatment('dev_time'))[T.marketing_only] -0.0537 0.0393 0.1722  0.1722  1573
        within_crit_given_mention              C(auth, Treatment('none'))[T.review]  0.0571 0.0560 0.3084  1.0000  1573
@@ -114,114 +114,114 @@ within_pct_positive_anyoversight                                     any_oversig
                mundlak_pct_positive                                    mean_disclosed -3.2179 1.1317 0.0045  7361
              notags_H1_pct_positive                                         disclosed -5.2202 0.3793 0.0000 23136
 notags_H1_pct_positive_developer_fe                                         disclosed -0.5498 0.7294 0.4510  7361
-         notags_within_pct_positive        C(locus, Treatment('dev_time'))[T.runtime] -4.5408 1.9410 0.0193  3393
-         notags_within_pct_positive C(locus, Treatment('dev_time'))[T.marketing_only]  0.9241 1.1959 0.4397  3393
-         notags_within_pct_positive              C(auth, Treatment('none'))[T.review] -5.1006 2.4488 0.0373  3393
-         notags_within_pct_positive                C(auth, Treatment('none'))[T.edit] -0.2604 0.9173 0.7765  3393
-         notags_within_pct_positive         C(auth, Treatment('none'))[T.human_final]  0.1364 1.4872 0.9269  3393
-         notags_within_pct_positive                                          d_visual -2.3678 0.7958 0.0029  3393
-         notags_within_pct_positive                                           d_voice -0.6974 1.0514 0.5071  3393
-         notags_within_pct_positive                                           d_music  3.4690 0.9166 0.0002  3393
-         notags_within_pct_positive                                             d_sfx  0.7177 1.3631 0.5985  3393
-         notags_within_pct_positive                                            d_text -2.0263 1.2173 0.0960  3393
-         notags_within_pct_positive                                    d_localization  5.2159 0.9281 0.0000  3393
-         notags_within_pct_positive                                            d_code  1.1416 1.3810 0.4084  3393
-         notags_within_pct_positive                                       ai_on_human  3.5796 1.2334 0.0037  3393
-         notags_within_pct_positive                                       scope_minor  1.5904 0.6940 0.0219  3393
-         notags_within_pct_positive                                   scope_extensive  0.1998 1.7873 0.9110  3393
-         notags_within_pct_positive                                       placeholder  3.2998 1.8690 0.0775  3393
-         notags_within_pct_positive                                       tools_named  0.5659 1.2740 0.6569  3393
-         notags_within_pct_positive                                        small_team  2.0601 1.4307 0.1499  3393
-         notags_within_pct_positive                                  explicit_no_live -1.0886 1.3919 0.4342  3393
-         notags_within_pct_positive                                         log_words  0.9469 0.5128 0.0648  3393
+         notags_within_pct_positive        C(locus, Treatment('dev_time'))[T.runtime] -4.5193 1.9410 0.0199  3393
+         notags_within_pct_positive C(locus, Treatment('dev_time'))[T.marketing_only]  1.0327 1.1855 0.3837  3393
+         notags_within_pct_positive              C(auth, Treatment('none'))[T.review] -5.0913 2.4490 0.0376  3393
+         notags_within_pct_positive                C(auth, Treatment('none'))[T.edit] -0.2531 0.9173 0.7826  3393
+         notags_within_pct_positive         C(auth, Treatment('none'))[T.human_final]  0.1484 1.4872 0.9205  3393
+         notags_within_pct_positive                                          d_visual -2.3691 0.7956 0.0029  3393
+         notags_within_pct_positive                                           d_voice -0.6894 1.0514 0.5121  3393
+         notags_within_pct_positive                                           d_music  3.4780 0.9166 0.0001  3393
+         notags_within_pct_positive                                             d_sfx  0.7265 1.3632 0.5941  3393
+         notags_within_pct_positive                                            d_text -2.0305 1.2166 0.0951  3393
+         notags_within_pct_positive                                    d_localization  5.2277 0.9283 0.0000  3393
+         notags_within_pct_positive                                            d_code  1.1513 1.3810 0.4045  3393
+         notags_within_pct_positive                                       ai_on_human  3.5844 1.2333 0.0037  3393
+         notags_within_pct_positive                                       scope_minor  1.5996 0.6939 0.0212  3393
+         notags_within_pct_positive                                   scope_extensive  0.2098 1.7880 0.9066  3393
+         notags_within_pct_positive                                       placeholder  3.3096 1.8691 0.0766  3393
+         notags_within_pct_positive                                       tools_named  0.5726 1.2739 0.6531  3393
+         notags_within_pct_positive                                        small_team  2.0675 1.4307 0.1484  3393
+         notags_within_pct_positive                                  explicit_no_live -1.0889 1.3919 0.4341  3393
+         notags_within_pct_positive                                         log_words  0.9462 0.5127 0.0650  3393
                  mundlak_crit_share                                         disclosed  0.0397 0.0100 0.0001  1230
                  mundlak_crit_share                                    mean_disclosed  0.0153 0.0137 0.2626  1230
        crit_sub_pct_positive_pooled                                         disclosed -1.6185 1.2178 0.1838  1230
  crit_sub_pct_positive_developer_fe                                         disclosed -1.8525 1.3783 0.1789  1230
                notags_H1_crit_share                                         disclosed  0.0499 0.0023 0.0000  6290
   notags_H1_crit_share_developer_fe                                         disclosed  0.0389 0.0093 0.0000  1230
-           notags_within_crit_share        C(locus, Treatment('dev_time'))[T.runtime]  0.0541 0.0151 0.0003  2719
-           notags_within_crit_share C(locus, Treatment('dev_time'))[T.marketing_only] -0.0346 0.0048 0.0000  2719
-           notags_within_crit_share              C(auth, Treatment('none'))[T.review] -0.0174 0.0120 0.1486  2719
-           notags_within_crit_share                C(auth, Treatment('none'))[T.edit] -0.0016 0.0071 0.8203  2719
-           notags_within_crit_share         C(auth, Treatment('none'))[T.human_final] -0.0068 0.0097 0.4824  2719
-           notags_within_crit_share                                          d_visual  0.0157 0.0050 0.0016  2719
-           notags_within_crit_share                                           d_voice  0.0017 0.0067 0.8014  2719
-           notags_within_crit_share                                           d_music  0.0081 0.0073 0.2669  2719
-           notags_within_crit_share                                             d_sfx  0.0183 0.0114 0.1071  2719
-           notags_within_crit_share                                            d_text  0.0049 0.0081 0.5457  2719
-           notags_within_crit_share                                    d_localization -0.0267 0.0055 0.0000  2719
-           notags_within_crit_share                                            d_code -0.0108 0.0075 0.1515  2719
-           notags_within_crit_share                                       ai_on_human -0.0135 0.0100 0.1772  2719
+           notags_within_crit_share        C(locus, Treatment('dev_time'))[T.runtime]  0.0539 0.0151 0.0004  2719
+           notags_within_crit_share C(locus, Treatment('dev_time'))[T.marketing_only] -0.0352 0.0048 0.0000  2719
+           notags_within_crit_share              C(auth, Treatment('none'))[T.review] -0.0174 0.0120 0.1475  2719
+           notags_within_crit_share                C(auth, Treatment('none'))[T.edit] -0.0017 0.0071 0.8139  2719
+           notags_within_crit_share         C(auth, Treatment('none'))[T.human_final] -0.0070 0.0097 0.4751  2719
+           notags_within_crit_share                                          d_visual  0.0157 0.0050 0.0015  2719
+           notags_within_crit_share                                           d_voice  0.0017 0.0067 0.7998  2719
+           notags_within_crit_share                                           d_music  0.0080 0.0073 0.2713  2719
+           notags_within_crit_share                                             d_sfx  0.0183 0.0114 0.1086  2719
+           notags_within_crit_share                                            d_text  0.0049 0.0081 0.5452  2719
+           notags_within_crit_share                                    d_localization -0.0269 0.0055 0.0000  2719
+           notags_within_crit_share                                            d_code -0.0108 0.0075 0.1493  2719
+           notags_within_crit_share                                       ai_on_human -0.0135 0.0100 0.1757  2719
            notags_within_crit_share                                       scope_minor -0.0158 0.0043 0.0003  2719
-           notags_within_crit_share                                   scope_extensive  0.0287 0.0135 0.0342  2719
-           notags_within_crit_share                                       placeholder -0.0118 0.0141 0.4036  2719
-           notags_within_crit_share                                       tools_named  0.0042 0.0077 0.5817  2719
-           notags_within_crit_share                                        small_team  0.0169 0.0131 0.1967  2719
-           notags_within_crit_share                                  explicit_no_live -0.0027 0.0110 0.8021  2719
+           notags_within_crit_share                                   scope_extensive  0.0286 0.0135 0.0348  2719
+           notags_within_crit_share                                       placeholder -0.0119 0.0141 0.3989  2719
+           notags_within_crit_share                                       tools_named  0.0042 0.0077 0.5845  2719
+           notags_within_crit_share                                        small_team  0.0169 0.0131 0.1980  2719
+           notags_within_crit_share                                  explicit_no_live -0.0028 0.0110 0.8012  2719
            notags_within_crit_share                                         log_words  0.0118 0.0035 0.0008  2719
-                     within_eng_pos        C(locus, Treatment('dev_time'))[T.runtime] -3.3246 2.8683 0.2464  2719
-                     within_eng_pos C(locus, Treatment('dev_time'))[T.marketing_only]  2.9808 1.4398 0.0384  2719
-                     within_eng_pos              C(auth, Treatment('none'))[T.review] -3.5263 2.9798 0.2367  2719
-                     within_eng_pos                C(auth, Treatment('none'))[T.edit] -1.1589 1.3012 0.3732  2719
-                     within_eng_pos         C(auth, Treatment('none'))[T.human_final] -2.2649 2.2407 0.3121  2719
-                     within_eng_pos                                          d_visual -0.6666 1.1635 0.5667  2719
-                     within_eng_pos                                           d_voice  0.3593 1.4455 0.8037  2719
-                     within_eng_pos                                           d_music  3.6778 1.2960 0.0045  2719
-                     within_eng_pos                                             d_sfx  0.7709 1.8101 0.6702  2719
-                     within_eng_pos                                            d_text -1.3758 1.5665 0.3798  2719
-                     within_eng_pos                                    d_localization  4.6919 1.3560 0.0005  2719
-                     within_eng_pos                                            d_code  2.1787 1.8909 0.2492  2719
-                     within_eng_pos                                       ai_on_human  1.3742 1.9596 0.4831  2719
-                     within_eng_pos                                       scope_minor  2.4884 0.9336 0.0077  2719
-                     within_eng_pos                                   scope_extensive -1.4869 2.4689 0.5470  2719
-                     within_eng_pos                                       placeholder  5.6577 2.4805 0.0226  2719
-                     within_eng_pos                                       tools_named  2.0191 2.0082 0.3147  2719
-                     within_eng_pos                                        small_team  2.7459 2.0715 0.1850  2719
-                     within_eng_pos                                  explicit_no_live  1.2105 1.9463 0.5340  2719
-                     within_eng_pos                                         log_words -0.2833 0.7309 0.6983  2719
-       bulkonly_within_pct_positive        C(locus, Treatment('dev_time'))[T.runtime] -2.7888 2.2616 0.2175  2706
-       bulkonly_within_pct_positive C(locus, Treatment('dev_time'))[T.marketing_only]  0.4178 1.2861 0.7453  2706
-       bulkonly_within_pct_positive              C(auth, Treatment('none'))[T.review] -5.4048 2.6385 0.0405  2706
-       bulkonly_within_pct_positive                C(auth, Treatment('none'))[T.edit] -0.4540 1.0092 0.6528  2706
-       bulkonly_within_pct_positive         C(auth, Treatment('none'))[T.human_final] -2.0515 1.7917 0.2522  2706
-       bulkonly_within_pct_positive                                          d_visual -2.2962 0.8632 0.0078  2706
-       bulkonly_within_pct_positive                                           d_voice  0.1551 1.1442 0.8922  2706
-       bulkonly_within_pct_positive                                           d_music  2.1655 1.0296 0.0354  2706
-       bulkonly_within_pct_positive                                             d_sfx  0.7964 1.4001 0.5695  2706
-       bulkonly_within_pct_positive                                            d_text -3.6946 1.3448 0.0060  2706
-       bulkonly_within_pct_positive                                    d_localization  4.8439 0.9342 0.0000  2706
-       bulkonly_within_pct_positive                                            d_code  1.6880 1.3678 0.2171  2706
-       bulkonly_within_pct_positive                                       ai_on_human  5.1379 1.6517 0.0019  2706
-       bulkonly_within_pct_positive                                       scope_minor  2.2561 0.7303 0.0020  2706
-       bulkonly_within_pct_positive                                   scope_extensive  1.7125 1.5474 0.2684  2706
-       bulkonly_within_pct_positive                                       placeholder  2.6253 2.1077 0.2129  2706
-       bulkonly_within_pct_positive                                       tools_named -0.7378 1.4845 0.6192  2706
-       bulkonly_within_pct_positive                                        small_team  3.3941 1.5583 0.0294  2706
-       bulkonly_within_pct_positive                                  explicit_no_live  0.7087 1.5514 0.6478  2706
-       bulkonly_within_pct_positive                                         log_words  0.2157 0.5176 0.6769  2706
-                      label_keepdev                                       ai_on_human  4.2808 1.3017 0.0010  3393
-                 label_keepdev_crit                                       ai_on_human -0.0120 0.0104 0.2515  2719
+                     within_eng_pos        C(locus, Treatment('dev_time'))[T.runtime] -3.2997 2.8685 0.2500  2719
+                     within_eng_pos C(locus, Treatment('dev_time'))[T.marketing_only]  3.0993 1.4377 0.0311  2719
+                     within_eng_pos              C(auth, Treatment('none'))[T.review] -3.5177 2.9795 0.2377  2719
+                     within_eng_pos                C(auth, Treatment('none'))[T.edit] -1.1488 1.3014 0.3774  2719
+                     within_eng_pos         C(auth, Treatment('none'))[T.human_final] -2.2478 2.2404 0.3157  2719
+                     within_eng_pos                                          d_visual -0.6685 1.1631 0.5654  2719
+                     within_eng_pos                                           d_voice  0.3655 1.4449 0.8003  2719
+                     within_eng_pos                                           d_music  3.6897 1.2962 0.0044  2719
+                     within_eng_pos                                             d_sfx  0.7794 1.8102 0.6668  2719
+                     within_eng_pos                                            d_text -1.3775 1.5664 0.3792  2719
+                     within_eng_pos                                    d_localization  4.7090 1.3562 0.0005  2719
+                     within_eng_pos                                            d_code  2.1912 1.8913 0.2466  2719
+                     within_eng_pos                                       ai_on_human  1.3813 1.9594 0.4808  2719
+                     within_eng_pos                                       scope_minor  2.4986 0.9332 0.0074  2719
+                     within_eng_pos                                   scope_extensive -1.4761 2.4696 0.5500  2719
+                     within_eng_pos                                       placeholder  5.6686 2.4805 0.0223  2719
+                     within_eng_pos                                       tools_named  2.0233 2.0082 0.3137  2719
+                     within_eng_pos                                        small_team  2.7554 2.0717 0.1835  2719
+                     within_eng_pos                                  explicit_no_live  1.2095 1.9468 0.5344  2719
+                     within_eng_pos                                         log_words -0.2803 0.7305 0.7012  2719
+       bulkonly_within_pct_positive        C(locus, Treatment('dev_time'))[T.runtime] -2.7702 2.2617 0.2206  2706
+       bulkonly_within_pct_positive C(locus, Treatment('dev_time'))[T.marketing_only]  0.5341 1.2768 0.6757  2706
+       bulkonly_within_pct_positive              C(auth, Treatment('none'))[T.review] -5.3950 2.6394 0.0409  2706
+       bulkonly_within_pct_positive                C(auth, Treatment('none'))[T.edit] -0.4489 1.0094 0.6565  2706
+       bulkonly_within_pct_positive         C(auth, Treatment('none'))[T.human_final] -2.0406 1.7918 0.2548  2706
+       bulkonly_within_pct_positive                                          d_visual -2.2955 0.8632 0.0078  2706
+       bulkonly_within_pct_positive                                           d_voice  0.1658 1.1448 0.8849  2706
+       bulkonly_within_pct_positive                                           d_music  2.1757 1.0297 0.0346  2706
+       bulkonly_within_pct_positive                                             d_sfx  0.8052 1.4001 0.5652  2706
+       bulkonly_within_pct_positive                                            d_text -3.6950 1.3447 0.0060  2706
+       bulkonly_within_pct_positive                                    d_localization  4.8554 0.9346 0.0000  2706
+       bulkonly_within_pct_positive                                            d_code  1.6977 1.3678 0.2145  2706
+       bulkonly_within_pct_positive                                       ai_on_human  5.1397 1.6514 0.0019  2706
+       bulkonly_within_pct_positive                                       scope_minor  2.2648 0.7299 0.0019  2706
+       bulkonly_within_pct_positive                                   scope_extensive  1.7195 1.5473 0.2665  2706
+       bulkonly_within_pct_positive                                       placeholder  2.6330 2.1077 0.2116  2706
+       bulkonly_within_pct_positive                                       tools_named -0.7313 1.4844 0.6223  2706
+       bulkonly_within_pct_positive                                        small_team  3.4018 1.5584 0.0290  2706
+       bulkonly_within_pct_positive                                  explicit_no_live  0.7075 1.5516 0.6484  2706
+       bulkonly_within_pct_positive                                         log_words  0.2150 0.5175 0.6778  2706
+                      label_keepdev                                       ai_on_human  4.2857 1.3015 0.0010  3393
+                 label_keepdev_crit                                       ai_on_human -0.0120 0.0104 0.2490  2719
                  label_keepdev_crit                                          d_visual  0.0151 0.0050 0.0024  2719
-                 label_keepdev_crit        C(locus, Treatment('dev_time'))[T.runtime]  0.0511 0.0150 0.0007  2719
-                 label_keepdev_crit C(locus, Treatment('dev_time'))[T.marketing_only] -0.0327 0.0047 0.0000  2719
-                      label_devzero                                       ai_on_human  4.4113 1.4715 0.0027  3393
-                 label_devzero_crit                                       ai_on_human -0.0158 0.0123 0.1959  2719
-                 label_devzero_crit                                          d_visual  0.0151 0.0050 0.0025  2719
-                 label_devzero_crit        C(locus, Treatment('dev_time'))[T.runtime]  0.0509 0.0150 0.0007  2719
-                 label_devzero_crit C(locus, Treatment('dev_time'))[T.marketing_only] -0.0327 0.0047 0.0000  2719
-                        label_nodev                                       ai_on_human  4.3508 1.4754 0.0032  3094
-                   label_nodev_crit                                       ai_on_human -0.0155 0.0123 0.2069  2472
+                 label_keepdev_crit        C(locus, Treatment('dev_time'))[T.runtime]  0.0509 0.0150 0.0007  2719
+                 label_keepdev_crit C(locus, Treatment('dev_time'))[T.marketing_only] -0.0333 0.0047 0.0000  2719
+                      label_devzero                                       ai_on_human  4.4155 1.4713 0.0027  3393
+                 label_devzero_crit                                       ai_on_human -0.0159 0.0122 0.1944  2719
+                 label_devzero_crit                                          d_visual  0.0151 0.0050 0.0024  2719
+                 label_devzero_crit        C(locus, Treatment('dev_time'))[T.runtime]  0.0508 0.0150 0.0007  2719
+                 label_devzero_crit C(locus, Treatment('dev_time'))[T.marketing_only] -0.0333 0.0047 0.0000  2719
+                        label_nodev                                       ai_on_human  4.3538 1.4752 0.0032  3094
+                   label_nodev_crit                                       ai_on_human -0.0155 0.0123 0.2055  2472
                    label_nodev_crit                                          d_visual  0.0131 0.0053 0.0128  2472
-                   label_nodev_crit        C(locus, Treatment('dev_time'))[T.runtime]  0.0406 0.0148 0.0061  2472
-                   label_nodev_crit C(locus, Treatment('dev_time'))[T.marketing_only] -0.0289 0.0051 0.0000  2472
-                      label_allbulk                                       ai_on_human  4.1762 1.4777 0.0047  3094
-                 label_allbulk_crit                                       ai_on_human -0.0150 0.0122 0.2195  2472
+                   label_nodev_crit        C(locus, Treatment('dev_time'))[T.runtime]  0.0404 0.0148 0.0064  2472
+                   label_nodev_crit C(locus, Treatment('dev_time'))[T.marketing_only] -0.0297 0.0050 0.0000  2472
+                      label_allbulk                                       ai_on_human  4.1795 1.4775 0.0047  3094
+                 label_allbulk_crit                                       ai_on_human -0.0150 0.0122 0.2178  2472
                  label_allbulk_crit                                          d_visual  0.0141 0.0053 0.0074  2472
-                 label_allbulk_crit        C(locus, Treatment('dev_time'))[T.runtime]  0.0425 0.0147 0.0039  2472
-                 label_allbulk_crit C(locus, Treatment('dev_time'))[T.marketing_only] -0.0298 0.0050 0.0000  2472
-                  label_nodev_split                                        aoh_transl  4.2852 2.5369 0.0912  3094
-                  label_nodev_split                                         aoh_other  4.3623 1.6583 0.0085  3094
+                 label_allbulk_crit        C(locus, Treatment('dev_time'))[T.runtime]  0.0424 0.0147 0.0041  2472
+                 label_allbulk_crit C(locus, Treatment('dev_time'))[T.marketing_only] -0.0305 0.0050 0.0000  2472
+                  label_nodev_split                                        aoh_transl  4.2874 2.5373 0.0911  3094
+                  label_nodev_split                                         aoh_other  4.3655 1.6580 0.0085  3094
         devunit_single_pct_positive                                         disclosed -0.4290 0.7395 0.5618  6571
           devunit_last_pct_positive                                         disclosed -0.6757 0.7028 0.3363  7298
         devunit_linked_pct_positive                                         disclosed -0.5798 0.7151 0.4175  7803
@@ -233,77 +233,77 @@ notags_H1_pct_positive_developer_fe                                         disc
      devunit_linked_crit_share_term                                         disclosed  0.0232 0.0053 0.0000  1308
                                  model                                              term        b     se      p     n
                                   main                                         disclosed  -3.4451 0.3623 0.0000 23136
-                                  main        C(locus, Treatment('dev_time'))[T.runtime]  -4.1272 1.9785 0.0370  3393
-                                  main C(locus, Treatment('dev_time'))[T.marketing_only]   1.4263 1.1680 0.2220  3393
-                                  main              C(auth, Treatment('none'))[T.review]  -4.8008 2.4309 0.0483  3393
-                                  main                C(auth, Treatment('none'))[T.edit]  -0.5819 0.9120 0.5234  3393
-                                  main         C(auth, Treatment('none'))[T.human_final]  -0.5954 1.4300 0.6771  3393
-                                  main                                       ai_on_human   3.8021 1.2687 0.0027  3393
-                                  main                                          d_visual  -1.5828 0.7947 0.0464  3393
-                                  main                                           d_voice  -0.1210 1.0426 0.9076  3393
+                                  main        C(locus, Treatment('dev_time'))[T.runtime]  -4.1057 1.9785 0.0380  3393
+                                  main C(locus, Treatment('dev_time'))[T.marketing_only]   1.5355 1.1599 0.1856  3393
+                                  main              C(auth, Treatment('none'))[T.review]  -4.7914 2.4316 0.0488  3393
+                                  main                C(auth, Treatment('none'))[T.edit]  -0.5746 0.9121 0.5287  3393
+                                  main         C(auth, Treatment('none'))[T.human_final]  -0.5832 1.4300 0.6834  3393
+                                  main                                       ai_on_human   3.8066 1.2686 0.0027  3393
+                                  main                                          d_visual  -1.5841 0.7945 0.0462  3393
+                                  main                                           d_voice  -0.1131 1.0426 0.9136  3393
                          min_reviews_5                                         disclosed  -4.1143 0.3676 0.0000 28615
-                         min_reviews_5        C(locus, Treatment('dev_time'))[T.runtime]  -4.5572 1.9591 0.0200  3598
-                         min_reviews_5 C(locus, Treatment('dev_time'))[T.marketing_only]   0.9455 1.2822 0.4609  3598
-                         min_reviews_5              C(auth, Treatment('none'))[T.review]  -4.3991 2.3206 0.0580  3598
-                         min_reviews_5                C(auth, Treatment('none'))[T.edit]  -0.2537 0.9192 0.7826  3598
-                         min_reviews_5         C(auth, Treatment('none'))[T.human_final]  -0.7818 1.4262 0.5836  3598
-                         min_reviews_5                                       ai_on_human   4.1833 1.2588 0.0009  3598
-                         min_reviews_5                                          d_visual  -2.0017 0.7891 0.0112  3598
-                         min_reviews_5                                           d_voice  -1.2578 1.0839 0.2459  3598
+                         min_reviews_5        C(locus, Treatment('dev_time'))[T.runtime]  -4.5374 1.9589 0.0205  3598
+                         min_reviews_5 C(locus, Treatment('dev_time'))[T.marketing_only]   1.0560 1.2705 0.4059  3598
+                         min_reviews_5              C(auth, Treatment('none'))[T.review]  -4.3887 2.3211 0.0586  3598
+                         min_reviews_5                C(auth, Treatment('none'))[T.edit]  -0.2463 0.9193 0.7888  3598
+                         min_reviews_5         C(auth, Treatment('none'))[T.human_final]  -0.7778 1.4256 0.5853  3598
+                         min_reviews_5                                       ai_on_human   4.1881 1.2588 0.0009  3598
+                         min_reviews_5                                          d_visual  -2.0034 0.7890 0.0111  3598
+                         min_reviews_5                                           d_voice  -1.2491 1.0839 0.2491  3598
                         min_reviews_20                                         disclosed  -3.6855 0.3949 0.0000 16854
-                        min_reviews_20        C(locus, Treatment('dev_time'))[T.runtime]  -2.9276 2.3406 0.2110  2294
-                        min_reviews_20 C(locus, Treatment('dev_time'))[T.marketing_only]   1.8037 1.1957 0.1314  2294
-                        min_reviews_20              C(auth, Treatment('none'))[T.review]  -4.0702 2.7324 0.1363  2294
-                        min_reviews_20                C(auth, Treatment('none'))[T.edit]  -1.2424 1.0468 0.2353  2294
-                        min_reviews_20         C(auth, Treatment('none'))[T.human_final]  -0.2033 1.4550 0.8889  2294
-                        min_reviews_20                                       ai_on_human   2.0495 1.6068 0.2021  2294
-                        min_reviews_20                                          d_visual  -1.8485 0.8835 0.0364  2294
-                        min_reviews_20                                           d_voice  -0.3052 1.1526 0.7911  2294
+                        min_reviews_20        C(locus, Treatment('dev_time'))[T.runtime]  -2.9032 2.3407 0.2149  2294
+                        min_reviews_20 C(locus, Treatment('dev_time'))[T.marketing_only]   1.9457 1.1897 0.1020  2294
+                        min_reviews_20              C(auth, Treatment('none'))[T.review]  -4.0585 2.7321 0.1374  2294
+                        min_reviews_20                C(auth, Treatment('none'))[T.edit]  -1.2330 1.0469 0.2389  2294
+                        min_reviews_20         C(auth, Treatment('none'))[T.human_final]  -0.1868 1.4552 0.8979  2294
+                        min_reviews_20                                       ai_on_human   2.0543 1.6068 0.2011  2294
+                        min_reviews_20                                          d_visual  -1.8478 0.8833 0.0364  2294
+                        min_reviews_20                                           d_voice  -0.2963 1.1523 0.7971  2294
                         min_reviews_50                                         disclosed  -2.8233 0.4685 0.0000 10714
-                        min_reviews_50        C(locus, Treatment('dev_time'))[T.runtime]  -2.0867 2.7225 0.4434  1352
-                        min_reviews_50 C(locus, Treatment('dev_time'))[T.marketing_only]   1.0320 1.3698 0.4512  1352
-                        min_reviews_50              C(auth, Treatment('none'))[T.review]  -7.6727 3.9082 0.0496  1352
-                        min_reviews_50                C(auth, Treatment('none'))[T.edit]  -1.5416 1.2238 0.2078  1352
-                        min_reviews_50         C(auth, Treatment('none'))[T.human_final]  -2.2932 1.7778 0.1971  1352
-                        min_reviews_50                                       ai_on_human   4.4043 1.8886 0.0197  1352
-                        min_reviews_50                                          d_visual  -1.5086 1.0704 0.1587  1352
-                        min_reviews_50                                           d_voice   0.4824 1.3431 0.7195  1352
+                        min_reviews_50        C(locus, Treatment('dev_time'))[T.runtime]  -2.0691 2.7222 0.4472  1352
+                        min_reviews_50 C(locus, Treatment('dev_time'))[T.marketing_only]   1.1394 1.3609 0.4025  1352
+                        min_reviews_50              C(auth, Treatment('none'))[T.review]  -7.6639 3.9072 0.0498  1352
+                        min_reviews_50                C(auth, Treatment('none'))[T.edit]  -1.5341 1.2241 0.2101  1352
+                        min_reviews_50         C(auth, Treatment('none'))[T.human_final]  -2.2808 1.7776 0.1995  1352
+                        min_reviews_50                                       ai_on_human   4.4079 1.8887 0.0196  1352
+                        min_reviews_50                                          d_visual  -1.5123 1.0696 0.1574  1352
+                        min_reviews_50                                           d_voice   0.4865 1.3425 0.7171  1352
                        no_early_access                                         disclosed  -3.5017 0.3886 0.0000 20863
-                       no_early_access        C(locus, Treatment('dev_time'))[T.runtime]  -3.3602 2.1855 0.1242  2886
-                       no_early_access C(locus, Treatment('dev_time'))[T.marketing_only]   2.2855 1.2096 0.0588  2886
-                       no_early_access              C(auth, Treatment('none'))[T.review]  -5.1610 2.7497 0.0605  2886
-                       no_early_access                C(auth, Treatment('none'))[T.edit]  -0.2778 0.9905 0.7792  2886
-                       no_early_access         C(auth, Treatment('none'))[T.human_final]  -1.0382 1.5464 0.5020  2886
-                       no_early_access                                       ai_on_human   2.9577 1.4025 0.0350  2886
-                       no_early_access                                          d_visual  -1.1592 0.8664 0.1809  2886
-                       no_early_access                                           d_voice  -0.2689 1.1601 0.8167  2886
+                       no_early_access        C(locus, Treatment('dev_time'))[T.runtime]  -3.3242 2.1851 0.1282  2886
+                       no_early_access C(locus, Treatment('dev_time'))[T.marketing_only]   2.4695 1.2041 0.0403  2886
+                       no_early_access              C(auth, Treatment('none'))[T.review]  -5.1470 2.7506 0.0613  2886
+                       no_early_access                C(auth, Treatment('none'))[T.edit]  -0.2665 0.9904 0.7879  2886
+                       no_early_access         C(auth, Treatment('none'))[T.human_final]  -1.0204 1.5459 0.5092  2886
+                       no_early_access                                       ai_on_human   2.9660 1.4024 0.0344  2886
+                       no_early_access                                          d_visual  -1.1604 0.8661 0.1803  2886
+                       no_early_access                                           d_voice  -0.2579 1.1595 0.8240  2886
                 excl_prolific_devs_gt5                                         disclosed  -3.3789 0.3452 0.0000 21509
-                excl_prolific_devs_gt5        C(locus, Treatment('dev_time'))[T.runtime]  -3.7258 2.0068 0.0634  3129
-                excl_prolific_devs_gt5 C(locus, Treatment('dev_time'))[T.marketing_only]  -0.2787 1.1239 0.8042  3129
-                excl_prolific_devs_gt5              C(auth, Treatment('none'))[T.review]  -5.5544 2.3897 0.0201  3129
-                excl_prolific_devs_gt5                C(auth, Treatment('none'))[T.edit]  -0.2265 0.9342 0.8084  3129
-                excl_prolific_devs_gt5         C(auth, Treatment('none'))[T.human_final]  -0.2275 1.4612 0.8763  3129
-                excl_prolific_devs_gt5                                       ai_on_human   3.9380 1.3289 0.0030  3129
-                excl_prolific_devs_gt5                                          d_visual  -1.7623 0.8061 0.0288  3129
-                excl_prolific_devs_gt5                                           d_voice  -0.1238 1.0508 0.9062  3129
+                excl_prolific_devs_gt5        C(locus, Treatment('dev_time'))[T.runtime]  -3.7041 2.0070 0.0649  3129
+                excl_prolific_devs_gt5 C(locus, Treatment('dev_time'))[T.marketing_only]  -0.1294 1.1205 0.9081  3129
+                excl_prolific_devs_gt5              C(auth, Treatment('none'))[T.review]  -5.5449 2.3897 0.0203  3129
+                excl_prolific_devs_gt5                C(auth, Treatment('none'))[T.edit]  -0.2215 0.9343 0.8126  3129
+                excl_prolific_devs_gt5         C(auth, Treatment('none'))[T.human_final]  -0.2154 1.4610 0.8828  3129
+                excl_prolific_devs_gt5                                       ai_on_human   3.9413 1.3288 0.0030  3129
+                excl_prolific_devs_gt5                                          d_visual  -1.7626 0.8061 0.0288  3129
+                excl_prolific_devs_gt5                                           d_voice  -0.1082 1.0518 0.9181  3129
                              year_2024                                         disclosed  -3.3472 0.7321 0.0000  8741
-                             year_2024        C(locus, Treatment('dev_time'))[T.runtime]  -3.5431 4.5441 0.4356   802
-                             year_2024 C(locus, Treatment('dev_time'))[T.marketing_only]   3.5812 2.1048 0.0889   802
-                             year_2024              C(auth, Treatment('none'))[T.review] -17.3565 8.5219 0.0417   802
-                             year_2024                C(auth, Treatment('none'))[T.edit]  -0.1191 2.1704 0.9562   802
-                             year_2024         C(auth, Treatment('none'))[T.human_final]  -2.6945 3.4740 0.4380   802
-                             year_2024                                       ai_on_human   1.6538 2.7992 0.5546   802
-                             year_2024                                          d_visual  -0.6779 2.0760 0.7440   802
-                             year_2024                                           d_voice   0.6550 2.2715 0.7731   802
+                             year_2024        C(locus, Treatment('dev_time'))[T.runtime]  -3.5708 4.5425 0.4318   802
+                             year_2024 C(locus, Treatment('dev_time'))[T.marketing_only]   3.4575 2.0978 0.0993   802
+                             year_2024              C(auth, Treatment('none'))[T.review] -17.3982 8.5226 0.0412   802
+                             year_2024                C(auth, Treatment('none'))[T.edit]  -0.1215 2.1726 0.9554   802
+                             year_2024         C(auth, Treatment('none'))[T.human_final]  -2.6796 3.4782 0.4411   802
+                             year_2024                                       ai_on_human   1.6424 2.7994 0.5574   802
+                             year_2024                                          d_visual  -0.6876 2.0756 0.7404   802
+                             year_2024                                           d_voice   0.6408 2.2708 0.7778   802
                              year_2025                                         disclosed  -3.0969 0.4868 0.0000  9448
-                             year_2025        C(locus, Treatment('dev_time'))[T.runtime]  -2.9782 3.0403 0.3273  1490
-                             year_2025 C(locus, Treatment('dev_time'))[T.marketing_only]   2.0463 1.5876 0.1974  1490
-                             year_2025              C(auth, Treatment('none'))[T.review]   1.8277 3.1975 0.5676  1490
-                             year_2025                C(auth, Treatment('none'))[T.edit]   0.3335 1.2530 0.7901  1490
-                             year_2025         C(auth, Treatment('none'))[T.human_final]  -0.4878 1.9864 0.8060  1490
-                             year_2025                                       ai_on_human   2.4715 2.0551 0.2291  1490
-                             year_2025                                          d_visual  -1.1575 1.0945 0.2903  1490
-                             year_2025                                           d_voice  -0.3105 1.4862 0.8345  1490
+                             year_2025        C(locus, Treatment('dev_time'))[T.runtime]  -2.8995 3.0381 0.3399  1490
+                             year_2025 C(locus, Treatment('dev_time'))[T.marketing_only]   2.3649 1.5781 0.1340  1490
+                             year_2025              C(auth, Treatment('none'))[T.review]   1.8507 3.1988 0.5629  1490
+                             year_2025                C(auth, Treatment('none'))[T.edit]   0.3483 1.2528 0.7810  1490
+                             year_2025         C(auth, Treatment('none'))[T.human_final]  -0.4500 1.9852 0.8207  1490
+                             year_2025                                       ai_on_human   2.4796 2.0542 0.2274  1490
+                             year_2025                                          d_visual  -1.1560 1.0938 0.2905  1490
+                             year_2025                                           d_voice  -0.2883 1.4852 0.8461  1490
                            year_2026h1                                         disclosed  -4.2504 0.6325 0.0000  4947
                            year_2026h1        C(locus, Treatment('dev_time'))[T.runtime]  -5.7820 3.0124 0.0549  1101
                            year_2026h1 C(locus, Treatment('dev_time'))[T.marketing_only]  -0.7993 2.3256 0.7311  1101
@@ -314,14 +314,14 @@ notags_H1_pct_positive_developer_fe                                         disc
                            year_2026h1                                          d_visual  -2.7301 1.3361 0.0410  1101
                            year_2026h1                                           d_voice  -1.5728 2.0010 0.4319  1101
                       fractional_logit                                         disclosed  -0.2135 0.0216 0.0000 23136
-                      fractional_logit        C(locus, Treatment('dev_time'))[T.runtime]  -0.1964 0.1028 0.0560  3393
-                      fractional_logit C(locus, Treatment('dev_time'))[T.marketing_only]   0.0890 0.0654 0.1739  3393
-                      fractional_logit              C(auth, Treatment('none'))[T.review]  -0.2658 0.1247 0.0331  3393
-                      fractional_logit                C(auth, Treatment('none'))[T.edit]  -0.0321 0.0539 0.5514  3393
-                      fractional_logit         C(auth, Treatment('none'))[T.human_final]  -0.0375 0.0823 0.6488  3393
-                      fractional_logit                                       ai_on_human   0.2416 0.0834 0.0038  3393
-                      fractional_logit                                          d_visual  -0.0966 0.0472 0.0408  3393
-                      fractional_logit                                           d_voice  -0.0115 0.0597 0.8470  3393
+                      fractional_logit        C(locus, Treatment('dev_time'))[T.runtime]  -0.1952 0.1028 0.0576  3393
+                      fractional_logit C(locus, Treatment('dev_time'))[T.marketing_only]   0.0950 0.0650 0.1441  3393
+                      fractional_logit              C(auth, Treatment('none'))[T.review]  -0.2653 0.1248 0.0335  3393
+                      fractional_logit                C(auth, Treatment('none'))[T.edit]  -0.0317 0.0539 0.5573  3393
+                      fractional_logit         C(auth, Treatment('none'))[T.human_final]  -0.0367 0.0823 0.6553  3393
+                      fractional_logit                                       ai_on_human   0.2419 0.0834 0.0037  3393
+                      fractional_logit                                          d_visual  -0.0967 0.0472 0.0405  3393
+                      fractional_logit                                           d_voice  -0.0112 0.0597 0.8517  3393
                             rule_codes                                         disclosed  -3.4451 0.3623 0.0000 23136
                             rule_codes        C(locus, Treatment('dev_time'))[T.runtime]  -6.2629 2.1496 0.0036  3393
                             rule_codes C(locus, Treatment('dev_time'))[T.marketing_only]   0.7345 1.7171 0.6688  3393
@@ -332,41 +332,41 @@ notags_H1_pct_positive_developer_fe                                         disc
                             rule_codes                                          d_visual  -0.2431 0.7648 0.7506  3393
                             rule_codes                                           d_voice  -0.0756 1.0386 0.9420  3393
                        excl_rereleases                                         disclosed  -3.4614 0.3633 0.0000 22777
-                       excl_rereleases        C(locus, Treatment('dev_time'))[T.runtime]  -4.0599 1.9783 0.0401  3367
-                       excl_rereleases C(locus, Treatment('dev_time'))[T.marketing_only]   1.2988 1.1760 0.2694  3367
-                       excl_rereleases              C(auth, Treatment('none'))[T.review]  -4.7038 2.4616 0.0560  3367
-                       excl_rereleases                C(auth, Treatment('none'))[T.edit]  -0.4857 0.9174 0.5965  3367
-                       excl_rereleases         C(auth, Treatment('none'))[T.human_final]  -0.5098 1.4309 0.7217  3367
-                       excl_rereleases                                       ai_on_human   3.8005 1.2792 0.0030  3367
-                       excl_rereleases                                          d_visual  -1.7404 0.7945 0.0285  3367
-                       excl_rereleases                                           d_voice   0.0960 1.0245 0.9254  3367
+                       excl_rereleases        C(locus, Treatment('dev_time'))[T.runtime]  -4.0585 1.9784 0.0402  3367
+                       excl_rereleases C(locus, Treatment('dev_time'))[T.marketing_only]   1.3076 1.1691 0.2634  3367
+                       excl_rereleases              C(auth, Treatment('none'))[T.review]  -4.7031 2.4620 0.0561  3367
+                       excl_rereleases                C(auth, Treatment('none'))[T.edit]  -0.4843 0.9175 0.5976  3367
+                       excl_rereleases         C(auth, Treatment('none'))[T.human_final]  -0.5080 1.4311 0.7226  3367
+                       excl_rereleases                                       ai_on_human   3.8006 1.2792 0.0030  3367
+                       excl_rereleases                                          d_visual  -1.7391 0.7945 0.0286  3367
+                       excl_rereleases                                           d_voice   0.0990 1.0247 0.9230  3367
                           track_record                                         disclosed  -2.9738 0.3232 0.0000 23136
-                          track_record        C(locus, Treatment('dev_time'))[T.runtime]  -3.7888 1.8576 0.0414  3393
-                          track_record C(locus, Treatment('dev_time'))[T.marketing_only]   0.7637 1.0140 0.4514  3393
-                          track_record              C(auth, Treatment('none'))[T.review]  -4.1412 2.2416 0.0647  3393
-                          track_record                C(auth, Treatment('none'))[T.edit]  -0.3878 0.8566 0.6508  3393
-                          track_record         C(auth, Treatment('none'))[T.human_final]  -0.5420 1.3265 0.6828  3393
-                          track_record                                       ai_on_human   3.7197 1.1903 0.0018  3393
-                          track_record                                          d_visual  -1.9071 0.7469 0.0107  3393
-                          track_record                                           d_voice   0.1509 0.9907 0.8789  3393
+                          track_record        C(locus, Treatment('dev_time'))[T.runtime]  -3.7653 1.8577 0.0427  3393
+                          track_record C(locus, Treatment('dev_time'))[T.marketing_only]   0.8868 1.0095 0.3797  3393
+                          track_record              C(auth, Treatment('none'))[T.review]  -4.1315 2.2421 0.0654  3393
+                          track_record                C(auth, Treatment('none'))[T.edit]  -0.3805 0.8567 0.6570  3393
+                          track_record         C(auth, Treatment('none'))[T.human_final]  -0.5286 1.3266 0.6903  3393
+                          track_record                                       ai_on_human   3.7241 1.1902 0.0018  3393
+                          track_record                                          d_visual  -1.9083 0.7468 0.0106  3393
+                          track_record                                           d_voice   0.1611 0.9909 0.8708  3393
                     prior_work_control                                         disclosed  -3.4377 0.3624 0.0000 23136
-                    prior_work_control        C(locus, Treatment('dev_time'))[T.runtime]  -4.1235 1.9799 0.0373  3393
-                    prior_work_control C(locus, Treatment('dev_time'))[T.marketing_only]   1.4217 1.1657 0.2226  3393
-                    prior_work_control              C(auth, Treatment('none'))[T.review]  -4.8522 2.4385 0.0466  3393
-                    prior_work_control                C(auth, Treatment('none'))[T.edit]  -0.5895 0.9120 0.5181  3393
-                    prior_work_control         C(auth, Treatment('none'))[T.human_final]  -0.5888 1.4302 0.6806  3393
-                    prior_work_control                                       ai_on_human   3.7798 1.2753 0.0030  3393
-                    prior_work_control                                          d_visual  -1.5827 0.7954 0.0466  3393
-                    prior_work_control                                           d_voice  -0.1256 1.0445 0.9043  3393
+                    prior_work_control        C(locus, Treatment('dev_time'))[T.runtime]  -4.1020 1.9799 0.0383  3393
+                    prior_work_control C(locus, Treatment('dev_time'))[T.marketing_only]   1.5307 1.1577 0.1861  3393
+                    prior_work_control              C(auth, Treatment('none'))[T.review]  -4.8429 2.4392 0.0471  3393
+                    prior_work_control                C(auth, Treatment('none'))[T.edit]  -0.5821 0.9121 0.5233  3393
+                    prior_work_control         C(auth, Treatment('none'))[T.human_final]  -0.5765 1.4301 0.6869  3393
+                    prior_work_control                                       ai_on_human   3.7840 1.2753 0.0030  3393
+                    prior_work_control                                          d_visual  -1.5839 0.7952 0.0464  3393
+                    prior_work_control                                           d_voice  -0.1175 1.0446 0.9104  3393
                        excl_prior_work                                         disclosed  -3.3822 0.3647 0.0000 21415
-                       excl_prior_work        C(locus, Treatment('dev_time'))[T.runtime]  -4.1390 2.0336 0.0418  3187
-                       excl_prior_work C(locus, Treatment('dev_time'))[T.marketing_only]   1.2522 1.1910 0.2931  3187
-                       excl_prior_work              C(auth, Treatment('none'))[T.review]  -4.5659 2.4934 0.0671  3187
-                       excl_prior_work                C(auth, Treatment('none'))[T.edit]  -0.3928 0.9426 0.6769  3187
-                       excl_prior_work         C(auth, Treatment('none'))[T.human_final]  -0.2096 1.4505 0.8851  3187
-                       excl_prior_work                                       ai_on_human   4.0654 1.3278 0.0022  3187
-                       excl_prior_work                                          d_visual  -1.8708 0.8055 0.0202  3187
-                       excl_prior_work                                           d_voice   0.3376 1.0539 0.7487  3187
+                       excl_prior_work        C(locus, Treatment('dev_time'))[T.runtime]  -4.1160 2.0336 0.0430  3187
+                       excl_prior_work C(locus, Treatment('dev_time'))[T.marketing_only]   1.3744 1.1822 0.2450  3187
+                       excl_prior_work              C(auth, Treatment('none'))[T.review]  -4.5550 2.4941 0.0678  3187
+                       excl_prior_work                C(auth, Treatment('none'))[T.edit]  -0.3846 0.9427 0.6833  3187
+                       excl_prior_work         C(auth, Treatment('none'))[T.human_final]  -0.1963 1.4505 0.8924  3187
+                       excl_prior_work                                       ai_on_human   4.0691 1.3278 0.0022  3187
+                       excl_prior_work                                          d_visual  -1.8717 0.8053 0.0201  3187
+                       excl_prior_work                                           d_voice   0.3474 1.0540 0.7417  3187
                 multi_game_devs_pooled                                         disclosed  -2.9986 0.7198 0.0000  7361
                 multi_game_devs_pooled        C(locus, Treatment('dev_time'))[T.runtime] -10.7784 3.9970 0.0070   778
                 multi_game_devs_pooled C(locus, Treatment('dev_time'))[T.marketing_only]   2.0405 2.0471 0.3189   778
@@ -393,43 +393,44 @@ notags_H1_pct_positive_developer_fe                                         disc
                        crit_rule_codes                                       ai_on_human  -0.0164 0.0061 0.0073  2719
                        crit_rule_codes                                          d_visual   0.0120 0.0046 0.0087  2719
                        crit_rule_codes                                           d_voice   0.0084 0.0067 0.2097  2719
-                   crit_min_reviews_20        C(locus, Treatment('dev_time'))[T.runtime]   0.0374 0.0168 0.0258  1971
-                   crit_min_reviews_20 C(locus, Treatment('dev_time'))[T.marketing_only]  -0.0258 0.0056 0.0000  1971
-                   crit_min_reviews_20              C(auth, Treatment('none'))[T.review]  -0.0114 0.0136 0.4007  1971
-                   crit_min_reviews_20                C(auth, Treatment('none'))[T.edit]  -0.0011 0.0083 0.8989  1971
-                   crit_min_reviews_20         C(auth, Treatment('none'))[T.human_final]  -0.0081 0.0116 0.4850  1971
-                   crit_min_reviews_20                                       ai_on_human  -0.0078 0.0123 0.5246  1971
-                   crit_min_reviews_20                                          d_visual   0.0172 0.0058 0.0028  1971
-                   crit_min_reviews_20                                           d_voice   0.0033 0.0076 0.6632  1971
+                   crit_min_reviews_20        C(locus, Treatment('dev_time'))[T.runtime]   0.0372 0.0168 0.0266  1971
+                   crit_min_reviews_20 C(locus, Treatment('dev_time'))[T.marketing_only]  -0.0268 0.0056 0.0000  1971
+                   crit_min_reviews_20              C(auth, Treatment('none'))[T.review]  -0.0115 0.0136 0.3971  1971
+                   crit_min_reviews_20                C(auth, Treatment('none'))[T.edit]  -0.0012 0.0083 0.8894  1971
+                   crit_min_reviews_20         C(auth, Treatment('none'))[T.human_final]  -0.0083 0.0116 0.4761  1971
+                   crit_min_reviews_20                                       ai_on_human  -0.0079 0.0123 0.5204  1971
+                   crit_min_reviews_20                                          d_visual   0.0172 0.0057 0.0027  1971
+                   crit_min_reviews_20                                           d_voice   0.0033 0.0076 0.6667  1971
               log_reviews_multi_pooled                                         disclosed  -0.6134 0.0571 0.0000 15664
               log_reviews_developer_fe                                         disclosed  -0.0152 0.0435 0.7271 15664
                        cluster_dev_pub                                         disclosed  -3.4451 0.3732 0.0000 23136
-                       cluster_dev_pub        C(locus, Treatment('dev_time'))[T.runtime]  -4.1272 1.9675 0.0359  3393
-                       cluster_dev_pub C(locus, Treatment('dev_time'))[T.marketing_only]   1.4263 1.1539 0.2164  3393
-                       cluster_dev_pub              C(auth, Treatment('none'))[T.review]  -4.8008 2.4342 0.0486  3393
-                       cluster_dev_pub                C(auth, Treatment('none'))[T.edit]  -0.5819 0.9160 0.5252  3393
-                       cluster_dev_pub         C(auth, Treatment('none'))[T.human_final]  -0.5954 1.4283 0.6768  3393
-                       cluster_dev_pub                                       ai_on_human   3.8021 1.2694 0.0027  3393
-                       cluster_dev_pub                                          d_visual  -1.5828 0.7942 0.0463  3393
-                       cluster_dev_pub                                           d_voice  -0.1210 1.0391 0.9073  3393
-                             aoh_split                                        aoh_transl   2.8424 2.4172 0.2396  3393
-                             aoh_split                                         aoh_other   4.0086 1.4219 0.0048  3393
-                             crit_main        C(locus, Treatment('dev_time'))[T.runtime]   0.0510 0.0150 0.0007  2719
-                             crit_main C(locus, Treatment('dev_time'))[T.marketing_only]  -0.0327 0.0047 0.0000  2719
-                             crit_main              C(auth, Treatment('none'))[T.review]  -0.0137 0.0118 0.2467  2719
-                             crit_main                C(auth, Treatment('none'))[T.edit]  -0.0030 0.0069 0.6697  2719
-                             crit_main         C(auth, Treatment('none'))[T.human_final]  -0.0067 0.0100 0.5045  2719
-                             crit_main                                       ai_on_human  -0.0136 0.0098 0.1665  2719
+                       cluster_dev_pub        C(locus, Treatment('dev_time'))[T.runtime]  -4.1057 1.9676 0.0369  3393
+                       cluster_dev_pub C(locus, Treatment('dev_time'))[T.marketing_only]   1.5355 1.1457 0.1802  3393
+                       cluster_dev_pub              C(auth, Treatment('none'))[T.review]  -4.7914 2.4348 0.0491  3393
+                       cluster_dev_pub                C(auth, Treatment('none'))[T.edit]  -0.5746 0.9161 0.5305  3393
+                       cluster_dev_pub         C(auth, Treatment('none'))[T.human_final]  -0.5832 1.4283 0.6831  3393
+                       cluster_dev_pub                                       ai_on_human   3.8066 1.2693 0.0027  3393
+                       cluster_dev_pub                                          d_visual  -1.5841 0.7941 0.0461  3393
+                       cluster_dev_pub                                           d_voice  -0.1131 1.0390 0.9134  3393
+                             aoh_split                                        aoh_transl   2.8427 2.4180 0.2397  3393
+                             aoh_split                                         aoh_other   4.0141 1.4218 0.0048  3393
+                   visual_no_marketing                                          d_visual  -1.6752 0.9025 0.0634  2570
+                             crit_main        C(locus, Treatment('dev_time'))[T.runtime]   0.0508 0.0150 0.0007  2719
+                             crit_main C(locus, Treatment('dev_time'))[T.marketing_only]  -0.0333 0.0047 0.0000  2719
+                             crit_main              C(auth, Treatment('none'))[T.review]  -0.0137 0.0118 0.2452  2719
+                             crit_main                C(auth, Treatment('none'))[T.edit]  -0.0030 0.0069 0.6621  2719
+                             crit_main         C(auth, Treatment('none'))[T.human_final]  -0.0068 0.0100 0.4973  2719
+                             crit_main                                       ai_on_human  -0.0136 0.0098 0.1648  2719
                              crit_main                                          d_visual   0.0151 0.0050 0.0024  2719
-                             crit_main                                           d_voice   0.0057 0.0066 0.3896  2719
-                    crit_mention_share        C(locus, Treatment('dev_time'))[T.runtime]   0.1593 0.0252 0.0000  2719
-                    crit_mention_share C(locus, Treatment('dev_time'))[T.marketing_only]  -0.0405 0.0062 0.0000  2719
-                    crit_mention_share              C(auth, Treatment('none'))[T.review]  -0.0240 0.0154 0.1183  2719
-                    crit_mention_share                C(auth, Treatment('none'))[T.edit]  -0.0043 0.0087 0.6181  2719
-                    crit_mention_share         C(auth, Treatment('none'))[T.human_final]  -0.0154 0.0116 0.1862  2719
-                    crit_mention_share                                       ai_on_human  -0.0195 0.0122 0.1101  2719
+                             crit_main                                           d_voice   0.0057 0.0066 0.3890  2719
+                    crit_mention_share        C(locus, Treatment('dev_time'))[T.runtime]   0.1592 0.0252 0.0000  2719
+                    crit_mention_share C(locus, Treatment('dev_time'))[T.marketing_only]  -0.0412 0.0061 0.0000  2719
+                    crit_mention_share              C(auth, Treatment('none'))[T.review]  -0.0240 0.0154 0.1175  2719
+                    crit_mention_share                C(auth, Treatment('none'))[T.edit]  -0.0044 0.0087 0.6112  2719
+                    crit_mention_share         C(auth, Treatment('none'))[T.human_final]  -0.0155 0.0116 0.1825  2719
+                    crit_mention_share                                       ai_on_human  -0.0196 0.0122 0.1089  2719
                     crit_mention_share                                          d_visual   0.0283 0.0064 0.0000  2719
-                    crit_mention_share                                           d_voice   0.0206 0.0091 0.0229  2719
+                    crit_mention_share                                           d_voice   0.0206 0.0090 0.0226  2719
                     crit_given_mention        C(locus, Treatment('dev_time'))[T.runtime]  -0.2106 0.0511 0.0000  1573
                     crit_given_mention C(locus, Treatment('dev_time'))[T.marketing_only]  -0.0537 0.0393 0.1722  1573
                     crit_given_mention              C(auth, Treatment('none'))[T.review]   0.0571 0.0560 0.3084  1573
@@ -446,30 +447,31 @@ notags_H1_pct_positive_developer_fe                                         disc
            crit_given_mention_weighted                                       ai_on_human  -0.0005 0.0364 0.9899  1573
            crit_given_mention_weighted                                          d_visual  -0.0170 0.0222 0.4432  1573
            crit_given_mention_weighted                                           d_voice  -0.0572 0.0242 0.0182  1573
-                             crit_term        C(locus, Treatment('dev_time'))[T.runtime]   0.0065 0.0093 0.4863  2719
-                             crit_term C(locus, Treatment('dev_time'))[T.marketing_only]  -0.0196 0.0032 0.0000  2719
-                             crit_term              C(auth, Treatment('none'))[T.review]  -0.0185 0.0067 0.0059  2719
-                             crit_term                C(auth, Treatment('none'))[T.edit]  -0.0033 0.0044 0.4536  2719
-                             crit_term         C(auth, Treatment('none'))[T.human_final]  -0.0128 0.0071 0.0733  2719
-                             crit_term                                       ai_on_human  -0.0141 0.0060 0.0190  2719
+                             crit_term        C(locus, Treatment('dev_time'))[T.runtime]   0.0064 0.0093 0.4920  2719
+                             crit_term C(locus, Treatment('dev_time'))[T.marketing_only]  -0.0200 0.0032 0.0000  2719
+                             crit_term              C(auth, Treatment('none'))[T.review]  -0.0185 0.0067 0.0058  2719
+                             crit_term                C(auth, Treatment('none'))[T.edit]  -0.0034 0.0044 0.4480  2719
+                             crit_term         C(auth, Treatment('none'))[T.human_final]  -0.0129 0.0071 0.0719  2719
+                             crit_term                                       ai_on_human  -0.0141 0.0060 0.0188  2719
                              crit_term                                          d_visual   0.0119 0.0034 0.0006  2719
-                             crit_term                                           d_voice   0.0014 0.0042 0.7305  2719
-                  crit_cluster_dev_pub        C(locus, Treatment('dev_time'))[T.runtime]   0.0510 0.0149 0.0006  2719
-                  crit_cluster_dev_pub C(locus, Treatment('dev_time'))[T.marketing_only]  -0.0327 0.0047 0.0000  2719
-                  crit_cluster_dev_pub              C(auth, Treatment('none'))[T.review]  -0.0137 0.0118 0.2476  2719
-                  crit_cluster_dev_pub                C(auth, Treatment('none'))[T.edit]  -0.0030 0.0070 0.6729  2719
-                  crit_cluster_dev_pub         C(auth, Treatment('none'))[T.human_final]  -0.0067 0.0102 0.5116  2719
-                  crit_cluster_dev_pub                                       ai_on_human  -0.0136 0.0098 0.1668  2719
+                             crit_term                                           d_voice   0.0015 0.0042 0.7293  2719
+                  crit_cluster_dev_pub        C(locus, Treatment('dev_time'))[T.runtime]   0.0508 0.0149 0.0007  2719
+                  crit_cluster_dev_pub C(locus, Treatment('dev_time'))[T.marketing_only]  -0.0333 0.0047 0.0000  2719
+                  crit_cluster_dev_pub              C(auth, Treatment('none'))[T.review]  -0.0137 0.0118 0.2461  2719
+                  crit_cluster_dev_pub                C(auth, Treatment('none'))[T.edit]  -0.0030 0.0070 0.6654  2719
+                  crit_cluster_dev_pub         C(auth, Treatment('none'))[T.human_final]  -0.0068 0.0102 0.5044  2719
+                  crit_cluster_dev_pub                                       ai_on_human  -0.0136 0.0098 0.1650  2719
                   crit_cluster_dev_pub                                          d_visual   0.0151 0.0050 0.0027  2719
-                  crit_cluster_dev_pub                                           d_voice   0.0057 0.0066 0.3890  2719
-                     crit_track_record        C(locus, Treatment('dev_time'))[T.runtime]   0.0511 0.0150 0.0006  2719
-                     crit_track_record C(locus, Treatment('dev_time'))[T.marketing_only]  -0.0321 0.0048 0.0000  2719
-                     crit_track_record              C(auth, Treatment('none'))[T.review]  -0.0144 0.0118 0.2233  2719
-                     crit_track_record                C(auth, Treatment('none'))[T.edit]  -0.0031 0.0069 0.6510  2719
-                     crit_track_record         C(auth, Treatment('none'))[T.human_final]  -0.0064 0.0101 0.5260  2719
-                     crit_track_record                                       ai_on_human  -0.0137 0.0098 0.1630  2719
+                  crit_cluster_dev_pub                                           d_voice   0.0057 0.0066 0.3884  2719
+                     crit_track_record        C(locus, Treatment('dev_time'))[T.runtime]   0.0509 0.0150 0.0007  2719
+                     crit_track_record C(locus, Treatment('dev_time'))[T.marketing_only]  -0.0327 0.0047 0.0000  2719
+                     crit_track_record              C(auth, Treatment('none'))[T.review]  -0.0145 0.0118 0.2221  2719
+                     crit_track_record                C(auth, Treatment('none'))[T.edit]  -0.0032 0.0070 0.6437  2719
+                     crit_track_record         C(auth, Treatment('none'))[T.human_final]  -0.0065 0.0101 0.5182  2719
+                     crit_track_record                                       ai_on_human  -0.0138 0.0098 0.1614  2719
                      crit_track_record                                          d_visual   0.0154 0.0050 0.0019  2719
-                     crit_track_record                                           d_voice   0.0054 0.0067 0.4149  2719
+                     crit_track_record                                           d_voice   0.0054 0.0067 0.4141  2719
+              crit_visual_no_marketing                                          d_visual   0.0227 0.0059 0.0001  2003
                              crit_main                                         disclosed   0.0491 0.0023 0.0000  6290
                              crit_term                                         disclosed   0.0301 0.0015 0.0000  6290
      crit_share_multi_game_devs_pooled                                         disclosed   0.0498 0.0065 0.0000  1230
@@ -494,6 +496,8 @@ crit_share_term_multi_game_devs_pooled                                         d
  "n_unreadable": 4800,
  "n_unreadable_mature": 4799,
  "n_unreadable_agecheck": 4739,
+ "n_kept_not_app_page": 0,
+ "n_dropped_app_page": 0,
  "n_cohort_with_page": 56930,
  "n_disclosed": 13658,
  "share_disclosed": 0.23990865975759704,
@@ -516,7 +520,14 @@ crit_share_term_multi_game_devs_pooled                                         d
   "gold_dev": 299
  },
  "share_visual_auth0": 0.5738284703801945,
- "share_devvisual_auth0": 0.48894783377542,
+ "n_visual_auth0": 1947,
+ "n_visual_auth0_mkt": 259,
+ "n_visual_auth0_aoh": 84,
+ "share_visual_auth0_no_mkt": 0.4974948423224285,
+ "share_visual_auth0_no_aoh": 0.5490716180371353,
+ "n_ai_on_human": 186,
+ "n_auth0_aoh": 118,
+ "share_devvisual_auth0": 0.4880636604774536,
  "n_live_reception": 112,
  "n_live_census": 255,
  "n_live_census_unique": 249,
@@ -553,6 +564,15 @@ crit_share_term_multi_game_devs_pooled                                         d
  "cue_recall_guard": 0.8235294117647058,
  "raw_pct_pos_disclosed": 76.6280577659888,
  "raw_pct_pos_nondisclosed": 82.04254672542167,
+ "h2a_ingame_pct_positive": {
+  "b": 1.6868811359343394,
+  "lo": -0.5793735215176015,
+  "hi": 3.9531357933862803,
+  "p": 0.14459416935903707,
+  "w_runtime": 0.03686635944700461,
+  "n_ref": 2926,
+  "n_ref_no_locus": 26
+ },
  "ov_share": 0.2116121426466254,
  "ov_dom1": 0.17089201877934274,
  "ov_dom3": 0.36585365853658536,
@@ -571,8 +591,17 @@ crit_share_term_multi_game_devs_pooled                                         d
  "crit_share_term_nondisclosed": 0.005262371009453173,
  "share_disclosed_any_crit": 0.47002574475910264,
  "share_nondisclosed_any_crit": 0.14505740688882665,
+ "h2a_ingame_crit_share": {
+  "b": -0.03520669908886188,
+  "lo": -0.044359489611406566,
+  "hi": -0.026053908566317188,
+  "p": 4.7320252348356393e-14,
+  "w_runtime": 0.036605657237936774,
+  "n_ref": 2316,
+  "n_ref_no_locus": 20
+ },
  "n_text_games_disc_mention": 1573,
- "mention_share_dev_time": 0.09087883583816066,
+ "mention_share_dev_time": 0.09103579410385695,
  "mention_share_runtime": 0.2833423312524103,
  "crit_given_mention_dev_time": 0.675542337066634,
  "crit_given_mention_runtime": 0.5447030297890441,
@@ -625,6 +654,9 @@ crit_share_term_multi_game_devs_pooled                                         d
  "wb_random_late": 13,
  "wb_random_uncertain": 2,
  "wb_random_unknown": 7,
+ "wb_fe_eligible": 173,
+ "wb_fe_extra": 6,
+ "wb_fe_eligible_missing": 0,
  "wb_nolate_switch_devs": 97,
  "wb_early_switch_devs": 93,
  "long_share_all": 0.11109038266372157,
@@ -685,7 +717,7 @@ crit_share_term_multi_game_devs_pooled                                         d
   "text": 5516,
   "within_text": 2316
  },
- "ov_r2_within": 0.2581669049948435,
+ "ov_r2_within": 0.2582557899560247,
  "loc_n": 405,
  "loc_aoh_transl_n": 33,
  "eng_pos_disclosed_mean": 71.75891070843088,
@@ -699,44 +731,44 @@ crit_share_term_multi_game_devs_pooled                                         d
  "label_test_pos_neither": 75.03428571428572,
  "label_test_ref_equals_both_annotators": 388,
  "label_keepdev_share": 0.04980842911877394,
- "label_keepdev_holm": 0.0040260145489941805,
- "label_keepdev_music_holm": 0.01793240087568026,
+ "label_keepdev_holm": 0.003968166619210995,
+ "label_keepdev_music_holm": 0.0173667807744204,
  "label_keepdev_holm_changes": [],
- "label_keepdev_crit_holm": 1.0,
+ "label_keepdev_crit_holm": 0.996070519325698,
  "label_keepdev_crit_holm_changes": [],
- "label_keepdev_crit_visual_holm": 0.014596276318999665,
+ "label_keepdev_crit_visual_holm": 0.014407983051761504,
  "label_devzero_share": 0.04008252284114353,
- "label_devzero_holm": 0.010873635146542639,
- "label_devzero_music_holm": 0.015923992066340157,
+ "label_devzero_holm": 0.010761139709211567,
+ "label_devzero_music_holm": 0.015417937321756045,
  "label_devzero_holm_changes": [],
- "label_devzero_crit_holm": 0.7835365018393117,
+ "label_devzero_crit_holm": 0.7775694147618566,
  "label_devzero_crit_holm_changes": [],
- "label_devzero_crit_visual_holm": 0.014712353314873182,
+ "label_devzero_crit_visual_holm": 0.014524739868677711,
  "label_nodev_share": 0.04395604395604396,
- "label_nodev_holm": 0.012759323574886051,
- "label_nodev_music_holm": 0.10818345515257088,
+ "label_nodev_holm": 0.012654219949948262,
+ "label_nodev_music_holm": 0.10773171087170036,
  "label_nodev_holm_changes": [
   "d_music"
  ],
- "label_nodev_crit_holm": 0.8277760615215457,
+ "label_nodev_crit_holm": 0.8218449953565341,
  "label_nodev_crit_holm_changes": [
   "d_visual"
  ],
- "label_nodev_crit_visual_holm": 0.0766186756939059,
+ "label_nodev_crit_visual_holm": 0.07660809291300585,
  "label_allbulk_share": 0.04395604395604396,
- "label_allbulk_holm": 0.01884428202367722,
- "label_allbulk_music_holm": 0.11190741235690266,
+ "label_allbulk_holm": 0.018687990658098785,
+ "label_allbulk_music_holm": 0.1088489733715315,
  "label_allbulk_holm_changes": [
   "d_music"
  ],
- "label_allbulk_crit_holm": 0.8778691673459713,
+ "label_allbulk_crit_holm": 0.8713268274045651,
  "label_allbulk_crit_holm_changes": [],
- "label_allbulk_crit_visual_holm": 0.044699119681071264,
+ "label_allbulk_crit_visual_holm": 0.044650011995743345,
  "aoh_split_other_n": 152,
- "aoh_split_equal_p": 0.6699638743851485,
+ "aoh_split_equal_p": 0.6686622318219668,
  "label_nodev_transl_n": 20,
  "label_nodev_other_n": 116,
- "label_nodev_split_equal_p": 0.9793155979095969,
+ "label_nodev_split_equal_p": 0.9790597810400813,
  "dev_multi_share_reception": 0.0790542876901798,
  "dev_multi_share_fe": 0.08789566634968075
 }

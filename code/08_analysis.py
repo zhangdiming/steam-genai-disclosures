@@ -125,6 +125,19 @@ def within_formula(y, ctrl):
             f"{' + '.join(DOM + EXTRA + ['log_words'])} + {ctrl}")
 
 
+def ingame_contrast(m, s):
+    names = list(m.params.index)
+    w = float((s.locus == "runtime").sum() / (s.locus != "marketing_only").sum())
+    r = np.zeros(len(names))
+    r[names.index("C(locus, Treatment('dev_time'))[T.marketing_only]")] = 1
+    r[names.index("C(locus, Treatment('dev_time'))[T.runtime]")] = -w
+    t = m.t_test(r)
+    lo, hi = np.asarray(t.conf_int()).ravel()
+    return {"b": float(np.squeeze(t.effect)), "lo": float(lo), "hi": float(hi), "p": float(np.squeeze(t.pvalue)),
+            "w_runtime": w, "n_ref": int((s.locus == "dev_time").sum()),
+            "n_ref_no_locus": int(((s.locus == "dev_time") & (s.c_pre == 0)).sum())}
+
+
 def within_terms(m):
     return [t for t in m.params.index if t.startswith("C(locus") or t.startswith("C(auth")] + DOM + EXTRA + ["log_words"]
 
@@ -148,17 +161,9 @@ def holm_by_term(m):
 
 
 def bulk_codes(bd):
-    B = ROOT / "annotation/bulk"
-    um = pd.read_csv(B / "uid_map.csv")
+    um = pd.read_csv(ROOT / "annotation/bulk/uid_map.csv")
     uid_norm = dict(zip(um.uid, um.norm))
-    rp = {r.pop("uid"): r for r in bd.load_jsonl(B / "runtime_pass.jsonl")}
-    out = {}
-    for p in sorted(B.glob("coded_batch_[0-9][0-9].jsonl")):
-        for r in bd.load_jsonl(p):
-            u = r.pop("uid")
-            if u in uid_norm:
-                out[uid_norm[u]] = bd.apply_runtime_pass(r, rp.get(u))
-    return out
+    return {uid_norm[u]: r for u, r in bd.bulk_codes().items() if u in uid_norm}
 
 
 def main():
@@ -172,10 +177,14 @@ def main():
     head["n_unreadable_mature"] = int((unread & (df["mature"] == 1)).sum())
     raw = ROOT / "data/raw/store_pages.jsonl"
     if raw.exists():
-        ids = set(df.loc[unread, "appid"])
+        ids, window = set(df.loc[unread, "appid"]), set(df.appid)
         with open(raw, encoding="utf-8") as f:
-            urls = [r.get("final_url") or "" for r in map(json.loads, f) if r["appid"] in ids]
+            pages = {r["appid"]: r for r in map(json.loads, f) if r["appid"] in window}
+        urls = [pages[a].get("final_url") or "" for a in ids]
         head["n_unreadable_agecheck"] = sum("agecheck" in u for u in urls)
+        app = df.appid.map(lambda a: bool(pages[a].get("is_app_page")))
+        head["n_kept_not_app_page"] = int((~unread & ~app).sum())
+        head["n_dropped_app_page"] = int((unread & app).sum())
     df = df[~unread]
     df, tag_cols = prep(df)
     ctrl = " + ".join(CONTROLS + tag_cols)
@@ -231,6 +240,14 @@ def main():
             dist.append({"code": c, "share": float(d["c_" + c].mean())})
     pd.DataFrame(dist).to_csv(RES / "code_distribution.csv", index=False)
     head["share_visual_auth0"] = float(((d.d_visual == 1) & (d.authority == 0)).mean())
+    va = (d.d_visual == 1) & (d.authority == 0)
+    head["n_visual_auth0"] = int(va.sum())
+    head["n_visual_auth0_mkt"] = int((va & (d.locus == "marketing_only")).sum())
+    head["n_visual_auth0_aoh"] = int((va & (d.ai_on_human == 1)).sum())
+    head["share_visual_auth0_no_mkt"] = float((va & (d.locus != "marketing_only")).mean())
+    head["share_visual_auth0_no_aoh"] = float((va & (d.ai_on_human == 0)).mean())
+    head["n_ai_on_human"] = int(d.ai_on_human.sum())
+    head["n_auth0_aoh"] = int(((d.authority == 0) & (d.ai_on_human == 1)).sum())
     head["share_devvisual_auth0"] = float(((d.locus == "dev_time") & (d.d_visual == 1) & (d.authority == 0)).mean())
     head["n_live_reception"] = int(d.live_any.sum())
     d.groupby("year").agg(
@@ -285,6 +302,7 @@ def main():
     f_w = within_formula("pct_positive", ctrl)
     m2 = fit(f_w, rd)
     rows += coef_table(m2, within_terms(m2), "within_pct_positive")
+    head["h2a_ingame_pct_positive"] = ingame_contrast(m2, rd)
     m2b = fit(f"pct_positive ~ any_oversight + C(locus, Treatment('dev_time')) + "
               f"{' + '.join(DOM + EXTRA + ['log_words'])} + {ctrl}", rd)
     rows += coef_table(m2b, ["any_oversight"], "within_pct_positive_anyoversight")
@@ -322,6 +340,7 @@ def main():
         rdr = rdr[rdr.n_reviews_text >= 5].assign(crit_given_mention=lambda x: x.n_crit / x.n_mention.where(x.n_mention > 0))
         m4 = fit(within_formula("crit_share", ctrl), rdr)
         rows += coef_table(m4, within_terms(m4), "within_crit_share")
+        head["h2a_ingame_crit_share"] = ingame_contrast(m4, rdr)
         rdm = rdr.dropna(subset=["crit_given_mention"])
         head["n_text_games_disc_mention"] = int(len(rdm))
         for k, sd in (("mention_share", rdr), ("crit_given_mention", rdm)):
@@ -421,6 +440,9 @@ def main():
     head["aoh_rerelease_n"] = int(((rda.ai_on_human == 1) & (rda.rerelease == 1)).sum())
     f_aoh = within_formula("pct_positive", ctrl).replace("ai_on_human", "aoh_transl + aoh_other")
     rob += coef_table(fit(f_aoh, rda), ["aoh_transl", "aoh_other"], "aoh_split")
+    def no_marketing(d):
+        return d[d.c_marketing == 0].assign(locus=lambda x: x.locus.astype(str))
+    rob += coef_table(fit(within_formula("pct_positive", ctrl), no_marketing(rd)), ["d_visual"], "visual_no_marketing")
     if rdr is not None:
         rob += coef_table(fit(within_formula("crit_share", ctrl), rdr), key[1:], "crit_main")
         rob += coef_table(fit(within_formula("mention_share", ctrl), rdr), key[1:], "crit_mention_share")
@@ -432,6 +454,8 @@ def main():
                           "crit_cluster_dev_pub")
         rob += coef_table(fit(within_formula("crit_share", ctrl + " + dev_track + dev_track_na"), rdr), key[1:],
                           "crit_track_record")
+        rob += coef_table(fit(within_formula("crit_share", ctrl), no_marketing(rdr)), ["d_visual"],
+                          "crit_visual_no_marketing")
         head["share_disc_track"] = float(1 - rd.dev_track_na.mean())
         head["aoh_prior_work_n"] = int(((rd.ai_on_human == 1) & (rd.prior_work == 1)).sum())
         head["disc_prior_work_n"] = int(rd.prior_work.sum())
@@ -484,6 +508,12 @@ def main():
                 for stt in ("early", "late", "uncertain", "unknown"):
                     head[f"wb_{grp}_{stt}"] = int((w.status == stt).sum())
             late, early = set(wb.appid[wb.status == "late"]), set(wb.appid[wb.status == "early"])
+            mgt = rsr[rsr.groupby("dev_key").appid.transform("size") >= 2]
+            swt = mgt.groupby("dev_key").disclosed.agg(["min", "max"])
+            swt = swt[(swt["min"] == 0) & (swt["max"] == 1)].index
+            elig, fe_t = set(mgt.appid[mgt.dev_key.isin(swt) & (mgt.disclosed == 1)]), set(wb.appid[wb.group == "fe"])
+            head["wb_fe_eligible"], head["wb_fe_extra"] = len(fe_t & elig), len(fe_t - elig)
+            head["wb_fe_eligible_missing"] = len(elig - fe_t)
             for name, keep in (("nolate", ~rsr.appid.isin(late)), ("early", (rsr.disclosed == 0) | rsr.appid.isin(early))):
                 sub = rsr[keep]
                 sub = sub[sub.groupby("dev_key").appid.transform("size") >= 2]

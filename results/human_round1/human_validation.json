@@ -17,10 +17,16 @@
    "R": "20261130-v1"
   }
  },
+ "R_crawl_unmatched": 0,
  "D_n_all_coders": 200,
  "D_aoh_disagreements": 22,
  "D_aoh_disagreements_translation": 18,
  "D_disagreement_cells": 135,
+ "D_aoh_model_pos": 10,
+ "D_aoh_gold_pos": 21,
+ "D_aoh_model_in_gold": 10,
+ "D_aoh_gold_extra": 11,
+ "D_aoh_gold_extra_rejected": 7,
  "G_n_all_coders": 288,
  "G_disagreement_cells": 508,
  "R_n_all_coders": 300,

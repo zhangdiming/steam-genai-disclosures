@@ -65,29 +65,34 @@ def load_humans(d, versions=None):
     return out, used
 
 
-def model_codes(key):
+def review_texts(rids):
+    spec = importlib.util.spec_from_file_location("vr", ROOT / "code/12_validate_reviews.py")
+    vr = importlib.util.module_from_spec(spec); spec.loader.exec_module(vr)
+    if (G / "reviews_gold.jsonl").exists():
+        hashes = {r["rid"]: vr.sha(r["text"]) for r in jsonl(G / "reviews_gold.jsonl")}
+    else:
+        hashes = {r["rid"]: r["sha256"] for r in jsonl(G / "reviews_gold_ids.jsonl")}
+    return vr.match_crawl({r: hashes[r] for r in rids}, pd.read_csv(G / "review_meta.csv").set_index("rid"))
+
+
+def model_codes(key, found):
     spec = importlib.util.spec_from_file_location("bd", ROOT / "code/05_build_dataset.py")
     bd = importlib.util.module_from_spec(spec); spec.loader.exec_module(bd)
-    bulk = {}
-    for p in sorted((ROOT / "annotation/bulk").glob("coded_batch_[0-9][0-9].jsonl")):
-        bulk.update({r["uid"]: r for r in jsonl(p)})
-    rp = {r.pop("uid"): r for r in jsonl(ROOT / "annotation/bulk/runtime_pass.jsonl")}
+    bulk = bd.bulk_codes()
     model, gold = {"D": {}, "G": {}, "R": {}}, {"D": {}, "R": {}}
     for i in key.query("task == 'D'").item:
         if i in bulk:
-            model["D"][i] = with_live(bd.apply_runtime_pass({k: v for k, v in bulk[i].items() if k != "uid"}, rp.get(i)))
+            model["D"][i] = with_live(bulk[i])
     gold["D"] = {r["gid"]: with_live(r) for r in jsonl(G / "gold_test.jsonl")}
     games = pd.read_csv(ROOT / "data/processed/games.csv", low_memory=False,
                         usecols=["appid"] + ["c_" + k for k in ("live_system", "live_player", *GR)]).set_index("appid")
     for r in key.query("task == 'G'").itertuples():
         row = games.loc[int(str(r.appids).split(";")[0])]
         model["G"][r.item] = with_live({k: int(row["c_" + k]) for k in ("live_system", "live_player", *GR)})
-    meta = pd.read_csv(G / "review_meta.csv").set_index("rid")
-    texts = {r["rid"]: r["text"] for r in jsonl(G / "reviews_gold.jsonl")}
-    lines = (ROOT / "data/raw/reviews_toprated.jsonl").read_text(encoding="utf-8").splitlines()
     for i in key.query("task == 'R'").item:
-        rec = json.loads(lines[int(meta.loc[i, "line"])]).get("recommended")
-        model["R"][i] = {"genai_mention": genai_mention(texts[i]), "genai_critical": genai_critical(texts[i], rec)}
+        if i in found:
+            text, rec = found[i]
+            model["R"][i] = {"genai_mention": genai_mention(text), "genai_critical": genai_critical(text, rec)}
     gold["R"] = {r["rid"]: r for r in jsonl(G / "gold_reviews.jsonl")}
     return model, gold
 
@@ -175,12 +180,16 @@ def main():
     multi = len(coders) > 1
     if not multi:
         print(f"only one coder ({coders[0]}): skipping human-human agreement and consensus", file=sys.stderr)
-    model, gold = model_codes(key)
+    rids = list(key.query("task == 'R'").item)
+    found = review_texts(rids)
+    print(f"review-task items found in the crawl: {len(found)} of {len(rids)}", file=sys.stderr)
+    model, gold = model_codes(key, found)
     w = weights(key)
     live_ref = lambda r: bool(r.get("live_any"))
-    texts = {t: {x["id"]: x["text"] for x in items}
+    texts = {t: {x["id"]: x.get("text") for x in items}
              for t, items in json.load(open(H / "build/tasks.json", encoding="utf-8"))["tasks"].items()}
-    rows, summary = [], {"coders": coders, "versions": used}
+    texts["R"] = {i: v[0] for i, v in found.items()}
+    rows, summary = [], {"coders": coders, "versions": used, "R_crawl_unmatched": len(rids) - len(found)}
     adj_dir = a.labels_dir if derived else None
     for t in ("D", "G", "R"):
         keyt = key.query("task == @t")

@@ -133,13 +133,16 @@ def main():
         for y, base in (("pct_positive", rs), ("crit_share", rsr)):
             m = A.fit(f"{y} ~ disclosed * {var} + {ctrl}", base, cluster=cluster)
             out += A.coef_table(m, ["disclosed", f"disclosed:{var}"], f"{label}{y}")
-            L = np.zeros(len(m.params))
-            L[list(m.params.index).index("disclosed")] = L[list(m.params.index).index(f"disclosed:{var}")] = 1
-            t = m.t_test(L)
-            lo, hi = np.squeeze(t.conf_int())
-            out.append({"model": f"{label}{y}", "term": "disclosed_if_publisher", "b": float(np.squeeze(t.effect)),
-                        "se": float(np.squeeze(t.sd)), "p": float(np.squeeze(t.pvalue)), "lo": float(lo), "hi": float(hi),
-                        "n": int(m.nobs)})
+            for term, pair in (("disclosed_if_publisher", ("disclosed", f"disclosed:{var}")),
+                               ("publisher_if_disclosed", (var, f"disclosed:{var}"))):
+                L = np.zeros(len(m.params))
+                for c in pair:
+                    L[list(m.params.index).index(c)] = 1
+                t = m.t_test(L)
+                lo, hi = np.squeeze(t.conf_int())
+                out.append({"model": f"{label}{y}", "term": term, "b": float(np.squeeze(t.effect)),
+                            "se": float(np.squeeze(t.sd)), "p": float(np.squeeze(t.pvalue)), "lo": float(lo),
+                            "hi": float(hi), "n": int(m.nobs)})
         tests = [r for r in out if r["term"] in (var, f"disclosed:{var}")]
         for r, q in zip(tests, multipletests([r["p"] for r in tests], method="holm")[1]):
             r["p_holm"] = q

@@ -1,8 +1,11 @@
+import importlib.util
 import json
 import os
+from datetime import datetime
 from pathlib import Path
 
 import numpy as np
+from sklearn.metrics import cohen_kappa_score
 from statsmodels.stats.multitest import multipletests
 import pandas as pd
 
@@ -54,7 +57,15 @@ def main():
             mac[prefix + "PHolm"] = pv(r.p_holm)
         mac[prefix + "N"] = num(r.n)
 
-    mac["CensusListings"] = num(sum(1 for _ in open(ROOT / "data/raw/search_index.jsonl", encoding="utf-8")))
+    cc_p, idx = RES / "census_counts.json", ROOT / "data/raw/search_index.jsonl"
+    if idx.exists() and "n_unreadable_agecheck" in H:
+        cc = {"census_listings": sum(1 for _ in open(idx, encoding="utf-8")),
+              "n_unreadable_agecheck": H["n_unreadable_agecheck"],
+              "n_kept_not_app_page": H["n_kept_not_app_page"], "n_dropped_app_page": H["n_dropped_app_page"]}
+        json.dump(cc, open(cc_p, "w"), indent=1)
+    else:
+        cc = json.load(open(cc_p))
+    mac["CensusListings"] = num(cc["census_listings"])
     cohort = (ROOT / "data/processed/cohort_appids.txt").read_text().split()
     mac["CohortN"] = num(len(cohort))
     mac["PagesN"] = num(H["n_pages_all"])
@@ -62,13 +73,17 @@ def main():
     mac["ExcludedDates"] = num(H["n_excluded_dates"])
     mac["AnalysisN"] = num(H["n_cohort_with_page"])
     mac["NUnreadable"] = num(H["n_unreadable"])
-    mac["NUnreadableAge"] = num(H["n_unreadable_agecheck"])
+    mac["NUnreadableAge"] = num(cc["n_unreadable_agecheck"])
+    mac["ListedWindowN"] = num(H["n_listed_window"])
+    assert cc["n_kept_not_app_page"] == cc["n_dropped_app_page"] == 0, "supplement says the two page tests agree"
     cs = H["code_src_reception"]
     mac["NGoldInRS"] = num(cs.get("gold_test", 0) + cs.get("gold_dev", 0))
     st = R[(R.model == "crit_term") & (R.term.str.startswith("C(auth") | (R.term == "ai_on_human"))].copy()
     st["p_holm"] = multipletests(st.p, method="holm")[1]
     srev = st[st.term.str.contains("review")].iloc[0]
     mac["StrictReviewB"], mac["StrictReviewPHolm"] = sgn(100 * srev.b), pv(srev.p_holm)
+    saoh = st[st.term == "ai_on_human"].iloc[0]
+    mac["StrictAohB"], mac["StrictAohP"], mac["StrictAohPHolm"] = sgn(100 * saoh.b), pv(saoh.p), pv(saoh.p_holm)
     mac["NDisclosed"] = num(H["n_disclosed"])
     mac["ShareDisclosed"] = pct(H["share_disclosed"])
     for y, w in (("2024", "TwentyFour"), ("2025", "TwentyFive"), ("2026", "TwentySix")):
@@ -98,6 +113,11 @@ def main():
             mac["Share" + v] = pct(D[k])
     mac["ShareAnyOversight"] = pct(1 - D["authority=0"])
     mac["ShareVisualAuthNone"] = pct(H["share_visual_auth0"])
+    mac["NVisualAuthNone"] = num(H["n_visual_auth0"])
+    mac["NVisualAuthNoneMkt"], mac["NVisualAuthNoneAoh"] = num(H["n_visual_auth0_mkt"]), num(H["n_visual_auth0_aoh"])
+    mac["ShareVisualAuthNoneNoMkt"] = pct(H["share_visual_auth0_no_mkt"])
+    mac["ShareVisualAuthNoneNoAoh"] = pct(H["share_visual_auth0_no_aoh"])
+    mac["NAiOnHuman"], mac["NAuthNoneAoh"] = num(H["n_ai_on_human"]), num(H["n_auth0_aoh"])
     mac["ShareRuntimeReception"] = pct(H["n_live_reception"] / H["n_reception_disclosed_coded"])
     mac["NLiveReception"] = num(H["n_live_reception"])
     lc = pd.read_csv(RES / "locus_counts.csv", index_col=0)["n"]
@@ -106,6 +126,7 @@ def main():
     la = pd.read_csv(RES / "locus_by_authority.csv", index_col=0)
     for k, v in (("dev_time", "DevTime"), ("runtime", "Runtime"), ("marketing_only", "MarketingOnly")):
         mac["AuthNone" + v] = pct(la.loc[k, "none"], 0)
+    assert mac["AuthNoneRuntime"] == mac["AuthNoneMarketingOnly"], "results.tex says '% of each'"
 
     gr = pd.read_csv(RES / "guardrails_live.csv", index_col=0)
     mac["NLiveCensus"] = num(H["n_live_census"])
@@ -180,6 +201,8 @@ def main():
         for k, v in (("mention_share", "Mention"), ("crit_given_mention", "CritGiven")):
             mac[v + "DevTime"], mac[v + "Runtime"] = pct(H[f"{k}_dev_time"]), pct(H[f"{k}_runtime"])
         coef("crit_given_mention_weighted", LOC.format("runtime"), "WGWRuntime", 100, frame=R)
+    coef("visual_no_marketing", "d_visual", "WVisualNoMkt", frame=R)
+    coef("crit_visual_no_marketing", "d_visual", "WCVisualNoMkt", 100, frame=R)
 
     coef("multi_game_devs_pooled", "disclosed", "MGPooled", frame=R)
     coef("developer_fe", "disclosed", "DevFE", frame=R)
@@ -228,6 +251,8 @@ def main():
     for y, w in (("2024", "TwentyFour"), ("2025", "TwentyFive"), ("2026", "TwentySix")):
         coef(f"crit_year_{y}", "disclosed", "CritYear" + w, 100, frame=R)
     if "wb_fe_n" in H:
+        mac["WBFEEligN"], mac["WBFEExtraN"] = num(H["wb_fe_eligible"]), num(H["wb_fe_extra"])
+        assert H["wb_fe_eligible_missing"] == 0, "supplement says every eligible game was targeted"
         for grp, v in (("fe", "FE"), ("random", "Rand")):
             mac[f"WB{v}N"] = num(H[f"wb_{grp}_n"])
             for stt in ("early", "late", "uncertain", "unknown"):
@@ -238,6 +263,22 @@ def main():
     mac["ExpReviews"], mac["ExpCite"] = num(H["exp_reviews"]), pct(H["exp_cite"])
     mac["ExpCiteNone"], mac["ExpCiteOversight"] = pct(H["exp_cite_none"]), pct(H["exp_cite_oversight"])
     mac["ExpReviewsOversight"], mac["ExpOverRefOversight"] = num(H["exp_reviews_oversight"]), num(H["exp_overref_oversight"])
+    FC = json.load(open(RES / "review_fetch_check.json"))
+    assert FC["no_failed_fetch"] and FC["one_block_per_game"] and FC["ranks_consecutive"]
+    mac["FetchGames"], mac["FetchRuns"] = num(FC["n_requested"]), "two three four five six seven eight nine".split()[FC["n_runs"] - 2]
+    mac["FetchRepRows"], mac["FetchRepGames"] = num(FC["n_repeat_text_rows"]), num(FC["n_repeat_text_games"])
+    LC = pd.read_csv(ROOT / "annotation/bulk/logic_corrections.csv")
+    un = pd.read_csv(ROOT / "annotation/bulk/uid_map.csv").set_index("uid").norm
+    mkt_norm = set(un[LC[(LC.code == "marketing_only") & (LC.corrected == 1)].uid])
+    gl = pd.read_csv(ROOT / "data/processed/games.csv", low_memory=False,
+                     usecols=["has_page", "page_redirect", "release_date", "review_count", "disclosed", "disclosure",
+                              "code_src", "c_marketing_only"])
+    gl = gl[(gl.has_page == 1) & (gl.page_redirect.fillna(0) != 1) & gl.release_date.between("2024-01-01", "2026-06-30")
+            & (gl.review_count >= 10) & (gl.disclosed == 1) & (gl.code_src == "bulk")]
+    moved = gl[gl.disclosure.str.strip().str.lower().str.replace(r"\s+", " ", regex=True).isin(mkt_norm)]
+    assert (moved.c_marketing_only == 1).all()
+    words = "zero one two three four five six seven eight nine".split()
+    mac["LogicFixTexts"], mac["LogicFixMktRS"] = words[len(LC)], words[len(moved)]
     for k, v in (("ov_share", "OvShare"), ("ov_dom1", "OvDomOne"), ("ov_dom3", "OvDomThree"), ("ov_pre26", "OvPre"),
                  ("ov_post26", "OvPost")):
         mac[v] = pct(H[k], 0)
@@ -249,6 +290,55 @@ def main():
     if "disp_pages" in H:
         mac["DispGames"], mac["DispPages"] = num(H["disp_games"]), num(H["disp_pages"])
         mac["DispPre"], mac["DispPost"] = num(H["disp_pre"]), num(H["disp_post"])
+    sa = ROOT / "annotation/store_about"
+    pg = pd.read_csv(sa / "pages.csv")
+    cd = pd.read_csv(sa / "coded.csv", keep_default_na=False).set_index("appid")
+    grc = ["filter", "constrained", "local", "human", "report", "optout", "provider"]
+    gs = pd.read_csv(ROOT / "data/processed/games.csv", low_memory=False,
+                     usecols=["appid", "c_gr_none"] + ["c_gr_" + c for c in grc]).set_index("appid").loc[cd.index]
+    assert len(pg) == len(cd) == H["n_live_in_rs"] and set(pg.appid) == set(cd.index)
+    page = cd.page_guardrails.str.split(";").map(lambda l: {x[3:] for x in l if x})
+    disc = pd.Series([{c for c in grc if gs.loc[a, "c_gr_" + c] == 1} for a in cd.index], index=cd.index)
+    none = gs.c_gr_none == 1
+    has = page.map(len) > 0
+    mac["AboutN"] = num(len(pg))
+    mac["AboutDate"] = datetime.strptime(pg.fetched_at.max(), "%Y-%m-%d").strftime("%-d %B %Y")
+    assert pg.fetched_at.min() == pg.fetched_at.max()
+    mac["AboutOneAI"] = num(((pg.ai_headings == 1) & (pg.ai_headings_other == 0)).sum())
+    mac["AboutDiscChanged"] = num(pg.disclosure_changed.sum())
+    mac["AboutGrGames"] = num(has.sum())
+    cand = pd.read_csv(sa / "candidates.csv")
+    mac["AboutCandN"], mac["AboutCandGames"] = num(len(cand)), num(cand.appid.nunique())
+    mac["AboutNoneN"] = num(none.sum())
+    mac["AboutNoneFound"] = num((none & has).sum())
+    mac["AboutNoneFoundLocal"] = num((none & page.map(lambda s: "local" in s)).sum())
+    mac["AboutNoneFoundCue"] = num((none & has & (cd.screen.astype(str) == "1")).sum())
+    mac["AboutCandCueN"] = num(cand.selected_by.str.contains("cue").sum())
+    mac["AboutEarlyN"] = num(pg.has_early_access.sum())
+    mac["AboutSubheadN"] = num((pg.ai_subheadings_about > 0).sum())
+    rv = pd.read_csv(ROOT / "data/processed/games.csv", low_memory=False,
+                     usecols=["appid", "review_count", "pct_positive"]).set_index("appid").loc[pg.appid]
+    pr = pg.set_index("appid")
+    allrow = pr.page_all_reviews.notna()
+    mac["RateAllRowN"] = num(allrow.sum())
+    mac["RateAllRowMedDiff"] = num(int((pr.page_all_reviews - rv.review_count)[allrow].abs().median()))
+    mac["RateAllRowMedPct"] = num(int((pr.page_all_pct - rv.pct_positive)[allrow].abs().median()))
+    en = ~allrow & pr.page_en_reviews.notna()
+    assert (allrow | en).all()
+    ratio = (rv.review_count / pr.page_en_reviews)[en]
+    mac["RateEnOnlyN"] = num(en.sum())
+    mac["RateEnOnlyRatioLo"], mac["RateEnOnlyRatioHi"] = f"{ratio.min():.1f}", f"{ratio.max():.1f}"
+    mac["AboutNewType"] = num((~none & pd.Series([bool(p - d) for p, d in zip(page, disc)], index=cd.index)).sum())
+    mac["ShareGrNonePage"] = pct((none & ~has).mean())
+    mac["ShareGrNonePageN"] = num((none & ~has).sum())
+    for k, v, sc in (("h2a_ingame_crit_share", "HTwoInGameCrit", 100), ("h2a_ingame_pct_positive", "HTwoInGamePos", 1)):
+        c = H[k]
+        mac[v + "B"], mac[v + "Lo"], mac[v + "Hi"] = sgn(c["b"] * sc), sgn(c["lo"] * sc), sgn(c["hi"] * sc)
+        mac[v + "P"] = pv(c["p"])
+    mac["RefN"] = num(H["h2a_ingame_pct_positive"]["n_ref"])
+    mac["RefNoLocusN"] = num(H["h2a_ingame_pct_positive"]["n_ref_no_locus"])
+    mac["RefNoLocusTextN"] = num(H["h2a_ingame_crit_share"]["n_ref_no_locus"])
+    mac["RefTextN"] = num(H["h2a_ingame_crit_share"]["n_ref"])
     cw = R[R.model.isin(["cluster_dev_pub", "crit_cluster_dev_pub"])].copy()
     cw["base"] = [R[(R.model == ("main" if m == "cluster_dev_pub" else "crit_main")) & (R.term == t)].se.iloc[0]
                   for m, t in zip(cw.model, cw.term)]
@@ -275,6 +365,30 @@ def main():
         mac[v + "KappaAuthority"] = f"{a.loc[a.code == 'authority', 'kappa'].iloc[0]:.2f}"
     mac["TestN"] = num(sum(1 for _ in open(G / "disclosures_test.jsonl")))
     mac["DevN"] = num(sum(1 for _ in open(G / "disclosures_dev.jsonl")))
+    spec = importlib.util.spec_from_file_location("vc", Path(__file__).parent / "07_validate_coding.py")
+    vc = importlib.util.module_from_spec(spec); spec.loader.exec_module(vc)
+    ca, cb = ([json.loads(l) for l in open(G / f"coder{c}_disclosures_test.jsonl", encoding="utf-8")] for c in "AB")
+    ks = vc.BIN + ["authority"]
+    assert set(ks) == set(ca[0]) - {"gid"} and [r["gid"] for r in ca] == [r["gid"] for r in cb]
+    CHUNK = 50
+    dis = [sum(int(a[k]) != int(b[k]) for k in ks) for a, b in zip(ca, cb)]
+    mac["TestChunkN"], mac["TestRestN"] = num(CHUNK), num(len(ca) - CHUNK)
+    mac["TestChunkDis"], mac["TestChunkCells"] = num(sum(dis[:CHUNK])), num(CHUNK * len(ks))
+    mac["TestRestDis"], mac["TestRestCells"] = num(sum(dis[CHUNK:])), num((len(ca) - CHUNK) * len(ks))
+    kr = {}
+    for k in ks:
+        a_ = np.array([int(r[k]) for r in ca[CHUNK:]]); b_ = np.array([int(r[k]) for r in cb[CHUNK:]])
+        kr[k] = (cohen_kappa_score(a_, b_, weights="quadratic" if k == "authority" else None)
+                 if len(set(a_) | set(b_)) > 1 else np.nan)
+    kb = pd.Series({k: v for k, v in kr.items() if k != "authority"})
+    mac["TestRestKappaMedian"], mac["TestRestKappaMin"] = f"{kb.median():.2f}", f"{kb.min():.2f}"
+    mac["TestRestKappaAuthority"] = f"{kr['authority']:.2f}"
+    for sp, v in (("dev", "Dev"), ("test", "Test")):
+        adj = [json.loads(l) for l in open(G / f"adjudicated_{sp}.jsonl", encoding="utf-8") if l.strip()]
+        mac[v + "AdjItems"] = num(len(adj))
+        mac[v + "AdjCells"] = num(sum(len([k for k in r if k not in ("gid", "note")]) for r in adj))
+        mac[v + "AdjAoH"] = num(sum("ai_on_human" in r for r in adj))
+    mac["RevAdjN"] = num(sum(1 for l in open(G / "adjudicated_reviews.jsonl", encoding="utf-8") if l.strip()))
     um = pd.read_csv(ROOT / "annotation/bulk/uid_map.csv")
     mac["BulkUnique"] = num(um.loc[um.uid != "gold", "uid"].nunique())
     mac["BulkGames"] = num(um.loc[um.uid != "gold", "appid"].nunique())
@@ -293,6 +407,7 @@ def main():
     if "tone_n_runtime" in rw:
         mac["ToneRuntimeCrit"], mac["ToneRuntimeN"] = num(rw["tone_crit_runtime"]), num(rw["tone_n_runtime"])
         mac["ToneOtherPct"] = pct(rw["tone_crit_other"] / rw["tone_n_other"], 0)
+        mac["ToneOtherCrit"], mac["ToneOtherN"] = num(rw["tone_crit_other"]), num(rw["tone_n_other"])
     for k, v in (("genai_mention", "Mention"), ("genai_critical", "Crit")):
         for s in ("P", "R", "F1"):
             mac[f"Lex{v}{s.replace('1', 'One')}"] = f"{rw[f'{k}_{s}_w']:.2f}"
@@ -304,6 +419,8 @@ def main():
     for k, v in (("genai_critical", "LexCrit"), ("genai_critical_term", "LexCritTerm")):
         mac[v + "PRuntime"], mac[v + "RRuntime"] = f"{rw[f'{k}_P_uruntime']:.2f}", f"{rw[f'{k}_R_uruntime']:.2f}"
     mac["LexRuntimeN"], mac["LexRuntimeNPos"] = num(rw["crit_n_runtime"]), num(rw["crit_npos_runtime"])
+    mac["LexRedirN"], mac["LexRedirGames"] = num(rw["redirect_n"]), num(rw["redirect_games"])
+    mac["LexRedirCrit"] = num(rw["redirect_crit"])
     mac["LexNoTokenN"] = num(rw["no_token_n"])
     mac["LexNoTokenUpper"] = pct(rw["no_token_upper95"])
     mac["LexPoolN"] = num(rw["pop_token"] + rw["pop_no_token"])
@@ -368,6 +485,8 @@ def main():
     gcodes = ["live_system", "live_player"] + [f"gr_{k}" for k in GRS]
     mac["HumGKappaHH"] = sgn(np.nanmedian([hh('G', k) for k in gcodes]))
     mac["HumGKappaMH"] = sgn(np.nanmedian([vs_h('G', 'model', k) for k in gcodes]))
+    lg = [round(hs.loc["live_any", f"share_{c}"] * hs.loc["live_any", f"games_{c}"]) for c in (c1, c2)]
+    mac["HumGLiveGamesLo"], mac["HumGLiveGamesHi"] = num(min(lg)), num(max(lg))
     for k, v in (("live_any", "Live"), ("live_system", "Sys"), ("live_player", "Player")):
         mac[f"HumG{v}HH"] = sgn(hh('G', k))
         mac[f"HumG{v}MH"] = sgn(vs_h('G', 'model', k))
@@ -486,6 +605,12 @@ def main():
     mac["RerunKappaMedian"], mac["RerunKappaMin"] = f"{s_.kappa.median():.2f}", f"{s_.kappa.min():.2f}"
     mac["RerunAuthKappa"] = f"{ra_.set_index('code').loc['authority', 'kappa']:.2f}"
     mac["RerunMaxDis"] = pct(1 - ra_[~ra_.convention_changed].agree.min())
+    def vis_mkt(p):
+        rs = [json.loads(l) for l in open(p, encoding="utf-8") if l.strip()]
+        return np.mean([r["d_visual"] for r in rs if r.get("marketing_only") == 1])
+    vm = [vis_mkt(p) for p in sorted((ROOT / "annotation/bulk").glob("coded_batch_[0-9][0-9].jsonl"))]
+    mac["MktVisualMin"], mac["MktVisualMax"] = pct(min(vm), 0), pct(max(vm), 0)
+    mac["MktVisualFirst"] = pct(vis_mkt(ROOT / "annotation/bulk/coded_batch_02_v1.jsonl"), 0)
 
     PJ = json.load(open(RES / "publisher.json"))
     P = pd.read_csv(RES / "publisher.csv")
@@ -511,6 +636,7 @@ def main():
         coef(y, "disclosed:pub_est", "PubInt" + k, s, P)
         coef(y, "disclosed", "PubGapSelf" + k, s, P)
         coef(y, "disclosed_if_publisher", "PubGapPub" + k, s, P)
+        coef(y, "publisher_if_disclosed", "PubLvl" + k, s, P)
     mac["PubAnyN"], mac["PubCoN"], mac["PubCoDisc"] = num(PJ["n_est_any"]), num(PJ["n_est_co"]), pct(PJ["disc_est_co"])
     coef("any_disclosed", "pub_est_any", "PubAnyDisc", 100, P)
     CK = pd.read_csv(RES / "publisher_check_sample.csv", dtype=str)
@@ -533,6 +659,7 @@ def main():
     mac["PubMinP"] = pv(rq3.p.min())
     alt = P[P.model.str.match(r"(broad|est5|devcl|any)_") & ~P.model.str.endswith("_disclosed") & P.p_holm.notna()]
     mac["PubAltMinPHolm"] = pv(alt.p_holm.min())
+    mac["PubLvlMinP"] = pv(P[P.term == "publisher_if_disclosed"].p.min())
 
     with open(MS / "numbers.tex", "w", encoding="utf-8") as f:
         f.write("% generated by code/15_numbers.py -- do not edit\n")
@@ -550,9 +677,8 @@ def main():
     cb = {r["gid"]: r for r in map(json.loads, open(G / "coderB_disclosures_test.jsonl"))}
     la = [int(ca[g]["live_system"] or ca[g]["live_player"]) for g in ca]
     lb = [int(cb[g]["live_system"] or cb[g]["live_player"]) for g in ca]
-    from sklearn.metrics import cohen_kappa_score
     a.loc["live_any", "kappa"] = cohen_kappa_score(la, lb)
-    lines = [r"\begin{table}[t]", r"\centering", r"\caption{Coding validation on the held-out test sample (" +
+    lines = [r"\begin{table}[t]", r"\centering", r"\caption{Coding validation on the test sample (" +
              mac["TestN"] + r" disclosures) and the review sample (" + mac["RevGoldN"] + r" reviews)}",
              r"\label{tab:validation}", r"\footnotesize", r"\setlength{\tabcolsep}{3pt}", r"\renewcommand{\arraystretch}{0.92}",
              r"\begin{tabular}{@{}lrrrrr@{}}", r"\toprule",
@@ -624,7 +750,7 @@ def main():
     for key, lab in spec + [(None, None)] + crit_spec:
         if key is None:
             lines += [r"\midrule", r"\multicolumn{" + str(len(cols) + 3) + r"}{@{}l}{\emph{B. Share of reviews "
-                      r"criticizing generative AI (percentage points)}} \\"]
+                      r"flagged as critical of generative AI (percentage points)}} \\"]
             continue
         sc = 100 if key.startswith("crit") else 1
         rr = pd.concat([R, SH])
@@ -658,7 +784,7 @@ def main():
     gdef = [("constrained", "Constrained scope", "Prompt, preset, or topic limits"),
             ("local", "Local or private", "On-device, offline, or data privacy"),
             ("filter", "Filtering", "Input or output moderation"),
-            ("optout", "Player opt-out", "Optional or can be disabled"),
+            ("optout", "Player opt-out", "Disable, opt in, or regenerate"),
             ("report", "Reporting", "Channel to report output"),
             ("human", "Human monitoring", "Developers monitor output"),
             ("provider", "Provider policies", "Relies on vendor safeguards"),
@@ -679,7 +805,8 @@ def main():
         hv_ = "".join(mac[m.format(k.capitalize())].replace("nan", "--") + " & " for m, _ in hcols)
         n_ = "" if hum_g else mac["NGr" + k.capitalize()] + " & "
         lines.append(f"{lab} & {n_}{mac['ShareGr' + k.capitalize()]} & {hv_}{cell} \\\\")
-    hnote = (r" \%$_{R}$: among the " + mac["NLiveInRS"] + r" runtime disclosures of the reception sample, all of which "
+    hnote = (r" \%: final codes of all " + mac["NLiveCensus"] + r" games."
+             r" \%$_{R}$: among the " + mac["NLiveInRS"] + r" runtime disclosures of the reception sample, all of which "
              r"were coded." + r" \%$_{H}$: among all " + mac["HumGGames"] + r" games, as coded by the two human coders (mean); agreement: Supplementary "
              r"Table~S4.") if hum_g else ""
     lines += [r"\bottomrule", r"\end{tabular}",
@@ -690,8 +817,8 @@ def main():
     rows = [(None, "Locus (ref.: development time)"), (LOC.format("runtime"), "Runtime generation"),
             (LOC.format("marketing_only"), "Marketing only"), (None, "Stated authority (ref.: none)"),
             (AUT.format("review"), "Review or selection"), (AUT.format("edit"), "Editing"),
-            (AUT.format("human_final"), "Human-made final content"), ("ai_on_human", "AI applied to human work"),
-            (None, "Content domain"), ("d_visual", "Visual"), ("d_voice", "Voice"), ("d_music", "Music"),
+            (AUT.format("human_final"), "Human-made final content"), (None, "Provenance (ref.: not flagged)"),
+            ("ai_on_human", "AI applied to human work"), (None, "Content domain"), ("d_visual", "Visual"), ("d_voice", "Voice"), ("d_music", "Music"),
             ("d_sfx", "Sound effects"), ("d_text", "Text"), ("d_localization", "Localization"), ("d_code", "Code"),
             (None, "Framing and other codes"), ("scope_minor", "Limited scope"), ("scope_extensive", "Pervasive use"),
             ("placeholder", "Placeholder"), ("tools_named", "Tools named"), ("small_team", "Small team"),
@@ -734,7 +861,7 @@ def main():
     clab = {"pre": "Development-time content", "live_system": "Runtime, system-initiated",
             "live_player": "Runtime, player-initiated", "live_any": "Runtime (any)", "marketing": "Marketing material",
             "marketing_only": "Marketing only", "explicit_no_live": "No runtime generation stated",
-            "non_genai": "No generative AI", "auth_none": "No human role stated", "ai_on_human": "AI applied to human work",
+            "non_genai": "No generative AI", "auth_none": "No human oversight stated", "ai_on_human": "AI applied to human work",
             "mixed_oversight": "Mixed oversight", "d_visual": "Visual", "d_music": "Music", "d_sfx": "Sound effects",
             "d_voice": "Voice", "d_text": "Text", "d_localization": "Localization", "d_code": "Code",
             "d_other": "Other uses", "scope_minor": "Limited scope", "scope_extensive": "Pervasive use",
@@ -849,22 +976,26 @@ def main():
                           ("any_disclosed", "pub_est_any", "Including co-published games")):
         lines.append(pline(model, t, lab))
     lines.append(r"\multicolumn{6}{@{}l}{\emph{B. Content, disclosing games}} \\")
-    for model, lab in (("any_oversight", "Claims human authority"), ("live_any", "Runtime generation"),
+    for model, lab in (("any_oversight", "Claims human oversight"), ("live_any", "Runtime generation"),
                        ("marketing_only", "Marketing only")):
         lines.append(pline(model, "pub_est", lab))
     lines.append(r"\multicolumn{6}{@{}l}{\emph{C. Reception: disclosure gap}} \\")
     for model, lab, s in (("pct_positive", "Positive reviews", 1), ("crit_share", "AI-critical share", 100)):
-        lines.append(pline(model, "disclosed", lab + ", no publisher", s))
+        lines.append(pline(model, "disclosed", lab + ", other games", s))
         lines.append(pline(model, "disclosed_if_publisher", lab + ", publisher", s))
         lines.append(pline(model, "disclosed:pub_est", lab + ", difference", s))
+    lines.append(r"\multicolumn{6}{@{}l}{\emph{D. Reception: publisher difference, disclosing games}} \\")
+    for model, lab, s in (("pct_positive", "Positive reviews", 1), ("crit_share", "AI-critical share", 100)):
+        lines.append(pline(model, "publisher_if_disclosed", lab, s))
     lines += [r"\bottomrule", r"\end{tabular}",
               r"\par\smallskip\parbox{\columnwidth}{\scriptsize Established publisher: a listed publisher whose name "
-              r"matches none of the game's developers (co-published games count as self-published) and that has released games of at least two other developers on "
-              r"Steam. Covariates of the main models, with this indicator in place of self-publishing. Standard errors clustered by "
+              r"matches none of the game's developers (co-published games count as self-published) and that has released games of at least two developers other than "
+              r"itself on Steam, the game's developers included. Covariates of the main models, with this indicator in place of self-publishing. Standard errors clustered by "
               r"developer and by publisher; fixed-effects (FE) rows by developer, among developers with $\geq$2 cohort "
               r"games. $p_{\mathrm{Holm}}$: Holm-adjusted across the six RQ3 tests. Panel B: the " + mac["ReceptionCoded"] +
               r" coded disclosures of the reception sample. Panel C: coefficient on disclosure for games without and "
-              r"with an established publisher, and their difference.}", r"\end{table}"]
+              r"with an established publisher, and their difference. Panel D: games with an established publisher "
+              r"minus other games, among disclosing games (the publisher and interaction coefficients summed).}", r"\end{table}"]
     (MS / "tables/tab_supp_publisher.tex").write_text("\n".join(lines) + "\n", encoding="utf-8")
     print(len(mac), "macros written")
 

@@ -221,7 +221,7 @@ def overview():
                      "Exploratory: AI on human work", f"{b('within_pct_positive', 'ai_on_human')} pp rating"]),
              ("H4", [f"Visual {b('within_crit_share', 'd_visual', 100)} pp AI-critical; rating n.s.",
                      "Voice: n.s."]),
-             ("RQ2", [f"No guardrail stated: {100 * H['live_in_gr_none']:.0f}% of fully",
+             ("RQ2", [f"No guardrail stated: {100 * H['live_in_gr_none']:.0f}% of {H['n_live_in_rs']} fully",
                       "coded runtime disclosures"])]
     for (tag, lines), yy in zip(finds, rows):
         assert all(xc + 0.36 + _tw(t, 6.5) <= xe for t in lines), f"panel C overflow: {lines}"
@@ -241,7 +241,7 @@ TERMS = [("C(locus, Treatment('dev_time'))[T.runtime]", "Runtime generation", "L
          ("C(auth, Treatment('none'))[T.review]", "Review", "Authority (vs. none stated)"),
          ("C(auth, Treatment('none'))[T.edit]", "Edit", None),
          ("C(auth, Treatment('none'))[T.human_final]", "Human final", None),
-         ("ai_on_human", "AI applied to human work", None),
+         ("ai_on_human", "AI applied to human work", "Provenance (vs. not flagged)"),
          ("d_visual", "Visual", "Domain"), ("d_voice", "Voice", None), ("d_music", "Music", None),
          ("d_sfx", "Sound effects", None), ("d_text", "Text", None), ("d_localization", "Localization", None),
          ("d_code", "Code", None)]
@@ -256,7 +256,7 @@ def coef_figure():
     panels = [("within_pct_positive", "Positive reviews (percentage points)", 1, (-10.8, 8.4)),
               ("within_crit_share", "AI-critical reviews (percentage points)", 100, (-6.4, 10.4))]
     panels = [p for p in panels if (m.model == p[0]).any()]
-    fig, axes = plt.subplots(1, len(panels), figsize=(7.16, 2.10), sharey=True)
+    fig, axes = plt.subplots(1, len(panels), figsize=(7.16, 2.18), sharey=True)
     axes = np.atleast_1d(axes)
     ypos, y = [], 0
     for t, _, grp in TERMS:

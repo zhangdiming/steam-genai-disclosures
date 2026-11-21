@@ -92,11 +92,11 @@ def main():
             params.update({"userreviewsoffset": inputs.get("userreviewsoffset"), "p": inputs.get("p"),
                            "userreviewscursor": inputs.get("userreviewscursor")})
         with lock:
-            for c in got[:cap]:
-                c.pop("author", None)
-                fr.write(json.dumps(c, ensure_ascii=False) + "\n")
-            fr.flush()
             if status == "ok":
+                for c in got[:cap]:
+                    c.pop("author", None)
+                    fr.write(json.dumps(c, ensure_ascii=False) + "\n")
+                fr.flush()
                 fd.write(f"{appid}\n"); fd.flush()
             n[0] += 1
             if n[0] % 200 == 0:
