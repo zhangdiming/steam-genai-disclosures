@@ -17,6 +17,8 @@
 - `store_about/`: guardrails stated elsewhere on the store page (`code/25_store_about.py`): `pages.csv` (page structure),
   `candidates.csv` (sentences of the developers' own page texts that mention AI or match a guardrail cue), `coded.csv`
   (decisions; `screen` marks the screen that found each guardrail).
+- `runtime_scope/`: which of the same 112 runtime disclosures describe a model that only judges player input or
+  chooses among authored outcomes (`coded.csv`; sensitivity check for the runtime denominator); see its README.
 
 ## Annotators
 All annotators were large language models that saw only the codebook, the instructions, and the texts:
@@ -65,3 +67,6 @@ a test of the analysis code on partial data that printed preliminary estimates b
 - Store-page template check (20 November 2026, after review): `pages.csv` gained the column `ai_headings_other`, the
   number of headings outside "About This Game" and the purchase boxes (which repeat the game's name) that mention AI,
   besides the disclosure heading. It is 0 on all 112 saved pages; no decision in `coded.csv` changed.
+- Runtime-scope check (21 November 2026, after review): the AI assistant that ran the study read the 112 runtime
+  disclosures of the reception sample once and marked the five that describe a model only judging player input or
+  choosing among authored outcomes (`runtime_scope/coded.csv`); no human checked this reading, and no code changed.

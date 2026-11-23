@@ -1,114 +1,116 @@
-                           model                                              term       b     se      p  p_holm     n
-                 H1_pct_positive                                         disclosed -3.4451 0.3623 0.0000     NaN 23136
-        H1_log_reviews_allwindow                                         disclosed -0.5277 0.0274 0.0000     NaN 46253
-             within_pct_positive        C(locus, Treatment('dev_time'))[T.runtime] -4.1057 1.9785 0.0380  0.0759  3393
-             within_pct_positive C(locus, Treatment('dev_time'))[T.marketing_only]  1.5355 1.1599 0.1856  0.1856  3393
-             within_pct_positive              C(auth, Treatment('none'))[T.review] -4.7914 2.4316 0.0488  0.1464  3393
-             within_pct_positive                C(auth, Treatment('none'))[T.edit] -0.5746 0.9121 0.5287  1.0000  3393
-             within_pct_positive         C(auth, Treatment('none'))[T.human_final] -0.5832 1.4300 0.6834  1.0000  3393
-             within_pct_positive                                          d_visual -1.5841 0.7945 0.0462  0.2308  3393
-             within_pct_positive                                           d_voice -0.1131 1.0426 0.9136  1.0000  3393
-             within_pct_positive                                           d_music  2.7056 0.9047 0.0028  0.0167  3393
-             within_pct_positive                                             d_sfx  0.6081 1.3467 0.6516  1.0000  3393
-             within_pct_positive                                            d_text -2.1147 1.1825 0.0737  0.2949  3393
-             within_pct_positive                                    d_localization  4.5483 0.8950 0.0000  0.0000  3393
-             within_pct_positive                                            d_code  1.0182 1.2985 0.4329  1.0000  3393
-             within_pct_positive                                       ai_on_human  3.8066 1.2686 0.0027  0.0108  3393
-             within_pct_positive                                       scope_minor  1.9475 0.6731 0.0038     NaN  3393
-             within_pct_positive                                   scope_extensive -0.2697 1.6144 0.8673     NaN  3393
-             within_pct_positive                                       placeholder  2.6585 1.8949 0.1606     NaN  3393
-             within_pct_positive                                       tools_named  0.6431 1.2763 0.6144     NaN  3393
-             within_pct_positive                                        small_team  2.5601 1.4091 0.0692     NaN  3393
-             within_pct_positive                                  explicit_no_live -1.0879 1.3888 0.4334     NaN  3393
-             within_pct_positive                                         log_words  0.8336 0.4983 0.0944     NaN  3393
-within_pct_positive_anyoversight                                     any_oversight -0.9925 0.8268 0.2300     NaN  3393
-              within_log_reviews        C(locus, Treatment('dev_time'))[T.runtime]  0.3532 0.1932 0.0675  0.1350  3393
-              within_log_reviews C(locus, Treatment('dev_time'))[T.marketing_only] -0.1226 0.0995 0.2178  0.2178  3393
-              within_log_reviews              C(auth, Treatment('none'))[T.review] -0.0612 0.1768 0.7293  0.7293  3393
-              within_log_reviews                C(auth, Treatment('none'))[T.edit]  0.1203 0.0735 0.1018  0.3053  3393
-              within_log_reviews         C(auth, Treatment('none'))[T.human_final]  0.4582 0.1817 0.0117  0.0468  3393
-              within_log_reviews                                          d_visual -0.1825 0.0666 0.0061  0.0427  3393
-              within_log_reviews                                           d_voice  0.1315 0.0954 0.1677  0.6710  3393
-              within_log_reviews                                           d_music -0.0695 0.0716 0.3322  0.6710  3393
-              within_log_reviews                                             d_sfx -0.0506 0.0976 0.6040  0.6710  3393
-              within_log_reviews                                            d_text -0.2047 0.0925 0.0268  0.1610  3393
-              within_log_reviews                                    d_localization  0.1091 0.0847 0.1976  0.6710  3393
-              within_log_reviews                                            d_code -0.1734 0.0910 0.0567  0.2835  3393
-              within_log_reviews                                       ai_on_human  0.1214 0.1208 0.3149  0.6297  3393
-              within_log_reviews                                       scope_minor  0.1196 0.0520 0.0214     NaN  3393
-              within_log_reviews                                   scope_extensive -0.1241 0.1178 0.2920     NaN  3393
-              within_log_reviews                                       placeholder  0.0656 0.1771 0.7109     NaN  3393
-              within_log_reviews                                       tools_named -0.2074 0.1008 0.0396     NaN  3393
-              within_log_reviews                                        small_team  0.0905 0.1610 0.5739     NaN  3393
-              within_log_reviews                                  explicit_no_live -0.2834 0.1010 0.0050     NaN  3393
-              within_log_reviews                                         log_words  0.0183 0.0407 0.6532     NaN  3393
-                oversight_extent                                         n_domains  0.0738 0.0108 0.0000     NaN  3393
-                oversight_extent                                       scope_minor  0.0594 0.0168 0.0004     NaN  3393
-                oversight_extent                                   scope_extensive -0.0363 0.0371 0.3274     NaN  3393
-                oversight_extent                                            post26  0.0697 0.0159 0.0000     NaN  3393
-                   H1_crit_share                                         disclosed  0.0491 0.0023 0.0000     NaN  6290
-                H1_mention_share                                         disclosed  0.0696 0.0031 0.0000     NaN  6290
-              H1_crit_share_term                                         disclosed  0.0301 0.0015 0.0000     NaN  6290
-               within_crit_share        C(locus, Treatment('dev_time'))[T.runtime]  0.0508 0.0150 0.0007  0.0007  2719
-               within_crit_share C(locus, Treatment('dev_time'))[T.marketing_only] -0.0333 0.0047 0.0000  0.0000  2719
-               within_crit_share              C(auth, Treatment('none'))[T.review] -0.0137 0.0118 0.2452  0.7355  2719
-               within_crit_share                C(auth, Treatment('none'))[T.edit] -0.0030 0.0069 0.6621  0.9946  2719
-               within_crit_share         C(auth, Treatment('none'))[T.human_final] -0.0068 0.0100 0.4973  0.9946  2719
-               within_crit_share                                          d_visual  0.0151 0.0050 0.0024  0.0143  2719
-               within_crit_share                                           d_voice  0.0057 0.0066 0.3890  0.8471  2719
-               within_crit_share                                           d_music  0.0078 0.0073 0.2824  0.8471  2719
-               within_crit_share                                             d_sfx  0.0205 0.0110 0.0638  0.3190  2719
-               within_crit_share                                            d_text  0.0049 0.0080 0.5437  0.8471  2719
-               within_crit_share                                    d_localization -0.0284 0.0055 0.0000  0.0000  2719
-               within_crit_share                                            d_code -0.0115 0.0074 0.1194  0.4777  2719
-               within_crit_share                                       ai_on_human -0.0136 0.0098 0.1648  0.6591  2719
-               within_crit_share                                       scope_minor -0.0149 0.0043 0.0005     NaN  2719
-               within_crit_share                                   scope_extensive  0.0249 0.0132 0.0591     NaN  2719
-               within_crit_share                                       placeholder -0.0105 0.0139 0.4470     NaN  2719
-               within_crit_share                                       tools_named  0.0057 0.0075 0.4526     NaN  2719
-               within_crit_share                                        small_team  0.0174 0.0128 0.1723     NaN  2719
-               within_crit_share                                  explicit_no_live -0.0020 0.0106 0.8495     NaN  2719
-               within_crit_share                                         log_words  0.0108 0.0035 0.0020     NaN  2719
-            within_mention_share        C(locus, Treatment('dev_time'))[T.runtime]  0.1592 0.0252 0.0000  0.0000  2719
-            within_mention_share C(locus, Treatment('dev_time'))[T.marketing_only] -0.0412 0.0061 0.0000  0.0000  2719
-            within_mention_share              C(auth, Treatment('none'))[T.review] -0.0240 0.0154 0.1175  0.4356  2719
-            within_mention_share                C(auth, Treatment('none'))[T.edit] -0.0044 0.0087 0.6112  0.6112  2719
-            within_mention_share         C(auth, Treatment('none'))[T.human_final] -0.0155 0.0116 0.1825  0.4356  2719
-            within_mention_share                                          d_visual  0.0283 0.0064 0.0000  0.0001  2719
-            within_mention_share                                           d_voice  0.0206 0.0090 0.0226  0.0906  2719
-            within_mention_share                                           d_music  0.0115 0.0090 0.2020  0.4039  2719
-            within_mention_share                                             d_sfx  0.0360 0.0141 0.0105  0.0524  2719
-            within_mention_share                                            d_text  0.0111 0.0105 0.2882  0.4039  2719
-            within_mention_share                                    d_localization -0.0309 0.0069 0.0000  0.0000  2719
-            within_mention_share                                            d_code -0.0158 0.0097 0.1050  0.3150  2719
-            within_mention_share                                       ai_on_human -0.0196 0.0122 0.1089  0.4356  2719
-            within_mention_share                                       scope_minor -0.0221 0.0053 0.0000     NaN  2719
-            within_mention_share                                   scope_extensive  0.0378 0.0163 0.0200     NaN  2719
-            within_mention_share                                       placeholder -0.0156 0.0153 0.3098     NaN  2719
-            within_mention_share                                       tools_named  0.0208 0.0122 0.0878     NaN  2719
-            within_mention_share                                        small_team  0.0263 0.0161 0.1032     NaN  2719
-            within_mention_share                                  explicit_no_live -0.0055 0.0129 0.6734     NaN  2719
-            within_mention_share                                         log_words  0.0136 0.0044 0.0017     NaN  2719
-       within_crit_given_mention        C(locus, Treatment('dev_time'))[T.runtime] -0.2106 0.0511 0.0000  0.0001  1573
-       within_crit_given_mention C(locus, Treatment('dev_time'))[T.marketing_only] -0.0537 0.0393 0.1722  0.1722  1573
-       within_crit_given_mention              C(auth, Treatment('none'))[T.review]  0.0571 0.0560 0.3084  1.0000  1573
-       within_crit_given_mention                C(auth, Treatment('none'))[T.edit]  0.0071 0.0290 0.8075  1.0000  1573
-       within_crit_given_mention         C(auth, Treatment('none'))[T.human_final] -0.0460 0.0517 0.3729  1.0000  1573
-       within_crit_given_mention                                          d_visual -0.0158 0.0267 0.5544  1.0000  1573
-       within_crit_given_mention                                           d_voice -0.0547 0.0319 0.0860  0.4298  1573
-       within_crit_given_mention                                           d_music  0.0230 0.0310 0.4584  1.0000  1573
-       within_crit_given_mention                                             d_sfx -0.0814 0.0447 0.0689  0.4136  1573
-       within_crit_given_mention                                            d_text  0.0500 0.0376 0.1842  0.7368  1573
-       within_crit_given_mention                                    d_localization -0.1280 0.0364 0.0004  0.0030  1573
-       within_crit_given_mention                                            d_code  0.0210 0.0449 0.6406  1.0000  1573
-       within_crit_given_mention                                       ai_on_human -0.0181 0.0471 0.7012  1.0000  1573
-       within_crit_given_mention                                       scope_minor  0.0059 0.0214 0.7840     NaN  1573
-       within_crit_given_mention                                   scope_extensive  0.0006 0.0552 0.9913     NaN  1573
-       within_crit_given_mention                                       placeholder -0.0460 0.0675 0.4960     NaN  1573
-       within_crit_given_mention                                       tools_named -0.0247 0.0379 0.5145     NaN  1573
-       within_crit_given_mention                                        small_team -0.0085 0.0496 0.8644     NaN  1573
-       within_crit_given_mention                                  explicit_no_live  0.0369 0.0412 0.3705     NaN  1573
-       within_crit_given_mention                                         log_words  0.0169 0.0169 0.3171     NaN  1573
+                                  model                                              term       b     se      p  p_holm     n
+                        H1_pct_positive                                         disclosed -3.4451 0.3623 0.0000     NaN 23136
+               H1_log_reviews_allwindow                                         disclosed -0.5277 0.0274 0.0000     NaN 46253
+                    within_pct_positive        C(locus, Treatment('dev_time'))[T.runtime] -4.1057 1.9785 0.0380  0.0759  3393
+                    within_pct_positive C(locus, Treatment('dev_time'))[T.marketing_only]  1.5355 1.1599 0.1856  0.1856  3393
+                    within_pct_positive              C(auth, Treatment('none'))[T.review] -4.7914 2.4316 0.0488  0.1464  3393
+                    within_pct_positive                C(auth, Treatment('none'))[T.edit] -0.5746 0.9121 0.5287  1.0000  3393
+                    within_pct_positive         C(auth, Treatment('none'))[T.human_final] -0.5832 1.4300 0.6834  1.0000  3393
+                    within_pct_positive                                          d_visual -1.5841 0.7945 0.0462  0.2308  3393
+                    within_pct_positive                                           d_voice -0.1131 1.0426 0.9136  1.0000  3393
+                    within_pct_positive                                           d_music  2.7056 0.9047 0.0028  0.0167  3393
+                    within_pct_positive                                             d_sfx  0.6081 1.3467 0.6516  1.0000  3393
+                    within_pct_positive                                            d_text -2.1147 1.1825 0.0737  0.2949  3393
+                    within_pct_positive                                    d_localization  4.5483 0.8950 0.0000  0.0000  3393
+                    within_pct_positive                                            d_code  1.0182 1.2985 0.4329  1.0000  3393
+                    within_pct_positive                                       ai_on_human  3.8066 1.2686 0.0027  0.0108  3393
+                    within_pct_positive                                       scope_minor  1.9475 0.6731 0.0038     NaN  3393
+                    within_pct_positive                                   scope_extensive -0.2697 1.6144 0.8673     NaN  3393
+                    within_pct_positive                                       placeholder  2.6585 1.8949 0.1606     NaN  3393
+                    within_pct_positive                                       tools_named  0.6431 1.2763 0.6144     NaN  3393
+                    within_pct_positive                                        small_team  2.5601 1.4091 0.0692     NaN  3393
+                    within_pct_positive                                  explicit_no_live -1.0879 1.3888 0.4334     NaN  3393
+                    within_pct_positive                                         log_words  0.8336 0.4983 0.0944     NaN  3393
+       within_pct_positive_anyoversight                                     any_oversight -0.9925 0.8268 0.2300     NaN  3393
+within_pct_positive_anyoversight_notext                                     any_oversight -0.4058 0.7399 0.5834     NaN  3393
+   within_pct_positive_anyoversight_raw                                     any_oversight  0.3128 0.7953 0.6941     NaN  3393
+                     within_log_reviews        C(locus, Treatment('dev_time'))[T.runtime]  0.3532 0.1932 0.0675  0.1350  3393
+                     within_log_reviews C(locus, Treatment('dev_time'))[T.marketing_only] -0.1226 0.0995 0.2178  0.2178  3393
+                     within_log_reviews              C(auth, Treatment('none'))[T.review] -0.0612 0.1768 0.7293  0.7293  3393
+                     within_log_reviews                C(auth, Treatment('none'))[T.edit]  0.1203 0.0735 0.1018  0.3053  3393
+                     within_log_reviews         C(auth, Treatment('none'))[T.human_final]  0.4582 0.1817 0.0117  0.0468  3393
+                     within_log_reviews                                          d_visual -0.1825 0.0666 0.0061  0.0427  3393
+                     within_log_reviews                                           d_voice  0.1315 0.0954 0.1677  0.6710  3393
+                     within_log_reviews                                           d_music -0.0695 0.0716 0.3322  0.6710  3393
+                     within_log_reviews                                             d_sfx -0.0506 0.0976 0.6040  0.6710  3393
+                     within_log_reviews                                            d_text -0.2047 0.0925 0.0268  0.1610  3393
+                     within_log_reviews                                    d_localization  0.1091 0.0847 0.1976  0.6710  3393
+                     within_log_reviews                                            d_code -0.1734 0.0910 0.0567  0.2835  3393
+                     within_log_reviews                                       ai_on_human  0.1214 0.1208 0.3149  0.6297  3393
+                     within_log_reviews                                       scope_minor  0.1196 0.0520 0.0214     NaN  3393
+                     within_log_reviews                                   scope_extensive -0.1241 0.1178 0.2920     NaN  3393
+                     within_log_reviews                                       placeholder  0.0656 0.1771 0.7109     NaN  3393
+                     within_log_reviews                                       tools_named -0.2074 0.1008 0.0396     NaN  3393
+                     within_log_reviews                                        small_team  0.0905 0.1610 0.5739     NaN  3393
+                     within_log_reviews                                  explicit_no_live -0.2834 0.1010 0.0050     NaN  3393
+                     within_log_reviews                                         log_words  0.0183 0.0407 0.6532     NaN  3393
+                       oversight_extent                                         n_domains  0.0738 0.0108 0.0000     NaN  3393
+                       oversight_extent                                       scope_minor  0.0594 0.0168 0.0004     NaN  3393
+                       oversight_extent                                   scope_extensive -0.0363 0.0371 0.3274     NaN  3393
+                       oversight_extent                                            post26  0.0697 0.0159 0.0000     NaN  3393
+                          H1_crit_share                                         disclosed  0.0491 0.0023 0.0000     NaN  6290
+                       H1_mention_share                                         disclosed  0.0696 0.0031 0.0000     NaN  6290
+                     H1_crit_share_term                                         disclosed  0.0301 0.0015 0.0000     NaN  6290
+                      within_crit_share        C(locus, Treatment('dev_time'))[T.runtime]  0.0508 0.0150 0.0007  0.0007  2719
+                      within_crit_share C(locus, Treatment('dev_time'))[T.marketing_only] -0.0333 0.0047 0.0000  0.0000  2719
+                      within_crit_share              C(auth, Treatment('none'))[T.review] -0.0137 0.0118 0.2452  0.7355  2719
+                      within_crit_share                C(auth, Treatment('none'))[T.edit] -0.0030 0.0069 0.6621  0.9946  2719
+                      within_crit_share         C(auth, Treatment('none'))[T.human_final] -0.0068 0.0100 0.4973  0.9946  2719
+                      within_crit_share                                          d_visual  0.0151 0.0050 0.0024  0.0143  2719
+                      within_crit_share                                           d_voice  0.0057 0.0066 0.3890  0.8471  2719
+                      within_crit_share                                           d_music  0.0078 0.0073 0.2824  0.8471  2719
+                      within_crit_share                                             d_sfx  0.0205 0.0110 0.0638  0.3190  2719
+                      within_crit_share                                            d_text  0.0049 0.0080 0.5437  0.8471  2719
+                      within_crit_share                                    d_localization -0.0284 0.0055 0.0000  0.0000  2719
+                      within_crit_share                                            d_code -0.0115 0.0074 0.1194  0.4777  2719
+                      within_crit_share                                       ai_on_human -0.0136 0.0098 0.1648  0.6591  2719
+                      within_crit_share                                       scope_minor -0.0149 0.0043 0.0005     NaN  2719
+                      within_crit_share                                   scope_extensive  0.0249 0.0132 0.0591     NaN  2719
+                      within_crit_share                                       placeholder -0.0105 0.0139 0.4470     NaN  2719
+                      within_crit_share                                       tools_named  0.0057 0.0075 0.4526     NaN  2719
+                      within_crit_share                                        small_team  0.0174 0.0128 0.1723     NaN  2719
+                      within_crit_share                                  explicit_no_live -0.0020 0.0106 0.8495     NaN  2719
+                      within_crit_share                                         log_words  0.0108 0.0035 0.0020     NaN  2719
+                   within_mention_share        C(locus, Treatment('dev_time'))[T.runtime]  0.1592 0.0252 0.0000  0.0000  2719
+                   within_mention_share C(locus, Treatment('dev_time'))[T.marketing_only] -0.0412 0.0061 0.0000  0.0000  2719
+                   within_mention_share              C(auth, Treatment('none'))[T.review] -0.0240 0.0154 0.1175  0.4356  2719
+                   within_mention_share                C(auth, Treatment('none'))[T.edit] -0.0044 0.0087 0.6112  0.6112  2719
+                   within_mention_share         C(auth, Treatment('none'))[T.human_final] -0.0155 0.0116 0.1825  0.4356  2719
+                   within_mention_share                                          d_visual  0.0283 0.0064 0.0000  0.0001  2719
+                   within_mention_share                                           d_voice  0.0206 0.0090 0.0226  0.0906  2719
+                   within_mention_share                                           d_music  0.0115 0.0090 0.2020  0.4039  2719
+                   within_mention_share                                             d_sfx  0.0360 0.0141 0.0105  0.0524  2719
+                   within_mention_share                                            d_text  0.0111 0.0105 0.2882  0.4039  2719
+                   within_mention_share                                    d_localization -0.0309 0.0069 0.0000  0.0000  2719
+                   within_mention_share                                            d_code -0.0158 0.0097 0.1050  0.3150  2719
+                   within_mention_share                                       ai_on_human -0.0196 0.0122 0.1089  0.4356  2719
+                   within_mention_share                                       scope_minor -0.0221 0.0053 0.0000     NaN  2719
+                   within_mention_share                                   scope_extensive  0.0378 0.0163 0.0200     NaN  2719
+                   within_mention_share                                       placeholder -0.0156 0.0153 0.3098     NaN  2719
+                   within_mention_share                                       tools_named  0.0208 0.0122 0.0878     NaN  2719
+                   within_mention_share                                        small_team  0.0263 0.0161 0.1032     NaN  2719
+                   within_mention_share                                  explicit_no_live -0.0055 0.0129 0.6734     NaN  2719
+                   within_mention_share                                         log_words  0.0136 0.0044 0.0017     NaN  2719
+              within_crit_given_mention        C(locus, Treatment('dev_time'))[T.runtime] -0.2106 0.0511 0.0000  0.0001  1573
+              within_crit_given_mention C(locus, Treatment('dev_time'))[T.marketing_only] -0.0537 0.0393 0.1722  0.1722  1573
+              within_crit_given_mention              C(auth, Treatment('none'))[T.review]  0.0571 0.0560 0.3084  1.0000  1573
+              within_crit_given_mention                C(auth, Treatment('none'))[T.edit]  0.0071 0.0290 0.8075  1.0000  1573
+              within_crit_given_mention         C(auth, Treatment('none'))[T.human_final] -0.0460 0.0517 0.3729  1.0000  1573
+              within_crit_given_mention                                          d_visual -0.0158 0.0267 0.5544  1.0000  1573
+              within_crit_given_mention                                           d_voice -0.0547 0.0319 0.0860  0.4298  1573
+              within_crit_given_mention                                           d_music  0.0230 0.0310 0.4584  1.0000  1573
+              within_crit_given_mention                                             d_sfx -0.0814 0.0447 0.0689  0.4136  1573
+              within_crit_given_mention                                            d_text  0.0500 0.0376 0.1842  0.7368  1573
+              within_crit_given_mention                                    d_localization -0.1280 0.0364 0.0004  0.0030  1573
+              within_crit_given_mention                                            d_code  0.0210 0.0449 0.6406  1.0000  1573
+              within_crit_given_mention                                       ai_on_human -0.0181 0.0471 0.7012  1.0000  1573
+              within_crit_given_mention                                       scope_minor  0.0059 0.0214 0.7840     NaN  1573
+              within_crit_given_mention                                   scope_extensive  0.0006 0.0552 0.9913     NaN  1573
+              within_crit_given_mention                                       placeholder -0.0460 0.0675 0.4960     NaN  1573
+              within_crit_given_mention                                       tools_named -0.0247 0.0379 0.5145     NaN  1573
+              within_crit_given_mention                                        small_team -0.0085 0.0496 0.8644     NaN  1573
+              within_crit_given_mention                                  explicit_no_live  0.0369 0.0412 0.3705     NaN  1573
+              within_crit_given_mention                                         log_words  0.0169 0.0169 0.3171     NaN  1573
                               model                                              term       b     se      p     n
                mundlak_pct_positive                                         disclosed -0.5521 0.7263 0.4472  7361
                mundlak_pct_positive                                    mean_disclosed -3.2179 1.1317 0.0045  7361
@@ -537,6 +539,7 @@ crit_share_term_multi_game_devs_pooled                                         d
  "live_any_safety": 0.3411764705882353,
  "n_live_in_rs": 112,
  "n_live_out_rs": 143,
+ "live_out_cue_n": 142,
  "live_in_gr_none": 0.6875,
  "live_in_any_safety": 0.15178571428571427,
  "live_out_gr_none": 0.3076923076923077,

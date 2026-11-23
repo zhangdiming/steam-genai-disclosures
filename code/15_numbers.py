@@ -136,6 +136,8 @@ def main():
     mac["ShareLiveAnyGuardrail"] = pct(H["live_any_guardrail"])
     mac["ShareGrSafety"] = pct(H["live_any_safety"])
     mac["NLiveInRS"], mac["NLiveOutRS"] = num(H["n_live_in_rs"]), num(H["n_live_out_rs"])
+    mac["NLiveOutCue"] = num(H["live_out_cue_n"])
+    mac["NLiveOutNoCue"] = num(H["n_live_out_rs"] - H["live_out_cue_n"])
     for k, v in (("in", "In"), ("out", "Out")):
         mac["ShareGrNone" + v] = pct(H[f"live_{k}_gr_none"])
         mac["ShareGrSafety" + v] = pct(H[f"live_{k}_any_safety"])
@@ -331,6 +333,13 @@ def main():
     mac["AboutNewType"] = num((~none & pd.Series([bool(p - d) for p, d in zip(page, disc)], index=cd.index)).sum())
     mac["ShareGrNonePage"] = pct((none & ~has).mean())
     mac["ShareGrNonePageN"] = num((none & ~has).sum())
+    changed = pg.set_index("appid").disclosure_changed.loc[cd.index] == 1
+    mac["AboutChangedNone"], mac["AboutChangedNoneFound"] = num((changed & none).sum()), num((changed & none & has).sum())
+    rsc = pd.read_csv(ROOT / "annotation/runtime_scope/coded.csv").set_index("appid").loc[cd.index]
+    judge = rsc.judge_only == 1
+    assert len(rsc) == len(cd) and abs(none.mean() - H["live_in_gr_none"]) < 1e-9
+    mac["RtJudgeN"], mac["RtJudgeNoneN"] = num(judge.sum()), num((judge & none).sum())
+    mac["ShareGrNoneNoJudge"] = pct(none[~judge].mean())
     for k, v, sc in (("h2a_ingame_crit_share", "HTwoInGameCrit", 100), ("h2a_ingame_pct_positive", "HTwoInGamePos", 1)):
         c = H[k]
         mac[v + "B"], mac[v + "Lo"], mac[v + "Hi"] = sgn(c["b"] * sc), sgn(c["lo"] * sc), sgn(c["hi"] * sc)
@@ -357,6 +366,8 @@ def main():
                      ("scope_minor", "ScopeMinor"), ("scope_extensive", "ScopeExt"), ("placeholder", "Placeholder")):
             coef(model, t, pre + v, sc)
     coef("within_pct_positive_anyoversight", "any_oversight", "WAnyOversight")
+    coef("within_pct_positive_anyoversight_notext", "any_oversight", "WAnyOvNoText")
+    coef("within_pct_positive_anyoversight_raw", "any_oversight", "WAnyOvRaw")
 
     ag_dev, ag_test = pd.read_csv(G / "agreement_dev.csv"), pd.read_csv(G / "agreement_test.csv")
     for a, v in ((ag_dev, "Dev"), (ag_test, "Test")):
@@ -419,6 +430,11 @@ def main():
     for k, v in (("genai_critical", "LexCrit"), ("genai_critical_term", "LexCritTerm")):
         mac[v + "PRuntime"], mac[v + "RRuntime"] = f"{rw[f'{k}_P_uruntime']:.2f}", f"{rw[f'{k}_R_uruntime']:.2f}"
     mac["LexRuntimeN"], mac["LexRuntimeNPos"] = num(rw["crit_n_runtime"]), num(rw["crit_npos_runtime"])
+    for grp, gv in (("visual", "Visual"), ("notvisual", "NotVisual")):
+        mac[f"LexCritP{gv}"], mac[f"LexCritR{gv}"] = (f"{rw[f'genai_critical_P_u{grp}']:.2f}",
+                                                    f"{rw[f'genai_critical_R_u{grp}']:.2f}")
+        mac[f"Lex{gv}N"] = num(rw[f"crit_n_{grp}"])
+    mac["LexMktN"], mac["LexMktNPos"] = num(rw["crit_n_mktonly"]), num(rw["crit_npos_mktonly"])
     mac["LexRedirN"], mac["LexRedirGames"] = num(rw["redirect_n"]), num(rw["redirect_games"])
     mac["LexRedirCrit"] = num(rw["redirect_crit"])
     mac["LexNoTokenN"] = num(rw["no_token_n"])
@@ -639,6 +655,9 @@ def main():
         coef(y, "publisher_if_disclosed", "PubLvl" + k, s, P)
     mac["PubAnyN"], mac["PubCoN"], mac["PubCoDisc"] = num(PJ["n_est_any"]), num(PJ["n_est_co"]), pct(PJ["disc_est_co"])
     coef("any_disclosed", "pub_est_any", "PubAnyDisc", 100, P)
+    coef("other_disclosed", "pub_est_other", "PubOtherDisc", 100, P)
+    mac["PubNotOtherN"], mac["PubNotOtherShare"] = num(PJ["n_est_not_other"]), pct(PJ["n_est_not_other"] / PJ["n_est"])
+    mac["PubNotOtherDisc"] = pct(PJ["disc_est_not_other"])
     CK = pd.read_csv(RES / "publisher_check_sample.csv", dtype=str)
     drawn_est = CK.drawn_from.str.startswith("established")
     est_now, sep_now = CK.group_now == "established", CK.group_now == "separate, not established"
@@ -651,13 +670,15 @@ def main():
     mac["PubCheckSepN"] = num(sep_now.sum())
     mac["PubCheckSepDistinct"] = num((sep_now & (CK.final == "distinct")).sum())
     mac["PubCheckAgree"] = num((CK.ai_judgment == CK.author_label).sum())
+    mac["PubCheckRevised"] = num((CK.author_label_initial != CK.author_label).sum())
+    mac["PubCheckAgreeInitial"] = num((CK.ai_judgment == CK.author_label_initial).sum())
     for k, model in (("PubDisc", "disclosed"), ("PubFE", "devfe_disclosed")):
         mac[k + "Abs"] = f"{abs(100 * P[(P.model == model) & (P.term == 'pub_est')].b.iloc[0]):.1f}"
     rq3 = P[(P.model.isin(["any_oversight", "live_any", "marketing_only", "pct_positive", "crit_share"]))
             & P.p_holm.notna()]
     mac["PubMinPHolm"] = pv(rq3.p_holm.min())
     mac["PubMinP"] = pv(rq3.p.min())
-    alt = P[P.model.str.match(r"(broad|est5|devcl|any)_") & ~P.model.str.endswith("_disclosed") & P.p_holm.notna()]
+    alt = P[P.model.str.match(r"(broad|est5|devcl|any|other)_") & ~P.model.str.endswith("_disclosed") & P.p_holm.notna()]
     mac["PubAltMinPHolm"] = pv(alt.p_holm.min())
     mac["PubLvlMinP"] = pv(P[P.term == "publisher_if_disclosed"].p.min())
 
@@ -973,7 +994,8 @@ def main():
                           ("devfe_nocov_disclosed", "pub_est", "Same developer, no covariates"),
                           ("broad_disclosed", "pub_sep", "Any separate publisher"),
                           ("est5_disclosed", "pub_est5", r"Publisher with $\geq$5 developers"),
-                          ("any_disclosed", "pub_est_any", "Including co-published games")):
+                          ("any_disclosed", "pub_est_any", "Including co-published games"),
+                          ("other_disclosed", "pub_est_other", "With another developer's game")):
         lines.append(pline(model, t, lab))
     lines.append(r"\multicolumn{6}{@{}l}{\emph{B. Content, disclosing games}} \\")
     for model, lab in (("any_oversight", "Claims human oversight"), ("live_any", "Runtime generation"),
@@ -992,7 +1014,9 @@ def main():
               r"matches none of the game's developers (co-published games count as self-published) and that has released games of at least two developers other than "
               r"itself on Steam, the game's developers included. Covariates of the main models, with this indicator in place of self-publishing. Standard errors clustered by "
               r"developer and by publisher; fixed-effects (FE) rows by developer, among developers with $\geq$2 cohort "
-              r"games. $p_{\mathrm{Holm}}$: Holm-adjusted across the six RQ3 tests. Panel B: the " + mac["ReceptionCoded"] +
+              r"games. Alternative definitions in panel A: any publisher not matching a developer; one with at least five other "
+              r"developers; co-published games included; one also listed on another developer's game. "
+              r"$p_{\mathrm{Holm}}$: Holm-adjusted across the six RQ3 tests. Panel B: the " + mac["ReceptionCoded"] +
               r" coded disclosures of the reception sample. Panel C: coefficient on disclosure for games without and "
               r"with an established publisher, and their difference. Panel D: games with an established publisher "
               r"minus other games, among disclosing games (the publisher and interaction coefficients summed).}", r"\end{table}"]

@@ -81,7 +81,8 @@ def main():
         out[f"{k}_pred_prev_w"] = (w * p).sum() / w.sum()
         out[f"{k}_unresolved"] = sum(1 for r in rids if gold[r][k] is None)
     g = pd.read_csv(ROOT / "data/processed/games.csv",
-                    usecols=["appid", "disclosed", "c_live_system", "c_live_player", "page_redirect"], low_memory=False)
+                    usecols=["appid", "disclosed", "c_live_system", "c_live_player", "c_d_visual", "c_marketing_only",
+                             "page_redirect"], low_memory=False)
     redir = set(g.appid[g.page_redirect == 1])
     out["redirect_n"] = sum(1 for r in rids if int(meta.loc[r, "appid"]) in redir)
     out["redirect_games"] = len({int(meta.loc[r, "appid"]) for r in rids} & redir)
@@ -89,6 +90,7 @@ def main():
     g = g[g.page_redirect != 1]
     disc = dict(zip(g.appid, g.disclosed))
     live = dict(zip(g.appid, (g.c_live_system == 1) | (g.c_live_player == 1)))
+    vis, mko = dict(zip(g.appid, g.c_d_visual)), dict(zip(g.appid, g.c_marketing_only))
     for grp, val in (("runtime", True), ("other", False)):
         idx = [r for r in rids if gold[r]["genai_mention"] == 1 and gold[r]["genai_critical"] is not None
                and disc.get(int(meta.loc[r, "appid"])) == 1 and live.get(int(meta.loc[r, "appid"])) == val]
@@ -103,11 +105,14 @@ def main():
             out[f"{k}_P_{grp}"] = tp / (tp + fp) if tp + fp else np.nan
             out[f"{k}_R_{grp}"] = tp / (tp + fn) if tp + fn else np.nan
             out[f"{k}_n_{grp}"] = len(idx)
-    for grp in ("runtime", "otherdisc", "nondisc"):
+    for grp in ("runtime", "otherdisc", "nondisc", "visual", "notvisual", "mktonly"):
         idx = [r for r in rids if gold[r]["genai_critical"] is not None and
                {"runtime": disc.get(int(meta.loc[r, "appid"])) == 1 and live.get(int(meta.loc[r, "appid"])),
                 "otherdisc": disc.get(int(meta.loc[r, "appid"])) == 1 and not live.get(int(meta.loc[r, "appid"])),
-                "nondisc": disc.get(int(meta.loc[r, "appid"])) == 0}[grp]]
+                "nondisc": disc.get(int(meta.loc[r, "appid"])) == 0,
+                "visual": disc.get(int(meta.loc[r, "appid"])) == 1 and vis.get(int(meta.loc[r, "appid"])) == 1,
+                "notvisual": disc.get(int(meta.loc[r, "appid"])) == 1 and vis.get(int(meta.loc[r, "appid"])) == 0,
+                "mktonly": disc.get(int(meta.loc[r, "appid"])) == 1 and mko.get(int(meta.loc[r, "appid"])) == 1}[grp]]
         y = np.array([gold[r]["genai_critical"] for r in idx])
         out[f"crit_n_{grp}"], out[f"crit_npos_{grp}"] = len(idx), int(y.sum())
         for k in ("genai_critical", "genai_critical_term"):

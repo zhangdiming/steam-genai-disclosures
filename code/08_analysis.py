@@ -273,6 +273,7 @@ def main():
     head["live_any_safety"] = float(lv[SAFETY].max(axis=1).mean())
     lv_in = (lv.release_date <= WINDOW_END) & (lv.review_count >= 10)
     head["n_live_in_rs"], head["n_live_out_rs"] = int(lv_in.sum()), int((~lv_in).sum())
+    head["live_out_cue_n"] = int(lv.loc[~lv_in, "disclosure"].str.contains(LIVE_CUE).sum())
     g["share_rs"] = lv.loc[lv_in, gr].mean()
     g.to_csv(RES / "guardrails_live.csv")
     for nm, sel in (("in", lv_in), ("out", ~lv_in)):
@@ -306,6 +307,9 @@ def main():
     m2b = fit(f"pct_positive ~ any_oversight + C(locus, Treatment('dev_time')) + "
               f"{' + '.join(DOM + EXTRA + ['log_words'])} + {ctrl}", rd)
     rows += coef_table(m2b, ["any_oversight"], "within_pct_positive_anyoversight")
+    rows += coef_table(fit(f"pct_positive ~ any_oversight + C(locus, Treatment('dev_time')) + {ctrl}", rd),
+                       ["any_oversight"], "within_pct_positive_anyoversight_notext")
+    rows += coef_table(fit("pct_positive ~ any_oversight", rd), ["any_oversight"], "within_pct_positive_anyoversight_raw")
     m2c = fit(within_formula("log_reviews", ctrl), rd)
     rows += coef_table(m2c, within_terms(m2c), "within_log_reviews")
     ov = rd.assign(n_domains=rd[DOM].sum(axis=1) + rd["c_d_other"], post26=(rd.release_date >= "2026-01-01").astype(int))

@@ -55,11 +55,17 @@ def build_publishers():
             pb = [d["name"].strip() for d in bi.get("publishers", []) or [] if d.get("name", "").strip()]
             items.append((it["appid"], dv, [p for p in pb if not PLACEHOLDER.fullmatch(norm(p))]))
     port = defaultdict(set)
-    for _, dv, pb in items:
+    listings = defaultdict(list)
+    for appid, dv, pb in items:
         nd = [norm(x) for x in dv]
         for p in pb:
             np_ = norm(p)
-            port[np_].update(a for a in nd if not same(np_, a))
+            own = {a for a in nd if not same(np_, a)}
+            port[np_].update(own)
+            listings[np_].append((appid, own))
+
+    def releases_other(p, appid, nd):
+        return any(b != appid and any(not any(same(d, x) for x in nd) for d in ds) for b, ds in listings[p])
     cohort = {int(x) for x in (ROOT / "data/processed/cohort_appids.txt").read_text().split()}
     rows = []
     for appid, dv, pb in items:
@@ -69,13 +75,16 @@ def build_publishers():
         sep = [norm(p) for p in pb if not any(same(norm(p), a) for a in nd)]
         ndev = max((len(port[p]) for p in sep), default=0)
         co = int(bool(dv) and len(sep) < len(pb))
+        est = int(bool(dv) and ndev >= 2 and not co)
+        other = int(est and any(len(port[p]) >= 2 and releases_other(p, appid, nd) for p in sep))
         rows.append({"appid": appid, "publishers": json.dumps(pb, ensure_ascii=False), "pub_co": co,
-                     "pub_sep": int(bool(dv) and bool(sep) and not co), "pub_est": int(bool(dv) and ndev >= 2 and not co),
-                     "pub_est_any": int(bool(dv) and ndev >= 2), "pub_ndev": ndev})
+                     "pub_sep": int(bool(dv) and bool(sep) and not co), "pub_est": est,
+                     "pub_est_any": int(bool(dv) and ndev >= 2), "pub_est_other": other, "pub_ndev": ndev})
     out = pd.DataFrame(rows).drop_duplicates("appid", keep="last").sort_values("appid")
     out.to_csv(PUB, index=False)
     print(len(out), "games;", int(out.pub_sep.sum()), "with a separate publisher;", int(out.pub_est.sum()), "established;",
-          int(out.pub_est_any.sum()), "established incl. co-published")
+          int(out.pub_est_any.sum()), "established incl. co-published;", int(out.pub_est_other.sum()),
+          "established with another developer's game")
 
 
 def main():
@@ -84,7 +93,7 @@ def main():
     df = pd.read_csv(ROOT / "data/processed/games.csv", low_memory=False)
     df = df[(df.has_page == 1) & (df.release_date >= "2024-01-01") & (df.page_redirect != 1)]
     df, tag_cols = A.prep(df)
-    cols = ["pub_sep", "pub_est", "pub_est_any", "pub_co", "pub_ndev"]
+    cols = ["pub_sep", "pub_est", "pub_est_any", "pub_est_other", "pub_co", "pub_ndev"]
     df = df.merge(pd.read_csv(PUB)[["appid"] + cols], on="appid", how="left")
     df[cols] = df[cols].fillna(0).astype(int)
     df["pub_est5"] = ((df.pub_est == 1) & (df.pub_ndev >= 5)).astype(int)
@@ -101,7 +110,9 @@ def main():
          "share_est": float(df.pub_est.mean()), "share_sep": float(df.pub_sep.mean()),
          "n_est_publishers_cohort": int(df.loc[df.pub_est == 1, "pub_key"].nunique()),
          "n_est_any": int(df.pub_est_any.sum()), "n_est_co": int(((df.pub_est_any == 1) & (df.pub_est == 0)).sum()),
-         "disc_est_co": float(df.loc[(df.pub_est_any == 1) & (df.pub_est == 0), "disclosed"].mean())}
+         "disc_est_co": float(df.loc[(df.pub_est_any == 1) & (df.pub_est == 0), "disclosed"].mean()),
+         "n_est_other": int(df.pub_est_other.sum()), "n_est_not_other": int(((df.pub_est == 1) & (df.pub_est_other == 0)).sum()),
+         "disc_est_not_other": float(df.loc[(df.pub_est == 1) & (df.pub_est_other == 0), "disclosed"].mean())}
     for k, v in (("est", 1), ("self", 0)):
         H[f"disc_{k}"] = float(df.loc[df.pub_est == v, "disclosed"].mean())
         sd = rd[rd.pub_est == v]
@@ -152,6 +163,7 @@ def main():
     rows += run("pub_est5", "est5_")
     rows += run("pub_est", "devcl_", cluster="dev_key")
     rows += run("pub_est_any", "any_")
+    rows += run("pub_est_other", "other_")
     multi = df[df.groupby("dev_key").appid.transform("size") >= 2]
     both = multi.groupby("dev_key").pub_est.transform(lambda s: s.nunique() > 1)
     H["n_fe_devs_both"], H["n_fe_games_both"] = int(multi.loc[both, "dev_key"].nunique()), int(both.sum())
