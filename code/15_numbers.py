@@ -90,6 +90,9 @@ def main():
         mac["ShareDisclosed" + w] = pct(H[f"share_disclosed_{y}"])
     mac["ShareDisclosedGeTen"] = pct(H["share_disclosed_ge10"])
     mac["ShareDisclosedLtTen"] = pct(H["share_disclosed_lt10"])
+    for y, w in (("2024", "TwentyFour"), ("2025", "TwentyFive"), ("2026", "TwentySix")):
+        mac["ShareDisclosedLtTen" + w] = pct(H[f"share_disclosed_lt10_{y}"])
+        mac["ShareDisclosedGeTen" + w] = pct(H[f"share_disclosed_ge10_{y}"])
     mac["NUniqueDisclosures"] = num(H["n_unique_disclosures"])
     mac["ShareSharedText"] = pct(H["share_disclosures_shared_text"])
     mac["MedianWords"] = num(H["median_words"])
@@ -1012,7 +1015,7 @@ def main():
     lines += [r"\bottomrule", r"\end{tabular}",
               r"\par\smallskip\parbox{\columnwidth}{\scriptsize Established publisher: a listed publisher whose name "
               r"matches none of the game's developers (co-published games count as self-published) and that has released games of at least two developers other than "
-              r"itself on Steam, the game's developers included. Covariates of the main models, with this indicator in place of self-publishing. Standard errors clustered by "
+              r"itself in the census, the game's developers included. Covariates of the main models, with this indicator in place of self-publishing. Standard errors clustered by "
               r"developer and by publisher; fixed-effects (FE) rows by developer, among developers with $\geq$2 cohort "
               r"games. Alternative definitions in panel A: any publisher not matching a developer; one with at least five other "
               r"developers; co-published games included; one also listed on another developer's game. "

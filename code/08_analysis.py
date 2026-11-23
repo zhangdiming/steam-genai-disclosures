@@ -209,6 +209,9 @@ def main():
         head[f"share_disclosed_{y}"] = float(df.loc[df.year == y, "disclosed"].mean())
     for lo, hi, name in ((0, 9, "lt10"), (10, 10**9, "ge10")):
         head[f"share_disclosed_{name}"] = float(df.loc[df.review_count.between(lo, hi), "disclosed"].mean())
+        for y in ("2024", "2025", "2026"):
+            sel = df.review_count.between(lo, hi) & (df.year == y)
+            head[f"share_disclosed_{name}_{y}"] = float(df.loc[sel, "disclosed"].mean())
     dn = df[df.disclosed == 1]
     tcount = dn["disclosure"].str.strip().str.lower().str.replace(r"\s+", " ", regex=True).value_counts()
     head["n_unique_disclosures"] = int(len(tcount))

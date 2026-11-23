@@ -25,6 +25,11 @@ Each coder coded every item, in an order shuffled per coder.
 | Disclosures (`D`) | 200 test-sample texts (50 with runtime cues, 150 others) | all codes of blocks A–E and the authority code |
 | Reviews (`R`) | 300 reviews from the review gold sample (200 with an AI term, 100 random without) | no mention / mention, not negative / mention and negative |
 
+Each export records, for every item, the time the item was shown in the tool (`t_ms`; each interval capped at five
+minutes). Coder H1 coded the review task (`R`) first, kept a record of the codes, and then entered them in the tool in
+one session, so H1's `t_ms` values for that task (median about 1 s per review, against 21 s for H2) measure entry, not
+reading.
+
 Decoys are texts with runtime cues that the model coded as not runtime. They keep coders from assuming that every item in
 the runtime task is runtime generation, and they check the model for missed runtime texts.
 
